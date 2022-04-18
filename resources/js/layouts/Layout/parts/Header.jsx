@@ -51,34 +51,30 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-
-
 export default function Header() {
     return (
 
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
-                <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
-                    
-                    <Avatar alt="RG" src="/img/assets/img.jpg" id="no-mg-1540-l" style={{marginRight:'5px',marginLeft:'24px'}} />
-
-                    <Typography
-                        component="div"
-                        sx={{ flexGrow: 1, display: { sm: 'block' } }}
-                    >
-                        Relaciones Geográficas
-                        <div style={{fontSize:'14px', fontWeight:'300'}}>de la Nueva España (1577 - 1585)</div>
-                    </Typography>
-                    <Search id="search-bar">
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Buscar…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
+                    <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
+                        <Avatar alt="RG" src="/img/assets/img.jpg" id="no-mg-1540-l" style={{marginRight:'5px',marginLeft:'24px'}} />
+                        <Typography
+                            component="div"
+                            sx={{ flexGrow: 1, display: { sm: 'block' } }}
+                        >
+                            Relaciones Geográficas
+                            <div style={{fontSize:'14px', fontWeight:'300'}}>de la Nueva España (1577 - 1585)</div>
+                        </Typography>
+                        <Search id="search-bar">
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Buscar…"
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
+                        </Search>
                     </Container>
                 </Toolbar>
             </AppBar>
