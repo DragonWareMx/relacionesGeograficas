@@ -1,0 +1,20 @@
+body{
+    margin: 0px !important;
+}
+/* LAYOUT */
+#search-bar{
+    margin-right: 24px;
+}
+@media(max-width:1540px){
+    #no-mg-1540-l{
+        margin-left: 0px !important;
+    }
+    #search-bar{
+        margin-right: 0px;
+    }
+}
+@media(max-width:600px){
+    #search-bar{
+        margin-top: 10px;
+    }
+}
