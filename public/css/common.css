@@ -5,6 +5,8 @@ body{
 /* LAYOUT */
 #search-bar{
     margin-right: 24px;
+    display: flex;
+    align-items: center;
 }
 @media(max-width:1540px){
     #no-mg-1540-l{

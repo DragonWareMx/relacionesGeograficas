@@ -14206,7 +14206,7 @@ function Layout(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_6__["default"], {
           maxWidth: 'xl',
           style: {
-            minHeight: 'calc(100vh - 449px)',
+            minHeight: 'calc(100vh - 454px)',
             marginTop: '75px'
           },
           children: children
@@ -14534,7 +14534,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
