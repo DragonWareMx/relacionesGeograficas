@@ -58,10 +58,11 @@ export default function Header() {
             <AppBar position="static">
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
                     <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
-                        <Avatar alt="RG" src="/img/assets/img.jpg" id="no-mg-1540-l" style={{marginRight:'5px',marginLeft:'24px'}} />
+                        <Avatar alt="RG" src="/img/assets/img.png" id="no-mg-1540-l" style={{marginRight:'8px',marginLeft:'24px'}} />
                         <Typography
                             component="div"
                             sx={{ flexGrow: 1, display: { sm: 'block' } }}
+                            style={{fontFamily:'Noto Sans'}}
                         >
                             Relaciones Geográficas
                             <div style={{fontSize:'14px', fontWeight:'300'}}>de la Nueva España (1577 - 1585)</div>

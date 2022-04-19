@@ -37,7 +37,7 @@ export default function Layout({ title, pageTitle, children }) {
                     <Header />
                 </GridHeader>
                 <GridMain>
-                    <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 200px)', marginTop:'75px'}}>
+                    <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 449px)', marginTop:'75px'}}>
                         {children}
                     </Container>
                     <Footer />
