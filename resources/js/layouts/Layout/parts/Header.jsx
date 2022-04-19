@@ -55,7 +55,7 @@ export default function Header() {
     return (
 
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" style={{boxShadow:'none'}}>
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
                     <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
                         <Avatar alt="RG" src="/img/assets/img.png" id="no-mg-1540-l" style={{marginRight:'8px',marginLeft:'24px'}} />

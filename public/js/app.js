@@ -5397,203 +5397,6 @@ const paperClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiP
 
 /***/ }),
 
-/***/ "./node_modules/@mui/material/Stack/Stack.js":
-/*!***************************************************!*\
-  !*** ./node_modules/@mui/material/Stack/Stack.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "style": () => (/* binding */ style)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/material/node_modules/@mui/system/esm/breakpoints.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/material/node_modules/@mui/system/esm/spacing.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/material/node_modules/@mui/system/esm/styleFunctionSx/extendSxProp.js");
-/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/material/node_modules/@mui/utils/esm/deepmerge.js");
-/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["component", "direction", "spacing", "divider", "children"];
-
-
-
-
-
-
-/**
- * Return an array with the separator React element interspersed between
- * each React node of the input children.
- *
- * > joinChildren([1,2,3], 0)
- * [1,0,2,0,3]
- */
-
-
-
-function joinChildren(children, separator) {
-  const childrenArray = react__WEBPACK_IMPORTED_MODULE_2__.Children.toArray(children).filter(Boolean);
-  return childrenArray.reduce((output, child, index) => {
-    output.push(child);
-
-    if (index < childrenArray.length - 1) {
-      output.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.cloneElement(separator, {
-        key: `separator-${index}`
-      }));
-    }
-
-    return output;
-  }, []);
-}
-
-const getSideFromDirection = direction => {
-  return {
-    row: 'Left',
-    'row-reverse': 'Right',
-    column: 'Top',
-    'column-reverse': 'Bottom'
-  }[direction];
-};
-
-const style = ({
-  ownerState,
-  theme
-}) => {
-  let styles = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    display: 'flex'
-  }, (0,_mui_system__WEBPACK_IMPORTED_MODULE_4__.handleBreakpoints)({
-    theme
-  }, (0,_mui_system__WEBPACK_IMPORTED_MODULE_4__.resolveBreakpointValues)({
-    values: ownerState.direction,
-    breakpoints: theme.breakpoints.values
-  }), propValue => ({
-    flexDirection: propValue
-  })));
-
-  if (ownerState.spacing) {
-    const transformer = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.createUnarySpacing)(theme);
-    const base = Object.keys(theme.breakpoints.values).reduce((acc, breakpoint) => {
-      if (ownerState.spacing[breakpoint] != null || ownerState.direction[breakpoint] != null) {
-        acc[breakpoint] = true;
-      }
-
-      return acc;
-    }, {});
-    const directionValues = (0,_mui_system__WEBPACK_IMPORTED_MODULE_4__.resolveBreakpointValues)({
-      values: ownerState.direction,
-      base
-    });
-    const spacingValues = (0,_mui_system__WEBPACK_IMPORTED_MODULE_4__.resolveBreakpointValues)({
-      values: ownerState.spacing,
-      base
-    });
-
-    const styleFromPropValue = (propValue, breakpoint) => {
-      return {
-        '& > :not(style) + :not(style)': {
-          margin: 0,
-          [`margin${getSideFromDirection(breakpoint ? directionValues[breakpoint] : ownerState.direction)}`]: (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.getValue)(transformer, propValue)
-        }
-      };
-    };
-
-    styles = (0,_mui_utils__WEBPACK_IMPORTED_MODULE_6__["default"])(styles, (0,_mui_system__WEBPACK_IMPORTED_MODULE_4__.handleBreakpoints)({
-      theme
-    }, spacingValues, styleFromPropValue));
-  }
-
-  return styles;
-};
-const StackRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_7__["default"])('div', {
-  name: 'MuiStack',
-  slot: 'Root',
-  overridesResolver: (props, styles) => {
-    return [styles.root];
-  }
-})(style);
-const Stack = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function Stack(inProps, ref) {
-  const themeProps = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__["default"])({
-    props: inProps,
-    name: 'MuiStack'
-  });
-  const props = (0,_mui_system__WEBPACK_IMPORTED_MODULE_9__["default"])(themeProps);
-
-  const {
-    component = 'div',
-    direction = 'column',
-    spacing = 0,
-    divider,
-    children
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(props, _excluded);
-
-  const ownerState = {
-    direction,
-    spacing
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(StackRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    as: component,
-    ownerState: ownerState,
-    ref: ref
-  }, other, {
-    children: divider ? joinChildren(children, divider) : children
-  }));
-});
- true ? Stack.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * The content of the component.
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().node),
-
-  /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */
-  component: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().elementType),
-
-  /**
-   * Defines the `flex-direction` style property.
-   * It is applied for all screen sizes.
-   * @default 'column'
-   */
-  direction: prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOf(['column-reverse', 'column', 'row-reverse', 'row']), prop_types__WEBPACK_IMPORTED_MODULE_10___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOf(['column-reverse', 'column', 'row-reverse', 'row'])), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object)]),
-
-  /**
-   * Add an element between each child.
-   */
-  divider: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().node),
-
-  /**
-   * Defines the space between immediate children.
-   * @default 0
-   */
-  spacing: prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_10___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_10___default().number), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().string)])), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().number), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().string)]),
-
-  /**
-   * The system prop, which allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_10___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_10___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object)])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Stack);
-
-/***/ }),
-
 /***/ "./node_modules/@mui/material/SvgIcon/SvgIcon.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@mui/material/SvgIcon/SvgIcon.js ***!
@@ -6333,68 +6136,6 @@ const common = {
   white: '#fff'
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (common);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/colors/deepOrange.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@mui/material/colors/deepOrange.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const deepOrange = {
-  50: '#fbe9e7',
-  100: '#ffccbc',
-  200: '#ffab91',
-  300: '#ff8a65',
-  400: '#ff7043',
-  500: '#ff5722',
-  600: '#f4511e',
-  700: '#e64a19',
-  800: '#d84315',
-  900: '#bf360c',
-  A100: '#ff9e80',
-  A200: '#ff6e40',
-  A400: '#ff3d00',
-  A700: '#dd2c00'
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (deepOrange);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/colors/deepPurple.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@mui/material/colors/deepPurple.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const deepPurple = {
-  50: '#ede7f6',
-  100: '#d1c4e9',
-  200: '#b39ddb',
-  300: '#9575cd',
-  400: '#7e57c2',
-  500: '#673ab7',
-  600: '#5e35b1',
-  700: '#512da8',
-  800: '#4527a0',
-  900: '#311b92',
-  A100: '#b388ff',
-  A200: '#7c4dff',
-  A400: '#651fff',
-  A700: '#6200ea'
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (deepPurple);
 
 /***/ }),
 
@@ -14040,12 +13781,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
-/* harmony import */ var _mui_material_Stack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Stack */ "./node_modules/@mui/material/Stack/Stack.js");
-/* harmony import */ var _mui_material_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/colors */ "./node_modules/@mui/material/colors/deepOrange.js");
-/* harmony import */ var _mui_material_colors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/colors */ "./node_modules/@mui/material/colors/deepPurple.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -14062,43 +13803,160 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var Div = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["default"])('div')(function (_ref) {
+
+
+var Div = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["default"])('div')(function (_ref) {
   var theme = _ref.theme;
   return _objectSpread(_objectSpread({}, theme.typography.button), {}, {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1)
   });
-});
+}); // const Item = styled(Paper)(({ theme }) => ({
+//     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+//     // ...theme.typography.body2,
+//     padding: theme.spacing(1),
+//     // textAlign: 'center',
+//     // color: theme.palette.text.secondary,
+//   }));
 
 var Home = function Home(_ref2) {
   _objectDestructuringEmpty(_ref2);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Div, {
-      children: "oski putoski \uC548\uB155"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Stack__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      direction: "row",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "row",
+      style: {
+        backgroundColor: '#193661'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: "Carrusel aqu\xED"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      maxWidth: 'xl',
+      style: {
+        minHeight: 'calc(100vh - 349px)',
+        paddingTop: '60px',
+        paddingBottom: '50px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        alignItems: "center",
+        justifyContent: "space-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-ri-50",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            children: "Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana. La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          style: {
+            display: 'flex',
+            justifyContent: 'center'
+          },
+          className: "pd-le-50",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            src: "/img/assets/asset1.png",
+            style: {
+              marginTop: '20px'
+            }
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        alignItems: "center",
+        justifyContent: "space-between",
+        direction: "row-reverse",
+        style: {
+          marginTop: '30px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-le-50",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            children: "Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas,  la  cultura,  la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores. Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          style: {
+            display: 'flex',
+            justifyContent: 'center'
+          },
+          className: "pd-ri-50",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            src: "/img/assets/asset2.png",
+            style: {
+              width: '35%',
+              marginTop: '20px'
+            }
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        alignItems: "flex-end",
+        justifyContent: "space-between",
+        direction: "row-reverse",
+        style: {
+          marginTop: '30px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+          href: "#!",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            style: {
+              width: '250px'
+            },
+            src: "/img/assets/btn1.PNG"
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      container: true,
+      justifyContent: "center",
       spacing: 2,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        children: "H"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        sx: {
-          bgcolor: _mui_material_colors__WEBPACK_IMPORTED_MODULE_6__["default"][500]
+      alignItems: "center",
+      style: {
+        backgroundColor: '#475e80',
+        padding: '10px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        item: true,
+        xs: 6,
+        sm: 4,
+        md: 2,
+        style: {
+          paddingTop: '0px'
         },
-        children: "N"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        sx: {
-          bgcolor: _mui_material_colors__WEBPACK_IMPORTED_MODULE_7__["default"][500]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          className: "btn-op",
+          children: "MAPA"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        item: true,
+        xs: 6,
+        sm: 4,
+        md: 2,
+        style: {
+          paddingTop: '0px'
         },
-        children: "OP"
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          className: "btn-op",
+          children: "ALFABETICO"
+        })
       })]
     })]
   });
 };
 
 Home.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Inicio",
     pageTitle: "Inicio"
@@ -14172,7 +14030,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/Layout/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/Layout/parts/Footer.jsx");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -14190,7 +14047,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Grid = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin:0px;\n    grid: \"header header\" min-content\n                          \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
 var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n"])));
-var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    padding-top:30px;\n    position: relative;\n"])));
+var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n"])));
 function Layout(_ref) {
   var title = _ref.title,
       pageTitle = _ref.pageTitle,
@@ -14203,11 +14060,10 @@ function Layout(_ref) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GridHeader, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_parts_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(GridMain, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          maxWidth: 'xl',
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           style: {
-            minHeight: 'calc(100vh - 454px)',
-            marginTop: '75px'
+            minHeight: 'calc(100vh - 349px)',
+            paddingTop: '0px'
           },
           children: children
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_parts_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
@@ -14405,6 +14261,9 @@ function Header() {
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
       position: "static",
+      style: {
+        boxShadow: 'none'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
         style: {
           backgroundColor: '#383a3a'
@@ -14534,7 +14393,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

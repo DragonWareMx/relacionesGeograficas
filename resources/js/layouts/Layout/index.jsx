@@ -20,7 +20,6 @@ const GridHeader = styled.div`
 
 const GridMain = styled.div`
     grid-area: main;
-    padding-top:30px;
     position: relative;
 `;
 
@@ -37,9 +36,13 @@ export default function Layout({ title, pageTitle, children }) {
                     <Header />
                 </GridHeader>
                 <GridMain>
-                    <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 454px)', marginTop:'75px'}}>
+                    {/* Container en cada página, ya que algunas necesitan el 100% de lo ancho */}
+                    <div style={{minHeight: 'calc(100vh - 349px)', paddingTop:'0px'}}>
+                            {children}
+                    </div>
+                    {/* <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 349px)', paddingTop:'0px'}}>
                         {children}
-                    </Container>
+                    </Container> */}
                     <Footer />
                 </GridMain>
             </Grid>

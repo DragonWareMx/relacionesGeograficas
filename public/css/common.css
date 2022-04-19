@@ -8,6 +8,30 @@ body{
     display: flex;
     align-items: center;
 }
+/* PAG INICIO */
+.pd-ri-50{
+    padding-right: 50px;
+}
+.pd-le-50{
+    padding-left: 50px;
+}
+.btn-op{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+    border-radius: 0px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    align-items: center;
+    background-color: white;
+    border: 5px solid white;
+    transition: all 0.25s ease-in-out;
+}
+.btn-op:hover, .btn-op:active, .btn-op:focus{
+    border: 5px solid #f37946;
+    transition: all 0.25s ease-in-out;
+}
 @media(max-width:1540px){
     #no-mg-1540-l{
         margin-left: 0px !important;
@@ -19,5 +43,11 @@ body{
 @media(max-width:600px){
     #search-bar{
         margin-top: 10px;
+    }
+    .pd-ri-50{
+        padding-right: 0px;
+    }
+    .pd-le-50{
+        padding-left: 0px;
     }
 }
