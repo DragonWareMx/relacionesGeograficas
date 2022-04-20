@@ -32,6 +32,14 @@ body{
     border: 5px solid #f37946;
     transition: all 0.25s ease-in-out;
 }
+.circle-name{
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 100%;
+    overflow-wrap:break-word;
+}
 @media(max-width:1540px){
     #no-mg-1540-l{
         margin-left: 0px !important;

@@ -13781,19 +13781,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -13802,16 +13798,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
-var Div = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["default"])('div')(function (_ref) {
-  var theme = _ref.theme;
-  return _objectSpread(_objectSpread({}, theme.typography.button), {}, {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(1)
-  });
-}); // const Item = styled(Paper)(({ theme }) => ({
+ // const Item = styled(Paper)(({ theme }) => ({
 //     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
 //     // ...theme.typography.body2,
 //     padding: theme.spacing(1),
@@ -13819,38 +13806,51 @@ var Div = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["default"])('div'
 //     // color: theme.palette.text.secondary,
 //   }));
 
-var Home = function Home(_ref2) {
-  _objectDestructuringEmpty(_ref2);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+
+
+
+function showAlfa() {
+  document.getElementById('mapa').style.display = "none";
+  document.getElementById('alfabetico').style.display = "block";
+}
+
+function showMapa() {
+  document.getElementById('mapa').style.display = "block";
+  document.getElementById('alfabetico').style.display = "none";
+}
+
+var Home = function Home(_ref) {
+  _objectDestructuringEmpty(_ref);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "row",
       style: {
         backgroundColor: '#193661'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         children: "Carrusel aqu\xED"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
       maxWidth: 'xl',
       style: {
-        minHeight: 'calc(100vh - 349px)',
         paddingTop: '60px',
         paddingBottom: '50px'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           sm: 6,
           className: "pd-ri-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
             children: "Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana. La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -13859,14 +13859,14 @@ var Home = function Home(_ref2) {
             justifyContent: 'center'
           },
           className: "pd-le-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: "/img/assets/asset1.png",
             style: {
               marginTop: '20px'
             }
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
@@ -13874,15 +13874,15 @@ var Home = function Home(_ref2) {
         style: {
           marginTop: '30px'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           sm: 6,
           className: "pd-le-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
             children: "Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas,  la  cultura,  la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores. Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -13891,7 +13891,7 @@ var Home = function Home(_ref2) {
             justifyContent: 'center'
           },
           className: "pd-ri-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: "/img/assets/asset2.png",
             style: {
               width: '35%',
@@ -13899,7 +13899,7 @@ var Home = function Home(_ref2) {
             }
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         alignItems: "flex-end",
         justifyContent: "space-between",
@@ -13907,9 +13907,9 @@ var Home = function Home(_ref2) {
         style: {
           marginTop: '30px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
           href: "#!",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             style: {
               width: '250px'
             },
@@ -13917,7 +13917,7 @@ var Home = function Home(_ref2) {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
       container: true,
       justifyContent: "center",
       spacing: 2,
@@ -13926,7 +13926,7 @@ var Home = function Home(_ref2) {
         backgroundColor: '#475e80',
         padding: '10px'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -13934,11 +13934,12 @@ var Home = function Home(_ref2) {
         style: {
           paddingTop: '0px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
           className: "btn-op",
+          onClick: showMapa,
           children: "MAPA"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -13946,17 +13947,272 @@ var Home = function Home(_ref2) {
         style: {
           paddingTop: '0px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_7__["default"], {
           className: "btn-op",
-          children: "ALFABETICO"
+          onClick: showAlfa,
+          children: "ALFAB\xC9TICO"
         })
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("iframe", {
+      id: "mapa",
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx",
+      width: "100%",
+      height: "1000",
+      style: {
+        border: 'none'
+      },
+      allowFullScreen: "",
+      loading: "lazy",
+      referrerPolicy: "no-referrer-when-downgrade"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      id: "alfabetico",
+      maxWidth: 'xl',
+      style: {
+        paddingTop: '60px',
+        paddingBottom: '30px',
+        display: 'none'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        alignItems: "stretch",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "ZapotitlanyTlaquemaqueAsuncionparaiuhnfkjhskshajdjdgaaksjfywjkhkh"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          sm: 3,
+          md: 2,
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            padding: '0px',
+            marginBottom: '35px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            alt: "Zapotitlan",
+            src: "/storage/iconosRelaciones/zapotitlan.png",
+            sx: {
+              width: 90,
+              height: 90
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "circle-name",
+            children: "Zapotitlan"
+          })]
+        })]
+      })
     })]
   });
 };
 
 Home.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Inicio",
     pageTitle: "Inicio"
@@ -14393,7 +14649,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name{\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap:break-word;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

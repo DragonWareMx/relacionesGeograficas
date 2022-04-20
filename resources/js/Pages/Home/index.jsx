@@ -4,13 +4,9 @@ import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Avatar from '@mui/material/Avatar';
 import { InertiaLink } from '@inertiajs/inertia-react';
-
-const Div = styled('div')(({ theme }) => ({
-    ...theme.typography.button,
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(1),
-}));
+import '/css/common.css'
 
 // const Item = styled(Paper)(({ theme }) => ({
 //     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,6 +15,14 @@ const Div = styled('div')(({ theme }) => ({
 //     // textAlign: 'center',
 //     // color: theme.palette.text.secondary,
 //   }));
+function showAlfa(){
+    document.getElementById('mapa').style.display = "none";
+    document.getElementById('alfabetico').style.display = "block";
+}
+function showMapa(){
+    document.getElementById('mapa').style.display = "block";
+    document.getElementById('alfabetico').style.display = "none";
+}
 
 const Home = ({ }) => {
 
@@ -28,7 +32,7 @@ const Home = ({ }) => {
         <div className="row" style={{backgroundColor:'#193661'}}>
             <div>Carrusel aquí</div>
         </div>
-        <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 349px)', paddingTop:'60px', paddingBottom:'50px'}}>
+        <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
             <Grid container alignItems="center" justifyContent="space-between">
                 <Grid item xs={12} sm={6} className="pd-ri-50">
                     <Grid>Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes 
@@ -64,12 +68,62 @@ const Home = ({ }) => {
         </Container>
         <Grid container justifyContent="center" spacing={2} alignItems="center" style={{backgroundColor:'#475e80', padding:'10px'}}>
             <Grid item xs={6} sm={4} md={2} style={{paddingTop:'0px'}}>
-                <Paper className="btn-op">MAPA</Paper>
+                <Paper className="btn-op" onClick={showMapa}>MAPA</Paper>
             </Grid>
             <Grid item xs={6} sm={4} md={2} style={{paddingTop:'0px'}}>
-                <Paper className="btn-op">ALFABETICO</Paper>
+                <Paper className="btn-op" onClick={showAlfa}>ALFABÉTICO</Paper>
             </Grid>
         </Grid>
+        {/* APARTADO DE MAPA GOOGLE */}
+        <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx" width="100%" height="1000" style={{border:'none'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+
+        {/* APARTADO DE TODAS LAS RELACIONES */}
+        <Container id="alfabetico" maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
+            <Grid container alignItems="stretch">
+                {/* {{Str::limit($book->authors[0]->nombre,62)}} limite de 62 caracteres */}
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">ZapotitlanyTlaquemaqueAsuncionparaiuhnfkjhskshajdjdgaaksjfywjkhkh</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
+                        <p className="circle-name">Zapotitlan</p>
+                </Grid>
+
+            </Grid>
+        </Container>
         </>
     )
 }
