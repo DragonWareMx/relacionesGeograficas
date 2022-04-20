@@ -22,6 +22,9 @@ const Relacion = ({ }) => {
             </Container>
             </Grid>
         </Grid>
+        <Container maxWidth={'xl'}>
+            TODA LA INFO AQUÍ 🍙🥩🍗🥝🍉🍇
+        </Container>
         </>
     )
 }

@@ -14485,8 +14485,8 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
 var Relacion = function Relacion(_ref) {
   _objectDestructuringEmpty(_ref);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
       container: true,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
         item: true,
@@ -14514,7 +14514,10 @@ var Relacion = function Relacion(_ref) {
           })
         })
       })
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      maxWidth: 'xl',
+      children: "TODA LA INFO AQU\xCD \uD83C\uDF59\uD83E\uDD69\uD83C\uDF57\uD83E\uDD5D\uD83C\uDF49\uD83C\uDF47"
+    })]
   });
 };
 
