@@ -1,0 +1,11 @@
+body{
+    background-color: #304a71 !important;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+.big-text{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}

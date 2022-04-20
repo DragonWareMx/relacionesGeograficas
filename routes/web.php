@@ -13,13 +13,16 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/inertia', function () {
-    return Inertia::render('Home');
+Route::get('/', function () {
+    return Inertia::render('Pages/index');
 });
 
-Route::get('/', function () {
-    return Inertia::render('Home');
+Route::get('/creditos', function () {
+    return Inertia::render('Pages/creditos');
+});
+
+Route::get('/fuentes', function () {
+    return Inertia::render('Pages/fuentes');
 });
 
 Auth::routes();

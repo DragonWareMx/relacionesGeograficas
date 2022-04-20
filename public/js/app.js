@@ -13768,10 +13768,202 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Home/index.jsx":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/Home/index.jsx ***!
-  \*******************************************/
+/***/ "./resources/js/Pages/Pages/creditos.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Pages/creditos.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+
+
+
+
+
+
+
+
+
+
+
+var Creditos = function Creditos(_ref) {
+  _objectDestructuringEmpty(_ref);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      maxWidth: 'xl',
+      style: {
+        paddingTop: '40px',
+        paddingBottom: '50px'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        justifyContent: "space-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-ri-50",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "big-text",
+            children: "Cr\xE9ditos"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Alejandra Frausto Guerrero", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Secretaria de Cultura"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Marina Nu\xF1ez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Subsecretaria de Desarrollo Cultural"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Omar Monroy", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Titular de Unidad de Administraci\xF3n y Finanzas"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Esther Hern\xE1ndez Torres", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Directora General de Vinculaci\xF3n Cultural"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Antonio Mart\xEDnez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Enlace de Comunicaci\xF3n Social y Vocero"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Silvano Aureoles Conejo", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Gobernador de Michoac\xE1n"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Sandra Aguilera Anaya", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Secretaria de Cultura"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Francisco Ram\xEDrez Flores", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Secretario T\xE9cnico"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["L\xE1zaro Bucio Gonz\xE1lez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Delegado Administrativo"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Jos\xE9 Roberto Morales Ochoa", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Direcci\xF3n de Producci\xF3n Art\xEDstica y Desarrollo Cultural"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Marco Antonio Villegas Garc\xEDa", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Direcci\xF3n de Patrimonio, Protecci\xF3n y Conservaci\xF3n de Monumentos y Sitios Hist\xF3ricos"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Manuel Alejandro Sosa Gonz\xE1lez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Director Centro Cultural Clav.ero"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Laura Elena Fraga Villica\xF1a", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Jefe del Centro de Documentaci\xF3n e Investigaci\xF3n de las Artes"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-le-50",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "big-text",
+            children: "Agradecimientos"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Biblioteca de las Artes, Centro Nacional de las Artes Instituto del Artesano Michoacano", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Centro Cultural Clav.ero", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Departamento de Conservaci\xF3n y Restauraci\xF3n de Obras de Arte", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "\u2013SECUM\u2013", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Departamento Editorial de la Universidad Aut\xF3noma de Aguascalientes", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Escuela Normal Urbana Federal \u201CProfr. J. Jes\xFAs Romero Flores\u201D Fundaci\xF3n Cultural Alfredo Zalce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Museo Agrarista de Michoac\xE1n, Tzurumutaro, Michoac\xE1n Museo de Arte Contempor\xE1neo Alfredo Zalce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Museo Nacional de Antropolog\xEDa e Historia Peri\xF3dico La Voz de Michoac\xE1n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Poder Judicial del Estado de Michoac\xE1n Presidencia Municipal de Opopeo, Michoac\xE1n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Presidencia Municipal de Santa Ana Maya, Michoac\xE1n Universidad Michoacana de San Nicol\xE1s de Hidalgo"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Agust\xEDn C\xE1rdenas Castro Alfredo Arregu\xEDn Mendoza Azucena Sol\xF3rzano \xC1vila Eduardo Le\xF3n L\xF3pez Familia Escalera Coria Familia Torres Canals Felipe Casta\xF1eda Jaramillo", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Felipe Cuauht\xE9moc Casta\xF1eda Vargas Francisco Garc\xEDa de la Torre", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Francisco Rodr\xEDguez O\xF1ate Ger\xF3nimo Mateo Madrigal Juan Garc\xEDa Ch\xE1vez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Luis Palomares Fr\xEDas", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Marco Antonio L\xF3pez Prado", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Mar a Auxilio C\xE1rdenas Rodr\xEDguez Martha Esparza Ram\xEDrez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Martin A. Foley Greenan Mart\xEDn Feliciano B\xE9jar", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
+          })]
+        })]
+      })
+    })
+  });
+};
+
+Creditos.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: page,
+    title: "Cr\xE9ditos",
+    pageTitle: "Cr\xE9ditos"
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Creditos);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Pages/fuentes.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/Pages/fuentes.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+
+
+
+
+
+
+
+
+
+
+
+var Fuentes = function Fuentes(_ref) {
+  _objectDestructuringEmpty(_ref);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      maxWidth: 'xl',
+      style: {
+        paddingTop: '40px',
+        paddingBottom: '50px'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        justifyContent: "space-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-ri-50",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "big-text",
+            children: "Fuentes"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Alejandra Frausto Guerrero", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Secretaria de Cultura"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 6,
+          className: "pd-le-50",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "big-text",
+            children: "Fuentes 2.0"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+            children: ["Biblioteca de las Artes, Centro Nacional de las Artes Instituto del Artesano Michoacano", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Centro Cultural Clav.ero", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Departamento de Conservaci\xF3n y Restauraci\xF3n de Obras de Arte", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "\u2013SECUM\u2013", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Departamento Editorial de la Universidad Aut\xF3noma de Aguascalientes", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Escuela Normal Urbana Federal \u201CProfr. J. Jes\xFAs Romero Flores\u201D Fundaci\xF3n Cultural Alfredo Zalce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Museo Agrarista de Michoac\xE1n, Tzurumutaro, Michoac\xE1n Museo de Arte Contempor\xE1neo Alfredo Zalce", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Museo Nacional de Antropolog\xEDa e Historia Peri\xF3dico La Voz de Michoac\xE1n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Poder Judicial del Estado de Michoac\xE1n Presidencia Municipal de Opopeo, Michoac\xE1n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Presidencia Municipal de Santa Ana Maya, Michoac\xE1n Universidad Michoacana de San Nicol\xE1s de Hidalgo"]
+          })]
+        })]
+      })
+    })
+  });
+};
+
+Fuentes.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: page,
+    title: "Fuentes",
+    pageTitle: "Fuentes"
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Fuentes);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Pages/index.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Pages/index.jsx ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14342,31 +14534,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Footer)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
+
+ // import route from 'ziggy-js';
 
 
 
 function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     style: {
       backgroundColor: '#304a71'
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
       maxWidth: 'xl',
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "center",
         style: {
           padding: '25px'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
           item: true,
           xs: 12,
           sm: 12,
@@ -14376,33 +14571,33 @@ function Footer() {
             justifyContent: 'space-around',
             flexWrap: 'wrap'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/img/assets/Cultura.PNG",
             style: {
               marginBottom: '15px'
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/img/assets/Conacyt.PNG",
             style: {
               marginBottom: '15px'
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
-            href: "#!",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+            href: "/creditos",
             style: {
               marginBottom: '25px'
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
               src: "/img/assets/Creditos.PNG"
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
           item: true,
           xs: 12,
           style: {
             display: 'flex',
             justifyContent: 'center'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
             href: "https://dragonware.com.mx",
             target: "_blank",
             style: {
@@ -14410,7 +14605,7 @@ function Footer() {
               color: '#919EAB',
               fontSize: '13px'
             },
-            children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
               src: "/img/assets/dragonBlanco1.png",
               style: {
                 width: '19px',
@@ -14650,6 +14845,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name{\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap:break-word;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./public/css/creditos.css":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./public/css/creditos.css ***!
+  \*******************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background-color: #304a71 !important;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n}\r\n.big-text{\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -51044,6 +51263,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./public/css/creditos.css":
+/*!*********************************!*\
+  !*** ./public/css/creditos.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_creditos_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./creditos.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./public/css/creditos.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_creditos_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_creditos_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -51372,10 +51621,14 @@ function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Home": "./resources/js/Pages/Home/index.jsx",
-	"./Home/": "./resources/js/Pages/Home/index.jsx",
-	"./Home/index": "./resources/js/Pages/Home/index.jsx",
-	"./Home/index.jsx": "./resources/js/Pages/Home/index.jsx"
+	"./Pages": "./resources/js/Pages/Pages/index.jsx",
+	"./Pages/": "./resources/js/Pages/Pages/index.jsx",
+	"./Pages/creditos": "./resources/js/Pages/Pages/creditos.jsx",
+	"./Pages/creditos.jsx": "./resources/js/Pages/Pages/creditos.jsx",
+	"./Pages/fuentes": "./resources/js/Pages/Pages/fuentes.jsx",
+	"./Pages/fuentes.jsx": "./resources/js/Pages/Pages/fuentes.jsx",
+	"./Pages/index": "./resources/js/Pages/Pages/index.jsx",
+	"./Pages/index.jsx": "./resources/js/Pages/Pages/index.jsx"
 };
 
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Container from '@mui/material/Container';
 import { InertiaLink } from '@inertiajs/inertia-react'
 import Grid from '@mui/material/Grid';
+import { Inertia } from '@inertiajs/inertia'
+// import route from 'ziggy-js';
 
 export default function Footer() {
     return (
@@ -14,7 +16,7 @@ export default function Footer() {
                     
                         <img src="/img/assets/Cultura.PNG" style={{marginBottom:'15px'}} />
                         <img src="/img/assets/Conacyt.PNG" style={{marginBottom:'15px'}} />
-                        <InertiaLink href="#!" style={{marginBottom:'25px'}}>
+                        <InertiaLink href="/creditos" style={{marginBottom:'25px'}}>
                             <img src="/img/assets/Creditos.PNG" />
                         </InertiaLink>
                     </Grid>
