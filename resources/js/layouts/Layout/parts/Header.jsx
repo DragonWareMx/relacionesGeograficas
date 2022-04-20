@@ -56,7 +56,7 @@ export default function Header() {
     return (
 
         <Box sx={{ flexGrow: 1 }}>
-            <InertiaLink href="/" style={{textDecoration:'none'}}>
+            <a href="/" style={{textDecoration:'none'}}>
             <AppBar position="static" style={{boxShadow:'none'}}>
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
                     <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
@@ -81,7 +81,7 @@ export default function Header() {
                     </Container>
                 </Toolbar>
             </AppBar>
-            </InertiaLink>
+            </a>
       </Box>
     )
 }

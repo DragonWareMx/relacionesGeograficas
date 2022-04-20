@@ -81,10 +81,14 @@ const Home = ({ }) => {
         <Container id="alfabetico" maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
             <Grid container alignItems="stretch">
                 {/* {{Str::limit($book->authors[0]->nombre,62)}} limite de 62 caracteres */}
+                
                 <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                    <InertiaLink href="/relaciones-geograficas" style={{textDecoration:'none', color:'black'}}>
                         <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
                         <p className="circle-name">Zapotitlan</p>
+                    </InertiaLink>
                 </Grid>
+                
                 <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
                         <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
                         <p className="circle-name">Zapotitlan</p>
@@ -128,6 +132,6 @@ const Home = ({ }) => {
     )
 }
 
-Home.layout = page => <Layout children={page} title="Inicio" pageTitle="Inicio" />
+Home.layout = page => <Layout children={page} title="Relaciones Geográficas" pageTitle="Relaciones Geográficas" />
 
 export default Home

@@ -2765,6 +2765,34 @@ var n,e=(n=__webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogr
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/ArrowBackIos.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/ArrowBackIos.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
+
+var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+  d: "M11.67 3.87 9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+}), 'ArrowBackIos');
+
+exports["default"] = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/Search.js":
 /*!****************************************************!*\
   !*** ./node_modules/@mui/icons-material/Search.js ***!
@@ -14167,7 +14195,7 @@ var Home = function Home(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         alignItems: "stretch",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 4,
           sm: 3,
@@ -14179,17 +14207,24 @@ var Home = function Home(_ref) {
             padding: '0px',
             marginBottom: '35px'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            href: "/relaciones-geograficas",
+            style: {
+              textDecoration: 'none',
+              color: 'black'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              alt: "Zapotitlan",
+              src: "/storage/iconosRelaciones/zapotitlan.png",
+              sx: {
+                width: 90,
+                height: 90
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              className: "circle-name",
+              children: "Zapotitlan"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 4,
@@ -14406,12 +14441,92 @@ var Home = function Home(_ref) {
 Home.layout = function (page) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
-    title: "Inicio",
-    pageTitle: "Inicio"
+    title: "Relaciones Geogr\xE1ficas",
+    pageTitle: "Relaciones Geogr\xE1ficas"
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Pages/relacion.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Pages/relacion.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+
+
+
+
+
+
+
+
+
+
+
+
+var Relacion = function Relacion(_ref) {
+  _objectDestructuringEmpty(_ref);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      container: true,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        item: true,
+        xs: 12,
+        style: {
+          backgroundColor: '#193661'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          maxWidth: 'xl',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+            href: "/",
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              color: 'white',
+              width: 'max-content'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+              style: {
+                fontSize: '20px'
+              },
+              children: "Zapotitlan"
+            })]
+          })
+        })
+      })
+    })
+  });
+};
+
+Relacion.layout = function (page) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: page,
+    title: "Relaciones Geogr\xE1ficas",
+    pageTitle: "Relaciones Geogr\xE1ficas"
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Relacion);
 
 /***/ }),
 
@@ -14712,7 +14827,7 @@ function Header() {
     sx: {
       flexGrow: 1
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
       href: "/",
       style: {
         textDecoration: 'none'
@@ -14852,7 +14967,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name{\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap:break-word;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n    background-color: white;\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name{\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap:break-word;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14876,7 +14991,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background-color: #304a71 !important;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n}\r\n.big-text{\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background-color: #304a71;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n}\r\n.big-text{\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -51636,7 +51751,9 @@ var map = {
 	"./Pages/fuentes": "./resources/js/Pages/Pages/fuentes.jsx",
 	"./Pages/fuentes.jsx": "./resources/js/Pages/Pages/fuentes.jsx",
 	"./Pages/index": "./resources/js/Pages/Pages/index.jsx",
-	"./Pages/index.jsx": "./resources/js/Pages/Pages/index.jsx"
+	"./Pages/index.jsx": "./resources/js/Pages/Pages/index.jsx",
+	"./Pages/relacion": "./resources/js/Pages/Pages/relacion.jsx",
+	"./Pages/relacion.jsx": "./resources/js/Pages/Pages/relacion.jsx"
 };
 
 

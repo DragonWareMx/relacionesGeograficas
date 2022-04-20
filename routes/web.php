@@ -17,6 +17,10 @@ Route::get('/', function () {
     return Inertia::render('Pages/index');
 });
 
+Route::get('/relaciones-geograficas', function () {
+    return Inertia::render('Pages/relacion');
+});
+
 Route::get('/creditos', function () {
     return Inertia::render('Pages/creditos');
 });

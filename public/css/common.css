@@ -1,6 +1,7 @@
 body{
     margin: 0px !important;
     font-family: 'Noto Sans';
+    background-color: white;
 }
 /* LAYOUT */
 #search-bar{
