@@ -17,16 +17,16 @@ Route::get('/', function () {
     return Inertia::render('Pages/index');
 });
 
-Route::get('/relaciones-geograficas', function () {
-    return Inertia::render('Pages/relacion');
-});
-
 Route::get('/creditos', function () {
     return Inertia::render('Pages/creditos');
 });
 
-Route::get('/fuentes', function () {
-    return Inertia::render('Pages/fuentes');
+Route::name('sources.')->group(function () {
+    Route::get('/fuentes', [App\Http\Controllers\SourceController::class, 'index'])->name('index');
+});
+
+Route::name('relations.')->group(function () {
+    Route::get('/relaciones-geograficas', [App\Http\Controllers\RelationController::class, 'index'])->name('index');
 });
 
 Auth::routes();
