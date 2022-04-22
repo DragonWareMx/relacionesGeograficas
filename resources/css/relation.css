@@ -1,0 +1,41 @@
+.map-container {
+    width: 100%;
+    height: 600px;
+    background-color: #ffffff;
+    border: solid 1px #4D7DB3;
+}
+
+.container-controls {
+    display: flex;
+    margin-top: 25px;
+}
+
+.round-button {
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    background-color: #4BA0AF;
+}
+
+.round-button.active {
+    border: 6px solid #F25E0D;
+}
+
+.round-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100px;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.round-button-text {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Nunito';
+}
+
+.info-text-relacion {
+    font-family: 'Nunito';
+}
