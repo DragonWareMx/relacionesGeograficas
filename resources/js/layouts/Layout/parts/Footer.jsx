@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from '@mui/material/Container';
 import { InertiaLink } from '@inertiajs/inertia-react'
 import Grid from '@mui/material/Grid';
-import { Inertia } from '@inertiajs/inertia'
-// import route from 'ziggy-js';
+import { Inertia } from '@inertiajs/inertia';
 
 export default function Footer() {
     return (

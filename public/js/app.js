@@ -16053,6 +16053,10 @@ function showMapa() {
   document.getElementById('alfabetico').style.display = "none";
 }
 
+function limitChar(nombre) {
+  return nombre.substring(0, 61);
+}
+
 var Home = function Home(_ref) {
   var relaciones = _ref.relaciones;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
@@ -16247,36 +16251,41 @@ var Home = function Home(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         container: true,
         alignItems: "stretch",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
-            href: "/relaciones-geograficas",
+        children: [relaciones && relaciones.length > 0 && relaciones.map(function (rel, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            item: true,
+            xs: 4,
+            sm: 3,
+            md: 2,
             style: {
-              textDecoration: 'none',
-              color: 'black'
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              padding: '0px',
+              marginBottom: '35px'
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-              alt: "Zapotitlan",
-              src: "/storage/iconosRelaciones/zapotitlan.png",
-              sx: {
-                width: 90,
-                height: 90
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-              className: "circle-name",
-              children: "Zapotitlan"
-            })]
-          })
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+              href: route('relations.index'),
+              style: {
+                textDecoration: 'none',
+                color: 'black',
+                display: 'flex',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                alt: rel.nombre,
+                src: "/storage/iconosRelaciones/" + rel.miniatura,
+                sx: {
+                  width: 90,
+                  height: 90
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+                className: "circle-name",
+                children: limitChar(rel.nombre)
+              })]
+            })
+          }, index);
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
           item: true,
           xs: 4,
@@ -16640,7 +16649,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import route from 'ziggy-js';
 
 
 
