@@ -9,6 +9,15 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import '/css/common.css'
 import '/css/carousel.css'
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
     document.getElementById('alfabetico').style.display = "block";
@@ -25,7 +34,34 @@ const Home = ({ }) => {
         <>
         <div className="row" style={{backgroundColor:'#193661'}}>
             <Container maxWidth="md">
-                   
+                <Swiper
+                    navigation={true}
+                    pagination={{dynamicBullets:true,clickable:true}}
+                    mousewheel={false}
+                    keyboard={true}
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    className="oski-swiper"
+                    loop={true}
+                >
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel1.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Meztitlán</div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel2.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Pátzcuaro</div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel3.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Tacámbaro</div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </Container>
         </div>
         <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
