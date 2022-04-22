@@ -9,9 +9,14 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import '/css/common.css';
 import '/css/carousel.css';
 
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
@@ -32,30 +37,34 @@ const Home = ({ relaciones }) => {
         <>
         <div className="row" style={{backgroundColor:'#193661'}}>
             <Container maxWidth="md">
-                <div className='carousel-container'>
-                    <OwlCarousel
-                        className='owl-carousel owl-theme'
-                        loop
-                        autoplay 
-                        autoplayTimeout={5000} 
-                        autoplayHoverPause
-                        margin={10}
-                        items={1}
-                    >
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel1.png' className='carousel-div' />
-                            <div className='carousel-title'>Meztitlán</div>
+                <Swiper
+                    navigation={true}
+                    pagination={{dynamicBullets:true,clickable:true}}
+                    mousewheel={false}
+                    keyboard={true}
+                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    className="oski-swiper"
+                    loop={true}
+                >
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel1.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Meztitlán</div>
                         </div>
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel2.jpg' className='carousel-div'/>
-                            <div className='carousel-title'>Pátzcuaro</div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel2.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Pátzcuaro</div>
                         </div>
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel1.png' className='carousel-div'/>
-                            <div className='carousel-title'>Tacámbaro</div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='oski-carousel-element'>
+                            <img src='img/assets/carrusel3.png' className='oski-carousel-img'/>
+                            <div className='oski-carousel-title'>Tacámbaro</div>
                         </div>
-                    </OwlCarousel>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </Container>
         </div>
         <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
