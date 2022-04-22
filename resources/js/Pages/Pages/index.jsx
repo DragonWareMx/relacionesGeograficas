@@ -9,10 +9,6 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import '/css/common.css'
 import '/css/carousel.css'
 
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
     document.getElementById('alfabetico').style.display = "block";
@@ -29,30 +25,7 @@ const Home = ({ }) => {
         <>
         <div className="row" style={{backgroundColor:'#193661'}}>
             <Container maxWidth="md">
-                <div className='carousel-container'>
-                    <OwlCarousel
-                        className='owl-carousel owl-theme'
-                        loop
-                        autoplay 
-                        autoplayTimeout={5000} 
-                        autoplayHoverPause
-                        margin={10}
-                        items={1}
-                    >
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel1.png' className='carousel-div' />
-                            <div className='carousel-title'>Meztitlán</div>
-                        </div>
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel2.jpg' className='carousel-div'/>
-                            <div className='carousel-title'>Pátzcuaro</div>
-                        </div>
-                        <div className='item carousel-div'>
-                            <img src='/img/assets/carrusel1.png' className='carousel-div'/>
-                            <div className='carousel-title'>Tacámbaro</div>
-                        </div>
-                    </OwlCarousel>
-                </div>
+                   
             </Container>
         </div>
         <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
