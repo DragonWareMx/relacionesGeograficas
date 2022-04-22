@@ -13,13 +13,6 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-// const Item = styled(Paper)(({ theme }) => ({
-//     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//     // ...theme.typography.body2,
-//     padding: theme.spacing(1),
-//     // textAlign: 'center',
-//     // color: theme.palette.text.secondary,
-//   }));
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
     document.getElementById('alfabetico').style.display = "block";
