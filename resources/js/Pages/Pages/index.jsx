@@ -7,6 +7,11 @@ import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import { InertiaLink } from '@inertiajs/inertia-react';
 import '/css/common.css'
+import '/css/carousel.css'
+
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 // const Item = styled(Paper)(({ theme }) => ({
 //     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -30,7 +35,32 @@ const Home = ({ }) => {
 
         <>
         <div className="row" style={{backgroundColor:'#193661'}}>
-            <div>Carrusel aquí</div>
+            <Container maxWidth="md">
+                <div className='carousel-container'>
+                    <OwlCarousel
+                        className='owl-carousel owl-theme'
+                        loop
+                        autoplay 
+                        autoplayTimeout={5000} 
+                        autoplayHoverPause
+                        margin={10}
+                        items={1}
+                    >
+                        <div className='item carousel-div'>
+                            <img src='/img/assets/carrusel1.png' className='carousel-div' />
+                            <div className='carousel-title'>Meztitlán</div>
+                        </div>
+                        <div className='item carousel-div'>
+                            <img src='/img/assets/carrusel2.jpg' className='carousel-div'/>
+                            <div className='carousel-title'>Pátzcuaro</div>
+                        </div>
+                        <div className='item carousel-div'>
+                            <img src='/img/assets/carrusel1.png' className='carousel-div'/>
+                            <div className='carousel-title'>Tacámbaro</div>
+                        </div>
+                    </OwlCarousel>
+                </div>
+            </Container>
         </div>
         <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
             <Grid container alignItems="center" justifyContent="space-between">
