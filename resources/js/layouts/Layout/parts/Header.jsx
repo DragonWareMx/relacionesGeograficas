@@ -56,10 +56,11 @@ export default function Header() {
     return (
 
         <Box sx={{ flexGrow: 1 }}>
-            <a href="/" style={{textDecoration:'none'}}>
+            
             <AppBar position="static" style={{boxShadow:'none'}}>
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
-                    <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px'}} alignItems="center">
+                    <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px', justifyContent:'space-between'}} alignItems="center" >
+                        <a href="/" style={{textDecoration:'none',display:'flex',flexWrap:'wrap', color:'white'}}>
                         <Avatar alt="RG" src="/img/assets/img.png" id="no-mg-1540-l" style={{marginRight:'8px',marginLeft:'24px'}} />
                         <Typography
                             component="div"
@@ -69,6 +70,7 @@ export default function Header() {
                             Relaciones Geográficas
                             <div style={{fontSize:'14px', fontWeight:'300'}}>de la Nueva España (1577 - 1585)</div>
                         </Typography>
+                        </a>
                         <Search id="search-bar">
                             <SearchIconWrapper>
                                 <SearchIcon />
@@ -81,7 +83,7 @@ export default function Header() {
                     </Container>
                 </Toolbar>
             </AppBar>
-            </a>
+            
       </Box>
     )
 }

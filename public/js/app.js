@@ -17003,28 +17003,32 @@ function Header() {
     sx: {
       flexGrow: 1
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-      href: "/",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      position: "static",
       style: {
-        textDecoration: 'none'
+        boxShadow: 'none'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        position: "static",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
         style: {
-          boxShadow: 'none'
+          backgroundColor: '#383a3a'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          maxWidth: 'xl',
           style: {
-            backgroundColor: '#383a3a'
+            display: 'flex',
+            flexWrap: 'wrap',
+            padding: '10px 0px 10px 0px',
+            justifyContent: 'space-between'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_9__["default"], {
-            maxWidth: 'xl',
+          alignItems: "center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            href: "/",
             style: {
+              textDecoration: 'none',
               display: 'flex',
               flexWrap: 'wrap',
-              padding: '10px 0px 10px 0px'
+              color: 'white'
             },
-            alignItems: "center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_10__["default"], {
               alt: "RG",
               src: "/img/assets/img.png",
@@ -17051,18 +17055,18 @@ function Header() {
                 },
                 children: "de la Nueva Espa\xF1a (1577 - 1585)"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Search, {
-              id: "search-bar",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SearchIconWrapper, {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_icons_material_Search__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(StyledInputBase, {
-                placeholder: "Buscar\u2026",
-                inputProps: {
-                  'aria-label': 'search'
-                }
-              })]
             })]
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Search, {
+            id: "search-bar",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SearchIconWrapper, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_icons_material_Search__WEBPACK_IMPORTED_MODULE_12__["default"], {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(StyledInputBase, {
+              placeholder: "Buscar\u2026",
+              inputProps: {
+                'aria-label': 'search'
+              }
+            })]
+          })]
         })
       })
     })
