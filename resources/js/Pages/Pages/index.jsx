@@ -22,7 +22,7 @@ function showMapa(){
     document.getElementById('alfabetico').style.display = "none";
 }
 
-const Home = ({ }) => {
+const Home = ({ relaciones }) => {
 
     return (
 
@@ -116,38 +116,7 @@ const Home = ({ }) => {
                         <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
                         <p className="circle-name">Zapotitlan</p>
                 </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">ZapotitlanyTlaquemaqueAsuncionparaiuhjhskshajdjdgaaksjfywjkhkh</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
+                
 
             </Grid>
         </Container>

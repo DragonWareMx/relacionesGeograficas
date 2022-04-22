@@ -16026,8 +16026,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var owl_carousel_dist_assets_owl_carousel_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! owl.carousel/dist/assets/owl.carousel.css */ "./node_modules/owl.carousel/dist/assets/owl.carousel.css");
 /* harmony import */ var owl_carousel_dist_assets_owl_theme_default_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! owl.carousel/dist/assets/owl.theme.default.css */ "./node_modules/owl.carousel/dist/assets/owl.theme.default.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 
 
 
@@ -16056,8 +16054,7 @@ function showMapa() {
 }
 
 var Home = function Home(_ref) {
-  _objectDestructuringEmpty(_ref);
-
+  var relaciones = _ref.relaciones;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "row",
@@ -16280,190 +16277,6 @@ var Home = function Home(_ref) {
               children: "Zapotitlan"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "ZapotitlanyTlaquemaqueAsuncionparaiuhjhskshajdjdgaaksjfywjkhkh"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          item: true,
-          xs: 4,
-          sm: 3,
-          md: 2,
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            padding: '0px',
-            marginBottom: '35px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            alt: "Zapotitlan",
-            src: "/storage/iconosRelaciones/zapotitlan.png",
-            sx: {
-              width: 90,
-              height: 90
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-            className: "circle-name",
-            children: "Zapotitlan"
-          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
           item: true,
           xs: 4,

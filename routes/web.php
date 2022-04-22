@@ -13,9 +13,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return Inertia::render('Pages/index');
-});
+Route::get('/', [App\Http\Controllers\InicioController::class, 'index'])->name('inicio');
 
 Route::get('/creditos', function () {
     return Inertia::render('Pages/creditos');
@@ -31,4 +29,4 @@ Route::name('relations.')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
