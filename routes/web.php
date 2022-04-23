@@ -20,7 +20,7 @@ Route::get('/creditos', function () {
 });
 
 Route::name('sources.')->group(function () {
-    Route::get('/fuentes', [App\Http\Controllers\SourceController::class, 'index'])->name('index');
+    Route::get('/fuentes/{id}', [App\Http\Controllers\SourceController::class, 'index'])->name('index');
 });
 
 Route::name('relations.')->group(function () {
