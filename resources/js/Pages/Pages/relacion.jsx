@@ -1,5 +1,5 @@
 import Layout from '../../layouts/Layout'
-import * as React from 'react';
+import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -8,10 +8,23 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import '../../../css/relation.css'
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles';
+import Drawer from '@mui/material/Drawer';
 
 //iconos
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+
+import SwiperCore, { Navigation, Virtual, FreeMode } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import { Translate } from '@mui/icons-material';
+
+// install Virtual module
+SwiperCore.use([Virtual, Navigation]);
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -24,7 +37,28 @@ const ColorButton = styled(Button)(({ theme }) => ({
     fontFamily: 'Nunito'
 }));
 
+const TranslateButton = styled(Button)(({ theme }) => ({
+    color: '#ffffff',
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    '&:hover': {
+        backgroundColor: 'rgba(0,0,0,0.9)',
+    },
+    borderRadius: 0,
+    padding: '10px 40px',
+    fontFamily: 'Nunito'
+}));
+
 const Relacion = ({ }) => {
+
+    const slideTo = () => {
+
+    };
+
+    const [open, setOpen] = useState(false)
+
+    function toggleDrawer() {
+        setOpen(!open)
+    }
 
     return (
 
@@ -51,6 +85,101 @@ const Relacion = ({ }) => {
                     <div class="round-button-container">
                         <div className="round-button"></div>
                         <div className="round-button-text">Mapa pictográfico 1</div>
+                    </div>
+                    <div className="swiper-container">
+                        <Swiper
+                            spaceBetween={4}
+                            freeMode={false}
+                            effect={"coverflow"}
+                            grabCursor={true}
+                            slidesPerView={'auto'}
+                            navigation={true}
+                            modules={[Navigation, FreeMode]}
+                            className="leo-swiper">
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini1.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini2.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini3.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini4.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini5.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini6.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini7.jpg'}
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className="mini-photo-container"
+                                onClick={() => slideTo()}
+                            >
+                                <img
+                                    className="oski-customGallery-miniPhoto"
+                                    src={'/img/provisional/Cul_mini8.jpg'}
+                                />
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
+                    <div className="translate-container">
+                        <TranslateButton variant="contained" size={"large"} >
+                            Acuña
+                        </TranslateButton>
+                        <TranslateButton variant="contained" size={"large"} >
+                            Valadez
+                        </TranslateButton>
+                        <TranslateButton variant="contained" size={"large"} >
+                            De la Garza
+                        </TranslateButton>
                     </div>
                 </div>
                 <div class="container-controls">
@@ -90,9 +219,80 @@ const Relacion = ({ }) => {
                 </div>
             </Container>
             {/* Boton estilo footer */}
-            <div>
-                <KeyboardArrowUpIcon /> Ver todos los folios
+            <div className='footer-all-folios' style={{ position: "static" }}>
+                <Container maxWidth={'xl'}>
+                    <div className="folios-button" style={{ cursor: 'pointer' }} onClick={toggleDrawer}>
+                        <KeyboardArrowUpIcon style={{ marginRight: 10 }} /> Ver todos los folios
+                    </div>
+                </Container>
             </div>
+            <Drawer
+                anchor={'bottom'}
+                open={open}
+            //onClose={toggleDrawer}
+            >
+                <div className="drawer-content">
+                    <Container maxWidth={"xl"}>
+                        <Grid container spacing={8}>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini1.jpg'} />
+                                    <div>Folio 1</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini2.jpg'} />
+                                    <div>Folio 2</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini3.jpg'} />
+                                    <div>Folio 3</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini4.jpg'} />
+                                    <div>Folio 4</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini5.jpg'} />
+                                    <div>Folio 5</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini6.jpg'} />
+                                    <div>Folio 6</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini7.jpg'} />
+                                    <div>Folio 7</div>
+                                </div>
+                            </Grid>
+                            <Grid item >
+                                <div className='folio-mini-container'>
+                                    <img className="" src={'/img/provisional/Cul_mini8.jpg'} />
+                                    <div>Folio 8</div>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </div>
+                <div className='footer-all-folios'>
+                    <Container maxWidth={'xl'}>
+                        <div className="folios-button" style={{ cursor: 'pointer' }} onClick={toggleDrawer}>
+                            <KeyboardArrowDownIcon style={{ marginRight: 10 }} /> Ver todos los folios
+                        </div>
+                    </Container>
+                </div>
+            </Drawer>
         </>
     )
 }
