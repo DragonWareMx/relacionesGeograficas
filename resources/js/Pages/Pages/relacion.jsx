@@ -211,9 +211,12 @@ const Relacion = ({ }) => {
                             </div>
                         </Grid>
                         <Grid item xs={3} style={{ display: 'flex', justifyContent: 'center' }}>
+                            {/* reemplazar por el uuid de la relacion por fa */}
+                            <InertiaLink href={route('sources.index','1')} style={{textDecoration:'none'}}>
                             <ColorButton variant="contained" size={"large"} >
                                 Ver Fuentes
                             </ColorButton>
+                            </InertiaLink>
                         </Grid>
                     </Grid>
                 </div>

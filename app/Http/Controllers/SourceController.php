@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Source;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Relation;
 
 class SourceController extends Controller
 {
@@ -13,10 +14,12 @@ class SourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($uuid)
     {
-        //
-        return Inertia::render('Pages/fuentes');
+        // Buscar la relación
+        $rel = Relation::select('id')->where('uuid',$uuid)->first();
+        $fuentes = Source::where('relation_id',$rel->id)->get();
+        return Inertia::render('Pages/fuentes',['fuentes' => $fuentes]);
     }
 
     /**
