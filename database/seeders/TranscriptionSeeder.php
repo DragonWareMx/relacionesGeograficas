@@ -15,5 +15,19 @@ class TranscriptionSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('transcriptions')->insert([
+            'uuid' => '2345678920',
+            'nombre' => 'Acuña 1986',
+            'texto' => 'texto texto texto',
+            'invoice_id' => '1',
+
+        ]);
+
+        // DB::table('transcriptions')->insert([
+        //     '' => '',
+        //     '' => '',
+        //     '' => '',
+        // ]);
+
     }
 }

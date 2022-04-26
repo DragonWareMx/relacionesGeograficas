@@ -15,5 +15,16 @@ class MapSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('maps')->insert([
+            'uuid' => '5678901234',
+            'imagen' => 'Culhuacan_mapa.jpg',
+            'relation_id' => '1',
+        ]);
+        DB::table('maps')->insert([
+            '' => '',
+            '' => '',
+            '' => '',
+        ]);
+
     }
 }

@@ -15,5 +15,19 @@ class RelationSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('relations')->insert([
+            'uuid' => '1234567890',
+            'nombre' => 'Culhuacan',
+            'api' => '{}',
+            'banner' => 'banner_culhuacan.jpg',
+            'miniatura' => 'mini_culhuacan.jpg',
+        ]);
+
+        // DB::table('relations')->insert([
+        //     '' => '',
+        //     '' => '',
+        //     '' => '',
+        // ]);
+
     }
 }
