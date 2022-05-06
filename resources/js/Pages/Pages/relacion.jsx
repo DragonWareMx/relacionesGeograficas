@@ -17,6 +17,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import SwiperCore, { Navigation, Virtual, FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { MapInteractionCSS } from 'react-map-interaction';
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -60,6 +62,8 @@ const Relacion = ({ }) => {
         setOpen(!open)
     }
 
+    const [contMap, setContMap] = useState('geo')
+
     return (
 
         <>
@@ -75,15 +79,31 @@ const Relacion = ({ }) => {
             </Grid>
             <Container maxWidth={'xl'}>
                 <div className="map-container">
-
+                    {contMap == 'geo' &&
+                        <div>
+                            mapa geografico
+                        </div>
+                    }
+                    {contMap == 'picto' &&
+                        <div className="mapaPicto">
+                            <MapInteractionCSS>
+                                <img src="/img/provisional/carrusel2.jpg" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
+                            </MapInteractionCSS>
+                        </div>
+                    }
+                    {contMap == 'lienzo' &&
+                        <div>
+                            lienzo
+                        </div>
+                    }
                 </div>
                 <div class="container-controls">
                     <div class="round-button-container">
-                        <div className="round-button active"></div>
+                        <div className="round-button active" onClick={() => setContMap('geo')}></div>
                         <div className="round-button-text">Mapa geográfico</div>
                     </div>
                     <div class="round-button-container">
-                        <div className="round-button"></div>
+                        <div className="round-button" onClick={() => setContMap('picto')}></div>
                         <div className="round-button-text">Mapa pictográfico 1</div>
                     </div>
                     <div className="swiper-container">
@@ -212,10 +232,10 @@ const Relacion = ({ }) => {
                         </Grid>
                         <Grid item xs={3} style={{ display: 'flex', justifyContent: 'center' }}>
                             {/* reemplazar por el uuid de la relacion por fa */}
-                            <InertiaLink href={route('sources.index','1')} style={{textDecoration:'none'}}>
-                            <ColorButton variant="contained" size={"large"} >
-                                Ver Fuentes
-                            </ColorButton>
+                            <InertiaLink href={route('sources.index', '1')} style={{ textDecoration: 'none' }}>
+                                <ColorButton variant="contained" size={"large"} >
+                                    Ver Fuentes
+                                </ColorButton>
                             </InertiaLink>
                         </Grid>
                     </Grid>
