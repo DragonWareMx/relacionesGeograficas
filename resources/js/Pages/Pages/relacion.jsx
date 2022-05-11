@@ -18,6 +18,7 @@ import SwiperCore, { Navigation, Virtual, FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { MapInteractionCSS } from 'react-map-interaction';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -137,9 +138,11 @@ const Relacion = ({ relation }) => {
                     }
                     {contMap == 'picto' &&
                         <div className="mapaPicto">
-                            <MapInteractionCSS>
-                                <img src="/img/provisional/carrusel2.jpg" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
-                            </MapInteractionCSS>
+                            <TransformWrapper>
+                                <TransformComponent>
+                                    <img src="/img/provisional/carrusel2-min.webp" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
+                                </TransformComponent>
+                            </TransformWrapper>
                         </div>
                     }
                     {contMap == 'lienzo' &&
