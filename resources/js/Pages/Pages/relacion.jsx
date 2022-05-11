@@ -50,7 +50,7 @@ const TranslateButton = styled(Button)(({ theme }) => ({
     fontFamily: 'Nunito'
 }));
 
-const Relacion = ({ }) => {
+const Relacion = ({ relation }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -123,7 +123,7 @@ const Relacion = ({ }) => {
                     <Container maxWidth={'xl'}>
                         <InertiaLink href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white', width: 'max-content' }}>
                             <ArrowBackIosIcon />
-                            <p style={{ fontSize: '20px' }}>Zapotitlan</p>
+                            <p style={{ fontSize: '20px' }}>{relation.nombre}</p>
                         </InertiaLink>
                     </Container>
                 </Grid>
@@ -295,7 +295,7 @@ const Relacion = ({ }) => {
                         </Grid>
                         <Grid item xs={3} style={{ display: 'flex', justifyContent: 'center' }}>
                             {/* reemplazar por el uuid de la relacion por fa */}
-                            <InertiaLink href={route('sources.index', '1')} style={{ textDecoration: 'none' }}>
+                            <InertiaLink href={route('sources.index', relation.uuid)} style={{ textDecoration: 'none' }}>
                                 <ColorButton variant="contained" size={"large"} >
                                     Ver Fuentes
                                 </ColorButton>

@@ -15,16 +15,16 @@ class SourceSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('sources')->insert([
-            'uuid' => '',
-            'ficha' => '',
-            'relation_id' => '',
-        ]);
-        DB::table('sources')->insert([
-            '' => '',
-            '' => '',
-            '' => '',
-        ]);
+        // DB::table('sources')->insert([
+        //     'uuid' => '',
+        //     'ficha' => '',
+        //     'relation_id' => '',
+        // ]);
+        // DB::table('sources')->insert([
+        //     '' => '',
+        //     '' => '',
+        //     '' => '',
+        // ]);
 
     }
 }

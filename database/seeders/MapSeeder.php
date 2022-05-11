@@ -20,11 +20,11 @@ class MapSeeder extends Seeder
             'imagen' => 'Culhuacan_mapa.jpg',
             'relation_id' => '1',
         ]);
-        DB::table('maps')->insert([
-            '' => '',
-            '' => '',
-            '' => '',
-        ]);
+        // DB::table('maps')->insert([
+        //     '' => '',
+        //     '' => '',
+        //     '' => '',
+        // ]);
 
     }
 }

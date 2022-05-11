@@ -115,22 +115,21 @@ const Home = ({ relaciones }) => {
         {/* APARTADO DE TODAS LAS RELACIONES */}
         <Container id="alfabetico" maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
             <Grid container alignItems="stretch">
-                {relaciones && relaciones.length>0 && relaciones.map((rel,index)=>(
+                {(relaciones && relaciones.length > 0) ?
+                relaciones.map((rel,index)=>(
                     <Grid item xs={4} sm={3} md={2} key={index} style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
                         {/* Agregar el uuid de la relacion */}
-                        <InertiaLink href={route('relations.index')} style={{textDecoration:'none', color:'black', display:'flex', justifyContent:'center',flexWrap:'wrap'}}>
-                            <Avatar alt={rel.nombre} src={"/storage/iconosRelaciones/" + rel.miniatura} sx={{ width: 90, height: 90 }} />
+                        <InertiaLink href={route('relations.index', rel.uuid)} style={{textDecoration:'none', color:'black', display:'flex', justifyContent:'center',flexWrap:'wrap'}}>
+                            <Avatar alt={rel.nombre} src={rel.miniatura} sx={{ width: 90, height: 90 }} />
                             <p className="circle-name">{limitChar(rel.nombre)}</p>
                         </InertiaLink>
                     </Grid>
-                ))}
-                {/* BORRAR YA QUE ESTEN LOS SEEDERS */}
-                <Grid item xs={4} sm={3} md={2}  style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
-                        <Avatar alt="Zapotitlan" src="/storage/iconosRelaciones/zapotitlan.png" sx={{ width: 90, height: 90 }} />
-                        <p className="circle-name">Zapotitlan</p>
-                </Grid>
-                
-
+                ))
+            :
+            <Grid>
+                No se encontraron resultados, intentalo más tarde.
+            </Grid>
+            }
             </Grid>
         </Container>
         </>
