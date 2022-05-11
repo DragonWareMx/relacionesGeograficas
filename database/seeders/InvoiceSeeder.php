@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class InvoiceSeeder extends Seeder
 {
@@ -16,56 +17,56 @@ class InvoiceSeeder extends Seeder
     {
         //
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
         ]);
 
         DB::table('invoices')->insert([
-            'uuid' => '0981234567',
+            'uuid' => Str::uuid(),
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',

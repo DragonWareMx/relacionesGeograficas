@@ -14,10 +14,10 @@ class SourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($uuid)
+    public function index($id)
     {
         // Buscar la relación
-        $rel = Relation::select('id')->where('uuid',$uuid)->first();
+        $rel = Relation::select('id')->where('uuid',$id)->firstOrFail();
         $fuentes = Source::where('relation_id',$rel->id)->get();
         return Inertia::render('Pages/fuentes',['fuentes' => $fuentes]);
     }
