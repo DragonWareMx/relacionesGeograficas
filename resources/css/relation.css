@@ -53,6 +53,13 @@
     height: 140px;
 }
 
+.oski-customGallery-miniPhoto.active {
+    width: 100px;
+    object-fit: cover;
+    height: 140px;
+    border: 6px solid #F25E0D;
+}
+
 .swiper-container {
     padding-left: 20px;
     padding-right: 20px;
@@ -123,6 +130,11 @@
 
 .folio-mini-container img {
     cursor: pointer;
+}
+
+.folio-mini-container.active img {
+    cursor: pointer;
+    border: 6px solid #F25E0D;
 }
 
 .mapaPicto {

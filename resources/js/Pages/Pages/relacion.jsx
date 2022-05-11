@@ -51,6 +51,18 @@ const TranslateButton = styled(Button)(({ theme }) => ({
     fontFamily: 'Nunito'
 }));
 
+const TranslateButtonActive = styled(Button)(({ theme }) => ({
+    color: '#ffffff',
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    '&:hover': {
+        backgroundColor: 'rgba(0,0,0,0.9)',
+    },
+    borderRadius: 0,
+    padding: '10px 40px',
+    fontFamily: 'Nunito',
+    border: '6px solid #F25E0D'
+}));
+
 const Relacion = ({ relation }) => {
 
     const [open, setOpen] = useState(false)
@@ -78,7 +90,10 @@ const Relacion = ({ relation }) => {
         setContMap('lienzo')
         setFolioActive(index)
         setOpen(false)
+        setIdActive(index)
     }
+
+    const [idActive, setIdActive] = useState(0)
 
     const [activeTranslate, setActiveTranslate] = useState('acuna')
 
@@ -140,7 +155,7 @@ const Relacion = ({ relation }) => {
                         <div className="mapaPicto">
                             <TransformWrapper>
                                 <TransformComponent>
-                                    <img src="/img/provisional/carrusel2-min.webp" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
+                                    <img src="/img/provisional/picto-min.webp" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
                                 </TransformComponent>
                             </TransformWrapper>
                         </div>
@@ -163,11 +178,11 @@ const Relacion = ({ relation }) => {
                 </div>
                 <div className="container-controls">
                     <div className="round-button-container">
-                        <div className="round-button active" onClick={() => setContMap('geo')}></div>
+                        <div className={(contMap == "geo" && idActive == 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('geo'); setIdActive(0) }}></div>
                         <div className="round-button-text">Mapa geográfico</div>
                     </div>
                     <div className="round-button-container">
-                        <div className="round-button" onClick={() => setContMap('picto')}></div>
+                        <div className={(contMap == "picto" && idActive == 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(0) }}></div>
                         <div className="round-button-text">Mapa pictográfico 1</div>
                     </div>
                     <div className="swiper-container">
@@ -185,7 +200,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(0)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 0) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini1.jpg'}
                                 />
                             </SwiperSlide>
@@ -194,7 +209,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(1)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 1) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini2.jpg'}
                                 />
                             </SwiperSlide>
@@ -203,7 +218,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(2)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 2) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini3.jpg'}
                                 />
                             </SwiperSlide>
@@ -212,7 +227,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(3)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 3) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini4.jpg'}
                                 />
                             </SwiperSlide>
@@ -221,7 +236,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(4)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 4) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini5.jpg'}
                                 />
                             </SwiperSlide>
@@ -230,7 +245,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(5)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 5) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini6.jpg'}
                                 />
                             </SwiperSlide>
@@ -239,7 +254,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(6)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 6) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini7.jpg'}
                                 />
                             </SwiperSlide>
@@ -248,7 +263,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => changeFolio(7)}
                             >
                                 <img
-                                    className="oski-customGallery-miniPhoto"
+                                    className={(contMap == "lienzo" && idActive == 7) ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto"}
                                     src={'/img/provisional/Cul_mini8.jpg'}
                                 />
                             </SwiperSlide>
@@ -256,33 +271,48 @@ const Relacion = ({ relation }) => {
                     </div>
                     {contMap == "lienzo" &&
                         <div className="translate-container">
-                            <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('acuna') }}>
-                                Acuña
-                            </TranslateButton>
-                            <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('valadez') }}>
-                                Valadez
-                            </TranslateButton>
-                            <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('garza') }}>
-                                De la Garza
-                            </TranslateButton>
+                            {activeTranslate == 'acuna' ?
+                                <TranslateButtonActive variant="contained" size={"large"} onClick={() => { setActiveTranslate('acuna') }}>
+                                    Acuña
+                                </TranslateButtonActive> :
+                                <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('acuna') }}>
+                                    Acuña
+                                </TranslateButton>
+                            }
+
+                            {activeTranslate == 'valadez' ?
+                                <TranslateButtonActive variant="contained" size={"large"} onClick={() => { setActiveTranslate('valadez') }}>
+                                    Valadez
+                                </TranslateButtonActive> :
+                                <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('valadez') }}>
+                                    Valadez
+                                </TranslateButton>
+                            }
+                            {activeTranslate == 'garza' ?
+                                <TranslateButtonActive variant="contained" size={"large"} onClick={() => { setActiveTranslate('garza') }}>
+                                    De la Garza
+                                </TranslateButtonActive> :
+                                <TranslateButton variant="contained" size={"large"} onClick={() => { setActiveTranslate('garza') }}>
+                                    De la Garza
+                                </TranslateButton>}
                         </div>
                     }
                 </div>
                 <div className="container-controls">
                     <div className="round-button-container">
-                        <div className="round-button"></div>
+                        <div className={(contMap == "picto" && idActive == 1) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(1) }}></div>
                         <div className="round-button-text">Mapa pictográfico 2</div>
                     </div>
                     <div className="round-button-container">
-                        <div className="round-button"></div>
+                        <div className={(contMap == "picto" && idActive == 2) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(2) }}></div>
                         <div className="round-button-text">Mapa pictográfico 3</div>
                     </div>
                     <div className="round-button-container">
-                        <div className="round-button"></div>
+                        <div className={(contMap == "picto" && idActive == 3) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(3) }}></div>
                         <div className="round-button-text">Mapa pictográfico 4</div>
                     </div>
                     <div className="round-button-container">
-                        <div className="round-button"></div>
+                        <div className={(contMap == "picto" && idActive == 4) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(4) }}></div>
                         <div className="round-button-text">Mapa pictográfico 5</div>
                     </div>
                 </div>
@@ -324,49 +354,49 @@ const Relacion = ({ relation }) => {
                     <Container maxWidth={"xl"}>
                         <Grid container spacing={8}>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 0) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini1.jpg'} onClick={() => changeFolio(0)} />
                                     <div>Folio 1</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 1) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini2.jpg'} onClick={() => changeFolio(1)} />
                                     <div>Folio 2</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 2) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini3.jpg'} onClick={() => changeFolio(2)} />
                                     <div>Folio 3</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 3) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini4.jpg'} onClick={() => changeFolio(3)} />
                                     <div>Folio 4</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 4) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini5.jpg'} onClick={() => changeFolio(4)} />
                                     <div>Folio 5</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 5) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini6.jpg'} onClick={() => changeFolio(5)} />
                                     <div>Folio 6</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 6) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini7.jpg'} onClick={() => changeFolio(6)} />
                                     <div>Folio 7</div>
                                 </div>
                             </Grid>
                             <Grid item >
-                                <div className='folio-mini-container'>
+                                <div className={(contMap == "lienzo" && idActive == 7) ? "folio-mini-container active" : "folio-mini-container"}>
                                     <img className="" src={'/img/provisional/Cul_mini8.jpg'} onClick={() => changeFolio(7)} />
                                     <div>Folio 8</div>
                                 </div>
