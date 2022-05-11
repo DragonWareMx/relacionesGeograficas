@@ -140,13 +140,11 @@
 
 .grid-lienzo {
     background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
 }
 
 .lienzo-text {
     max-width: 500px;
     padding: 30px 25px;
     color: white;
-    text-justify: inter-word;
+    text-align: justify;
 }

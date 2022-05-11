@@ -129,10 +129,10 @@ const Relacion = ({ relation }) => {
                 </Grid>
             </Grid>
             <Container maxWidth={'xl'}>
-                <div className="map-container">
+                <div className={contMap == 'lienzo' ? "map-container grid-lienzo" : "map-container"}>
                     {contMap == 'geo' &&
                         <div>
-                            mapa geografico
+                            <img src="/img/provisional/captura.png" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto", width: "100%", objectFit: "cover" }} />
                         </div>
                     }
                     {contMap == 'picto' &&
@@ -143,12 +143,12 @@ const Relacion = ({ relation }) => {
                         </div>
                     }
                     {contMap == 'lienzo' &&
-                        <div className='lienzo-container'>
-                            <Grid container spacing={5} className={"grid-lienzo"}>
-                                <Grid item xs={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div>
+                            <Grid container spacing={5}>
+                                <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-end' }}>
                                     <img src={folios[folioActive]} alt="" style={{ height: "600px" }} />
                                 </Grid>
-                                <Grid item xs={6} style={{ display: 'flex', justifyContent: 'center' }}>
+                                <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-start' }}>
                                     <div className={"lienzo-text"}>
                                         {textoFolios[folioActive][activeTranslate]}
                                     </div>
