@@ -27,6 +27,10 @@ Route::name('relations.')->group(function () {
     Route::get('/relaciones-geograficas/{id}', [App\Http\Controllers\RelationController::class, 'index'])->name('index');
 });
 
+Route::name('admin.')->group(function () {
+    Route::get('/admin/create', [App\Http\Controllers\RelationController::class, 'create'])->name('create');
+});
+
 Auth::routes();
 
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

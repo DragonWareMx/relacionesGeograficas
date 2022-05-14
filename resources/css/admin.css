@@ -1,0 +1,89 @@
+.backpage-header{
+    /* width: 100%; */
+    display: flex;
+    background-color: #304A71;
+    height: 70px;
+    color: #FAFAFA;
+    padding-left: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stepper-card{
+    /* width: 100%; */
+    background-color: #FFFFFF;
+    border-radius: 9px;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.46); 
+    box-shadow: 1px 2px 1px 2px rgba(0,0,0,0.46);
+    padding: 35px 30px;
+    margin-bottom: 100px;
+}
+
+.banner-skelleton{
+    width: 183px;
+    height: 90px;
+    border: 2px dashed #C1C1C1;
+    border-radius: 4px;
+    color: #707070;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: ease-in 0.05s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.imageMin-skelleton{
+    width: 98px;
+    height: 98px;
+    border: 2px dashed #C1C1C1;
+    border-radius: 50%;
+    color: #707070;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: ease-in 0.05s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-skelleton:hover, .imageMin-skelleton:hover{
+    border: 2px dashed #304A71;
+    color: #304A71;
+    transition: ease-in 0.2s;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.buttons-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
