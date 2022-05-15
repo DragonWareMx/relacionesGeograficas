@@ -12,6 +12,7 @@ import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles';
 
 import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -49,7 +50,7 @@ const CssTextField = styled(TextField)({
 const steps = ['NOMBRE', 'MAPAS', 'FOLIOS']
 const Create = () => {
     //Control steps
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = React.useState(2);
     const [completed, setCompleted] = React.useState({});
     const [skipped, setSkipped] = React.useState(new Set());
 
@@ -116,8 +117,50 @@ const Create = () => {
         imageMin:[],
         fuentes:'',
         mapa_geografico: '',
-        mapas_pictograficos: []
+        mapImages: [],
+        folios:[],
+        descripcion:'',
+        imageFolio:[],
     });
+
+    const [transcription, setTranscription] = useState({
+        name:'',
+        text:'',
+    });
+
+    const [transcriptions, setTranscriptions] = useState([]);
+
+    function addTranscription(){
+        let trans={
+            name:transcription.name,
+            text:transcription.text
+        };
+        setTranscriptions([
+            ...transcriptions,
+            trans
+        ]);
+        setTranscription((values) => ({
+            name:'',
+            text:'',
+        }));
+    }
+
+    function addFolio(){
+        var folios = values.folios.slice();
+        let folio={
+            descripcion:values.descripcion,
+            imageFolio:values.imageFolio,
+            transcriptions:transcriptions,
+        }
+        folios.push(folio);
+        setValues((values) => ({
+            ...values,
+            folios: folios,
+            imageFolio:[],
+            descripcion:'',
+        }));
+        setTranscriptions([]);
+    }
 
     function handleChange(e) {
         const key = e.target.id;
@@ -126,7 +169,16 @@ const Create = () => {
             ...values,
             [key]: value,
         }))
-      }
+    }
+
+    function handleTranscription(e) {
+        const key = e.target.id;
+        const value = e.target.value
+        setTranscription(values => ({
+            ...values,
+            [key]: value,
+        }))
+    }
 
     function loadImage(id){
         var input = document.getElementById(id);
@@ -138,14 +190,32 @@ const Create = () => {
                 ...values,
                 [id]: arr,
             }));
-            //Handle div styles to show the image
-            container.style.backgroundImage = 'url('+URL.createObjectURL(input.files[0])+')';
-            container.style.border = 'none';
-            for(let i=0;i<container.children.length;i++){
-                container.children[i].style.display='none';
-                container.children[i].style.display='none';
-            };
         }
+    }
+
+    function addImages(id){
+        var input = document.getElementById(id);
+        if (input.files) {
+            var arr = values[id].slice();
+
+            for(var i=0;i<input.files.length;i++){
+                arr.push(
+                    input.files[i]
+                );
+            }
+            setValues((values) => ({
+                ...values,
+                [id]: arr,
+            }));
+        }
+    }
+
+    function removeImg(id,index){
+        var arr=values[id].slice();
+        setValues((values) => ({
+            ...values,
+            [id]:arr.filter((o, i) => i !== index)
+        }));
     }
 
     return (
@@ -225,9 +295,37 @@ const Create = () => {
                                     onChange={()=>loadImage('imageBanner')}
                                 />
                                 <label htmlFor="imageBanner">
-                                    <div id='imageBannerContainer' className='banner-skelleton'>
-                                        <FileUploadIcon />
-                                        <div>Imagen Banner</div>
+                                    <div id='imageBannerContainer' 
+                                        className='banner-skelleton' 
+                                        style={values.imageBanner.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageBanner[0])+')',border:'none'} : {}}
+                                    >
+                                        {values.imageBanner.length==0 && 
+                                            <>
+                                                <FileUploadIcon />
+                                                <div>Imagen Banner</div>
+                                            </>
+                                        }
+                                    </div>
+                                </label>
+                                {/* MIN IMAGE */}
+                                <input
+                                    accept="image/*"
+                                    id="imageMin"
+                                    type="file"
+                                    style={{ display: 'none' }}
+                                    onChange={()=>loadImage('imageMin')}
+                                />
+                                <label htmlFor="imageMin">
+                                    <div id='imageMinContainer' 
+                                        className='imageMin-skelleton' 
+                                        style={values.imageMin.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageMin[0])+')',border:'none'} : {}}
+                                    >
+                                        {values.imageMin.length == 0 &&
+                                            <>
+                                                <FileUploadIcon />
+                                                <div>Miniatura</div>
+                                            </>
+                                        }
                                     </div>
                                 </label>
                             </div>
@@ -259,35 +357,42 @@ const Create = () => {
                                 helperText={values.error == true && errors.nombre}
                                 style={{marginTop:'40px',marginBottom:'25px'}}
                             />
+                            <div className='title'>Mapas pictográficos</div>
                             <div className='flex-container'>
-                                {/* BANNER IMAGE */}
-                                <input
-                                    accept="image/*"
-                                    id="imageBanner"
-                                    type="file"
-                                    style={{ display: 'none' }}
-                                    onChange={()=>loadImage('imageBanner')}
-                                />
-                                <label htmlFor="imageBanner">
-                                    <div id='imageBannerContainer' className='banner-skelleton'>
-                                        <FileUploadIcon />
-                                        <div>Imagen Banner</div>
-                                    </div>
-                                </label>
-                                {/* MIN IMAGE */}
-                                <input
-                                    accept="image/*"
-                                    id="imageMin"
-                                    type="file"
-                                    style={{ display: 'none' }}
-                                    onChange={()=>loadImage('imageMin')}
-                                />
-                                <label htmlFor="imageMin">
-                                    <div id='imageMinContainer' className='imageMin-skelleton'>
-                                        <FileUploadIcon />
-                                        <div>Miniatura</div>
-                                    </div>
-                                </label>
+                                {/* IMAGENES */}
+                                <Grid container spacing={1}>
+                                        {/* MAP IMAGES */}
+                                        <input
+                                            accept="image/*"
+                                            id="mapImages"
+                                            multiple
+                                            type="file"
+                                            style={{ display: 'none' }}
+                                            onChange={()=>addImages('mapImages')}
+                                        />
+                                        <label htmlFor="mapImages">
+                                            <div id='mapImagesContainer' className='maps-skelleton'>
+                                                <FileUploadIcon />
+                                                <div>Agregar mapa</div>
+                                            </div>
+                                        </label>
+                                        {values.mapImages && values.mapImages.length > 0 && values.mapImages.map((preview, index) => (
+                                            <Grid key={index} item>
+                                                <IconButton aria-label="delete" 
+                                                    size="small"
+                                                    style={{ position: 'absolute', zIndex: '999', 
+                                                    marginTop:'5px',
+                                                    marginLeft:'5px',
+                                                    backgroundColor:'rgba(232,232,232,0.7)',
+                                                    color: '#F4F4F4'}}
+                                                    onClick={()=>removeImg('mapImages',index)}
+                                                    >
+                                                    <CloseIcon fontSize="inherit"/>
+                                                </IconButton>
+                                                <img src={URL.createObjectURL(preview)} className="maps-preview" />
+                                            </Grid>
+                                        ))}
+                                    </Grid>
                             </div>
                         </>
                     }
@@ -302,14 +407,6 @@ const Create = () => {
                                 <Typography>
                                     Folios
                                 </Typography>
-
-                                <IconButton
-                                    style={{border: "1px solid"}}
-                                    variant="outlined"
-                                    color='primary'
-                                >
-                                    <AddIcon />
-                                </IconButton>
                             </Grid>
 
                             <Paper
@@ -347,15 +444,23 @@ const Create = () => {
                                         >
                                             <input
                                                 accept="image/*"
-                                                id="imageBanner"
+                                                id="imageFolio"
                                                 type="file"
                                                 style={{ display: 'none' }}
-                                                onChange={()=>loadImage('imageBanner')}
+                                                onChange={()=>loadImage('imageFolio')}
                                             />
-                                            <label htmlFor="imageBanner">
-                                                <div id='imageBannerContainer' className='banner-skelleton'>
-                                                    <FileUploadIcon />
-                                                    <div>Imagen Banner</div>
+                                            <label htmlFor="imageFolio">
+                                                <div 
+                                                    id='imageFolioContainer' 
+                                                    className='maps-skelleton'
+                                                    style={values.imageFolio.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageFolio[0])+')',border:'none'} : {}}
+                                                >
+                                                    {values.imageFolio.length==0 && 
+                                                        <>
+                                                        <FileUploadIcon />
+                                                        <div>Agregar imagen</div>
+                                                        </>
+                                                    }
                                                 </div>
                                             </label>
                                         </Grid>
@@ -375,35 +480,27 @@ const Create = () => {
                                             >
                                                 <Typography>
                                                     Transcripciones
-                                                </Typography>
-
-                                                <IconButton
-                                                    style={{border: "1px solid"}}
-                                                    variant="outlined"
-                                                    color='primary'
-                                                >
-                                                    <AddIcon />
-                                                </IconButton>
+                                                </Typography>   
                                             </Grid>
                                             <TextField
-                                                id='nombre' 
+                                                id='name' 
                                                 label='Nombre' 
                                                 required
-                                                value={values.nombre}
-                                                onChange={handleChange} 
-                                                error={errors.nombre && values.nombre}
-                                                helperText={values.error === true && errors.nombre}
-                                                style={{marginTop:'40px',marginBottom:'25px'}}
+                                                value={transcription.name}
+                                                onChange={handleTranscription} 
+                                                error={errors.name && transcription.name}
+                                                helperText={transcription.error === true && errors.name}
+                                                style={{marginTop:'15px'}}
                                                 fullWidth
                                             />
                                             <TextField
-                                                id='texto' 
+                                                id='text' 
                                                 label='Texto' 
                                                 required
-                                                value={values.texto}
-                                                onChange={handleChange} 
-                                                error={errors.texto && values.texto}
-                                                helperText={values.error === true && errors.texto}
+                                                value={transcription.text}
+                                                onChange={handleTranscription} 
+                                                error={errors.text && transcription.text}
+                                                helperText={transcription.error === true && errors.text}
                                                 style={{marginTop:'40px',marginBottom:'25px'}}
                                                 fullWidth
                                                 rows={4}
@@ -411,9 +508,28 @@ const Create = () => {
                                             />
                                             <Button
                                                 variant='contained'
+                                                onClick={()=>addTranscription()}
                                             >
-                                                Agregar
+                                                Agregar transcripción
                                             </Button>
+                                            {transcriptions && transcriptions.length > 0 && transcriptions.map((preview, index) => (
+                                                <Grid key={index} container>
+                                                    <div className='flex-container'>
+                                                        <div>{index+1}. {preview.name}</div>
+                                                        <CloseIcon />
+                                                    </div>
+                                                    <div>{preview.text}</div>
+                                                    <div className='separator'></div>
+                                                </Grid>
+                                            ))}
+                                            {transcriptions && transcriptions.length > 0 &&
+                                                <Button
+                                                    variant='contained'
+                                                    onClick={()=>addFolio()}
+                                                >
+                                                    Agregar folio
+                                                </Button>
+                                            }
                                         </Grid>
                                     </Grid>
                                 </Grid>

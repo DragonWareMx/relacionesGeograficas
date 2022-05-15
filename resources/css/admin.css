@@ -66,7 +66,37 @@
     background-size: cover;
 }
 
-.banner-skelleton:hover, .imageMin-skelleton:hover{
+.maps-skelleton{
+    width: 150px;
+    height: 90px;
+    border: 2px dashed #C1C1C1;
+    border-radius: 4px;
+    color: #707070;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: ease-in 0.05s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top:5px;
+}
+
+.maps-preview{
+    width: 150px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.banner-skelleton:hover, .imageMin-skelleton:hover, .maps-skelleton:hover{
     border: 2px dashed #304A71;
     color: #304A71;
     transition: ease-in 0.2s;
@@ -86,4 +116,22 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+}
+
+.title{
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #707070;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.separator{
+    background-color: #707070;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
 }
