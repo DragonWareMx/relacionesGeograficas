@@ -13,6 +13,7 @@ import { styled } from '@mui/material/styles';
 
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+import { Inertia } from '@inertiajs/inertia';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -121,6 +122,7 @@ const Create = () => {
         folios:[],
         descripcion:'',
         imageFolio:[],
+        error: false
     });
 
     const [transcription, setTranscription] = useState({
@@ -218,6 +220,19 @@ const Create = () => {
         }));
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        console.log(values);
+        Inertia.post(route('admin.store'), values, {
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        })
+      }    
+
     return (
         <>
             <InertiaLink href="/" className='backpage-header' >
@@ -272,6 +287,7 @@ const Create = () => {
                         </Typography>
                         
                     }
+                    <form onSubmit={handleSubmit}>
                     {activeStep == 0 &&
                         <>
                             <CssTextField
@@ -545,29 +561,6 @@ const Create = () => {
                         >
                                 Anterior
                         </Button>
-                        {/* {activeStep!=2 ?
-                            <Button variant='contained'>Siguiente</Button>
-                            :
-                            <Button variant='contained'>Finalizar</Button>
-                        } */}
-
-                        {/* <Button
-                            color="inherit"
-                            disabled={activeStep === 0}
-                            onClick={handleBack}
-                            sx={{ mr: 1 }}
-                        >
-                            Back
-                        </Button> */}
-                        {/* <Button onClick={handleNext} sx={{ mr: 1 }}>
-                            Next
-                        </Button> */}
-                        {/* {activeStep !== steps.length &&
-                        (completed[activeStep] ? (
-                        <Typography variant="caption" sx={{ display: 'inline-block' }}>
-                            Step {activeStep + 1} already completed
-                        </Typography>
-                        ) : ( */}
                         <Button
                             variant='contained'
                             onClick={handleNext}
@@ -576,8 +569,18 @@ const Create = () => {
                             ? 'Finalizar'
                             : 'Siguiente'}
                         </Button>
-                        {/* ))} */}
+                        {/* -------------------------------------------- TEST -------------------------------------------- */}
+                        <Button
+                            variant='outlined'
+                            disabled={activeStep === 2}
+                            onClick={handleBack}
+                            type="submit"
+                        >
+                                Finalizar
+                        </Button>
+                        {/* -------------------------------------------- TEST -------------------------------------------- */}
                     </div>
+                    </form>
                 </div>
             </Container>
         </>

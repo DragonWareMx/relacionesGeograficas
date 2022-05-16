@@ -29,6 +29,8 @@ Route::name('relations.')->group(function () {
 
 Route::name('admin.')->group(function () {
     Route::get('/admin/create', [App\Http\Controllers\RelationController::class, 'create'])->name('create');
+    Route::get('/admin/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    Route::post('/admin/store', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
 });
 
 Auth::routes();
