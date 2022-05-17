@@ -13,7 +13,12 @@ import { styled } from '@mui/material/styles';
 
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { Inertia } from '@inertiajs/inertia';
+
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -48,12 +53,30 @@ const CssTextField = styled(TextField)({
     },
   });
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const steps = ['NOMBRE', 'MAPAS', 'FOLIOS']
 const Create = () => {
     //Control steps
-    const [activeStep, setActiveStep] = React.useState(2);
+    const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
     const [skipped, setSkipped] = React.useState(new Set());
+
+    //Control alerts
+    const [open, setOpen] = React.useState(false);
+    const [errorMessagge, setErrorMessagge] = React.useState('');
+    const handleClick = () => {
+        setOpen(true);
+    };
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+    };
 
     // const handleNext = () => {
     //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -133,6 +156,16 @@ const Create = () => {
     const [transcriptions, setTranscriptions] = useState([]);
 
     function addTranscription(){
+        if(transcription.name === ''){
+            setErrorMessagge('Ingresa nombre de la transcripción');
+            setOpen(true);
+            return false;
+        }
+        if(transcription.text === ''){
+            setErrorMessagge('Ingresa texto de la transcripción');
+            setOpen(true);
+            return false;
+        }
         let trans={
             name:transcription.name,
             text:transcription.text
@@ -148,6 +181,16 @@ const Create = () => {
     }
 
     function addFolio(){
+        if(values.descripcion === ''){
+            setErrorMessagge('Agrega una descripción del folio');
+            setOpen(true);
+            return false;
+        }
+        if(values.imageFolio.length==0){
+            setErrorMessagge('Agrega una imagen del folio');
+            setOpen(true);
+            return false;
+        }
         var folios = values.folios.slice();
         let folio={
             descripcion:values.descripcion,
@@ -220,7 +263,112 @@ const Create = () => {
         }));
     }
 
+    function removeTranscription(index){
+        var arr=transcriptions.slice();
+        setTranscriptions((values) => (
+            arr.filter((o, i) => i !== index)
+        ));
+    }
+
+    function removeFolio(index){
+        var arr=values.folios.slice();
+        setValues((values) => ({
+            ...values,
+            folios:arr.filter((o, i) => i !== index)
+        }));
+    }
+
+    function checkInputs(){
+        if(!values.nombre || values.nombre === ''){
+            setErrorMessagge('Debes ingresar un nombre');
+            errors.nombre='Ingresa un nombre';
+            values.error = true;
+            setActiveStep(0);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.nombre=null;
+            values.error = false;
+        }
+        if(!values.imageBanner || values.imageBanner.length == 0){
+            setErrorMessagge('Debes ingresar una imagen de banner');
+            errors.imageBanner='Ingresa una imagen';
+            values.error = true;
+            setActiveStep(0);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.imageBanner=null;
+            values.error = false;
+        }
+        if(!values.imageMin || values.imageMin.length == 0){
+            setErrorMessagge('Debes ingresar una imagen miniatura');
+            errors.imageMin='Ingresa una imagen';
+            values.error = true;
+            setActiveStep(0);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.imageMin=null;
+            values.error = false;
+        }
+        if(!values.fuentes || values.fuentes === ''){
+            setErrorMessagge('Debes ingresar las fuentes');
+            errors.fuentes='Ingresa las fuentes';
+            values.error = true;
+            setActiveStep(0);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.fuentes=null;
+            values.error = false;
+        }
+        if(!values.mapa_geografico || values.mapa_geografico === ''){
+            setErrorMessagge('Debes ingresar el mapa geográfico');
+            errors.mapa_geografico='Ingresa el mapa geográfico';
+            values.error = true;
+            setActiveStep(1);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.mapa_geografico=null;
+            values.error = false;
+        }
+        if(!values.mapImages || values.mapImages.length == 0){
+            setErrorMessagge('Debes ingresar al menos una imagen del mapa geográfico');
+            errors.mapImages='Ingresa una imagen del mapa geográfico';
+            values.error = true;
+            setActiveStep(1);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.mapImages=null;
+            values.error = false;
+        }
+        if(!values.folios || values.folios.length == 0){
+            setErrorMessagge('Debes ingresar al menos folio');
+            errors.folios='Ingresa una imagen del mapa geográfico';
+            values.error = true;
+            setActiveStep(2);
+            setOpen(true);
+            return false;
+        }
+        else{
+            errors.folios=null;
+            values.error = false;
+        }
+    }
+
     function handleSubmit(e) {
+        //Validando que todo esté llenito
+        console.log(values);
+        if(!checkInputs()) return false;
         e.preventDefault()
         console.log(values);
         Inertia.post(route('admin.store'), values, {
@@ -231,7 +379,7 @@ const Create = () => {
                 }));
             },
         })
-      }    
+    }    
 
     return (
         <>
@@ -312,7 +460,7 @@ const Create = () => {
                                 />
                                 <label htmlFor="imageBanner">
                                     <div id='imageBannerContainer' 
-                                        className='banner-skelleton' 
+                                        className={errors.imageBanner ? 'banner-skelleton error' : 'banner-skelleton'} 
                                         style={values.imageBanner.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageBanner[0])+')',border:'none'} : {}}
                                     >
                                         {values.imageBanner.length==0 && 
@@ -333,7 +481,7 @@ const Create = () => {
                                 />
                                 <label htmlFor="imageMin">
                                     <div id='imageMinContainer' 
-                                        className='imageMin-skelleton' 
+                                        className={errors.imageMin ? 'imageMin-skelleton error' : 'imageMin-skelleton'} 
                                         style={values.imageMin.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageMin[0])+')',border:'none'} : {}}
                                     >
                                         {values.imageMin.length == 0 &&
@@ -369,8 +517,8 @@ const Create = () => {
                                 fullWidth
                                 value={values.mapa_geografico}
                                 onChange={handleChange} 
-                                error={errors.mapa_geografico && values.mapa_geografico == true && true}
-                                helperText={values.error == true && errors.nombre}
+                                error={errors.mapa_geografico && values.error == true && true}
+                                helperText={values.error == true && errors.mapa_geografico}
                                 style={{marginTop:'40px',marginBottom:'25px'}}
                             />
                             <div className='title'>Mapas pictográficos</div>
@@ -387,8 +535,11 @@ const Create = () => {
                                             onChange={()=>addImages('mapImages')}
                                         />
                                         <label htmlFor="mapImages">
-                                            <div id='mapImagesContainer' className='maps-skelleton'>
-                                                <FileUploadIcon />
+                                            <div 
+                                                id='mapImagesContainer' 
+                                                className={errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton'}>
+                                                <FileUploadIcon 
+                                            />
                                                 <div>Agregar mapa</div>
                                             </div>
                                         </label>
@@ -529,12 +680,20 @@ const Create = () => {
                                                 Agregar transcripción
                                             </Button>
                                             {transcriptions && transcriptions.length > 0 && transcriptions.map((preview, index) => (
-                                                <Grid key={index} container>
-                                                    <div className='flex-container'>
-                                                        <div>{index+1}. {preview.name}</div>
-                                                        <CloseIcon />
-                                                    </div>
-                                                    <div>{preview.text}</div>
+                                                <Grid key={index} container style={{marginTop:'17px'}}>
+                                                    <Grid 
+                                                        container
+                                                        direction="row"
+                                                        justifyContent="space-between"
+                                                        alignItems="center"
+                                                    >
+                                                        <div className='trans-title'>{index+1}. {preview.name}</div>
+                                                        <RemoveCircleOutlineIcon 
+                                                            style={{color:'#304A71',cursor:'pointer'}}
+                                                            onClick={()=>removeTranscription(index)}
+                                                        />
+                                                    </Grid>
+                                                    <div className='trans-text'>{preview.text}</div>
                                                     <div className='separator'></div>
                                                 </Grid>
                                             ))}
@@ -550,6 +709,51 @@ const Create = () => {
                                     </Grid>
                                 </Grid>
                             </Paper>
+                            <Grid container>
+                                {values.folios && values.folios.length > 0 && values.folios.map((folio, index) => (
+                                    <Grid container key={index} style={{marginTop:'27px'}}>
+                                        <Grid 
+                                            container
+                                            direction="row"
+                                            justifyContent="space-between"
+                                            alignItems="center"
+                                            style={{marginBottom:'10px'}}
+                                        >
+                                            <div>Folio {index+1}</div>
+                                            <RemoveCircleOutlineIcon 
+                                                style={{color:'#304A71',cursor:'pointer'}}
+                                                onClick={()=>removeFolio(index)}
+                                            />
+                                        </Grid>
+                                        <Grid container spacing={2}>
+                                            <Grid item xs={12} md={3}>
+                                                <img src={URL.createObjectURL(folio.imageFolio[0])} className='folio-preview'/>
+                                            </Grid>
+                                            <Grid item xs={12} md={9}>
+                                                <Typography>Descripción</Typography>
+                                                <div className='trans-text' style={{marginBottom:'15px'}}>{folio.descripcion}</div>
+                                                <Typography>Transcripciones</Typography>
+                                                <Grid container>
+                                                    {folio.transcriptions && folio.transcriptions.length > 0 && folio.transcriptions.map((preview, index) => (
+                                                        <Grid key={index} container style={{marginTop:'17px'}}>
+                                                            <Grid 
+                                                                container
+                                                                direction="row"
+                                                                justifyContent="space-between"
+                                                                alignItems="center"
+                                                            >
+                                                                <div className='trans-title'>{index+1}. {preview.name}</div>
+                                                            </Grid>
+                                                            <div className='trans-text'>{preview.text}</div>
+                                                            <div className='separator'></div>
+                                                        </Grid>
+                                                    ))}
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </>
                     }
                     {/* por que usas clases :´v */}
@@ -572,9 +776,9 @@ const Create = () => {
                         {/* -------------------------------------------- TEST -------------------------------------------- */}
                         <Button
                             variant='outlined'
-                            disabled={activeStep === 2}
-                            onClick={handleBack}
-                            type="submit"
+                            disabled={activeStep !== 2}
+                            onClick={()=>handleSubmit()}
+                            type="button"
                         >
                                 Finalizar
                         </Button>
@@ -583,6 +787,11 @@ const Create = () => {
                     </form>
                 </div>
             </Container>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                    {errorMessagge && errorMessagge}
+                </Alert>
+            </Snackbar>
         </>
     )
 }
