@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Relation;
+use App\Models\Invoice;
+use App\Models\Transcription;
+use App\Models\Map;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
@@ -45,11 +48,15 @@ class RelationController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
+            'fuentes' => 'required|string',
+            'mapa_geografico' => 'required|string',
+
             'imageBanner' => 'required',
             'imageMin' => 'required',
-            'fuentes' => 'required|string',
+            'mapImages' => 'required',
+            'folios' => 'required',
+
             'mapa_geografico' => 'nullable',
-            'mapImages' => 'nullable',
             'folios' => 'nullable',
             'descripcion' => 'nullable',
             'imageFolio' => 'nullable',
@@ -57,7 +64,10 @@ class RelationController extends Controller
 
         $foto = null;
         $fotoMin = null;
+        $mapasFolios = null;
+        $mapas = null;
         DB::beginTransaction();
+
         try {
             $relation = new Relation();
             $relation->uuid = Str::uuid();
@@ -93,6 +103,49 @@ class RelationController extends Controller
             }
 
             $relation->save();
+
+            if($request->folios){
+                $mapasFolios = [];
+                foreach ($request->folios as $key => $folio) {
+                    $folioM = new Invoice;
+                    $folioM->uuid = Str::uuid();
+                    $folioM->descripcion = $folio["descripcion"];
+                    
+                    $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
+                    $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
+                    $folioM->imagen = $fileName;
+
+                    $folioM->save();
+
+                    $relation->invoices()->save($folioM);
+
+                    foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
+                        $transcription = new Transcription;
+                        $transcription->uuid = Str::uuid();
+                        $transcription->nombre = $transcripcion["name"];
+                        $transcription->texto = $transcripcion["text"];
+                        $transcription->invoice_id = $folioM->id;
+                        $transcription->save();
+                    }
+                }
+            }
+
+            if ($request->mapImages) {
+                $mapas = [];
+                foreach ($request->mapImages as $key => $mapa) {
+                    $map = new Map;
+                    $map->uuid = Str::uuid();
+                    //Se sube foto
+                    $mapas[$key] = $mapa->store('public/relaciones');
+                    $fileName = $mapa->hashName();
+    
+                    $map->imagen = $fileName;
+                    $map->save();
+
+                    $map->relation()->associate($relation);
+                }
+            }
+
             DB::commit();
             return Redirect::route('admin.index')->with('success', '¡Relación creada con éxito!');
         } catch (\Throwable $th) {
@@ -105,6 +158,19 @@ class RelationController extends Controller
             if ($fotoMin) {
                 Storage::delete($fotoMin);
             }
+
+            if($mapasFolios && count($mapasFolios) > 0){
+                foreach ($mapasFolios as $key => $mapa) {
+                    Storage::delete($mapa);
+                }
+            }
+
+            if($mapas && count($mapas) > 0){
+                foreach ($mapas as $key => $mapa) {
+                    Storage::delete($mapa);
+                }
+            }
+
             return Redirect::route('admin.create')->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
         }
     }

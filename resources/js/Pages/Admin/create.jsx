@@ -363,11 +363,13 @@ const Create = () => {
             errors.folios=null;
             values.error = false;
         }
+        return true
     }
 
     function handleSubmit(e) {
         //Validando que todo esté llenito
         console.log(values);
+        console.log(!checkInputs());
         if(!checkInputs()) return false;
         e.preventDefault()
         console.log(values);
@@ -777,7 +779,7 @@ const Create = () => {
                         <Button
                             variant='outlined'
                             disabled={activeStep !== 2}
-                            onClick={()=>handleSubmit()}
+                            onClick={handleSubmit}
                             type="button"
                         >
                                 Finalizar
