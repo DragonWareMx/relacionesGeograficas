@@ -36,3 +36,5 @@ Route::name('admin.')->group(function () {
 Auth::routes();
 
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
