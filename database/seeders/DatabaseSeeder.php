@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SourceSeeder::class,
             InvoiceSeeder::class,
             TranscriptionSeeder::class,
+            UsersSeeder::class,
         ]);
     }
 }
