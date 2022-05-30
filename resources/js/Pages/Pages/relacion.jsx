@@ -64,7 +64,7 @@ const TranslateButtonActive = styled(Button)(({ theme }) => ({
 }));
 
 const Relacion = ({ relation }) => {
-
+console.log(relation);
     const [open, setOpen] = useState(false)
 
     function toggleDrawer() {
@@ -145,22 +145,22 @@ const Relacion = ({ relation }) => {
                 </Grid>
             </Grid>
             <Container maxWidth={'xl'}>
-                <div className={contMap == 'lienzo' ? "map-container grid-lienzo" : "map-container"}>
-                    {contMap == 'geo' &&
+                <div className={contMap === 'lienzo' ? "map-container grid-lienzo" : "map-container"}>
+                    {contMap === 'geo' &&
                         <div>
                             <img src="/img/provisional/captura.png" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto", width: "100%", objectFit: "cover" }} />
                         </div>
                     }
-                    {contMap == 'picto' &&
+                    {contMap === 'picto' &&
                         <div className="mapaPicto">
                             <TransformWrapper>
                                 <TransformComponent>
-                                    <img src="/img/provisional/picto-min.webp" alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
+                                    <img src={(relation.maps && relation.maps.length > 0) ? ('/storage/relaciones/' + relation.maps[idActive].imagen) : ''} alt="" style={{ height: "600px", marginLeft: "auto", marginRight: "auto" }} />
                                 </TransformComponent>
                             </TransformWrapper>
                         </div>
                     }
-                    {contMap == 'lienzo' &&
+                    {contMap === 'lienzo' &&
                         <div>
                             <Grid container spacing={5}>
                                 <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -178,13 +178,15 @@ const Relacion = ({ relation }) => {
                 </div>
                 <div className="container-controls">
                     <div className="round-button-container">
-                        <div className={(contMap == "geo" && idActive == 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('geo'); setIdActive(0) }}></div>
+                        <div className={(contMap === "geo" && idActive == 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('geo'); setIdActive(0) }}></div>
                         <div className="round-button-text">Mapa geográfico</div>
                     </div>
-                    <div className="round-button-container">
-                        <div className={(contMap == "picto" && idActive == 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(0) }}></div>
-                        <div className="round-button-text">Mapa pictográfico 1</div>
-                    </div>
+                    {relation.maps && relation.maps.length > 0 &&
+                        <div className="round-button-container">
+                            <div className={(contMap === "picto" && idActive === 0) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(0) }}></div>
+                            <div className="round-button-text">Mapa pictográfico 1</div>
+                        </div>
+                    }
                     <div className="swiper-container">
                         <Swiper
                             spaceBetween={4}
@@ -299,22 +301,18 @@ const Relacion = ({ relation }) => {
                     }
                 </div>
                 <div className="container-controls">
-                    <div className="round-button-container">
-                        <div className={(contMap == "picto" && idActive == 1) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(1) }}></div>
-                        <div className="round-button-text">Mapa pictográfico 2</div>
-                    </div>
-                    <div className="round-button-container">
-                        <div className={(contMap == "picto" && idActive == 2) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(2) }}></div>
-                        <div className="round-button-text">Mapa pictográfico 3</div>
-                    </div>
-                    <div className="round-button-container">
-                        <div className={(contMap == "picto" && idActive == 3) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(3) }}></div>
-                        <div className="round-button-text">Mapa pictográfico 4</div>
-                    </div>
-                    <div className="round-button-container">
-                        <div className={(contMap == "picto" && idActive == 4) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(4) }}></div>
-                        <div className="round-button-text">Mapa pictográfico 5</div>
-                    </div>
+                    {relation.maps && relation.maps.length > 0 && relation.maps.map((map, index) => {
+                        if(index === 0)
+                            return
+                        
+                        return (
+                        <div className="round-button-container">
+                            <div className={(contMap == "picto" && idActive === index) ? "round-button active" : "round-button"} onClick={() => { setContMap('picto'); setIdActive(index) }}></div>
+                            <div className="round-button-text">Mapa pictográfico {index + 1}</div>
+                        </div>
+                        )
+                    })
+                    }
                 </div>
 
                 <div style={{ marginTop: 50, width: '100%', marginBottom: 70 }}>

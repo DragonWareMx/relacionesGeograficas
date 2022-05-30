@@ -23,7 +23,9 @@ class RelationController extends Controller
     public function index($id)
     {
         //
-        $relation = Relation::where('uuid', $id)->firstOrFail();
+        $relation = Relation::where('uuid', $id)
+        ->with(['maps', 'invoices', 'invoices.transcriptions'])
+        ->firstOrFail();
 
         return Inertia::render('Pages/relacion', ['relation' => $relation]);
     }
@@ -55,8 +57,8 @@ class RelationController extends Controller
             'imageMin' => 'required',
             'mapImages' => 'required',
             'folios' => 'required',
+            'mapa_geografico' => 'required|url',
 
-            'mapa_geografico' => 'nullable',
             'folios' => 'nullable',
             'descripcion' => 'nullable',
             'imageFolio' => 'nullable',
@@ -71,7 +73,7 @@ class RelationController extends Controller
         try {
             $relation = new Relation();
             $relation->uuid = Str::uuid();
-            $relation->api = '{}';
+            $relation->api = $request->mapa_geografico;
             $relation->nombre = $request->nombre;
             if ($request->imageBanner) {
                 //Se sube foto
@@ -140,9 +142,10 @@ class RelationController extends Controller
                     $fileName = $mapa->hashName();
     
                     $map->imagen = $fileName;
+                    $map->relation_id = $relation->id;
                     $map->save();
 
-                    $map->relation()->associate($relation);
+                    // $map->relation()->associate($relation);
                 }
             }
 

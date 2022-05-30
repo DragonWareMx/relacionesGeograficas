@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Invoice extends Model
 {
     use HasFactory;
+
+    public function transcriptions()
+    {
+        return $this->hasMany(Transcription::class);
+    }
 }
