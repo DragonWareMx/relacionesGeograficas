@@ -57,7 +57,6 @@ function limitChar(nombre){
 }
 
 const Home = ({ relaciones }) => {
-
     const [data, setData] = useState({
         infoMapa: {
             centro: {
@@ -205,7 +204,9 @@ const Home = ({ relaciones }) => {
         </Grid>
         {/* APARTADO DE MAPA LEAFLET */}
         {/* <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx" width="100%" height="1000" style={{border:'none'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
+        
         <MapContainer
+            id="mapa"
             style={styleMap}
             center={
                 L.latLng(data.infoMapa.centro.lat, data.infoMapa.centro.long)
