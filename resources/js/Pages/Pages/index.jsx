@@ -1,5 +1,6 @@
 import Layout from '../../layouts/Layout'
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -18,6 +19,31 @@ import "swiper/css/pagination";
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
+/** Leaflet Imports **/
+import L from "leaflet";
+import {
+    MapContainer,
+    Marker,
+    TileLayer,
+    Circle,
+    CircleMarker,
+    Polyline,
+    Polygon,
+    Rectangle,
+    Popup,
+    Tooltip,
+    GeoJSON,
+    LayerGroup,
+    LayersControl,
+    ScaleControl,
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+/** Axios Imports **/
+import axios from "axios";
+
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
     document.getElementById('alfabetico').style.display = "block";
@@ -31,6 +57,74 @@ function limitChar(nombre){
 }
 
 const Home = ({ relaciones }) => {
+
+    const [data, setData] = useState({
+        infoMapa: {
+            centro: {
+                lat: "20.0853643565",
+                long: "-98.76998",
+            },
+            limites: {
+                visible: false,
+                nE: {
+                    lat: null,
+                    long: null,
+                },
+                nO: {
+                    lat: null,
+                    long: null,
+                },
+                sE: {
+                    lat: null,
+                    long: null,
+                },
+                sO: {
+                    lat: null,
+                    long: null,
+                },
+            },
+            zoom: {
+                max: 12,
+                min: 0,
+                inicial: 4,
+            },
+            mapasBase: {
+                0: {
+                    nombre: "ESRI",
+                    atribution: "ESRI",
+                    link: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
+                },
+            },
+        },
+        capas: null
+    });
+
+    useEffect(() => {
+        axios
+            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .then((response) => {
+                let new_data = data;
+                new_data.capas = response.data;
+                setData({...data, new_data})
+            })
+            .catch((error) => {});
+    }, []);
+
+    /** Leaflet Consts and Functions **/
+    const { BaseLayer, Overlay } = LayersControl;
+
+    let DefaultIcon = L.icon({
+        iconUrl: icon,
+        shadowUrl: iconShadow,
+    });
+
+    L.Marker.prototype.options.icon = DefaultIcon;
+
+    const styleMap = { width: "100%", height: "800px" };
+
+    function getCoords(coord) {
+        return L.latLng(coord.long, coord.lat);
+    }
 
     return (
 
@@ -109,8 +203,49 @@ const Home = ({ relaciones }) => {
                 <Paper className="btn-op" onClick={showAlfa}>ALFABÉTICO</Paper>
             </Grid>
         </Grid>
-        {/* APARTADO DE MAPA GOOGLE */}
-        <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx" width="100%" height="1000" style={{border:'none'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        {/* APARTADO DE MAPA LEAFLET */}
+        {/* <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx" width="100%" height="1000" style={{border:'none'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
+        <MapContainer
+            style={styleMap}
+            center={
+                L.latLng(data.infoMapa.centro.lat, data.infoMapa.centro.long)
+            }
+            zoom={data.infoMapa.zoom.inicial}
+            minZoom={data.infoMapa.zoom.min}
+            maxZoom={data.infoMapa.zoom.max}
+        >
+            <LayersControl position='topleft'>
+                <BaseLayer checked name="ESRI Satellite">
+                    <TileLayer
+                        attribution={
+                            '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                        }
+                        url={
+                            "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+                        }
+                    />
+                </BaseLayer>
+                <LayerGroup>
+                    {
+                        data.capas !== null ? data.capas.map((item, i) => {
+                            return(
+                                <CircleMarker key={item.idDS} center={L.latLng(item.Y, item.X)} radius={5} color={"white"}>
+                                    <Tooltip>
+                                        {item.cNombre}
+                                    </Tooltip>
+                                </CircleMarker>
+                            )
+                        }) : ''
+                    }
+                </LayerGroup>
+
+                <ScaleControl
+                    position="bottomright"
+                    metric={true}
+                    imperial={true}
+                />
+            </LayersControl>
+        </MapContainer>
 
         {/* APARTADO DE TODAS LAS RELACIONES */}
         <Container id="alfabetico" maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
