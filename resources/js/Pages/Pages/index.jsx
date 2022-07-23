@@ -215,7 +215,7 @@ const Home = ({ relaciones }) => {
             minZoom={data.infoMapa.zoom.min}
             maxZoom={data.infoMapa.zoom.max}
         >
-            <LayersControl position='topleft'>
+            <LayersControl position='topleft' collapsed={false}>
                 <BaseLayer checked name="ESRI Satellite">
                     <TileLayer
                         attribution={
