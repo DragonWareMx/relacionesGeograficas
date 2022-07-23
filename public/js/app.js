@@ -30901,6 +30901,7 @@ var Home = function Home(_ref) {
       maxZoom: data.infoMapa.zoom.max,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
         position: "topleft",
+        collapsed: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(BaseLayer, {
           checked: true,
           name: "ESRI Satellite",
