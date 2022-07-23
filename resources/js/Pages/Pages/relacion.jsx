@@ -394,7 +394,7 @@ const Relacion = ({ relation }) => {
                     )}
                     {contMap === "picto" && (
                         <div className="mapaPicto">
-                            <TransformWrapper>
+                            {/* <TransformWrapper>
                                 <TransformComponent>
                                     <img
                                         src={
@@ -410,9 +410,15 @@ const Relacion = ({ relation }) => {
                                             marginLeft: "auto",
                                             marginRight: "auto",
                                         }}
+                                        id='imagenprov'
                                     />
                                 </TransformComponent>
-                            </TransformWrapper>
+                            </TransformWrapper> */}
+                            <iframe
+                                src={'/storage/relaciones/Culhuacan_mapa.jpg'}
+                                style={{width:'100%',height:'100%'}}
+                            >
+                            </iframe>
                         </div>
                     )}
                     {contMap === "lienzo" && (
@@ -491,11 +497,11 @@ const Relacion = ({ relation }) => {
                     )}
                     <div className="swiper-container">
                         <Swiper
-                            spaceBetween={4}
+                            spaceBetween={15}
                             freeMode={false}
                             effect={"coverflow"}
                             grabCursor={true}
-                            slidesPerView={"auto"}
+                            slidesPerView={5}
                             navigation={true}
                             modules={[Navigation, FreeMode]}
                             className="leo-swiper"
@@ -511,6 +517,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini1.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -524,6 +531,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini2.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -537,6 +545,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini3.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -550,6 +559,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini4.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -563,6 +573,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini5.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -576,6 +587,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini6.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -589,6 +601,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini7.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -602,6 +615,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini8.jpg"}
+                                    style={{width:'66px',height:'100px'}}
                                 />
                             </SwiperSlide>
                         </Swiper>

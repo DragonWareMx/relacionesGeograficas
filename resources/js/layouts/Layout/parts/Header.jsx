@@ -61,15 +61,17 @@ export default function Header() {
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
                     <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px', justifyContent:'space-between'}} alignItems="center" >
                         <a href="/" style={{textDecoration:'none',display:'flex',flexWrap:'wrap', color:'white'}}>
-                        <Avatar alt="RG" src="/img/assets/img.png" id="no-mg-1540-l" style={{marginRight:'8px',marginLeft:'24px'}} />
-                        <Typography
-                            component="div"
-                            sx={{ flexGrow: 1, display: { sm: 'block' } }}
-                            style={{fontFamily:'Noto Sans'}}
-                        >
-                            Relaciones Geográficas
-                            <div style={{fontSize:'14px', fontWeight:'300'}}>de la Nueva España (1577 - 1585)</div>
-                        </Typography>
+                        <div style={{display:'flex', alignItems:'center'}}>
+                            <Avatar alt="RG" src="/img/assets/img.png" id="no-mg-1540-l" style={{marginRight:'8px',marginLeft:'24px'}} />
+                            <Typography
+                                component="div"
+                                sx={{ flexGrow: 1, display: { sm: 'block' } }}
+                                style={{fontFamily:'Noto Sans'}}
+                            >
+                                Relaciones Geográficas
+                                de la Nueva España (1577 - 1585)
+                            </Typography>
+                        </div>
                         </a>
                         <Search id="search-bar">
                             <SearchIconWrapper>
