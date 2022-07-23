@@ -426,11 +426,15 @@ const Relacion = ({ relation }) => {
                                         justifyContent: "flex-end",
                                     }}
                                 >
-                                    <img
-                                        src={folios[folioActive]}
-                                        alt=""
-                                        style={{ height: "600px" }}
-                                    />
+                                    <TransformWrapper>
+                                        <TransformComponent>
+                                            <img
+                                                src={folios[folioActive]}
+                                                alt=""
+                                                style={{ height: "600px" }}
+                                            />
+                                        </TransformComponent>
+                                    </TransformWrapper>
                                 </Grid>
                                 <Grid
                                     item
