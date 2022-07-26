@@ -1,6 +1,6 @@
 import Layout from '../../layouts/Layout'
-import React, { useState } from 'react';
-import {Container, Stepper, Step, StepLabel, TextField, Typography, StepButton, IconButton, Paper} from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import {Container, Stepper, Step, StepLabel, TextField, Typography, StepButton, IconButton, Paper, FormControl, InputLabel, Select, MenuItem} from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
@@ -19,6 +19,7 @@ import { Inertia } from '@inertiajs/inertia';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import axios from "axios";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -56,6 +57,8 @@ const CssTextField = styled(TextField)({
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
+
+
 
 const steps = ['NOMBRE', 'MAPAS', 'FOLIOS']
 const Create = () => {
@@ -132,15 +135,24 @@ const Create = () => {
         setCompleted({});
     };
 
+    const [data, setData]= useState([]);
+
+    useEffect(() => {
+        axios
+            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .then((response) => {
+                setData(response.data);
+            })
+            .catch((error) => {});
+    }, []);
     //form data
     const { errors } = usePage().props;
 
     const [values, setValues] = useState({
-        nombre:'',
         imageBanner:[],
         imageMin:[],
         fuentes:'',
-        mapa_geografico: '',
+        // mapa_geografico: '',
         mapImages: [],
         folios:[],
         descripcion:'',
@@ -216,6 +228,12 @@ const Create = () => {
         }))
     }
 
+    const [relation, setRelation] = React.useState('');
+
+    const handleChangeSelect = (event) => {
+        setRelation(event.target.value);
+    };
+
     function handleTranscription(e) {
         const key = e.target.id;
         const value = e.target.value
@@ -279,9 +297,9 @@ const Create = () => {
     }
 
     function checkInputs(){
-        if(!values.nombre || values.nombre === ''){
-            setErrorMessagge('Debes ingresar un nombre');
-            errors.nombre='Ingresa un nombre';
+        if(!relation){
+            setErrorMessagge('Debes seleccionar una relación');
+            errors.nombre='Selecciona una relación';
             values.error = true;
             setActiveStep(0);
             setOpen(true);
@@ -327,18 +345,18 @@ const Create = () => {
             errors.fuentes=null;
             values.error = false;
         }
-        if(!values.mapa_geografico || values.mapa_geografico === ''){
-            setErrorMessagge('Debes ingresar el mapa geográfico');
-            errors.mapa_geografico='Ingresa el mapa geográfico';
-            values.error = true;
-            setActiveStep(1);
-            setOpen(true);
-            return false;
-        }
-        else{
-            errors.mapa_geografico=null;
-            values.error = false;
-        }
+        // if(!values.mapa_geografico || values.mapa_geografico === ''){
+        //     setErrorMessagge('Debes ingresar el mapa geográfico');
+        //     errors.mapa_geografico='Ingresa el mapa geográfico';
+        //     values.error = true;
+        //     setActiveStep(1);
+        //     setOpen(true);
+        //     return false;
+        // }
+        // else{
+        //     errors.mapa_geografico=null;
+        //     values.error = false;
+        // }
         if(!values.mapImages || values.mapImages.length == 0){
             setErrorMessagge('Debes ingresar al menos una imagen del mapa geográfico');
             errors.mapImages='Ingresa una imagen del mapa geográfico';
@@ -368,10 +386,10 @@ const Create = () => {
 
     function handleSubmit(e) {
         //Validando que todo esté llenito
-        console.log(values);
-        console.log(!checkInputs());
         if(!checkInputs()) return false;
         e.preventDefault()
+        let finalRelation=JSON.parse(relation);
+        values={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS}
         console.log(values);
         Inertia.post(route('admin.store'), values, {
             onError: () => {
@@ -402,35 +420,7 @@ const Create = () => {
                             );
                         })}
                     </Stepper>
-                    {/* {
-                        allStepsCompleted() || (
-                            <>
-                            <Button
-                                color="inherit"
-                                disabled={activeStep === 0}
-                                onClick={handleBack}
-                                sx={{ mr: 1 }}
-                            >
-                                Back
-                            </Button>
-                            <Button onClick={handleNext} sx={{ mr: 1 }}>
-                                Next
-                            </Button>
-                            {activeStep !== steps.length &&
-                            (completed[activeStep] ? (
-                            <Typography variant="caption" sx={{ display: 'inline-block' }}>
-                                Step {activeStep + 1} already completed
-                            </Typography>
-                            ) : (
-                            <Button onClick={handleComplete}>
-                                {completedSteps() === totalSteps() - 1
-                                ? 'Finish'
-                                : 'Complete Step'}
-                            </Button>
-                            ))}
-                            </>
-                        )
-                    } */}
+
                     {completed[activeStep] &&
                         <Typography variant="caption" sx={{ display: 'inline-block' }}>
                             Paso {activeStep + 1} completado
@@ -440,17 +430,28 @@ const Create = () => {
                     <form onSubmit={handleSubmit}>
                     {activeStep == 0 &&
                         <>
-                            <CssTextField
-                                id='nombre' 
-                                label='Nombre' 
-                                required
-                                fullWidth
-                                value={values.nombre}
-                                onChange={handleChange} 
-                                error={errors.nombre && values.error == true && true}
-                                helperText={values.error == true && errors.nombre}
-                                style={{marginTop:'40px',marginBottom:'25px'}}
-                            />
+                            <FormControl fullWidth style={{marginTop:'40px',marginBottom:'25px'}}>
+                                <InputLabel id="relation-names">Nombre</InputLabel>
+                                <Select
+                                    labelId="relation-names"
+                                    id="nombre"
+                                    value={relation || ''}
+                                    defaultValue=''
+                                    label="Nombre"
+                                    onChange={handleChangeSelect}
+                                    error={errors.nombre && values.error == true && true}
+                                    helperText={values.error == true && errors.nombre}
+                                >
+                                    {data && data.length > 0 && data.map((rel, index) => (
+                                        <MenuItem 
+                                            key={index} 
+                                            value={JSON.stringify({idDS: rel.idDS,cNombre: rel.cNombre})}
+                                        >
+                                            {rel.idDS+' '+rel.cNombre}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                             <div className='flex-container'>
                                 {/* BANNER IMAGE */}
                                 <input
@@ -512,7 +513,7 @@ const Create = () => {
                     }
                     {activeStep == 1 &&
                         <>
-                            <CssTextField
+                            {/* <CssTextField
                                 id='mapa_geografico' 
                                 label='Mapa geográfico' 
                                 required
@@ -522,7 +523,7 @@ const Create = () => {
                                 error={errors.mapa_geografico && values.error == true && true}
                                 helperText={values.error == true && errors.mapa_geografico}
                                 style={{marginTop:'40px',marginBottom:'25px'}}
-                            />
+                            /> */}
                             <div className='title'>Mapas pictográficos</div>
                             <div className='flex-container'>
                                 {/* IMAGENES */}
@@ -767,23 +768,27 @@ const Create = () => {
                         >
                                 Anterior
                         </Button>
-                        <Button
-                            variant='contained'
-                            onClick={handleNext}
-                        >
-                            {completedSteps() === totalSteps() - 1
-                            ? 'Finalizar'
-                            : 'Siguiente'}
-                        </Button>
+                        {activeStep != 2 &&
+                            <Button
+                                variant='contained'
+                                onClick={handleNext}
+                            >
+                                {completedSteps() === totalSteps() - 1
+                                ? 'Finalizar'
+                                : 'Siguiente'}
+                            </Button>
+                        }
                         {/* -------------------------------------------- TEST -------------------------------------------- */}
-                        <Button
-                            variant='outlined'
-                            disabled={activeStep !== 2}
-                            onClick={handleSubmit}
-                            type="button"
-                        >
-                                Finalizar
-                        </Button>
+                        {activeStep == 2 &&
+                            <Button
+                                variant='outlined'
+                                disabled={activeStep !== 2}
+                                onClick={handleSubmit}
+                                type="button"
+                            >
+                                    Finalizar
+                            </Button>
+                        }
                         {/* -------------------------------------------- TEST -------------------------------------------- */}
                     </div>
                     </form>
