@@ -30046,6 +30046,8 @@ var Create = function Create() {
     // mapa_geografico: '',
     mapImages: [],
     folios: [],
+    nombre: '',
+    no_folio: '',
     descripcion: '',
     imageFolio: [],
     error: false
@@ -30094,6 +30096,18 @@ var Create = function Create() {
   }
 
   function addFolio() {
+    if (values.nombre === '') {
+      setErrorMessagge('Agrega un nombre al folio');
+      setOpen(true);
+      return false;
+    }
+
+    if (values.no_folio === '') {
+      setErrorMessagge('Agrega un número al folio');
+      setOpen(true);
+      return false;
+    }
+
     if (values.descripcion === '') {
       setErrorMessagge('Agrega una descripción del folio');
       setOpen(true);
@@ -30108,6 +30122,8 @@ var Create = function Create() {
 
     var folios = values.folios.slice();
     var folio = {
+      no_folio: values.no_folio,
+      nombre: values.nombre,
       descripcion: values.descripcion,
       imageFolio: values.imageFolio,
       transcriptions: transcriptions
@@ -30117,7 +30133,9 @@ var Create = function Create() {
       return _objectSpread(_objectSpread({}, values), {}, {
         folios: folios,
         imageFolio: [],
-        descripcion: ''
+        descripcion: '',
+        no_folio: '',
+        nombre: ''
       });
     });
     setTranscriptions([]);
@@ -30520,19 +30538,62 @@ var Create = function Create() {
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                 container: true,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
-                  id: "descripcion",
-                  label: "Descripci\xF3n",
-                  required: true,
-                  fullWidth: true,
-                  value: values.descripcion,
-                  onChange: handleChange,
-                  error: errors.descripcion && values.descripcion,
-                  helperText: values.error === true && errors.nombre,
-                  style: {
-                    marginTop: '40px',
-                    marginBottom: '25px'
-                  }
+                spacing: 2,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                  item: true,
+                  xs: 2,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                    id: "no_folio",
+                    label: "N\xFAmero de folio",
+                    required: true,
+                    fullWidth: true,
+                    value: values.no_folio,
+                    onChange: handleChange,
+                    error: errors.errors && values.no_folio,
+                    helperText: values.error === true && errors.no_folio,
+                    style: {
+                      marginTop: '40px',
+                      marginBottom: '0px'
+                    },
+                    type: "number",
+                    InputLabelProps: {
+                      shrink: true
+                    }
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                  item: true,
+                  xs: 10,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                    id: "nombre",
+                    label: "Nombre",
+                    required: true,
+                    fullWidth: true,
+                    value: values.nombre,
+                    onChange: handleChange,
+                    error: errors.nombre && values.nombre,
+                    helperText: values.error === true && errors.nombre,
+                    style: {
+                      marginTop: '40px',
+                      marginBottom: '0px'
+                    }
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                  item: true,
+                  xs: 12,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                    id: "descripcion",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    fullWidth: true,
+                    value: values.descripcion,
+                    onChange: handleChange,
+                    error: errors.descripcion && values.descripcion,
+                    helperText: values.error === true && errors.descripcion,
+                    style: {
+                      marginTop: '30px',
+                      marginBottom: '25px'
+                    }
+                  })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                   container: true,
                   direction: "row",
@@ -30678,7 +30739,7 @@ var Create = function Create() {
                       marginBottom: '10px'
                     },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                      children: ["Folio ", index + 1]
+                      children: ["Folio ", folio.no_folio]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_RemoveCircleOutline__WEBPACK_IMPORTED_MODULE_28__["default"], {
                       style: {
                         color: '#304A71',
@@ -30704,6 +30765,14 @@ var Create = function Create() {
                       xs: 12,
                       md: 9,
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
+                        children: "Nombre"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                        className: "trans-text",
+                        style: {
+                          marginBottom: '15px'
+                        },
+                        children: folio.nombre
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
                         children: "Descripci\xF3n"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         className: "trans-text",

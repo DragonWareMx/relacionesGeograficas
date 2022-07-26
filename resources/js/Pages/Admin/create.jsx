@@ -155,6 +155,8 @@ const Create = () => {
         // mapa_geografico: '',
         mapImages: [],
         folios:[],
+        nombre:'',
+        no_folio:'',
         descripcion:'',
         imageFolio:[],
         error: false
@@ -193,6 +195,16 @@ const Create = () => {
     }
 
     function addFolio(){
+        if(values.nombre === ''){
+            setErrorMessagge('Agrega un nombre al folio');
+            setOpen(true);
+            return false; 
+        }
+        if(values.no_folio === ''){
+            setErrorMessagge('Agrega un número al folio');
+            setOpen(true);
+            return false; 
+        }
         if(values.descripcion === ''){
             setErrorMessagge('Agrega una descripción del folio');
             setOpen(true);
@@ -205,6 +217,8 @@ const Create = () => {
         }
         var folios = values.folios.slice();
         let folio={
+            no_folio:values.no_folio,
+            nombre:values.nombre,
             descripcion:values.descripcion,
             imageFolio:values.imageFolio,
             transcriptions:transcriptions,
@@ -215,6 +229,8 @@ const Create = () => {
             folios: folios,
             imageFolio:[],
             descripcion:'',
+            no_folio:'',
+            nombre:''
         }));
         setTranscriptions([]);
     }
@@ -584,18 +600,51 @@ const Create = () => {
                             >
                                 <Grid
                                     container
+                                    spacing={2}
                                 >
-                                    <TextField
-                                        id='descripcion' 
-                                        label='Descripción' 
-                                        required
-                                        fullWidth
-                                        value={values.descripcion}
-                                        onChange={handleChange} 
-                                        error={errors.descripcion && values.descripcion}
-                                        helperText={values.error === true && errors.nombre}
-                                        style={{marginTop:'40px',marginBottom:'25px'}}
-                                    />
+                                    <Grid item xs={2}>
+                                        <TextField 
+                                            id='no_folio'
+                                            label='Número de folio'
+                                            required
+                                            fullWidth
+                                            value={values.no_folio}
+                                            onChange={handleChange}
+                                            error={errors.errors && values.no_folio}
+                                            helperText={values.error === true && errors.no_folio}
+                                            style={{marginTop:'40px',marginBottom:'0px'}}
+                                            type="number"
+                                            InputLabelProps={{
+                                              shrink: true,
+                                            }}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={10}>
+                                        <TextField
+                                            id='nombre' 
+                                            label='Nombre' 
+                                            required
+                                            fullWidth
+                                            value={values.nombre}
+                                            onChange={handleChange} 
+                                            error={errors.nombre && values.nombre}
+                                            helperText={values.error === true && errors.nombre}
+                                            style={{marginTop:'40px',marginBottom:'0px'}}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            id='descripcion' 
+                                            label='Descripción' 
+                                            required
+                                            fullWidth
+                                            value={values.descripcion}
+                                            onChange={handleChange} 
+                                            error={errors.descripcion && values.descripcion}
+                                            helperText={values.error === true && errors.descripcion}
+                                            style={{marginTop:'30px',marginBottom:'25px'}}
+                                        />
+                                    </Grid>
                                     <Grid
                                         container
                                         direction="row"
@@ -722,7 +771,7 @@ const Create = () => {
                                             alignItems="center"
                                             style={{marginBottom:'10px'}}
                                         >
-                                            <div>Folio {index+1}</div>
+                                            <div>Folio {folio.no_folio}</div>
                                             <RemoveCircleOutlineIcon 
                                                 style={{color:'#304A71',cursor:'pointer'}}
                                                 onClick={()=>removeFolio(index)}
@@ -733,6 +782,8 @@ const Create = () => {
                                                 <img src={URL.createObjectURL(folio.imageFolio[0])} className='folio-preview'/>
                                             </Grid>
                                             <Grid item xs={12} md={9}>
+                                                <Typography>Nombre</Typography>
+                                                <div className='trans-text' style={{marginBottom:'15px'}}>{folio.nombre}</div>
                                                 <Typography>Descripción</Typography>
                                                 <div className='trans-text' style={{marginBottom:'15px'}}>{folio.descripcion}</div>
                                                 <Typography>Transcripciones</Typography>
