@@ -90,52 +90,12 @@ const TranslateButtonActive = styled(Button)(({ theme }) => ({
 }));
 
 const Relacion = ({ relation }) => {
-    console.log(relation);
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(null);
-    // const [data, setData] = useState({
-    //     infoMapa: {
-    //         centro: {
-    //             lat: "20.0853643565",
-    //             long: "-98.76998",
-    //         },
-    //         limites: {
-    //             visible: false,
-    //             nE: {
-    //                 lat: null,
-    //                 long: null,
-    //             },
-    //             nO: {
-    //                 lat: null,
-    //                 long: null,
-    //             },
-    //             sE: {
-    //                 lat: null,
-    //                 long: null,
-    //             },
-    //             sO: {
-    //                 lat: null,
-    //                 long: null,
-    //             },
-    //         },
-    //         zoom: {
-    //             max: 12,
-    //             min: 0,
-    //             inicial: 4,
-    //         },
-    //         mapasBase: {
-    //             0: {
-    //                 nombre: "ESRI",
-    //                 atribution: "ESRI",
-    //                 link: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
-    //             },
-    //         },
-    //     },
-    // });
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/94`)
+            .get(`https://decm.arqueodata.com/api/v1/mapa/`+relation.idDS)
             .then((response) => {
                 setData(response.data);
             })
@@ -148,7 +108,22 @@ const Relacion = ({ relation }) => {
 
     const [contMap, setContMap] = useState("geo");
 
-    const folios = [
+    let folios=[];
+    let textoFolios=[];
+
+    relation.invoices.forEach(folio => {
+        let textos = {};
+        folios.push(folio.imagen);
+        folio.transcriptions.forEach(transcription => {
+            textos[transcription.nombre]=transcription.texto;
+        });
+        textoFolios.push(textos);
+    });
+    
+    console.log(folios);
+
+
+    const foliosa = [
         "/img/provisional/Culhuacan1.jpg",
         "/img/provisional/Culhuacan2.jpg",
         "/img/provisional/Culhuacan3.jpg",
@@ -172,7 +147,7 @@ const Relacion = ({ relation }) => {
 
     const [activeTranslate, setActiveTranslate] = useState("acuna");
 
-    const textoFolios = [
+    const textoFoliosa = [
         {
             acuna: "En el pueblo de Culhuacan desta Nueva España, jurisdicción del corregimiento de Mexicaltzingo y su partido, cuya encomienda es de DON FERNANDO DE OÑATE, hijo legítimo de CRISTÓBAL DE OÑATE,  en diecisiete días del mes de enero de mil y quinientos y ochenta años, el ilustre señor GONZALO GALLEGOS, corregidor del, y por presencia de mí, el escribano y receptor de su Majestad yuso escrito, dijo que, por cuanto su Majestad, por una su Instrucción, tiene proveído y mandado que todos los corregidores y alcaldes mayores desta Nueva España hagan averiguación de la calidad, temple y descripción de la tierra, y otras cosas contenidas en la dicha Instrucción, para  cumplir lo que por ella se manda, como tal corregidor del dicho pueblo y su partido hizo las diligencias siguientes:",
             valadez:
@@ -415,7 +390,13 @@ const Relacion = ({ relation }) => {
                                 </TransformComponent>
                             </TransformWrapper> */}
                             <iframe
-                                src={'/storage/relaciones/Culhuacan_mapa.jpg'}
+                                src={
+                                    relation.maps &&
+                                    relation.maps.length > 0
+                                        ? "/storage/relaciones/" +
+                                          relation.maps[idActive].imagen
+                                        : ""
+                                }
                                 style={{width:'100%',height:'100%'}}
                             >
                             </iframe>
@@ -435,7 +416,7 @@ const Relacion = ({ relation }) => {
                                     <TransformWrapper>
                                         <TransformComponent>
                                             <img
-                                                src={folios[folioActive]}
+                                                src={'/storage/relaciones/'+folios[folioActive]}
                                                 alt=""
                                                 style={{ height: "600px" }}
                                             />

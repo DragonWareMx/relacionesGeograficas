@@ -51,13 +51,12 @@ class RelationController extends Controller
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
             'fuentes' => 'required|string',
-            'mapa_geografico' => 'required|string',
+            'idDS'=>'required|numeric',
 
             'imageBanner' => 'required',
             'imageMin' => 'required',
             'mapImages' => 'required',
             'folios' => 'required',
-            'mapa_geografico' => 'required|url',
 
             'folios' => 'nullable',
             'descripcion' => 'nullable',
@@ -73,7 +72,7 @@ class RelationController extends Controller
         try {
             $relation = new Relation();
             $relation->uuid = Str::uuid();
-            $relation->api = $request->mapa_geografico;
+            $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
             if ($request->imageBanner) {
                 //Se sube foto
@@ -111,6 +110,8 @@ class RelationController extends Controller
                 foreach ($request->folios as $key => $folio) {
                     $folioM = new Invoice;
                     $folioM->uuid = Str::uuid();
+                    $folioM->nombre = $folio["nombre"];
+                    $folioM->folio = $folio["no_folio"];
                     $folioM->descripcion = $folio["descripcion"];
                     
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');

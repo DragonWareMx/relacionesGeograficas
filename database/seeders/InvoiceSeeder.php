@@ -18,6 +18,8 @@ class InvoiceSeeder extends Seeder
         //
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 1,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -25,6 +27,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 2,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -32,6 +36,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 3,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -39,6 +45,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 4,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -46,6 +54,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 5,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -53,6 +63,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 6,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -60,6 +72,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 7,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',
@@ -67,6 +81,8 @@ class InvoiceSeeder extends Seeder
 
         DB::table('invoices')->insert([
             'uuid' => Str::uuid(),
+            'folio' => 8,
+            'nombre' => 'traducción',
             'descripcion' => '',
             'imagen' => 'Culhuacan1.jpg',
             'relation_id' => '1',

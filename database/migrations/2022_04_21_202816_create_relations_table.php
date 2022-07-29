@@ -16,9 +16,8 @@ class CreateRelationsTable extends Migration
         Schema::create('relations', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-
+            $table->unsignedBigInteger('idDS');
             $table->string('nombre', 255);
-            $table->text('api');
             $table->text('banner');
             $table->text('miniatura');
 

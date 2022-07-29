@@ -29857,8 +29857,6 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -30317,12 +30315,13 @@ var Create = function Create() {
     if (!checkInputs()) return false;
     e.preventDefault();
     var finalRelation = JSON.parse(relation);
-    _objectSpread(_objectSpread({}, values), {}, {
+
+    var data = _objectSpread(_objectSpread({}, values), {}, {
       nombre: finalRelation.cNombre,
       idDS: finalRelation.idDS
-    }), _readOnlyError("values");
-    console.log(values);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route('admin.store'), values, {
+    });
+
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route('admin.store'), data, {
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -30490,7 +30489,7 @@ var Create = function Create() {
                     id: "mapImagesContainer",
                     className: errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton',
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                      children: "Agregar mapa"
+                      children: "Agregar mapas"
                     })]
                   })
                 }), values.mapImages && values.mapImages.length > 0 && values.mapImages.map(function (preview, index) {
@@ -31638,7 +31637,6 @@ var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19_
 
 var Relacion = function Relacion(_ref4) {
   var relation = _ref4.relation;
-  console.log(relation);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -31648,49 +31646,10 @@ var Relacion = function Relacion(_ref4) {
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       data = _useState4[0],
-      setData = _useState4[1]; // const [data, setData] = useState({
-  //     infoMapa: {
-  //         centro: {
-  //             lat: "20.0853643565",
-  //             long: "-98.76998",
-  //         },
-  //         limites: {
-  //             visible: false,
-  //             nE: {
-  //                 lat: null,
-  //                 long: null,
-  //             },
-  //             nO: {
-  //                 lat: null,
-  //                 long: null,
-  //             },
-  //             sE: {
-  //                 lat: null,
-  //                 long: null,
-  //             },
-  //             sO: {
-  //                 lat: null,
-  //                 long: null,
-  //             },
-  //         },
-  //         zoom: {
-  //             max: 12,
-  //             min: 0,
-  //             inicial: 4,
-  //         },
-  //         mapasBase: {
-  //             0: {
-  //                 nombre: "ESRI",
-  //                 atribution: "ESRI",
-  //                 link: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
-  //             },
-  //         },
-  //     },
-  // });
-
+      setData = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/94").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
   }, []);
@@ -31704,7 +31663,18 @@ var Relacion = function Relacion(_ref4) {
       contMap = _useState6[0],
       setContMap = _useState6[1];
 
-  var folios = ["/img/provisional/Culhuacan1.jpg", "/img/provisional/Culhuacan2.jpg", "/img/provisional/Culhuacan3.jpg", "/img/provisional/Culhuacan4.jpg", "/img/provisional/Culhuacan5.jpg", "/img/provisional/Culhuacan6.jpg", "/img/provisional/Culhuacan7.jpg", "/img/provisional/Culhuacan8.jpg"];
+  var folios = [];
+  var textoFolios = [];
+  relation.invoices.forEach(function (folio) {
+    var textos = {};
+    folios.push(folio.imagen);
+    folio.transcriptions.forEach(function (transcription) {
+      textos[transcription.nombre] = transcription.texto;
+    });
+    textoFolios.push(textos);
+  });
+  console.log(folios);
+  var foliosa = ["/img/provisional/Culhuacan1.jpg", "/img/provisional/Culhuacan2.jpg", "/img/provisional/Culhuacan3.jpg", "/img/provisional/Culhuacan4.jpg", "/img/provisional/Culhuacan5.jpg", "/img/provisional/Culhuacan6.jpg", "/img/provisional/Culhuacan7.jpg", "/img/provisional/Culhuacan8.jpg"];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
@@ -31728,7 +31698,7 @@ var Relacion = function Relacion(_ref4) {
       activeTranslate = _useState12[0],
       setActiveTranslate = _useState12[1];
 
-  var textoFolios = [{
+  var textoFoliosa = [{
     acuna: "En el pueblo de Culhuacan desta Nueva España, jurisdicción del corregimiento de Mexicaltzingo y su partido, cuya encomienda es de DON FERNANDO DE OÑATE, hijo legítimo de CRISTÓBAL DE OÑATE,  en diecisiete días del mes de enero de mil y quinientos y ochenta años, el ilustre señor GONZALO GALLEGOS, corregidor del, y por presencia de mí, el escribano y receptor de su Majestad yuso escrito, dijo que, por cuanto su Majestad, por una su Instrucción, tiene proveído y mandado que todos los corregidores y alcaldes mayores desta Nueva España hagan averiguación de la calidad, temple y descripción de la tierra, y otras cosas contenidas en la dicha Instrucción, para  cumplir lo que por ella se manda, como tal corregidor del dicho pueblo y su partido hizo las diligencias siguientes:",
     valadez: "In the town of Culhuacan in New Spain, jurisdiction of the township of Mexicaltzingo and its party, whose charge is DON FERNANDO DE OÑATE, legitimate son of CRISTÓBAL DE OÑATE, on the seventeenth day of the month of January, one thousand and five hundred and eighty years old, the illustrious Mr. GONZALO GALLEGOS, mayor of, and in the presence of me, the notary and receiver of His Majesty and I use the writing, said that, since His Majesty, through his Instruction, has provided and ordered that all the mayors and mayors of this New Spain make an investigation of the quality, temper and description of the land, and other things contained in the said Instruction, to comply with what is ordered by it, as such corregidor of the said town and its party did the following steps:",
     garza: "Na cidade de Culhuacan na Nova Espanha, jurisdição da comuna de Mexicaltzingo e sua parte, cujo cargo é DON FERNANDO DE OÑATE, filho legítimo de CRISTÓBAL DE OÑATE, no dia dezessete do mês de janeiro de mil e quinhentos e oitenta anos, o ilustre Sr. GONZALO GALLEGOS, prefeito de, e na minha presença, notário e síndico de Sua Majestade e eu uso a escrita, disse que, já que Sua Majestade, por sua Instrução, providenciou e ordenou que todos os prefeitos e prefeitos desta Nova Espanha fazem uma investigação da qualidade, temperamento e descrição da terra, e outras coisas contidas na referida Instrução, para cumprir o que é ordenado por ela, como corregedor da referida cidade e seus partido fez os seguintes passos:"
@@ -31878,7 +31848,7 @@ var Relacion = function Relacion(_ref4) {
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_33__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "mapaPicto",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("iframe", {
-            src: '/storage/relaciones/Culhuacan_mapa.jpg',
+            src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
             style: {
               width: '100%',
               height: '100%'
@@ -31898,7 +31868,7 @@ var Relacion = function Relacion(_ref4) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                    src: folios[folioActive],
+                    src: '/storage/relaciones/' + folios[folioActive],
                     alt: "",
                     style: {
                       height: "600px"

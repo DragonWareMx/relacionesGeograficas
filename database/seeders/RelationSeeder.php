@@ -18,8 +18,8 @@ class RelationSeeder extends Seeder
         //
         DB::table('relations')->insert([
             'uuid' => '1234567890',
+            'idDS' => 1,
             'nombre' => 'Culhuacan',
-            'api' => '{}',
             'banner' => 'banner_culhuacan.jpg',
             'miniatura' => '/storage/uploads/1234567890/culhuacan.png',
         ]);

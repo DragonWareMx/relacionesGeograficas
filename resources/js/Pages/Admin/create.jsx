@@ -403,11 +403,10 @@ const Create = () => {
     function handleSubmit(e) {
         //Validando que todo esté llenito
         if(!checkInputs()) return false;
-        e.preventDefault()
+        e.preventDefault();
         let finalRelation=JSON.parse(relation);
-        values={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS}
-        console.log(values);
-        Inertia.post(route('admin.store'), values, {
+        let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS}
+        Inertia.post(route('admin.store'), data, {
             onError: () => {
                 setValues((values) => ({
                     ...values,
@@ -559,7 +558,7 @@ const Create = () => {
                                                 className={errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton'}>
                                                 <FileUploadIcon 
                                             />
-                                                <div>Agregar mapa</div>
+                                                <div>Agregar mapas</div>
                                             </div>
                                         </label>
                                         {values.mapImages && values.mapImages.length > 0 && values.mapImages.map((preview, index) => (

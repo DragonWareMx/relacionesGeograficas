@@ -17,6 +17,8 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->uuid('uuid')->unique();
 
+            $table->unsignedBigInteger('folio');
+            $table->string('nombre',255);
             $table->text('descripcion');
             $table->text('imagen');
 
