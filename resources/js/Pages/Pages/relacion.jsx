@@ -1,5 +1,5 @@
 import Layout from "../../layouts/Layout";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -20,6 +20,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { MapInteractionCSS } from "react-map-interaction";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import PanZoomMap from "react-pan-zoom-map";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -95,7 +96,7 @@ const Relacion = ({ relation }) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/`+relation.idDS)
+            .get(`https://decm.arqueodata.com/api/v1/mapa/` + relation.idDS)
             .then((response) => {
                 setData(response.data);
             })
@@ -108,20 +109,19 @@ const Relacion = ({ relation }) => {
 
     const [contMap, setContMap] = useState("geo");
 
-    let folios=[];
-    let textoFolios=[];
+    let folios = [];
+    let textoFolios = [];
 
-    relation.invoices.forEach(folio => {
+    relation.invoices.forEach((folio) => {
         let textos = {};
         folios.push(folio.imagen);
-        folio.transcriptions.forEach(transcription => {
-            textos[transcription.nombre]=transcription.texto;
+        folio.transcriptions.forEach((transcription) => {
+            textos[transcription.nombre] = transcription.texto;
         });
         textoFolios.push(textos);
     });
-    
-    console.log(folios);
 
+    console.log(folios);
 
     const foliosa = [
         "/img/provisional/Culhuacan1.jpg",
@@ -213,6 +213,35 @@ const Relacion = ({ relation }) => {
     function getCoords(coord) {
         return L.latLng(coord.long, coord.lat);
     }
+
+    const refContainer = useRef(null);
+    const refImg = useRef(null);
+    const [width, setWidth] = useState(0);
+    const [ready, setReady] = useState(true);
+
+    const setImageSize = () => {
+        const img = new Image();
+        img.src =
+            relation.maps && relation.maps.length > 0
+                ? "/storage/relaciones/" + relation.maps[idActive].imagen
+                : "";
+
+        img.onload = () => {
+            console.log(img.height);
+            console.log(img.width);
+            let height = img.height;
+            let width = img.width;
+            let newWidth = width * 600;
+            newWidth = newWidth / height;
+            console.log(newWidth);
+            let container = refContainer.current?.offsetWidth;
+            newWidth = newWidth / 2;
+            container = container / 2;
+            setWidth(container - newWidth);
+            setReady(false);
+            setReady(true);
+        };
+    };
 
     return (
         <>
@@ -368,28 +397,37 @@ const Relacion = ({ relation }) => {
                         <LinearProgress />
                     )}
                     {contMap === "picto" && (
-                        <div className="mapaPicto">
-                            {/* <TransformWrapper>
-                                <TransformComponent>
-                                    <img
-                                        src={
-                                            relation.maps &&
-                                            relation.maps.length > 0
-                                                ? "/storage/relaciones/" +
-                                                  relation.maps[idActive].imagen
-                                                : ""
-                                        }
-                                        alt=""
-                                        style={{
-                                            height: "600px",
-                                            marginLeft: "auto",
-                                            marginRight: "auto",
+                        <div className="mapaPicto" ref={refContainer}>
+                            {ready && (
+                                <TransformWrapper
+                                    centerZoomedOut
+                                    initialPositionX={width}
+                                >
+                                    <TransformComponent
+                                        wrapperStyle={{
+                                            width: "100%",
                                         }}
-                                        id='imagenprov'
-                                    />
-                                </TransformComponent>
-                            </TransformWrapper> */}
-                            <iframe
+                                    >
+                                        <img
+                                            src={
+                                                relation.maps &&
+                                                relation.maps.length > 0
+                                                    ? "/storage/relaciones/" +
+                                                      relation.maps[idActive]
+                                                          .imagen
+                                                    : ""
+                                            }
+                                            alt=""
+                                            style={{
+                                                height: "600px",
+                                            }}
+                                            id="imagenprov"
+                                            ref={refImg}
+                                        />
+                                    </TransformComponent>
+                                </TransformWrapper>
+                            )}
+                            {/* <iframe
                                 src={
                                     relation.maps &&
                                     relation.maps.length > 0
@@ -399,7 +437,7 @@ const Relacion = ({ relation }) => {
                                 }
                                 style={{width:'100%',height:'100%'}}
                             >
-                            </iframe>
+                            </iframe> */}
                         </div>
                     )}
                     {contMap === "lienzo" && (
@@ -416,7 +454,10 @@ const Relacion = ({ relation }) => {
                                     <TransformWrapper>
                                         <TransformComponent>
                                             <img
-                                                src={'/storage/relaciones/'+folios[folioActive]}
+                                                src={
+                                                    "/storage/relaciones/" +
+                                                    folios[folioActive]
+                                                }
                                                 alt=""
                                                 style={{ height: "600px" }}
                                             />
@@ -469,6 +510,7 @@ const Relacion = ({ relation }) => {
                                 onClick={() => {
                                     setContMap("picto");
                                     setIdActive(0);
+                                    setImageSize();
                                 }}
                             ></div>
                             <div className="round-button-text">
@@ -498,7 +540,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini1.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -512,7 +554,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini2.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -526,7 +568,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini3.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -540,7 +582,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini4.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -554,7 +596,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini5.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -568,7 +610,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini6.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -582,7 +624,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini7.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                             <SwiperSlide
@@ -596,7 +638,7 @@ const Relacion = ({ relation }) => {
                                             : "oski-customGallery-miniPhoto"
                                     }
                                     src={"/img/provisional/Cul_mini8.jpg"}
-                                    style={{width:'66px',height:'100px'}}
+                                    style={{ width: "66px", height: "100px" }}
                                 />
                             </SwiperSlide>
                         </Swiper>
