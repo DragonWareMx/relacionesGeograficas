@@ -17,6 +17,17 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js ***!
@@ -31503,46 +31514,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
-/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-map-interaction */ "./node_modules/react-map-interaction/dist/react-map-interaction.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_map_interaction__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
-/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
-/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
-/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
-/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
+/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
+/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-map-interaction */ "./node_modules/react-map-interaction/dist/react-map-interaction.js");
+/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_map_interaction__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
+/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
+/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
+/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
+/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -31593,8 +31612,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-swiper__WEBPACK_IMPORTED_MODULE_5__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_5__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_5__.Navigation]);
-var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref) {
+swiper__WEBPACK_IMPORTED_MODULE_6__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_6__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation]);
+var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
     color: "#ffffff",
@@ -31607,7 +31626,7 @@ var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default
     fontFamily: "Nunito"
   };
 });
-var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref2) {
+var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref2) {
   var theme = _ref2.theme;
   return {
     color: "#ffffff",
@@ -31620,7 +31639,7 @@ var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["def
     fontFamily: "Nunito"
   };
 });
-var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref3) {
+var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref3) {
   var theme = _ref3.theme;
   return {
     color: "#ffffff",
@@ -31638,18 +31657,18 @@ var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19_
 var Relacion = function Relacion(_ref4) {
   var relation = _ref4.relation;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       open = _useState2[0],
       setOpen = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       data = _useState4[0],
       setData = _useState4[1];
 
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_18___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
   }, []);
@@ -31658,109 +31677,118 @@ var Relacion = function Relacion(_ref4) {
     setOpen(!open);
   }
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("geo"),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("geo"),
       _useState6 = _slicedToArray(_useState5, 2),
       contMap = _useState6[0],
       setContMap = _useState6[1];
 
-  var folios = [];
-  var textoFolios = [];
-  relation.invoices.forEach(function (folio) {
-    var textos = {};
-    folios.push(folio.imagen);
-    folio.transcriptions.forEach(function (transcription) {
-      textos[transcription.nombre] = transcription.texto;
-    });
-    textoFolios.push(textos);
-  });
-  console.log(folios);
-  var foliosa = ["/img/provisional/Culhuacan1.jpg", "/img/provisional/Culhuacan2.jpg", "/img/provisional/Culhuacan3.jpg", "/img/provisional/Culhuacan4.jpg", "/img/provisional/Culhuacan5.jpg", "/img/provisional/Culhuacan6.jpg", "/img/provisional/Culhuacan7.jpg", "/img/provisional/Culhuacan8.jpg"];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState8 = _slicedToArray(_useState7, 2),
       folioActive = _useState8[0],
       setFolioActive = _useState8[1];
 
-  var changeFolio = function changeFolio(index) {
-    setContMap("lienzo");
-    setFolioActive(index);
-    setOpen(false);
-    setIdActive(index);
-  };
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState10 = _slicedToArray(_useState9, 2),
-      idActive = _useState10[0],
-      setIdActive = _useState10[1];
+      textActive = _useState10[0],
+      setTextActive = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("acuna"),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
       _useState12 = _slicedToArray(_useState11, 2),
       activeTranslate = _useState12[0],
       setActiveTranslate = _useState12[1];
 
-  var textoFoliosa = [{
-    acuna: "En el pueblo de Culhuacan desta Nueva España, jurisdicción del corregimiento de Mexicaltzingo y su partido, cuya encomienda es de DON FERNANDO DE OÑATE, hijo legítimo de CRISTÓBAL DE OÑATE,  en diecisiete días del mes de enero de mil y quinientos y ochenta años, el ilustre señor GONZALO GALLEGOS, corregidor del, y por presencia de mí, el escribano y receptor de su Majestad yuso escrito, dijo que, por cuanto su Majestad, por una su Instrucción, tiene proveído y mandado que todos los corregidores y alcaldes mayores desta Nueva España hagan averiguación de la calidad, temple y descripción de la tierra, y otras cosas contenidas en la dicha Instrucción, para  cumplir lo que por ella se manda, como tal corregidor del dicho pueblo y su partido hizo las diligencias siguientes:",
-    valadez: "In the town of Culhuacan in New Spain, jurisdiction of the township of Mexicaltzingo and its party, whose charge is DON FERNANDO DE OÑATE, legitimate son of CRISTÓBAL DE OÑATE, on the seventeenth day of the month of January, one thousand and five hundred and eighty years old, the illustrious Mr. GONZALO GALLEGOS, mayor of, and in the presence of me, the notary and receiver of His Majesty and I use the writing, said that, since His Majesty, through his Instruction, has provided and ordered that all the mayors and mayors of this New Spain make an investigation of the quality, temper and description of the land, and other things contained in the said Instruction, to comply with what is ordered by it, as such corregidor of the said town and its party did the following steps:",
-    garza: "Na cidade de Culhuacan na Nova Espanha, jurisdição da comuna de Mexicaltzingo e sua parte, cujo cargo é DON FERNANDO DE OÑATE, filho legítimo de CRISTÓBAL DE OÑATE, no dia dezessete do mês de janeiro de mil e quinhentos e oitenta anos, o ilustre Sr. GONZALO GALLEGOS, prefeito de, e na minha presença, notário e síndico de Sua Majestade e eu uso a escrita, disse que, já que Sua Majestade, por sua Instrução, providenciou e ordenou que todos os prefeitos e prefeitos desta Nova Espanha fazem uma investigação da qualidade, temperamento e descrição da terra, e outras coisas contidas na referida Instrução, para cumprir o que é ordenado por ela, como corregedor da referida cidade e seus partido fez os seguintes passos:"
-  }, {
-    acuna: "Y luego, incontinente, el dicho señor corregidor dijo que, para hacer las dichas diligencias y declaraciones de los naturales del dicho pueblo de Culhuacan, convenía hacer parecer ante sí al gobernador, alcaldes, regidores y principales del, y que, para el dicho efecto, los había mandado venir y estaban presentes, para hacer con ellos la diligencia que conviniese, mediante DIEGO DE PAZ, teniente del dicho partido e intérprete de la lengua mexicana que hablan los dichos indios; y, para ello, le nombró por tal intérprete ante los cuales, y de FRAY JUAN NÚÑEZ, prior del monasterio del SEÑOR SANTO AGUSTÍN del dicho pueblo, que presente estaba y entendía la lengua mexicana. Y se juntaron para este efecto y declaración de la dicha Instrucción, y dijeron y declararon lo siguiente:",
-    valadez: "And then, incontinently, the said corregidor said that, in order to carry out the said proceedings and declarations of the natives of the said town of Culhuacan, it was convenient to make the governor, mayors, aldermen and principals appear before him, and that, for said effect , had ordered them to come and they were present, to do with them the appropriate diligence, through DIEGO DE PAZ, lieutenant of the said party and interpreter of the Mexican language spoken by the said Indians; and, for this, he appointed him by such interpreter before whom, and of FRAY JUAN NÚÑEZ, prior of the monastery of SEÑOR SANTO AGUSTÍN of said town, who was present and understood the Mexican language. And they met for this purpose and declaration of said Instruction, and said and declared the following:",
-    garza: "E então, incontinente, o dito corregedor disse que, para realizar os ditos atos e declarações dos nativos da dita cidade de Culhuacan, era conveniente fazer comparecer perante ele o governador, prefeitos, vereadores e diretores, e que , para o efeito, ordenou-lhes que viessem e estiveram presentes, para fazer com eles as devidas diligências, por intermédio de DIEGO DE PAZ, tenente da referida parte e intérprete da língua mexicana falada pelos referidos índios; e, para isso, o nomeou por tal intérprete perante o qual, e de FRAY JUAN NÚÑEZ, prior do mosteiro de SEÑOR SANTO AGUSTÍN dessa cidade, que estava presente e entendia a língua mexicana. E eles se reuniram para este fim e declaração da referida Instrução, e disseram e declararam o seguinte:"
-  }, {
-    acuna: "Al primero capítulo, dijo el dicho padre prior que este dicho pueblo de Culhuacan, que tiene a su cargo y donde administra los santos sacramentos, tiene dos nombres: el uno, profano y gentílico, de que los naturales dél usaban en tiempo de su gentilidad, y al presente lo usan, que es Culhuacan.  Y dijo que el nombre antiguo, en nuestro lenguaje, es “una punta de cerro corvado”. \n  Al segundo capítulo, dijeron los dichos señor corregidor y padre prior que la conquista y conquistador del dicho pueblo y su comarca fue el mismo que ganó y conquistó a la ciudad de México, de la cual dista dos leguas el dicho pueblo.\n Al tercero capítulo, dijeron que el dicho pueblo es algo frío y de el mismo temple que México, y está fundado en la Laguna todo él, y pasa por medio una acequia principal que va a la ciudad de México, y por ella andan los naturales en sus canoas de madera.  Y, de ordinario, hay mucha agua en la dicha Laguna y acequia, y en especial en tiempo de aguas, y, a esta causa, es húmedo. Y todo el año corren en él los vientos, y en especial, desde enero en adelante, es más ordinario ventar el norte en él.",
-    valadez: "In the first chapter, I said that the priest prior said that this villager of Culhuacan, who was in charge and where he administered the holy sacraments, had two names: the one, profane and gentile, of which the naturales of the usaban in time of su gentilidad, y al presente lo usan, que es Culhuacan. And he says that the old name, in our language, is “una point of cerro corvado”. \n In the second chapter, he said the señor corregidor and the priest prior who conquered the city and the conqueror of the said pueblo and its region was the same as the one who won and conquered the city of Mexico, from where the city is distant from the leagues.\n In the third chapter, I said that the pueblo is something cold and the mismo temple that Mexico, and is founded in the entire Lagoon, and passes through a main waterway that goes to the city of Mexico, and through it and an los naturales in their wooden canoes. Ordinarily, there is a lot of water in the basin, Laguna and acequia, and especially in the waters, and, for this reason, it is wet. And every year it runs in the winds, and in particular, since it's been in adelante, it's the most ordinary wind in the north.",
-    garza: "Al primero capítulo, dijo el dicho padre prior que este dicho pueblo de Culhuacan, que tiene a su cargo y donde administra los santos sacramentos, tiene dos nombres: el uno, profano y gentílico, de que los naturales dél usaban en tiempo de su gentilidad, y al presente lo usan, que es Culhuacan. Y dijo que el nombre antiguo, en nuestro lenguaje, é “una punta de cerro corvado”. \n No segundo capítulo, dijeron los dichos señor corregidor y padre prior que la conquista y conquistador del dicho pueblo y su comarca fue el mismo que ganó y conquistó a la ciudad de Mexico, de la cual dista dos leguas el dicho pueblo.\n Al tercero capítulo, dijeron que el dicho pueblo es algo frío y de el mismo temple que México, y está fundado em la Laguna todo él, y pasa por medio una acequia principal que va a la ciudad de México, y por ella andan los naturales em sus canoas de madera. Y, de ordinario, hay mucha agua en la dicha Laguna y acequia, y en especial en tiempo de aguas, y, a esta causa, es húmedo. Y todo el año corren en él los vientos, y en especial, desde enero en adelante, es más ordinario ventar el norte en él."
-  }, {
-    acuna: "Al cuarto capítulo, dijeron que el dicho pueblo es tierra llana y fresco, de muchas fuentes y manantiales de agua, ansí en tierra como en la laguna; y toda la dicha agua se convierte en la dicha Laguna, porque luego entra en ella. Y es tierra abundosa de maíz y de pastos cuando hay pocas aguas, a causa de la dicha Laguna y fuentes; porque se suelen anegar, como de presente están anegadas, muchas tierras de los dichos naturales, en que siembran. Críanse en él arboledas de sauces y cañaverales, y carrizos que se dan en la Laguna.",
-    valadez: "In the fourth chapter, they said that said town is flat and cool land, with many fountains and springs of water, both on land and in the lagoon; and all the said water becomes the said Lagoon, because then it enters it. And it is an abundant land of corn and pastures when there is little water, because of the said Lagoon and springs; because they are usually flooded, as they are now flooded, many lands of the natural sayings, in which they sow. Groves of willows and reeds grow in it, and reeds that grow in the Lagoon.",
-    garza: "No capítulo quarto, diziam que a referida vila é de terra plana e fresca, com muitas fontes e nascentes de água, tanto em terra como na lagoa; e toda a dita água torna-se a dita Lagoa, porque então entra nela. E é uma terra abundante de milho e pastagens quando há pouca água, por causa da dita Lagoa e nascentes; porque geralmente são inundadas, como agora estão inundadas, muitas terras dos ditos naturais, em que semeiam. Nele crescem salgueiros e juncos, e juncos que crescem na Lagoa."
-  }, {
-    acuna: "Al quinto capítulo, dijeron que este dicho pueblo de Culhuacan tiene novecientos tributarios enteros, sin contar los muchachos: que, cada tributario entero, son dos personas, y, una, hace medio. Y, en tiempos pasados, y después de conquistados, eran muy muchos más, y con enfermedades que han tenido, y en especial de pestilencias, que ellos llaman COCOLIZTE, se han muerto. Es pueblo fundado y poblado en orden, con sus calles y plazas. Su lengua, trato y manera de vivir de los dichos naturales dél, es como los de México, porque son todos mexicanos. Y, en general, se ocupan todos en llevar, en sus canoas, yerbas y piedra a vender a México.",
-    valadez: "In the fifth chapter, they said that this said town of Culhuacan has nine hundred entire tributaries, not counting the boys: that each entire tributary is two people, and one makes up half. And, in past times, and after they were conquered, there were many more, and with diseases that they have had, and especially pestilences, which they call COCOLIZTE, they have died. It is a town founded and populated in order, with its streets and squares. His language, treatment and way of living of the natural sayings of him, is like those of Mexico, because they are all Mexicans. And, in general, they all take care of carrying, in their canoes, herbs and stone to sell to Mexico.",
-    garza: "No quinto capítulo, eles disseram que esta cidade de Culhuacan tem novecentos afluentes inteiros, sem contar os meninos: que cada afluente inteiro é duas pessoas, e uma é a metade. E, em tempos passados, e depois de conquistados, foram muitos mais, e com as doenças que tiveram, e principalmente as pestilências, que chamam de COCOLIZTE, morreram. É uma cidade fundada e povoada em ordem, com suas ruas e praças. Sua linguagem, tratamento e modo de viver dos ditos naturais dele, é como os do México, porque são todos mexicanos. E, em geral, todos se encarregam de carregar, em suas canoas, ervas e pedras para vender ao México."
-  }, {
-    acuna: "Al sexto capítulo, dijeron que el dicho pueblo está en la altura y elevación que la ciudad de México, y que, el día de SAN BERNABÉ a medio día, está el sol en el medio cenit. Al octavo capítulo, dijeron que el dicho pueblo está a dos leguas de la ciudad de México, y a un cuarto de legua de los pueblos de Iztapalapa, Mexicaltzingo y Ocholobusco, poco más o menos; y a dos leguas del pueblo de Suchimilco, y a otras dos del pueblo de Cuitlahuaca. Y las leguas son comunes, y, toda, tierra llana, de buenos caminos y derechos. Con todos los cuales dichos pueblos parte términos.",
-    valadez: "In the sixth chapter, they said that said town is at the height and elevation of Mexico City, and that, on the day of SAN BERNABÉ at noon, the sun is at mid-zenith. In the eighth chapter, they said that the said town is two leagues from the city of Mexico, and a quarter of a league from the towns of Iztapalapa, Mexicaltzingo and Ocholobusco, a little more or less; and two leagues from the town of Suchimilco, and another two from the town of Cuitlahuaca. And the leagues are common, and, all, flat land, with good roads and rights. With all of whom said peoples part terms.",
-    garza: "No sexto capítulo, diziam que a dita cidade está à altura e elevação da Cidade do México, e que, no dia de SAN BERNABÉ ao meio-dia, o sol está no meio do zênite. No oitavo capítulo, diziam que a dita cidade fica a duas léguas da cidade do México, e um quarto de légua das cidades de Iztapalapa, Mexicaltzingo e Ocholobusco, um pouco mais ou menos; e duas léguas da cidade de Suchimilco, e outras duas da cidade de Cuitlahuaca. E as léguas são comuns, e, todas, planas, com boas estradas e direitos. Com todos os quais disse que os povos se separam."
-  }, {
-    acuna: "A los quince capítulos, dijeron que los naturales del dicho pueblo de Culhuacan tenían guerra, por mandado de MONTEZUMA, con los de Huexotzingo y Tlaxcala y otras partes, que eran contrarios del dicho MONTEZUMA. Y traían, en aquel tiempo, puestos unos pañetes por la cintura y, todo lo demás, en cueros, sin otra cosa. Y sus armas eran arcos, flechas, y macanas y rodelas. Andan, ahora, vestidos con camisas, zaragüelles y mantas blancas largas, todo de lienzo de la tierra, y en este hábito andan, y, en general, traen todos zapatos y sombreros. Su comida ordinaria es maíz, y yerbas que llaman QUILITES, y pescadillos de la Laguna; su especia es chile y tomates, y comen muchas veces carne. Las enfermedades que tienen son ordinarias, excepto cuando hay alguna pestilencia, como de presente, que mueren muchos de pujamiento de sangre.",
-    valadez: "After fifteen chapters, they said that the natives of the said town of Culhuacan were at war, by order of MONTEZUMA, with those of Huexotzingo and Tlaxcala and other parts, who were contrary to said MONTEZUMA. And they wore, at that time, some scarves around their waists and everything else, in leathers, without anything else. And their weapons were bows, arrows, clubs and shields. They now walk dressed in shirts, zaragüelles, and long white blankets, all made of cloth from the land, and they walk in this habit, and, in general, they all wear shoes and hats. Their ordinary food is corn, and herbs that they call QUILITES, and little fish from the Lagoon; their spice is chili and tomatoes, and they often eat meat. The illnesses they have are ordinary, except when there is some pestilence, as in the present, when many die of bloodshed.",
-    garza: "Depois de quinze capítulos, eles disseram que os nativos da dita cidade de Culhuacan estavam em guerra, por ordem de MONTEZUMA, com os de Huexotzingo e Tlaxcala e outras partes, que eram contrários a dita MONTEZUMA. E eles usavam, naquela época, alguns lenços na cintura e tudo mais, em couro, sem mais nada. E suas armas eram arcos, flechas, porretes e escudos. Eles agora andam vestidos com camisas, zaragüelles e longas mantas brancas, todas feitas de panos da terra, e andam com esse hábito e, em geral, todos usam sapatos e chapéus. Sua comida comum é milho e ervas que eles chamam de QUILITES, e peixinhos da Lagoa; seu tempero é pimenta e tomate, e muitas vezes comem carne. As doenças que eles têm são comuns, exceto quando há alguma pestilência, como no presente, quando muitos morrem de derramamento de sangue."
-  }, {
-    acuna: "A los veinte capítulos, dijeron que, en el monasterio del dicho pueblo, hay una fuente que hace un estanque grande, y, junto al dicho pueblo, otra fuente que llaman “del Estrella”, el agua de la cual se lleva a México, porque es de la mejor que hay en todo este reino. Hay en el dicho pueblo un molino y batán en que se hace papel, y procede de una fuente en donde está asentado. Hay, también, otras fuentes y manantiales, como está dicho. A los veinte y tres capítulos, dijeron que hay en el dicho pueblo algunas huertezuelas, en que hay árboles frutales de España, que dan fruto de membrillo, manzana, durazno y albaricoques, y otros árboles.",
-    valadez: "After twenty chapters, they said that, in the monastery of the said town, there is a fountain that makes a large pond, and, next to the said town, another fountain that they call “del Estrella”, the water from which is taken to Mexico, because it is the best there is in this whole kingdom. There is in the said town a mill and fulling mill in which paper is made, and it comes from a source where it is settled. There are also other fountains and springs, as has been said. At twenty-three chapters, they said that there are some orchards in the said town, in which there are fruit trees from Spain, which bear quince, apple, peach and apricot fruit, and other trees.",
-    garza: "Depois de vinte capítulos, diziam que, no mosteiro da dita vila, há uma fonte que faz um grande lago, e, junto à dita vila, outra fonte que chamam “del Estrella”, cuja água é retirada. para o México, porque é o melhor que existe em todo este reino. Existe na referida vila um moinho e um moinho onde se fabrica o papel, e este provém de uma fonte onde se instala. Existem também outras fontes e nascentes, como já foi dito. Em vinte e três capítulos, disseram que há alguns pomares na referida cidade, nos quais há árvores frutíferas da Espanha, que dão frutos de marmelo, macieira, pêssego e damasco, e outras árvores."
-  }];
+  function changeFolio(_x, _x2) {
+    return _changeFolio.apply(this, arguments);
+  }
+
+  function _changeFolio() {
+    _changeFolio = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(invoice, index) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setContMap("lienzo");
+              setFolioActive(invoice);
+
+              if (invoice.transcriptions && invoice.transcriptions.length > 0) {
+                setTextActive(invoice.transcriptions[0].texto);
+                setActiveTranslate(0);
+              } else {
+                setTextActive(null);
+                setActiveTranslate(0);
+              }
+
+              setOpen(false);
+              setIdActive(index);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _changeFolio.apply(this, arguments);
+  }
+
+  function changeText(_x3, _x4) {
+    return _changeText.apply(this, arguments);
+  }
+
+  function _changeText() {
+    _changeText = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(text, index) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              setTextActive(text);
+              setActiveTranslate(index);
+
+            case 2:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _changeText.apply(this, arguments);
+  }
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      idActive = _useState14[0],
+      setIdActive = _useState14[1];
   /** Leaflet **/
 
-  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.BaseLayer,
-      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.Overlay;
-  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_13___default().icon({
-    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_15__["default"],
-    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_16__["default"]
+
+  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl.BaseLayer,
+      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl.Overlay;
+  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_14___default().icon({
+    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_16__["default"],
+    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_17__["default"]
   });
-  (leaflet__WEBPACK_IMPORTED_MODULE_13___default().Marker.prototype.options.icon) = DefaultIcon;
+  (leaflet__WEBPACK_IMPORTED_MODULE_14___default().Marker.prototype.options.icon) = DefaultIcon;
   var styleMap = {
     width: "100%",
     height: "600px"
   };
 
   function getCoords(coord) {
-    return leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(coord["long"], coord.lat);
+    return leaflet__WEBPACK_IMPORTED_MODULE_14___default().latLng(coord["long"], coord.lat);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
       container: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
         item: true,
         xs: 12,
         style: {
           backgroundColor: "#193661"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
             href: "/",
             style: {
               display: "flex",
@@ -31769,7 +31797,7 @@ var Relacion = function Relacion(_ref4) {
               color: "white",
               width: "max-content"
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_25__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("p", {
               style: {
                 fontSize: "20px"
               },
@@ -31778,48 +31806,48 @@ var Relacion = function Relacion(_ref4) {
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
       maxWidth: "xl",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
         className: contMap === "lienzo" ? "map-container grid-lienzo" : "map-container",
-        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.MapContainer, {
+        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.MapContainer, {
             style: styleMap,
-            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
+            center: leaflet__WEBPACK_IMPORTED_MODULE_14___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
             zoom: data.infoMapa.zoom.inicial,
             minZoom: data.infoMapa.zoom.min,
             maxZoom: data.infoMapa.zoom.max,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl, {
               position: "topleft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(BaseLayer, {
                 checked: true,
                 name: "ESRI Satellite",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.TileLayer, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.TileLayer, {
                   attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
                   url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
                 })
               }), Object.values(data.infoMapa.mapasBase).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(BaseLayer, {
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.TileLayer, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.TileLayer, {
                     attribution: item.atribution,
                     url: item.link
                   })
                 });
               }), Object.values(data.capas).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(Overlay, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(Overlay, {
                   checked: true,
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.LayerGroup, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.LayerGroup, {
                     children: Object.values(item.elementos).map(function (el, ind) {
                       if (el.tipo === "punto") {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.CircleMarker, {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.CircleMarker, {
                           center: getCoords(el.coordenadas),
                           radius: 4,
                           color: el.simbolo.color,
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.Popup, {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.Popup, {
                             children: el.popup
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.Tooltip, {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.Tooltip, {
                             children: el.nombre
                           })]
                         });
@@ -31827,7 +31855,7 @@ var Relacion = function Relacion(_ref4) {
 
                       if (el.tipo === "geojson" && ind !== 4) {
                         try {
-                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.GeoJSON, {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.GeoJSON, {
                             data: el.coordenadas
                           }, ind);
                         } catch (error) {// console.log(
@@ -31838,37 +31866,37 @@ var Relacion = function Relacion(_ref4) {
                     })
                   }, item.nombre)
                 });
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.ScaleControl, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_33__.ScaleControl, {
                 position: "bottomright",
                 metric: true,
                 imperial: true
               })]
             })
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_33__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_34__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
           className: "mapaPicto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("iframe", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("iframe", {
             src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
             style: {
               width: '100%',
               height: '100%'
             }
           })
-        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
             container: true,
             spacing: 5,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
               xs: 6,
               style: {
                 display: "flex",
                 justifyContent: "flex-end"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                    src: '/storage/relaciones/' + folios[folioActive],
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                    src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
                       height: "600px"
@@ -31876,255 +31904,140 @@ var Relacion = function Relacion(_ref4) {
                   })
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
               xs: 6,
               style: {
                 display: "flex",
                 justifyContent: "flex-start"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                 className: "lienzo-text",
-                children: textoFolios[folioActive][activeTranslate]
+                children: textActive ? textActive : 'Sin Transcripción'
               })
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
         className: "container-controls",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
             className: contMap === "geo" && idActive == 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("geo");
               setIdActive(0);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa geogr\xE1fico"
           })]
-        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
             className: contMap === "picto" && idActive === 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("picto");
               setIdActive(0);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa pictogr\xE1fico 1"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
           className: "swiper-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
             spaceBetween: 15,
             freeMode: false,
             effect: "coverflow",
             grabCursor: true,
             slidesPerView: 5,
             navigation: true,
-            modules: [swiper__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_5__.FreeMode],
+            modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
             className: "leo-swiper",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(0);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 0 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini1.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(1);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 1 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini2.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(2);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 2 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini3.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(3);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 3 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini4.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(4);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 4 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini5.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(5);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 5 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini6.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(6);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 6 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini7.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(7);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 7 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini8.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            })]
+            children: relation && relation.invoices.map(function (invoice, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+                className: "mini-photo-container",
+                onClick: function onClick() {
+                  return changeFolio(invoice, index);
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                  className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
+                  src: "/storage/relaciones/" + invoice.imagen,
+                  style: {
+                    width: '66px',
+                    height: '100px'
+                  }
+                })
+              }, index);
+            })
           })
-        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
           className: "translate-container",
-          children: [activeTranslate == "acuna" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("acuna");
-            },
-            children: "Acu\xF1a"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("acuna");
-            },
-            children: "Acu\xF1a"
-          }), activeTranslate == "valadez" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("valadez");
-            },
-            children: "Valadez"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("valadez");
-            },
-            children: "Valadez"
-          }), activeTranslate == "garza" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("garza");
-            },
-            children: "De la Garza"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("garza");
-            },
-            children: "De la Garza"
-          })]
+          children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
+            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(TranslateButtonActive, {
+              variant: "contained",
+              size: "large",
+              onClick: function onClick() {
+                return changeText(transcription.texto, index);
+              },
+              children: transcription.nombre
+            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(TranslateButton, {
+              variant: "contained",
+              size: "large",
+              onClick: function onClick() {
+                return changeText(transcription.texto, index);
+              },
+              children: transcription.nombre
+            }, index);
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
         className: "container-controls",
         children: relation.maps && relation.maps.length > 0 && relation.maps.map(function (map, index) {
           if (index === 0) return;
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
             className: "round-button-container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
               className: contMap == "picto" && idActive === index ? "round-button active" : "round-button",
               onClick: function onClick() {
                 setContMap("picto");
                 setIdActive(index);
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
               className: "round-button-text",
               children: ["Mapa pictogr\xE1fico ", index + 1]
             })]
           });
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
         style: {
           marginTop: 50,
           width: "100%",
           marginBottom: 70
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
           container: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
             item: true,
             xs: 9,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
               className: "info-text-relacion",
-              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
+              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
             item: true,
             xs: 3,
             style: {
               display: "flex",
               justifyContent: "center"
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
               href: route("sources.index", relation.uuid),
               style: {
                 textDecoration: "none"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(ColorButton, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(ColorButton, {
                 variant: "contained",
                 size: "large",
                 children: "Ver Fuentes"
@@ -32133,163 +32046,163 @@ var Relacion = function Relacion(_ref4) {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
       className: "footer-all-folios",
       style: {
         position: "static"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
         maxWidth: "xl",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
           className: "folios-button",
           style: {
             cursor: "pointer"
           },
           onClick: toggleDrawer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_34__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_35__["default"], {
             style: {
               marginRight: 10
             }
           }), " Ver todos los folios"]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_35__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_36__["default"], {
       anchor: "bottom",
       open: open //onClose={toggleDrawer}
       ,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
         className: "drawer-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
             container: true,
             spacing: 8,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 0 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini1.jpg",
                   onClick: function onClick() {
                     return changeFolio(0);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 1"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 1 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini2.jpg",
                   onClick: function onClick() {
                     return changeFolio(1);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 2"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 2 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini3.jpg",
                   onClick: function onClick() {
                     return changeFolio(2);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 3"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 3 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini4.jpg",
                   onClick: function onClick() {
                     return changeFolio(3);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 4"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 4 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini5.jpg",
                   onClick: function onClick() {
                     return changeFolio(4);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 5"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 5 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini6.jpg",
                   onClick: function onClick() {
                     return changeFolio(5);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 6"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 6 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini7.jpg",
                   onClick: function onClick() {
                     return changeFolio(6);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 7"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 7 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini8.jpg",
                   onClick: function onClick() {
                     return changeFolio(7);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
                   children: "Folio 8"
                 })]
               })
             })]
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
         className: "footer-all-folios",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
             className: "folios-button",
             style: {
               cursor: "pointer"
             },
             onClick: toggleDrawer,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_36__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_37__["default"], {
               style: {
                 marginRight: 10
               }
@@ -32302,7 +32215,7 @@ var Relacion = function Relacion(_ref4) {
 };
 
 Relacion.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: page,
     title: "Relaciones Geogr\xE1ficas",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -32981,7 +32894,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 100%;\r\n    height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 40%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: space-around;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 100%;\r\n    height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 50%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -85149,6 +85062,770 @@ if (false) {} else {
 
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-jsx-runtime.development.js */ "./node_modules/react/cjs/react-jsx-runtime.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  define(IteratorPrototype, iteratorSymbol, function () {
+    return this;
+  });
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = GeneratorFunctionPrototype;
+  define(Gp, "constructor", GeneratorFunctionPrototype);
+  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+    return this;
+  });
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  define(Gp, iteratorSymbol, function() {
+    return this;
+  });
+
+  define(Gp, "toString", function() {
+    return "[object Generator]";
+  });
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, in modern engines
+  // we can explicitly access globalThis. In older engines we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  if (typeof globalThis === "object") {
+    globalThis.regeneratorRuntime = runtime;
+  } else {
+    Function("r", "regeneratorRuntime = r")(runtime);
+  }
 }
 
 

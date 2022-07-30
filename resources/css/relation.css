@@ -8,6 +8,7 @@
 .container-controls {
     display: flex;
     margin-top: 25px;
+    padding: 0px;
 }
 
 .round-button {
@@ -51,6 +52,7 @@
     width: 100px;
     object-fit: cover;
     height: 140px;
+    cursor: pointer;
 }
 
 .oski-customGallery-miniPhoto.active {
@@ -77,10 +79,12 @@
 
 .translate-container {
     display: flex;
-    width: 40%;
+    width: 50%;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap:15px;
 }
 
 .footer-all-folios {
