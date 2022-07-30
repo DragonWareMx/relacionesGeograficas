@@ -9,7 +9,6 @@ import "../../../css/relation.css";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Drawer from "@mui/material/Drawer";
-import { LinearProgress } from "@mui/material";
 
 //iconos
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -18,9 +17,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SwiperCore, { Navigation, Virtual, FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { MapInteractionCSS } from "react-map-interaction";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import PanZoomMap from "react-pan-zoom-map";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -208,7 +205,7 @@ const Relacion = ({ relation }) => {
                             : "map-container"
                     }
                 >
-                    {contMap === "geo" && data ? (
+                    {contMap === "geo" && data && (
                         <div>
                             <MapContainer
                                 style={styleMap}
@@ -327,8 +324,6 @@ const Relacion = ({ relation }) => {
                                 </LayersControl>
                             </MapContainer>
                         </div>
-                    ) : (
-                        <LinearProgress />
                     )}
                     {contMap === "picto" && (
                         <div className="mapaPicto" ref={refContainer}>
@@ -354,6 +349,7 @@ const Relacion = ({ relation }) => {
                                             alt=""
                                             style={{
                                                 height: "600px",
+                                                width: '100%'
                                             }}
                                             id="imagenprov"
                                             ref={refImg}
@@ -361,17 +357,6 @@ const Relacion = ({ relation }) => {
                                     </TransformComponent>
                                 </TransformWrapper>
                             )}
-                            {/* <iframe
-                                src={
-                                    relation.maps &&
-                                    relation.maps.length > 0
-                                        ? "/storage/relaciones/" +
-                                          relation.maps[idActive].imagen
-                                        : ""
-                                }
-                                style={{width:'100%',height:'100%'}}
-                            >
-                            </iframe> */}
                         </div>
                     )}
                     {contMap === "lienzo" && (
@@ -379,7 +364,8 @@ const Relacion = ({ relation }) => {
                             <Grid container spacing={5}>
                                 <Grid
                                     item
-                                    xs={6}
+                                    xs={12}
+                                    md={7}
                                     style={{
                                         display: "flex",
                                         justifyContent: "flex-end",
@@ -390,14 +376,15 @@ const Relacion = ({ relation }) => {
                                             <img
                                                 src={'/storage/relaciones/'+folioActive?.imagen}
                                                 alt=""
-                                                style={{ height: "600px" }}
+                                                style={{ height: "600px", width:'100%'}}
                                             />
                                         </TransformComponent>
                                     </TransformWrapper>
                                 </Grid>
                                 <Grid
                                     item
-                                    xs={6}
+                                    xs={12}
+                                    md={5}
                                     style={{
                                         display: "flex",
                                         justifyContent: "flex-start",
@@ -521,6 +508,7 @@ const Relacion = ({ relation }) => {
                                         onClick={() => {
                                             setContMap("picto");
                                             setIdActive(index);
+                                            setImageSize();
                                         }}
                                     ></div>
                                     <div className="round-button-text">
@@ -532,36 +520,33 @@ const Relacion = ({ relation }) => {
                 </div>
 
                 <div style={{ marginTop: 50, width: "100%", marginBottom: 70 }}>
-                    <Grid container>
-                        <Grid item xs={9}>
-                            <div className="info-text-relacion">
-                                Relación de la Alcaldía Mayor de Metzititlán y
-                                su Jurisdicción
-                                <br />
-                                Reproducción por cortesía de la Benson Latin
-                                America Collection. The General Libraries, The
-                                University of Texas Austin (JGI-XXIV-12).
-                            </div>
+                    <div style={{width:'90%', marginLeft:'auto', marginRight:'auto'}}>
+                        <Grid container justifyContent={'space-between'}>
+                            <Grid item sm={7} xs={12}>
+                                <div className="info-text-relacion">
+                                    Relación de la Alcaldía Mayor de Metzititlán y
+                                    su Jurisdicción
+                                    <br />
+                                    Reproducción por cortesía de la Benson Latin
+                                    America Collection. The General Libraries, The
+                                    University of Texas Austin (JGI-XXIV-12).
+                                </div>
+                            </Grid>
+                            <Grid item sm={5} xs={12}>
+                                {/* reemplazar por el uuid de la relacion por fa */}
+                                <Grid container justifyContent={'right'} sx={{mt:{xs:3, sm:0}}}>
+                                    <InertiaLink
+                                        href={route("sources.index", relation.uuid)}
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        <ColorButton variant="contained" size={"large"}>
+                                            Ver Fuentes
+                                        </ColorButton>
+                                    </InertiaLink>
+                                </Grid>
+                            </Grid>
                         </Grid>
-                        <Grid
-                            item
-                            xs={3}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            {/* reemplazar por el uuid de la relacion por fa */}
-                            <InertiaLink
-                                href={route("sources.index", relation.uuid)}
-                                style={{ textDecoration: "none" }}
-                            >
-                                <ColorButton variant="contained" size={"large"}>
-                                    Ver Fuentes
-                                </ColorButton>
-                            </InertiaLink>
-                        </Grid>
-                    </Grid>
+                    </div>
                 </div>
             </Container>
             {/* Boton estilo footer */}
@@ -585,134 +570,25 @@ const Relacion = ({ relation }) => {
                 <div className="drawer-content">
                     <Container maxWidth={"xl"}>
                         <Grid container spacing={8}>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 0
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini1.jpg"}
-                                        onClick={() => changeFolio(0)}
-                                    />
-                                    <div>Folio 1</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 1
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini2.jpg"}
-                                        onClick={() => changeFolio(1)}
-                                    />
-                                    <div>Folio 2</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 2
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini3.jpg"}
-                                        onClick={() => changeFolio(2)}
-                                    />
-                                    <div>Folio 3</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 3
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini4.jpg"}
-                                        onClick={() => changeFolio(3)}
-                                    />
-                                    <div>Folio 4</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 4
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini5.jpg"}
-                                        onClick={() => changeFolio(4)}
-                                    />
-                                    <div>Folio 5</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 5
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini6.jpg"}
-                                        onClick={() => changeFolio(5)}
-                                    />
-                                    <div>Folio 6</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 6
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini7.jpg"}
-                                        onClick={() => changeFolio(6)}
-                                    />
-                                    <div>Folio 7</div>
-                                </div>
-                            </Grid>
-                            <Grid item>
-                                <div
-                                    className={
-                                        contMap == "lienzo" && idActive == 7
-                                            ? "folio-mini-container active"
-                                            : "folio-mini-container"
-                                    }
-                                >
-                                    <img
-                                        className=""
-                                        src={"/img/provisional/Cul_mini8.jpg"}
-                                        onClick={() => changeFolio(7)}
-                                    />
-                                    <div>Folio 8</div>
-                                </div>
-                            </Grid>
+                            {relation && relation.invoices.map((invoice, index) => (
+                                <Grid item>
+                                    <div
+                                        key={index}
+                                        className={
+                                            contMap == "lienzo" && idActive == index
+                                                ? "folio-mini-container active"
+                                                : "folio-mini-container"
+                                        }
+                                    >
+                                        <img
+                                            style={{width:100,height:139,objectFit:'cover'}}
+                                            src={"/storage/relaciones/"+invoice.imagen}
+                                            onClick={() => changeFolio(invoice, index)}
+                                        />
+                                        <div>Folio 1</div>
+                                    </div>
+                                </Grid>
+                            ))}
                         </Grid>
                     </Container>
                 </div>

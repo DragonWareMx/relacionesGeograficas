@@ -10726,429 +10726,6 @@ const inputClasses = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MOD
 
 /***/ }),
 
-/***/ "./node_modules/@mui/material/LinearProgress/LinearProgress.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@mui/material/LinearProgress/LinearProgress.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/composeClasses/composeClasses.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/system */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/material/node_modules/@mui/system/esm/colorManipulator.js");
-/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@mui/material/utils/capitalize.js");
-/* harmony import */ var _styles_useTheme__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../styles/useTheme */ "./node_modules/@mui/material/styles/useTheme.js");
-/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var _linearProgressClasses__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./linearProgressClasses */ "./node_modules/@mui/material/LinearProgress/linearProgressClasses.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["className", "color", "value", "valueBuffer", "variant"];
-
-let _ = t => t,
-    _t,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6;
-
-
-
-
-
-
-
-
-
-
-
-
-
-const TRANSITION_DURATION = 4; // seconds
-
-const indeterminate1Keyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t || (_t = _`
-  0% {
-    left: -35%;
-    right: 100%;
-  }
-
-  60% {
-    left: 100%;
-    right: -90%;
-  }
-
-  100% {
-    left: 100%;
-    right: -90%;
-  }
-`));
-const indeterminate2Keyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t2 || (_t2 = _`
-  0% {
-    left: -200%;
-    right: 100%;
-  }
-
-  60% {
-    left: 107%;
-    right: -8%;
-  }
-
-  100% {
-    left: 107%;
-    right: -8%;
-  }
-`));
-const bufferKeyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t3 || (_t3 = _`
-  0% {
-    opacity: 1;
-    background-position: 0 -23px;
-  }
-
-  60% {
-    opacity: 0;
-    background-position: 0 -23px;
-  }
-
-  100% {
-    opacity: 1;
-    background-position: -200px -23px;
-  }
-`));
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes,
-    variant,
-    color
-  } = ownerState;
-  const slots = {
-    root: ['root', `color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, variant],
-    dashed: ['dashed', `dashedColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`],
-    bar1: ['bar', `barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, (variant === 'indeterminate' || variant === 'query') && 'bar1Indeterminate', variant === 'determinate' && 'bar1Determinate', variant === 'buffer' && 'bar1Buffer'],
-    bar2: ['bar', variant !== 'buffer' && `barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, variant === 'buffer' && `color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, (variant === 'indeterminate' || variant === 'query') && 'bar2Indeterminate', variant === 'buffer' && 'bar2Buffer']
-  };
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_7__["default"])(slots, _linearProgressClasses__WEBPACK_IMPORTED_MODULE_8__.getLinearProgressUtilityClass, classes);
-};
-
-const getColorShade = (theme, color) => {
-  if (color === 'inherit') {
-    return 'currentColor';
-  }
-
-  return theme.palette.mode === 'light' ? (0,_mui_system__WEBPACK_IMPORTED_MODULE_9__.lighten)(theme.palette[color].main, 0.62) : (0,_mui_system__WEBPACK_IMPORTED_MODULE_9__.darken)(theme.palette[color].main, 0.5);
-};
-
-const LinearProgressRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Root',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.root, styles[`color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], styles[ownerState.variant]];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  position: 'relative',
-  overflow: 'hidden',
-  display: 'block',
-  height: 4,
-  zIndex: 0,
-  // Fix Safari's bug during composition of different paint.
-  '@media print': {
-    colorAdjust: 'exact'
-  },
-  backgroundColor: getColorShade(theme, ownerState.color)
-}, ownerState.color === 'inherit' && ownerState.variant !== 'buffer' && {
-  backgroundColor: 'none',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'currentColor',
-    opacity: 0.3
-  }
-}, ownerState.variant === 'buffer' && {
-  backgroundColor: 'transparent'
-}, ownerState.variant === 'query' && {
-  transform: 'rotate(180deg)'
-}));
-const LinearProgressDashed = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Dashed',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.dashed, styles[`dashedColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`]];
-  }
-})(({
-  ownerState,
-  theme
-}) => {
-  const backgroundColor = getColorShade(theme, ownerState.color);
-  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    position: 'absolute',
-    marginTop: 0,
-    height: '100%',
-    width: '100%'
-  }, ownerState.color === 'inherit' && {
-    opacity: 0.3
-  }, {
-    backgroundImage: `radial-gradient(${backgroundColor} 0%, ${backgroundColor} 16%, transparent 42%)`,
-    backgroundSize: '10px 10px',
-    backgroundPosition: '0 -23px'
-  });
-}, (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t4 || (_t4 = _`
-    animation: ${0} 3s infinite linear;
-  `), bufferKeyframe));
-const LinearProgressBar1 = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Bar1',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.bar, styles[`barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && styles.bar1Indeterminate, ownerState.variant === 'determinate' && styles.bar1Determinate, ownerState.variant === 'buffer' && styles.bar1Buffer];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  width: '100%',
-  position: 'absolute',
-  left: 0,
-  bottom: 0,
-  top: 0,
-  transition: 'transform 0.2s linear',
-  transformOrigin: 'left',
-  backgroundColor: ownerState.color === 'inherit' ? 'currentColor' : theme.palette[ownerState.color].main
-}, ownerState.variant === 'determinate' && {
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}, ownerState.variant === 'buffer' && {
-  zIndex: 1,
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}), ({
-  ownerState
-}) => (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t5 || (_t5 = _`
-      width: auto;
-      animation: ${0} 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-    `), indeterminate1Keyframe));
-const LinearProgressBar2 = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Bar2',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.bar, styles[`barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && styles.bar2Indeterminate, ownerState.variant === 'buffer' && styles.bar2Buffer];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  width: '100%',
-  position: 'absolute',
-  left: 0,
-  bottom: 0,
-  top: 0,
-  transition: 'transform 0.2s linear',
-  transformOrigin: 'left'
-}, ownerState.variant !== 'buffer' && {
-  backgroundColor: ownerState.color === 'inherit' ? 'currentColor' : theme.palette[ownerState.color].main
-}, ownerState.color === 'inherit' && {
-  opacity: 0.3
-}, ownerState.variant === 'buffer' && {
-  backgroundColor: getColorShade(theme, ownerState.color),
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}), ({
-  ownerState
-}) => (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t6 || (_t6 = _`
-      width: auto;
-      animation: ${0} 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
-    `), indeterminate2Keyframe));
-/**
- * ## ARIA
- *
- * If the progress bar is describing the loading progress of a particular region of a page,
- * you should use `aria-describedby` to point to the progress bar, and set the `aria-busy`
- * attribute to `true` on that region until it has finished loading.
- */
-
-const LinearProgress = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function LinearProgress(inProps, ref) {
-  const props = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_11__["default"])({
-    props: inProps,
-    name: 'MuiLinearProgress'
-  });
-
-  const {
-    className,
-    color = 'primary',
-    value,
-    valueBuffer,
-    variant = 'indeterminate'
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(props, _excluded);
-
-  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-    color,
-    variant
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  const theme = (0,_styles_useTheme__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  const rootProps = {};
-  const inlineStyles = {
-    bar1: {},
-    bar2: {}
-  };
-
-  if (variant === 'determinate' || variant === 'buffer') {
-    if (value !== undefined) {
-      rootProps['aria-valuenow'] = Math.round(value);
-      rootProps['aria-valuemin'] = 0;
-      rootProps['aria-valuemax'] = 100;
-      let transform = value - 100;
-
-      if (theme.direction === 'rtl') {
-        transform = -transform;
-      }
-
-      inlineStyles.bar1.transform = `translateX(${transform}%)`;
-    } else if (true) {
-      console.error('MUI: You need to provide a value prop ' + 'when using the determinate or buffer variant of LinearProgress .');
-    }
-  }
-
-  if (variant === 'buffer') {
-    if (valueBuffer !== undefined) {
-      let transform = (valueBuffer || 0) - 100;
-
-      if (theme.direction === 'rtl') {
-        transform = -transform;
-      }
-
-      inlineStyles.bar2.transform = `translateX(${transform}%)`;
-    } else if (true) {
-      console.error('MUI: You need to provide a valueBuffer prop ' + 'when using the buffer variant of LinearProgress.');
-    }
-  }
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(LinearProgressRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
-    ownerState: ownerState,
-    role: "progressbar"
-  }, rootProps, {
-    ref: ref
-  }, other, {
-    children: [variant === 'buffer' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressDashed, {
-      className: classes.dashed,
-      ownerState: ownerState
-    }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressBar1, {
-      className: classes.bar1,
-      ownerState: ownerState,
-      style: inlineStyles.bar1
-    }), variant === 'determinate' ? null : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressBar2, {
-      className: classes.bar2,
-      ownerState: ownerState,
-      style: inlineStyles.bar2
-    })]
-  }));
-});
- true ? LinearProgress.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object),
-
-  /**
-   * @ignore
-   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().string),
-
-  /**
-   * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
-   * @default 'primary'
-   */
-  color: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOf(['inherit', 'primary', 'secondary']), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().string)]),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_13___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_13___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object)]),
-
-  /**
-   * The value of the progress indicator for the determinate and buffer variants.
-   * Value between 0 and 100.
-   */
-  value: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().number),
-
-  /**
-   * The value for the buffer variant.
-   * Value between 0 and 100.
-   */
-  valueBuffer: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().number),
-
-  /**
-   * The variant to use.
-   * Use indeterminate or query when there is no progress value.
-   * @default 'indeterminate'
-   */
-  variant: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOf(['buffer', 'determinate', 'indeterminate', 'query'])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LinearProgress);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/LinearProgress/linearProgressClasses.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@mui/material/LinearProgress/linearProgressClasses.js ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getLinearProgressUtilityClass": () => (/* binding */ getLinearProgressUtilityClass)
-/* harmony export */ });
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/generateUtilityClass/generateUtilityClass.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/generateUtilityClasses/generateUtilityClasses.js");
-
-function getLinearProgressUtilityClass(slot) {
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiLinearProgress', slot);
-}
-const linearProgressClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiLinearProgress', ['root', 'colorPrimary', 'colorSecondary', 'determinate', 'indeterminate', 'buffer', 'query', 'dashed', 'dashedColorPrimary', 'dashedColorSecondary', 'bar', 'barColorPrimary', 'barColorSecondary', 'bar1Indeterminate', 'bar1Determinate', 'bar1Buffer', 'bar2Indeterminate', 'bar2Buffer']);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (linearProgressClasses);
-
-/***/ }),
-
 /***/ "./node_modules/@mui/material/ListItemIcon/listItemIconClasses.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@mui/material/ListItemIcon/listItemIconClasses.js ***!
@@ -31518,45 +31095,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
-/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
+/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-map-interaction */ "./node_modules/react-map-interaction/dist/react-map-interaction.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_map_interaction__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-pan-zoom-map'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
-/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
-/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
-/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
-/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
+/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
+/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
+/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
+/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -31585,10 +31158,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
  //iconos
-
-
 
 
 
@@ -31615,7 +31185,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 swiper__WEBPACK_IMPORTED_MODULE_6__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_6__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation]);
-var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref) {
+var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
     color: "#ffffff",
@@ -31628,7 +31198,7 @@ var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default
     fontFamily: "Nunito"
   };
 });
-var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref2) {
+var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref2) {
   var theme = _ref2.theme;
   return {
     color: "#ffffff",
@@ -31641,7 +31211,7 @@ var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["def
     fontFamily: "Nunito"
   };
 });
-var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref3) {
+var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref3) {
   var theme = _ref3.theme;
   return {
     color: "#ffffff",
@@ -31670,7 +31240,7 @@ var Relacion = function Relacion(_ref4) {
       setData = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_19___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
   }, []);
@@ -31763,20 +31333,20 @@ var Relacion = function Relacion(_ref4) {
   /** Leaflet **/
 
 
-  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl.BaseLayer,
-      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl.Overlay;
-  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_15___default().icon({
-    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_17__["default"],
-    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_18__["default"]
+  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.BaseLayer,
+      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.Overlay;
+  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_13___default().icon({
+    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_15__["default"],
+    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_16__["default"]
   });
-  (leaflet__WEBPACK_IMPORTED_MODULE_15___default().Marker.prototype.options.icon) = DefaultIcon;
+  (leaflet__WEBPACK_IMPORTED_MODULE_13___default().Marker.prototype.options.icon) = DefaultIcon;
   var styleMap = {
     width: "100%",
     height: "600px"
   };
 
   function getCoords(coord) {
-    return leaflet__WEBPACK_IMPORTED_MODULE_15___default().latLng(coord["long"], coord.lat);
+    return leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(coord["long"], coord.lat);
   }
 
   var refContainer = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
@@ -31812,18 +31382,18 @@ var Relacion = function Relacion(_ref4) {
     };
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
       container: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
         item: true,
         xs: 12,
         style: {
           backgroundColor: "#193661"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
             href: "/",
             style: {
               display: "flex",
@@ -31832,7 +31402,7 @@ var Relacion = function Relacion(_ref4) {
               color: "white",
               width: "max-content"
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_26__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("p", {
               style: {
                 fontSize: "20px"
               },
@@ -31841,48 +31411,48 @@ var Relacion = function Relacion(_ref4) {
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
       maxWidth: "xl",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
         className: contMap === "lienzo" ? "map-container grid-lienzo" : "map-container",
-        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.MapContainer, {
+        children: [contMap === "geo" && data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.MapContainer, {
             style: styleMap,
-            center: leaflet__WEBPACK_IMPORTED_MODULE_15___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
+            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
             zoom: data.infoMapa.zoom.inicial,
             minZoom: data.infoMapa.zoom.min,
             maxZoom: data.infoMapa.zoom.max,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl, {
               position: "topleft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(BaseLayer, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
                 checked: true,
                 name: "ESRI Satellite",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.TileLayer, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.TileLayer, {
                   attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
                   url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
                 })
               }), Object.values(data.infoMapa.mapasBase).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(BaseLayer, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.TileLayer, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.TileLayer, {
                     attribution: item.atribution,
                     url: item.link
                   })
                 });
               }), Object.values(data.capas).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(Overlay, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(Overlay, {
                   checked: true,
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.LayerGroup, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.LayerGroup, {
                     children: Object.values(item.elementos).map(function (el, ind) {
                       if (el.tipo === "punto") {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.CircleMarker, {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.CircleMarker, {
                           center: getCoords(el.coordenadas),
                           radius: 4,
                           color: el.simbolo.color,
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.Popup, {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.Popup, {
                             children: el.popup
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.Tooltip, {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.Tooltip, {
                             children: el.nombre
                           })]
                         });
@@ -31890,7 +31460,7 @@ var Relacion = function Relacion(_ref4) {
 
                       if (el.tipo === "geojson" && ind !== 4) {
                         try {
-                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_33__.GeoJSON, {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.GeoJSON, {
                             data: el.coordenadas
                           }, ind);
                         } catch (error) {// console.log(
@@ -31901,100 +31471,104 @@ var Relacion = function Relacion(_ref4) {
                     })
                   }, item.nombre)
                 });
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_34__.ScaleControl, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.ScaleControl, {
                 position: "bottomright",
                 metric: true,
                 imperial: true
               })]
             })
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_35__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+        }), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "mapaPicto",
           ref: refContainer,
-          children: ready && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
+          children: ready && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
             centerZoomedOut: true,
             initialPositionX: width,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
               wrapperStyle: {
                 width: "100%"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                 src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
                 alt: "",
                 style: {
-                  height: "600px"
+                  height: "600px",
+                  width: '100%'
                 },
                 id: "imagenprov",
                 ref: refImg
               })
             })
           })
-        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
             container: true,
             spacing: 5,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              xs: 6,
+              xs: 12,
+              md: 7,
               style: {
                 display: "flex",
                 justifyContent: "flex-end"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                     src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
-                      height: "600px"
+                      height: "600px",
+                      width: '100%'
                     }
                   })
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              xs: 6,
+              xs: 12,
+              md: 5,
               style: {
                 display: "flex",
                 justifyContent: "flex-start"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
                 className: "lienzo-text",
                 children: textActive ? textActive : 'Sin Transcripción'
               })
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
         className: "container-controls",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
             className: contMap === "geo" && idActive == 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("geo");
               setIdActive(0);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa geogr\xE1fico"
           })]
-        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
             className: contMap === "picto" && idActive === 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("picto");
               setIdActive(0);
               setImageSize();
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa pictogr\xE1fico 1"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "swiper-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
             spaceBetween: 15,
             freeMode: false,
             effect: "coverflow",
@@ -32004,12 +31578,12 @@ var Relacion = function Relacion(_ref4) {
             modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
             className: "leo-swiper",
             children: relation && relation.invoices.map(function (invoice, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
                 className: "mini-photo-container",
                 onClick: function onClick() {
                   return changeFolio(invoice, index);
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                   className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
                   src: "/storage/relaciones/" + invoice.imagen,
                   style: {
@@ -32020,17 +31594,17 @@ var Relacion = function Relacion(_ref4) {
               }, index);
             })
           })
-        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "translate-container",
           children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
-            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(TranslateButtonActive, {
+            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
               variant: "contained",
               size: "large",
               onClick: function onClick() {
                 return changeText(transcription.texto, index);
               },
               children: transcription.nombre
-            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(TranslateButton, {
+            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
               variant: "contained",
               size: "large",
               onClick: function onClick() {
@@ -32040,217 +31614,142 @@ var Relacion = function Relacion(_ref4) {
             }, index);
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "container-controls",
         children: relation.maps && relation.maps.length > 0 && relation.maps.map(function (map, index) {
           if (index === 0) return;
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
             className: "round-button-container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
               className: contMap == "picto" && idActive === index ? "round-button active" : "round-button",
               onClick: function onClick() {
                 setContMap("picto");
                 setIdActive(index);
+                setImageSize();
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
               className: "round-button-text",
               children: ["Mapa pictogr\xE1fico ", index + 1]
             })]
           });
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         style: {
           marginTop: 50,
           width: "100%",
           marginBottom: 70
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-          container: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-            item: true,
-            xs: 9,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-              className: "info-text-relacion",
-              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-            item: true,
-            xs: 3,
-            style: {
-              display: "flex",
-              justifyContent: "center"
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
-              href: route("sources.index", relation.uuid),
-              style: {
-                textDecoration: "none"
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(ColorButton, {
-                variant: "contained",
-                size: "large",
-                children: "Ver Fuentes"
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          style: {
+            width: '90%',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            container: true,
+            justifyContent: 'space-between',
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              item: true,
+              sm: 7,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                className: "info-text-relacion",
+                children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
               })
-            })
-          })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              item: true,
+              sm: 5,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                container: true,
+                justifyContent: 'right',
+                sx: {
+                  mt: {
+                    xs: 3,
+                    sm: 0
+                  }
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+                  href: route("sources.index", relation.uuid),
+                  style: {
+                    textDecoration: "none"
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(ColorButton, {
+                    variant: "contained",
+                    size: "large",
+                    children: "Ver Fuentes"
+                  })
+                })
+              })
+            })]
+          })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
       className: "footer-all-folios",
       style: {
         position: "static"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
         maxWidth: "xl",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
           className: "folios-button",
           style: {
             cursor: "pointer"
           },
           onClick: toggleDrawer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_36__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_33__["default"], {
             style: {
               marginRight: 10
             }
           }), " Ver todos los folios"]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_37__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_34__["default"], {
       anchor: "bottom",
       open: open //onClose={toggleDrawer}
       ,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "drawer-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
             container: true,
             spacing: 8,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 0 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini1.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(0);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 1"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 1 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini2.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(1);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 2"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 2 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini3.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(2);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 3"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 3 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini4.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(3);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 4"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 4 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini5.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(4);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 5"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 5 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini6.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(5);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 6"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 6 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini7.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(6);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 7"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 7 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini8.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(7);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
-                  children: "Folio 8"
-                })]
-              })
-            })]
+            children: relation && relation.invoices.map(function (invoice, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                item: true,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                  className: contMap == "lienzo" && idActive == index ? "folio-mini-container active" : "folio-mini-container",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                    style: {
+                      width: 100,
+                      height: 139,
+                      objectFit: 'cover'
+                    },
+                    src: "/storage/relaciones/" + invoice.imagen,
+                    onClick: function onClick() {
+                      return changeFolio(invoice, index);
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    children: "Folio 1"
+                  })]
+                }, index)
+              });
+            })
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "footer-all-folios",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
             className: "folios-button",
             style: {
               cursor: "pointer"
             },
             onClick: toggleDrawer,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_38__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_35__["default"], {
               style: {
                 marginRight: 10
               }
@@ -32263,7 +31762,7 @@ var Relacion = function Relacion(_ref4) {
 };
 
 Relacion.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: page,
     title: "Relaciones Geogr\xE1ficas",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -32942,7 +32441,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 100%;\r\n    height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 50%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n    padding-left:0px;\r\n    padding-right: 0px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 50%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n@media(max-width:1100px){\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -78832,1038 +78331,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/react-map-interaction/dist/react-map-interaction.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/react-map-interaction/dist/react-map-interaction.js ***!
-  \**************************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"), __webpack_require__(/*! react */ "./node_modules/react/index.js"));
-	else {}
-})(this, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __nested_webpack_require_754__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __nested_webpack_require_754__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__nested_webpack_require_754__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__nested_webpack_require_754__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__nested_webpack_require_754__.d = function(exports, name, getter) {
-/******/ 		if(!__nested_webpack_require_754__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__nested_webpack_require_754__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__nested_webpack_require_754__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __nested_webpack_require_754__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__nested_webpack_require_754__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __nested_webpack_require_754__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__nested_webpack_require_754__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__nested_webpack_require_754__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__nested_webpack_require_754__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__nested_webpack_require_754__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __nested_webpack_require_754__(__nested_webpack_require_754__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __nested_webpack_require_4438__) {
-
-"use strict";
-__nested_webpack_require_4438__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"React","root":"React"}
-var external_commonjs_react_commonjs2_react_amd_React_root_React_ = __nested_webpack_require_4438__(1);
-var external_commonjs_react_commonjs2_react_amd_React_root_React_default = /*#__PURE__*/__nested_webpack_require_4438__.n(external_commonjs_react_commonjs2_react_amd_React_root_React_);
-
-// EXTERNAL MODULE: external {"commonjs":"prop-types","commonjs2":"prop-types","commonj2s":"prop-types","amd":"prop-types","root":"PropTypes"}
-var external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_ = __nested_webpack_require_4438__(0);
-var external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default = /*#__PURE__*/__nested_webpack_require_4438__.n(external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_);
-
-// CONCATENATED MODULE: ./src/Controls.jsx
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Controls_Controls =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Controls, _Component);
-
-  function Controls() {
-    _classCallCheck(this, Controls);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Controls).apply(this, arguments));
-  }
-
-  _createClass(Controls, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var _this$props = this.props,
-          plusBtnContents = _this$props.plusBtnContents,
-          minusBtnContents = _this$props.minusBtnContents,
-          btnClass = _this$props.btnClass,
-          plusBtnClass = _this$props.plusBtnClass,
-          minusBtnClass = _this$props.minusBtnClass,
-          controlsClass = _this$props.controlsClass,
-          scale = _this$props.scale,
-          minScale = _this$props.minScale,
-          maxScale = _this$props.maxScale,
-          onClickPlus = _this$props.onClickPlus,
-          onClickMinus = _this$props.onClickMinus,
-          disableZoom = _this$props.disableZoom;
-      var btnStyle = {
-        width: 30,
-        paddingTop: 5,
-        marginBottom: 5
-      };
-      var controlsStyle = controlsClass ? undefined : {
-        position: 'absolute',
-        right: 10,
-        top: 10
-      };
-
-      function plusHandler(e) {
-        e.preventDefault();
-        e.target.blur();
-        if (disableZoom) return;
-        onClickPlus();
-      }
-
-      function minusHandler(e) {
-        e.preventDefault();
-        e.target.blur();
-        if (disableZoom) return;
-        onClickMinus();
-      }
-
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-        style: controlsStyle,
-        className: controlsClass
-      }, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", null, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("button", {
-        ref: function ref(node) {
-          _this.plusNode = node;
-        },
-        onClick: plusHandler,
-        onTouchEnd: plusHandler,
-        className: [btnClass ? btnClass : '', plusBtnClass ? plusBtnClass : ''].join(' '),
-        type: "button",
-        style: btnClass || plusBtnClass ? undefined : btnStyle,
-        disabled: disableZoom || scale >= maxScale
-      }, plusBtnContents)), external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", null, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("button", {
-        ref: function ref(node) {
-          _this.minusNode = node;
-        },
-        onClick: minusHandler,
-        onTouchEnd: minusHandler,
-        className: [btnClass ? btnClass : '', minusBtnClass ? minusBtnClass : ''].join(' '),
-        type: "button",
-        style: btnClass || minusBtnClass ? undefined : btnStyle,
-        disabled: disableZoom || scale <= minScale
-      }, minusBtnContents)));
-    }
-  }]);
-
-  return Controls;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-
-Controls_Controls.propTypes = {
-  onClickPlus: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-  onClickMinus: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-  plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-  minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-  btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool
-};
-Controls_Controls.defaultProps = {
-  plusBtnContents: '+',
-  minusBtnContents: '-',
-  disableZoom: false
-};
-/* harmony default export */ var src_Controls = (Controls_Controls);
-// CONCATENATED MODULE: ./src/geometry.js
-function clamp(min, value, max) {
-  return Math.max(min, Math.min(value, max));
-}
-
-function distance(p1, p2) {
-  var dx = p1.x - p2.x;
-  var dy = p1.y - p2.y;
-  return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-}
-
-function midpoint(p1, p2) {
-  return {
-    x: (p1.x + p2.x) / 2,
-    y: (p1.y + p2.y) / 2
-  };
-}
-
-function touchPt(touch) {
-  return {
-    x: touch.clientX,
-    y: touch.clientY
-  };
-}
-
-function touchDistance(t0, t1) {
-  var p0 = touchPt(t0);
-  var p1 = touchPt(t1);
-  return distance(p0, p1);
-}
-
-
-// CONCATENATED MODULE: ./src/makePassiveEventOption.js
-// We want to make event listeners non-passive, and to do so have to check
-// that browsers support EventListenerOptions in the first place.
-// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
-var passiveSupported = false;
-
-try {
-  var options = {
-    get passive() {
-      passiveSupported = true;
-    }
-
-  };
-  window.addEventListener("test", options, options);
-  window.removeEventListener("test", options, options);
-} catch (_unused) {
-  passiveSupported = false;
-}
-
-function makePassiveEventOption(passive) {
-  return passiveSupported ? {
-    passive: passive
-  } : passive;
-}
-
-/* harmony default export */ var src_makePassiveEventOption = (makePassiveEventOption);
-// CONCATENATED MODULE: ./src/MapInteraction.jsx
-function MapInteraction_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { MapInteraction_typeof = function _typeof(obj) { return typeof obj; }; } else { MapInteraction_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return MapInteraction_typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function MapInteraction_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function MapInteraction_possibleConstructorReturn(self, call) { if (call && (MapInteraction_typeof(call) === "object" || typeof call === "function")) { return call; } return MapInteraction_assertThisInitialized(self); }
-
-function MapInteraction_getPrototypeOf(o) { MapInteraction_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return MapInteraction_getPrototypeOf(o); }
-
-function MapInteraction_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function MapInteraction_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function MapInteraction_createClass(Constructor, protoProps, staticProps) { if (protoProps) MapInteraction_defineProperties(Constructor.prototype, protoProps); if (staticProps) MapInteraction_defineProperties(Constructor, staticProps); return Constructor; }
-
-function MapInteraction_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) MapInteraction_setPrototypeOf(subClass, superClass); }
-
-function MapInteraction_setPrototypeOf(o, p) { MapInteraction_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return MapInteraction_setPrototypeOf(o, p); }
-
-
-
-
-
- // The amount that a value of a dimension will change given a new scale
-
-var coordChange = function coordChange(coordinate, scaleRatio) {
-  return scaleRatio * coordinate - coordinate;
-};
-
-var translationShape = external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-  x: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  y: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-});
-/*
-  This contains logic for providing a map-like interaction to any DOM node.
-  It allows a user to pinch, zoom, translate, etc, as they would an interactive map.
-  It renders its children with the current state of the translation and does not do any scaling
-  or translating on its own. This works on both desktop, and mobile.
-*/
-
-var MapInteraction_MapInteractionControlled =
-/*#__PURE__*/
-function (_Component) {
-  MapInteraction_inherits(MapInteractionControlled, _Component);
-
-  MapInteraction_createClass(MapInteractionControlled, null, [{
-    key: "propTypes",
-    get: function get() {
-      return {
-        // The content that will be transformed
-        children: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        // This is a controlled component
-        value: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }).isRequired,
-        onChange: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-        disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        disablePan: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        translationBounds: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          xMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          xMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-        }),
-        minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        showControls: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string
-      };
-    }
-  }, {
-    key: "defaultProps",
-    get: function get() {
-      return {
-        minScale: 0.05,
-        maxScale: 3,
-        showControls: false,
-        translationBounds: {},
-        disableZoom: false,
-        disablePan: false
-      };
-    }
-  }]);
-
-  function MapInteractionControlled(props) {
-    var _this;
-
-    MapInteraction_classCallCheck(this, MapInteractionControlled);
-
-    _this = MapInteraction_possibleConstructorReturn(this, MapInteraction_getPrototypeOf(MapInteractionControlled).call(this, props));
-    _this.state = {
-      shouldPreventTouchEndDefault: false
-    };
-    _this.startPointerInfo = undefined;
-    _this.onMouseDown = _this.onMouseDown.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchStart = _this.onTouchStart.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onMouseMove = _this.onMouseMove.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchMove = _this.onTouchMove.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onMouseUp = _this.onMouseUp.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchEnd = _this.onTouchEnd.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onWheel = _this.onWheel.bind(MapInteraction_assertThisInitialized(_this));
-    return _this;
-  }
-
-  MapInteraction_createClass(MapInteractionControlled, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var passiveOption = src_makePassiveEventOption(false);
-      this.getContainerNode().addEventListener('wheel', this.onWheel, passiveOption);
-      /*
-        Setup events for the gesture lifecycle: start, move, end touch
-      */
-      // start gesture
-
-      this.getContainerNode().addEventListener('touchstart', this.onTouchStart, passiveOption);
-      this.getContainerNode().addEventListener('mousedown', this.onMouseDown, passiveOption); // move gesture
-
-      window.addEventListener('touchmove', this.onTouchMove, passiveOption);
-      window.addEventListener('mousemove', this.onMouseMove, passiveOption); // end gesture
-
-      var touchAndMouseEndOptions = _objectSpread({
-        capture: true
-      }, passiveOption);
-
-      window.addEventListener('touchend', this.onTouchEnd, touchAndMouseEndOptions);
-      window.addEventListener('mouseup', this.onMouseUp, touchAndMouseEndOptions);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.getContainerNode().removeEventListener('wheel', this.onWheel); // Remove touch events
-
-      this.getContainerNode().removeEventListener('touchstart', this.onTouchStart);
-      window.removeEventListener('touchmove', this.onTouchMove);
-      window.removeEventListener('touchend', this.onTouchEnd); // Remove mouse events
-
-      this.getContainerNode().removeEventListener('mousedown', this.onMouseDown);
-      window.removeEventListener('mousemove', this.onMouseMove);
-      window.removeEventListener('mouseup', this.onMouseUp);
-    }
-    /*
-      Event handlers
-       All touch/mouse handlers preventDefault because we add
-      both touch and mouse handlers in the same session to support devicse
-      with both touch screen and mouse inputs. The browser may fire both
-      a touch and mouse event for a *single* user action, so we have to ensure
-      that only one handler is used by canceling the event in the first handler.
-       https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent
-    */
-
-  }, {
-    key: "onMouseDown",
-    value: function onMouseDown(e) {
-      e.preventDefault();
-      this.setPointerState([e]);
-    }
-  }, {
-    key: "onTouchStart",
-    value: function onTouchStart(e) {
-      e.preventDefault();
-      this.setPointerState(e.touches);
-    }
-  }, {
-    key: "onMouseUp",
-    value: function onMouseUp(e) {
-      this.setPointerState();
-    }
-  }, {
-    key: "onTouchEnd",
-    value: function onTouchEnd(e) {
-      this.setPointerState(e.touches);
-    }
-  }, {
-    key: "onMouseMove",
-    value: function onMouseMove(e) {
-      if (!this.startPointerInfo || this.props.disablePan) {
-        return;
-      }
-
-      e.preventDefault();
-      this.onDrag(e);
-    }
-  }, {
-    key: "onTouchMove",
-    value: function onTouchMove(e) {
-      if (!this.startPointerInfo) {
-        return;
-      }
-
-      e.preventDefault();
-      var _this$props = this.props,
-          disablePan = _this$props.disablePan,
-          disableZoom = _this$props.disableZoom;
-      var isPinchAction = e.touches.length == 2 && this.startPointerInfo.pointers.length > 1;
-
-      if (isPinchAction && !disableZoom) {
-        this.scaleFromMultiTouch(e);
-      } else if (e.touches.length === 1 && this.startPointerInfo && !disablePan) {
-        this.onDrag(e.touches[0]);
-      }
-    } // handles both touch and mouse drags
-
-  }, {
-    key: "onDrag",
-    value: function onDrag(pointer) {
-      var _this2 = this;
-
-      var _this$startPointerInf = this.startPointerInfo,
-          translation = _this$startPointerInf.translation,
-          pointers = _this$startPointerInf.pointers;
-      var startPointer = pointers[0];
-      var dragX = pointer.clientX - startPointer.clientX;
-      var dragY = pointer.clientY - startPointer.clientY;
-      var newTranslation = {
-        x: translation.x + dragX,
-        y: translation.y + dragY
-      };
-      var shouldPreventTouchEndDefault = Math.abs(dragX) > 1 || Math.abs(dragY) > 1;
-      this.setState({
-        shouldPreventTouchEndDefault: shouldPreventTouchEndDefault
-      }, function () {
-        _this2.props.onChange({
-          scale: _this2.props.value.scale,
-          translation: _this2.clampTranslation(newTranslation)
-        });
-      });
-    }
-  }, {
-    key: "onWheel",
-    value: function onWheel(e) {
-      if (this.props.disableZoom) {
-        return;
-      }
-
-      e.preventDefault();
-      e.stopPropagation();
-      var scaleChange = Math.pow(2, e.deltaY * 0.002);
-      var newScale = clamp(this.props.minScale, this.props.value.scale + (1 - scaleChange), this.props.maxScale);
-      var mousePos = this.clientPosToTranslatedPos({
-        x: e.clientX,
-        y: e.clientY
-      });
-      this.scaleFromPoint(newScale, mousePos);
-    }
-  }, {
-    key: "setPointerState",
-    value: function setPointerState(pointers) {
-      if (!pointers || pointers.length === 0) {
-        this.startPointerInfo = undefined;
-        return;
-      }
-
-      this.startPointerInfo = {
-        pointers: pointers,
-        scale: this.props.value.scale,
-        translation: this.props.value.translation
-      };
-    }
-  }, {
-    key: "clampTranslation",
-    value: function clampTranslation(desiredTranslation) {
-      var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.props;
-      var x = desiredTranslation.x,
-          y = desiredTranslation.y;
-      var _props$translationBou = props.translationBounds,
-          xMax = _props$translationBou.xMax,
-          xMin = _props$translationBou.xMin,
-          yMax = _props$translationBou.yMax,
-          yMin = _props$translationBou.yMin;
-      xMin = xMin != undefined ? xMin : -Infinity;
-      yMin = yMin != undefined ? yMin : -Infinity;
-      xMax = xMax != undefined ? xMax : Infinity;
-      yMax = yMax != undefined ? yMax : Infinity;
-      return {
-        x: clamp(xMin, x, xMax),
-        y: clamp(yMin, y, yMax)
-      };
-    }
-  }, {
-    key: "translatedOrigin",
-    value: function translatedOrigin() {
-      var translation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props.value.translation;
-      var clientOffset = this.getContainerBoundingClientRect();
-      return {
-        x: clientOffset.left + translation.x,
-        y: clientOffset.top + translation.y
-      };
-    } // From a given screen point return it as a point
-    // in the coordinate system of the given translation
-
-  }, {
-    key: "clientPosToTranslatedPos",
-    value: function clientPosToTranslatedPos(_ref) {
-      var x = _ref.x,
-          y = _ref.y;
-      var translation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.props.value.translation;
-      var origin = this.translatedOrigin(translation);
-      return {
-        x: x - origin.x,
-        y: y - origin.y
-      };
-    }
-  }, {
-    key: "scaleFromPoint",
-    value: function scaleFromPoint(newScale, focalPt) {
-      var _this$props$value = this.props.value,
-          translation = _this$props$value.translation,
-          scale = _this$props$value.scale;
-      var scaleRatio = newScale / (scale != 0 ? scale : 1);
-      var focalPtDelta = {
-        x: coordChange(focalPt.x, scaleRatio),
-        y: coordChange(focalPt.y, scaleRatio)
-      };
-      var newTranslation = {
-        x: translation.x - focalPtDelta.x,
-        y: translation.y - focalPtDelta.y
-      };
-      this.props.onChange({
-        scale: newScale,
-        translation: this.clampTranslation(newTranslation)
-      });
-    } // Given the start touches and new e.touches, scale and translate
-    // such that the initial midpoint remains as the new midpoint. This is
-    // to achieve the effect of keeping the content that was directly
-    // in the middle of the two fingers as the focal point throughout the zoom.
-
-  }, {
-    key: "scaleFromMultiTouch",
-    value: function scaleFromMultiTouch(e) {
-      var startTouches = this.startPointerInfo.pointers;
-      var newTouches = e.touches; // calculate new scale
-
-      var dist0 = touchDistance(startTouches[0], startTouches[1]);
-      var dist1 = touchDistance(newTouches[0], newTouches[1]);
-      var scaleChange = dist1 / dist0;
-      var startScale = this.startPointerInfo.scale;
-      var targetScale = startScale + (scaleChange - 1) * startScale;
-      var newScale = clamp(this.props.minScale, targetScale, this.props.maxScale); // calculate mid points
-
-      var startMidpoint = midpoint(touchPt(startTouches[0]), touchPt(startTouches[1]));
-      var newMidPoint = midpoint(touchPt(newTouches[0]), touchPt(newTouches[1])); // The amount we need to translate by in order for
-      // the mid point to stay in the middle (before thinking about scaling factor)
-
-      var dragDelta = {
-        x: newMidPoint.x - startMidpoint.x,
-        y: newMidPoint.y - startMidpoint.y
-      };
-      var scaleRatio = newScale / startScale; // The point originally in the middle of the fingers on the initial zoom start
-
-      var focalPt = this.clientPosToTranslatedPos(startMidpoint, this.startPointerInfo.translation); // The amount that the middle point has changed from this scaling
-
-      var focalPtDelta = {
-        x: coordChange(focalPt.x, scaleRatio),
-        y: coordChange(focalPt.y, scaleRatio)
-      }; // Translation is the original translation, plus the amount we dragged,
-      // minus what the scaling will do to the focal point. Subtracting the
-      // scaling factor keeps the midpoint in the middle of the touch points.
-
-      var newTranslation = {
-        x: this.startPointerInfo.translation.x - focalPtDelta.x + dragDelta.x,
-        y: this.startPointerInfo.translation.y - focalPtDelta.y + dragDelta.y
-      };
-      this.props.onChange({
-        scale: newScale,
-        translation: this.clampTranslation(newTranslation)
-      });
-    }
-  }, {
-    key: "discreteScaleStepSize",
-    value: function discreteScaleStepSize() {
-      var _this$props2 = this.props,
-          minScale = _this$props2.minScale,
-          maxScale = _this$props2.maxScale;
-      var delta = Math.abs(maxScale - minScale);
-      return delta / 10;
-    } // Scale using the center of the content as a focal point
-
-  }, {
-    key: "changeScale",
-    value: function changeScale(delta) {
-      var targetScale = this.props.value.scale + delta;
-      var _this$props3 = this.props,
-          minScale = _this$props3.minScale,
-          maxScale = _this$props3.maxScale;
-      var scale = clamp(minScale, targetScale, maxScale);
-      var rect = this.getContainerBoundingClientRect();
-      var x = rect.left + rect.width / 2;
-      var y = rect.top + rect.height / 2;
-      var focalPoint = this.clientPosToTranslatedPos({
-        x: x,
-        y: y
-      });
-      this.scaleFromPoint(scale, focalPoint);
-    } // Done like this so it is mockable
-
-  }, {
-    key: "getContainerNode",
-    value: function getContainerNode() {
-      return this.containerNode;
-    }
-  }, {
-    key: "getContainerBoundingClientRect",
-    value: function getContainerBoundingClientRect() {
-      return this.getContainerNode().getBoundingClientRect();
-    }
-  }, {
-    key: "renderControls",
-    value: function renderControls() {
-      var _this3 = this;
-
-      var step = this.discreteScaleStepSize();
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(src_Controls, {
-        onClickPlus: function onClickPlus() {
-          return _this3.changeScale(step);
-        },
-        onClickMinus: function onClickMinus() {
-          return _this3.changeScale(-step);
-        },
-        plusBtnContents: this.props.plusBtnContents,
-        minusBtnContents: this.props.minusBtnContents,
-        btnClass: this.props.btnClass,
-        plusBtnClass: this.props.plusBtnClass,
-        minusBtnClass: this.props.minusBtnClass,
-        controlsClass: this.props.controlsClass,
-        scale: this.props.value.scale,
-        minScale: this.props.minScale,
-        maxScale: this.props.maxScale,
-        disableZoom: this.props.disableZoom
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      var _this$props4 = this.props,
-          showControls = _this$props4.showControls,
-          children = _this$props4.children;
-      var scale = this.props.value.scale; // Defensively clamp the translation. This should not be necessary if we properly set state elsewhere.
-
-      var translation = this.clampTranslation(this.props.value.translation);
-      /*
-        This is a little trick to allow the following ux: We want the parent of this
-        component to decide if elements inside the map are clickable. Normally, you wouldn't
-        want to trigger a click event when the user *drags* on an element (only if they click
-        and then release w/o dragging at all). However we don't want to assume this
-        behavior here, so we call `preventDefault` and then let the parent check
-        `e.defaultPrevented`. That value being true means that we are signalling that
-        a drag event ended, not a click.
-      */
-
-      var handleEventCapture = function handleEventCapture(e) {
-        if (_this4.state.shouldPreventTouchEndDefault) {
-          e.preventDefault();
-
-          _this4.setState({
-            shouldPreventTouchEndDefault: false
-          });
-        }
-      };
-
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-        ref: function ref(node) {
-          _this4.containerNode = node;
-        },
-        style: {
-          height: '100%',
-          width: '100%',
-          position: 'relative',
-          // for absolutely positioned children
-          touchAction: 'none'
-        },
-        onClickCapture: handleEventCapture,
-        onTouchEndCapture: handleEventCapture
-      }, (children || undefined) && children({
-        translation: translation,
-        scale: scale
-      }), (showControls || undefined) && this.renderControls());
-    }
-  }]);
-
-  return MapInteractionControlled;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-/*
-  Main entry point component.
-  Determines if it's parent is controlling (eg it manages state) or leaving us uncontrolled
-  (eg we manage our own internal state)
-*/
-
-var MapInteraction_MapInteractionController =
-/*#__PURE__*/
-function (_Component2) {
-  MapInteraction_inherits(MapInteractionController, _Component2);
-
-  MapInteraction_createClass(MapInteractionController, null, [{
-    key: "propTypes",
-    get: function get() {
-      return {
-        children: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        value: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }),
-        defaultValue: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }),
-        disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        disablePan: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        onChange: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        translationBounds: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          xMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          xMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-        }),
-        minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        showControls: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string
-      };
-    }
-  }]);
-
-  function MapInteractionController(props) {
-    var _this5;
-
-    MapInteraction_classCallCheck(this, MapInteractionController);
-
-    _this5 = MapInteraction_possibleConstructorReturn(this, MapInteraction_getPrototypeOf(MapInteractionController).call(this, props));
-    var controlled = MapInteractionController.isControlled(props);
-
-    if (controlled) {
-      _this5.state = {
-        lastKnownValueFromProps: props.value
-      };
-    } else {
-      // Set the necessary state for controlling map interaction ourselves
-      _this5.state = {
-        value: props.defaultValue || {
-          scale: 1,
-          translation: {
-            x: 0,
-            y: 0
-          }
-        },
-        lastKnownValueFromProps: undefined
-      };
-    }
-
-    return _this5;
-  }
-  /*
-    Handle the parent switchg form controlled to uncontrolled or vice versa.
-    This is at most a best-effort attempt. It is not gauranteed by our API
-    but it will do its best to maintain the state such that if the parent
-    accidentally switches between controlled/uncontrolled there won't be
-    any jankiness or jumpiness.
-     This tries to mimick how the React <input /> component behaves.
-  */
-
-
-  MapInteraction_createClass(MapInteractionController, [{
-    key: "innerProps",
-    // The subset of this component's props that need to be passed
-    // down to the core RMI component
-    value: function innerProps() {
-      var _this$props5 = this.props,
-          value = _this$props5.value,
-          defaultValue = _this$props5.defaultValue,
-          onChange = _this$props5.onChange,
-          innerProps = _objectWithoutProperties(_this$props5, ["value", "defaultValue", "onChange"]);
-
-      return innerProps;
-    }
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      var controlled = MapInteractionController.isControlled(this.props);
-      return controlled ? this.props.value : this.state.value;
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this6 = this;
-
-      var _this$props6 = this.props,
-          _onChange = _this$props6.onChange,
-          children = _this$props6.children;
-      var controlled = MapInteractionController.isControlled(this.props);
-      var value = controlled ? this.props.value : this.state.value;
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(MapInteraction_MapInteractionControlled, _extends({
-        onChange: function onChange(value) {
-          controlled ? _onChange(value) : _this6.setState({
-            value: value
-          });
-        },
-        value: value
-      }, this.innerProps()), children);
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      var nowControlled = MapInteractionController.isControlled(props);
-      var wasControlled = state.lastKnownValueFromProps && MapInteractionController.isControlled({
-        value: state.lastKnownValueFromProps
-      });
-      /*
-        State transitions:
-          uncontrolled --> controlled   (unset internal state, set last props from parent)
-          controlled   --> uncontrolled (set internal state to last props from parent)
-          controlled   --> controlled   (update last props from parent)
-          uncontrolled --> uncontrolled (do nothing)
-         Note that the second two (no change in control) will also happen on the
-        initial render because we set lastKnownValueFromProps in the constructor.
-      */
-
-      if (!wasControlled && nowControlled) {
-        return {
-          value: undefined,
-          lastKnownValueFromProps: props.value
-        };
-      } else if (wasControlled && !nowControlled) {
-        return {
-          value: state.lastKnownValueFromProps,
-          lastKnownValueFromProps: undefined
-        };
-      } else if (wasControlled && nowControlled) {
-        return {
-          lastKnownValueFromProps: props.value
-        };
-      } else if (!wasControlled && !nowControlled) {
-        return null;
-      }
-    }
-  }, {
-    key: "isControlled",
-    value: function isControlled(props) {
-      // Similar to React's <input /> API, setting a value declares
-      // that you want to control this component.
-      return props.value != undefined;
-    }
-  }]);
-
-  return MapInteractionController;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-
-/* harmony default export */ var MapInteraction = (MapInteraction_MapInteractionController);
-// CONCATENATED MODULE: ./src/MapInteractionCSS.jsx
-
-
-/*
-  This component provides a map like interaction to any content that you place in it. It will let
-  the user zoom and pan the children by scaling and translating props.children using css.
-*/
-
-var MapInteractionCSS_MapInteractionCSS = function MapInteractionCSS(props) {
-  return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(MapInteraction, props, function (_ref) {
-    var translation = _ref.translation,
-        scale = _ref.scale;
-    // Translate first and then scale.  Otherwise, the scale would affect the translation.
-    var transform = "translate(".concat(translation.x, "px, ").concat(translation.y, "px) scale(").concat(scale, ")");
-    return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-      style: {
-        height: '100%',
-        width: '100%',
-        position: 'relative',
-        // for absolutely positioned children
-        overflow: 'hidden',
-        touchAction: 'none',
-        // Not supported in Safari :(
-        msTouchAction: 'none',
-        cursor: 'all-scroll',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        msUserSelect: 'none'
-      }
-    }, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-      style: {
-        display: 'inline-block',
-        // size to content
-        transform: transform,
-        transformOrigin: '0 0 '
-      }
-    }, props.children));
-  });
-};
-
-/* harmony default export */ var src_MapInteractionCSS = (MapInteractionCSS_MapInteractionCSS);
-// CONCATENATED MODULE: ./src/index.js
-/* concated harmony reexport MapInteractionCSS */__nested_webpack_require_4438__.d(__webpack_exports__, "MapInteractionCSS", function() { return src_MapInteractionCSS; });
-/* concated harmony reexport MapInteraction */__nested_webpack_require_4438__.d(__webpack_exports__, "MapInteraction", function() { return MapInteraction; });
-
-
-
-/* harmony default export */ var src = __webpack_exports__["default"] = (MapInteraction);
-
-/***/ })
-/******/ ]);
-});
 
 /***/ }),
 
