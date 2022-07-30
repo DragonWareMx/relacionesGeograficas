@@ -227,13 +227,10 @@ const Relacion = ({ relation }) => {
                 : "";
 
         img.onload = () => {
-            console.log(img.height);
-            console.log(img.width);
             let height = img.height;
             let width = img.width;
             let newWidth = width * 600;
             newWidth = newWidth / height;
-            console.log(newWidth);
             let container = refContainer.current?.offsetWidth;
             newWidth = newWidth / 2;
             container = container / 2;
