@@ -31518,44 +31518,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
-/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
+/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-map-interaction */ "./node_modules/react-map-interaction/dist/react-map-interaction.js");
 /* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_map_interaction__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
-/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
-/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
-/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
-/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-pan-zoom-map'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
+/* harmony import */ var swiper_css_free_mode__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! swiper/css/free-mode */ "./node_modules/swiper/modules/free-mode/free-mode.min.css");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Popup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/GeoJSON.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
+/* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
+/* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
+/* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -31598,6 +31599,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 /** Leaflet Imports **/
 
 
@@ -31613,7 +31615,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 swiper__WEBPACK_IMPORTED_MODULE_6__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_6__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation]);
-var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref) {
+var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
     color: "#ffffff",
@@ -31626,7 +31628,7 @@ var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default
     fontFamily: "Nunito"
   };
 });
-var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref2) {
+var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref2) {
   var theme = _ref2.theme;
   return {
     color: "#ffffff",
@@ -31639,7 +31641,7 @@ var TranslateButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["def
     fontFamily: "Nunito"
   };
 });
-var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_20__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_21__["default"])(function (_ref3) {
+var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_21__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_22__["default"])(function (_ref3) {
   var theme = _ref3.theme;
   return {
     color: "#ffffff",
@@ -31668,7 +31670,7 @@ var Relacion = function Relacion(_ref4) {
       setData = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_18___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_19___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
   }, []);
@@ -31761,34 +31763,67 @@ var Relacion = function Relacion(_ref4) {
   /** Leaflet **/
 
 
-  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl.BaseLayer,
-      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl.Overlay;
-  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_14___default().icon({
-    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_16__["default"],
-    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_17__["default"]
+  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl.BaseLayer,
+      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl.Overlay;
+  var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_15___default().icon({
+    iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_17__["default"],
+    shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_18__["default"]
   });
-  (leaflet__WEBPACK_IMPORTED_MODULE_14___default().Marker.prototype.options.icon) = DefaultIcon;
+  (leaflet__WEBPACK_IMPORTED_MODULE_15___default().Marker.prototype.options.icon) = DefaultIcon;
   var styleMap = {
     width: "100%",
     height: "600px"
   };
 
   function getCoords(coord) {
-    return leaflet__WEBPACK_IMPORTED_MODULE_14___default().latLng(coord["long"], coord.lat);
+    return leaflet__WEBPACK_IMPORTED_MODULE_15___default().latLng(coord["long"], coord.lat);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+  var refContainer = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  var refImg = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState16 = _slicedToArray(_useState15, 2),
+      width = _useState16[0],
+      setWidth = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(true),
+      _useState18 = _slicedToArray(_useState17, 2),
+      ready = _useState18[0],
+      setReady = _useState18[1];
+
+  var setImageSize = function setImageSize() {
+    var img = new Image();
+    img.src = relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "";
+
+    img.onload = function () {
+      var _refContainer$current;
+
+      var height = img.height;
+      var width = img.width;
+      var newWidth = width * 600;
+      newWidth = newWidth / height;
+      var container = (_refContainer$current = refContainer.current) === null || _refContainer$current === void 0 ? void 0 : _refContainer$current.offsetWidth;
+      newWidth = newWidth / 2;
+      container = container / 2;
+      setWidth(container - newWidth);
+      setReady(false);
+      setReady(true);
+    };
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
       container: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
         item: true,
         xs: 12,
         style: {
           backgroundColor: "#193661"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
             href: "/",
             style: {
               display: "flex",
@@ -31797,7 +31832,7 @@ var Relacion = function Relacion(_ref4) {
               color: "white",
               width: "max-content"
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_25__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_26__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("p", {
               style: {
                 fontSize: "20px"
               },
@@ -31806,48 +31841,48 @@ var Relacion = function Relacion(_ref4) {
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
       maxWidth: "xl",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
         className: contMap === "lienzo" ? "map-container grid-lienzo" : "map-container",
-        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.MapContainer, {
+        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.MapContainer, {
             style: styleMap,
-            center: leaflet__WEBPACK_IMPORTED_MODULE_14___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
+            center: leaflet__WEBPACK_IMPORTED_MODULE_15___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
             zoom: data.infoMapa.zoom.inicial,
             minZoom: data.infoMapa.zoom.min,
             maxZoom: data.infoMapa.zoom.max,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayersControl, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.LayersControl, {
               position: "topleft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(BaseLayer, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(BaseLayer, {
                 checked: true,
                 name: "ESRI Satellite",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.TileLayer, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.TileLayer, {
                   attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
                   url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
                 })
               }), Object.values(data.infoMapa.mapasBase).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(BaseLayer, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(BaseLayer, {
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.TileLayer, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.TileLayer, {
                     attribution: item.atribution,
                     url: item.link
                   })
                 });
               }), Object.values(data.capas).map(function (item, i) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(Overlay, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(Overlay, {
                   checked: true,
                   name: item.nombre,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.LayerGroup, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.LayerGroup, {
                     children: Object.values(item.elementos).map(function (el, ind) {
                       if (el.tipo === "punto") {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_29__.CircleMarker, {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.CircleMarker, {
                           center: getCoords(el.coordenadas),
                           radius: 4,
                           color: el.simbolo.color,
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_30__.Popup, {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.Popup, {
                             children: el.popup
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_31__.Tooltip, {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.Tooltip, {
                             children: el.nombre
                           })]
                         });
@@ -31855,7 +31890,7 @@ var Relacion = function Relacion(_ref4) {
 
                       if (el.tipo === "geojson" && ind !== 4) {
                         try {
-                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_32__.GeoJSON, {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_33__.GeoJSON, {
                             data: el.coordenadas
                           }, ind);
                         } catch (error) {// console.log(
@@ -31866,36 +31901,48 @@ var Relacion = function Relacion(_ref4) {
                     })
                   }, item.nombre)
                 });
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_33__.ScaleControl, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_34__.ScaleControl, {
                 position: "bottomright",
                 metric: true,
                 imperial: true
               })]
             })
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_34__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_35__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
           className: "mapaPicto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("iframe", {
-            src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
-            style: {
-              width: '100%',
-              height: '100%'
-            }
+          ref: refContainer,
+          children: ready && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
+            centerZoomedOut: true,
+            initialPositionX: width,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
+              wrapperStyle: {
+                width: "100%"
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
+                src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
+                alt: "",
+                style: {
+                  height: "600px"
+                },
+                id: "imagenprov",
+                ref: refImg
+              })
+            })
           })
-        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+        }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
             container: true,
             spacing: 5,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
               xs: 6,
               style: {
                 display: "flex",
                 justifyContent: "flex-end"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformWrapper, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_9__.TransformComponent, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                     src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
@@ -31904,49 +31951,50 @@ var Relacion = function Relacion(_ref4) {
                   })
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
               xs: 6,
               style: {
                 display: "flex",
                 justifyContent: "flex-start"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                 className: "lienzo-text",
                 children: textActive ? textActive : 'Sin Transcripción'
               })
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
         className: "container-controls",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
             className: contMap === "geo" && idActive == 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("geo");
               setIdActive(0);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa geogr\xE1fico"
           })]
-        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
           className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
             className: contMap === "picto" && idActive === 0 ? "round-button active" : "round-button",
             onClick: function onClick() {
               setContMap("picto");
               setIdActive(0);
+              setImageSize();
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
             className: "round-button-text",
             children: "Mapa pictogr\xE1fico 1"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
           className: "swiper-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
             spaceBetween: 15,
             freeMode: false,
             effect: "coverflow",
@@ -31956,12 +32004,12 @@ var Relacion = function Relacion(_ref4) {
             modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
             className: "leo-swiper",
             children: relation && relation.invoices.map(function (invoice, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
                 className: "mini-photo-container",
                 onClick: function onClick() {
                   return changeFolio(invoice, index);
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
                   src: "/storage/relaciones/" + invoice.imagen,
                   style: {
@@ -31972,17 +32020,17 @@ var Relacion = function Relacion(_ref4) {
               }, index);
             })
           })
-        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
           className: "translate-container",
           children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
-            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(TranslateButtonActive, {
+            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(TranslateButtonActive, {
               variant: "contained",
               size: "large",
               onClick: function onClick() {
                 return changeText(transcription.texto, index);
               },
               children: transcription.nombre
-            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(TranslateButton, {
+            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(TranslateButton, {
               variant: "contained",
               size: "large",
               onClick: function onClick() {
@@ -31992,52 +32040,52 @@ var Relacion = function Relacion(_ref4) {
             }, index);
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
         className: "container-controls",
         children: relation.maps && relation.maps.length > 0 && relation.maps.map(function (map, index) {
           if (index === 0) return;
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
             className: "round-button-container",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
               className: contMap == "picto" && idActive === index ? "round-button active" : "round-button",
               onClick: function onClick() {
                 setContMap("picto");
                 setIdActive(index);
               }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
               className: "round-button-text",
               children: ["Mapa pictogr\xE1fico ", index + 1]
             })]
           });
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
         style: {
           marginTop: 50,
           width: "100%",
           marginBottom: 70
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
           container: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
             item: true,
             xs: 9,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
               className: "info-text-relacion",
-              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
+              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
             item: true,
             xs: 3,
             style: {
               display: "flex",
               justifyContent: "center"
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
               href: route("sources.index", relation.uuid),
               style: {
                 textDecoration: "none"
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(ColorButton, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(ColorButton, {
                 variant: "contained",
                 size: "large",
                 children: "Ver Fuentes"
@@ -32046,163 +32094,163 @@ var Relacion = function Relacion(_ref4) {
           })]
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
       className: "footer-all-folios",
       style: {
         position: "static"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
         maxWidth: "xl",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
           className: "folios-button",
           style: {
             cursor: "pointer"
           },
           onClick: toggleDrawer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_35__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_36__["default"], {
             style: {
               marginRight: 10
             }
           }), " Ver todos los folios"]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_36__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_37__["default"], {
       anchor: "bottom",
       open: open //onClose={toggleDrawer}
       ,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
         className: "drawer-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
             container: true,
             spacing: 8,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 0 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini1.jpg",
                   onClick: function onClick() {
                     return changeFolio(0);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 1"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 1 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini2.jpg",
                   onClick: function onClick() {
                     return changeFolio(1);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 2"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 2 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini3.jpg",
                   onClick: function onClick() {
                     return changeFolio(2);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 3"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 3 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini4.jpg",
                   onClick: function onClick() {
                     return changeFolio(3);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 4"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 4 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini5.jpg",
                   onClick: function onClick() {
                     return changeFolio(4);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 5"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 5 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini6.jpg",
                   onClick: function onClick() {
                     return changeFolio(5);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 6"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 6 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini7.jpg",
                   onClick: function onClick() {
                     return changeFolio(6);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 7"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_23__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
               item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
                 className: contMap == "lienzo" && idActive == 7 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("img", {
                   className: "",
                   src: "/img/provisional/Cul_mini8.jpg",
                   onClick: function onClick() {
                     return changeFolio(7);
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
                   children: "Folio 8"
                 })]
               })
             })]
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)("div", {
         className: "footer-all-folios",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_25__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
             className: "folios-button",
             style: {
               cursor: "pointer"
             },
             onClick: toggleDrawer,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_37__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_38__["default"], {
               style: {
                 marginRight: 10
               }
@@ -32215,7 +32263,7 @@ var Relacion = function Relacion(_ref4) {
 };
 
 Relacion.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_19__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: page,
     title: "Relaciones Geogr\xE1ficas",
     pageTitle: "Relaciones Geogr\xE1ficas"
