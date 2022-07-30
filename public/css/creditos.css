@@ -1,10 +1,11 @@
-body{
+.body-creditos {
     background-color: #304a71;
     color: white;
     font-size: 15px;
     font-weight: 300;
+    min-height: calc(100vh - 348px);
 }
-.big-text{
+.big-text {
     font-size: 25px;
     font-weight: 400;
     margin-bottom: 50px;
