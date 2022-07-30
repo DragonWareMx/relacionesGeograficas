@@ -43,6 +43,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 /** Axios Imports **/
 import axios from "axios";
+import { Box, Button, Typography } from '@mui/material';
 
 function showAlfa(){
     document.getElementById('mapa').style.display = "none";
@@ -128,14 +129,17 @@ const Home = ({ relaciones }) => {
     return (
 
         <>
-        <div className="row" style={{backgroundColor:'#193661'}}>
-            <Container maxWidth="md">
+        {/* CAROUSEL */}
+        <Box component={"section"} sx={{backgroundColor:'#193661'}}>
+            <Container>
                 <Swiper
-                    navigation={true}
+                    slidesPerView={3}
+                    spaceBetween={10}
+                    navigation={false}
                     pagination={{dynamicBullets:true,clickable:true}}
                     mousewheel={false}
                     keyboard={true}
-                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                    modules={[Pagination, Mousewheel, Keyboard]}
                     className="oski-swiper"
                     loop={true}
                 >
@@ -159,101 +163,165 @@ const Home = ({ relaciones }) => {
                     </SwiperSlide>
                 </Swiper>
             </Container>
-        </div>
-        <Container maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'50px'}}>
-            <Grid container alignItems="center" justifyContent="space-between">
-                <Grid item xs={12} sm={6} className="pd-ri-50">
-                    <Grid>Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes 
+        </Box>
+
+        {/* CONTENT */}
+        <Container sx={{pt: 5, paddingBottom:5}}>
+            <Grid
+                container
+                alignItems="center"
+                justifyContent="space-between"
+            >
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                >
+                    <Typography align='justify'>
+                        Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes 
                         históricas del siglo XVI. Como el título sugiere, el objetivo es desarrollar métodos y herramientas computacionales que faciliten la extracción de datos histórico-geográficos 
                         de manera automática para responder preguntas acerca de la sociedad novohispana.
-                    La investigación utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geográficas de la Nueva España, específicamente los reportes redactados entre 
-                    1577 y 1585 en varias provincias de México y Guatemala por orden del rey Felipe II. Estos informes describen cómo eran la organización territorial y el modo de vida de los 
-                    habitantes de Nueva España seis décadas después de consumada la conquista de México-Tenochtitlan.
-                    </Grid>
+                        <br />
+                        <br />
+                        La investigación utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geográficas de la Nueva España, específicamente los reportes redactados entre 
+                        1577 y 1585 en varias provincias de México y Guatemala por orden del rey Felipe II. Estos informes describen cómo eran la organización territorial y el modo de vida de los 
+                        habitantes de Nueva España seis décadas después de consumada la conquista de México-Tenochtitlan.
+                    </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} style={{display:'flex', justifyContent:'center'}} className="pd-le-50">
-                    <img src="/img/assets/asset1.png" style={{marginTop:'20px'}} />
+                
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    container
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <img src="/img/assets/asset1.png"/>
                 </Grid>
             </Grid>
-            <Grid container alignItems="center" justifyContent="space-between" direction="row-reverse" style={{marginTop:'30px'}}>
-                <Grid item xs={12} sm={6} className="pd-le-50">
-                    <Grid>Las Relaciones se componen de textos y mapas en cuya elaboración participaron informantes indígenas y oficiales españoles. Debido a la riqueza y variedad del contenido, el 
+
+            <Grid
+                container
+                alignItems="center"
+                justifyContent="space-between"
+                direction="row-reverse"
+            >
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                >
+                    <Typography align='justify'>
+                        Las Relaciones se componen de textos y mapas en cuya elaboración participaron informantes indígenas y oficiales españoles. Debido a la riqueza y variedad del contenido, el 
                         corpus constituye una de las fuentes más importantes para analizar la historia, la geografía, las jurisdicciones administrativas,  la  cultura,  la religión, la economía, la 
                         interacción social y los procesos de transculturación que afectaron a las comunidades nativas y a los colonizadores.
-                    Otra aportación del proyecto es la compilación de un directorio de nombres geográficos del siglo XVI, el cual provee las coordenadas geográficas de cerca de 4000 topónimos, 
-                    acompañadas de otros rubros de información temática extraída de los documentos (lo que en inglés se denomina gazetteer). Una tercera contribución es la conversión del corpus 
-                    de las Relaciones Geográficas del medio analógico a un formato legible por computadora. Esta versión digital estará disponible en distintas plataformas gracias a la tecnología 
-                    de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigación.
-                    </Grid>
+                        <br />
+                        <br />
+                        Otra aportación del proyecto es la compilación de un directorio de nombres geográficos del siglo XVI, el cual provee las coordenadas geográficas de cerca de 4000 topónimos, 
+                        acompañadas de otros rubros de información temática extraída de los documentos (lo que en inglés se denomina gazetteer). Una tercera contribución es la conversión del corpus 
+                        de las Relaciones Geográficas del medio analógico a un formato legible por computadora. Esta versión digital estará disponible en distintas plataformas gracias a la tecnología 
+                        de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigación.
+                    </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} style={{display:'flex', justifyContent:'center'}} className="pd-ri-50">
-                    <img src="/img/assets/asset2.png" style={{width:'35%',marginTop:'20px'}} />
+
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    container
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <img src="/img/assets/asset2.png" style={{width:'60%'}} />
                 </Grid>
             </Grid>
-            <Grid container alignItems="flex-end" justifyContent="space-between" direction="row-reverse" style={{marginTop:'30px'}}>
-                <InertiaLink href="#!"><img style={{width:'250px'}} src="/img/assets/btn1.PNG" /></InertiaLink>
+
+            <Grid
+                container
+                alignItems="flex-end"
+                justifyContent="space-between"
+                direction="row-reverse"
+            >
+                <InertiaLink href="#!">
+                    <img style={{width:'250px'}} src="/img/assets/btn1.PNG" />
+                </InertiaLink>
             </Grid>
         </Container>
-        <Grid container justifyContent="center" spacing={2} alignItems="center" style={{backgroundColor:'#475e80', padding:'10px'}}>
+
+        {/* MAP */}
+        <Grid
+            container
+            justifyContent="center"
+            spacing={2}
+            alignItems="center"
+            style={{backgroundColor:'#475e80', padding:'10px'}}
+        >
             <Grid item xs={6} sm={4} md={2} style={{paddingTop:'0px'}}>
+                {/* <Button variant="outlined" sx={{}}>
+                    MAPA
+                </Button> */}
                 <Paper className="btn-op" onClick={showMapa}>MAPA</Paper>
             </Grid>
             <Grid item xs={6} sm={4} md={2} style={{paddingTop:'0px'}}>
                 <Paper className="btn-op" onClick={showAlfa}>ALFABÉTICO</Paper>
             </Grid>
         </Grid>
-        {/* APARTADO DE MAPA LEAFLET */}
-        {/* <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15265770.013208373!2d-102.4105487232916!3d20.912535627434032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses-419!2smx!4v1650413701265!5m2!1ses-419!2smx" width="100%" height="1000" style={{border:'none'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
-        
-        <MapContainer
-            id="mapa"
-            style={styleMap}
-            center={
-                L.latLng(data.infoMapa.centro.lat, data.infoMapa.centro.long)
-            }
-            zoom={data.infoMapa.zoom.inicial}
-            minZoom={data.infoMapa.zoom.min}
-            maxZoom={data.infoMapa.zoom.max}
-        >
-            <LayersControl position='topleft' collapsed={false}>
-                <BaseLayer checked name="ESRI Satellite">
-                    <TileLayer
-                        attribution={
-                            '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
-                        }
-                        url={
-                            "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                        }
-                    />
-                </BaseLayer>
-                <LayerGroup>
-                    {
-                        data.capas !== null ? data.capas.map((item, i) => {
-                            return(
-                                <CircleMarker key={item.idDS} center={L.latLng(item.Y, item.X)} radius={5} color={"white"}>
-                                    <Tooltip>
-                                        {item.cNombre}
-                                    </Tooltip>
-                                </CircleMarker>
-                            )
-                        }) : ''
-                    }
-                </LayerGroup>
 
-                <ScaleControl
-                    position="bottomright"
-                    metric={true}
-                    imperial={true}
-                />
-            </LayersControl>
-        </MapContainer>
+        {/* APARTADO DE MAPA LEAFLET */}
+        <Container maxWidth="false" sx={{ maxWidth:'90%'  }}>
+            <MapContainer
+                id="mapa"
+                style={styleMap}
+                center={
+                    L.latLng(data.infoMapa.centro.lat, data.infoMapa.centro.long)
+                }
+                zoom={data.infoMapa.zoom.inicial}
+                minZoom={data.infoMapa.zoom.min}
+                maxZoom={data.infoMapa.zoom.max}
+            >
+                <LayersControl position='topleft' collapsed={false}>
+                    <BaseLayer checked name="ESRI Satellite">
+                        <TileLayer
+                            attribution={
+                                '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                            }
+                            url={
+                                "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+                            }
+                        />
+                    </BaseLayer>
+                    <LayerGroup>
+                        {
+                            data.capas !== null ? data.capas.map((item, i) => {
+                                return(
+                                    <CircleMarker key={item.idDS} center={L.latLng(item.Y, item.X)} radius={5} color={"white"}>
+                                        <Tooltip>
+                                            {item.cNombre}
+                                        </Tooltip>
+                                    </CircleMarker>
+                                )
+                            }) : ''
+                        }
+                    </LayerGroup>
+
+                    <ScaleControl
+                        position="bottomright"
+                        metric={true}
+                        imperial={true}
+                    />
+                </LayersControl>
+            </MapContainer>
+        </Container>
 
         {/* APARTADO DE TODAS LAS RELACIONES */}
-        <Container id="alfabetico" maxWidth={'xl'} style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
+        <Container id="alfabetico" style={{paddingTop:'60px', paddingBottom:'30px', display:'none'}}>
             <Grid container alignItems="stretch">
                 {(relaciones && relaciones.length > 0) ?
                 relaciones.map((rel,index)=>(
-                    <Grid item xs={4} sm={3} md={2} key={index} style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
+                    <Grid item xs={4} sm={12/5} md={12/7} key={index} style={{display:'flex', justifyContent:'center',flexWrap:'wrap', padding:'0px', marginBottom:'35px'}}>
                         {/* Agregar el uuid de la relacion */}
                         <InertiaLink href={route('relations.index', rel.uuid)} style={{textDecoration:'none', color:'black', display:'flex', justifyContent:'center',flexWrap:'wrap'}}>
                             <Avatar alt={rel.nombre} src={'/storage/relaciones/' + rel.miniatura} sx={{ width: 90, height: 90 }} />
