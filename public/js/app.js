@@ -17,6 +17,17 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js ***!
@@ -10712,429 +10723,6 @@ function getInputUtilityClass(slot) {
 const inputClasses = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _InputBase__WEBPACK_IMPORTED_MODULE_2__["default"], (0,_mui_base__WEBPACK_IMPORTED_MODULE_3__["default"])('MuiInput', ['root', 'underline', 'input']));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputClasses);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/LinearProgress/LinearProgress.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/@mui/material/LinearProgress/LinearProgress.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/composeClasses/composeClasses.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/system */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/material/node_modules/@mui/system/esm/colorManipulator.js");
-/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@mui/material/utils/capitalize.js");
-/* harmony import */ var _styles_useTheme__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../styles/useTheme */ "./node_modules/@mui/material/styles/useTheme.js");
-/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var _linearProgressClasses__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./linearProgressClasses */ "./node_modules/@mui/material/LinearProgress/linearProgressClasses.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["className", "color", "value", "valueBuffer", "variant"];
-
-let _ = t => t,
-    _t,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6;
-
-
-
-
-
-
-
-
-
-
-
-
-
-const TRANSITION_DURATION = 4; // seconds
-
-const indeterminate1Keyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t || (_t = _`
-  0% {
-    left: -35%;
-    right: 100%;
-  }
-
-  60% {
-    left: 100%;
-    right: -90%;
-  }
-
-  100% {
-    left: 100%;
-    right: -90%;
-  }
-`));
-const indeterminate2Keyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t2 || (_t2 = _`
-  0% {
-    left: -200%;
-    right: 100%;
-  }
-
-  60% {
-    left: 107%;
-    right: -8%;
-  }
-
-  100% {
-    left: 107%;
-    right: -8%;
-  }
-`));
-const bufferKeyframe = (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.keyframes)(_t3 || (_t3 = _`
-  0% {
-    opacity: 1;
-    background-position: 0 -23px;
-  }
-
-  60% {
-    opacity: 0;
-    background-position: 0 -23px;
-  }
-
-  100% {
-    opacity: 1;
-    background-position: -200px -23px;
-  }
-`));
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes,
-    variant,
-    color
-  } = ownerState;
-  const slots = {
-    root: ['root', `color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, variant],
-    dashed: ['dashed', `dashedColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`],
-    bar1: ['bar', `barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, (variant === 'indeterminate' || variant === 'query') && 'bar1Indeterminate', variant === 'determinate' && 'bar1Determinate', variant === 'buffer' && 'bar1Buffer'],
-    bar2: ['bar', variant !== 'buffer' && `barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, variant === 'buffer' && `color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color)}`, (variant === 'indeterminate' || variant === 'query') && 'bar2Indeterminate', variant === 'buffer' && 'bar2Buffer']
-  };
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_7__["default"])(slots, _linearProgressClasses__WEBPACK_IMPORTED_MODULE_8__.getLinearProgressUtilityClass, classes);
-};
-
-const getColorShade = (theme, color) => {
-  if (color === 'inherit') {
-    return 'currentColor';
-  }
-
-  return theme.palette.mode === 'light' ? (0,_mui_system__WEBPACK_IMPORTED_MODULE_9__.lighten)(theme.palette[color].main, 0.62) : (0,_mui_system__WEBPACK_IMPORTED_MODULE_9__.darken)(theme.palette[color].main, 0.5);
-};
-
-const LinearProgressRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Root',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.root, styles[`color${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], styles[ownerState.variant]];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  position: 'relative',
-  overflow: 'hidden',
-  display: 'block',
-  height: 4,
-  zIndex: 0,
-  // Fix Safari's bug during composition of different paint.
-  '@media print': {
-    colorAdjust: 'exact'
-  },
-  backgroundColor: getColorShade(theme, ownerState.color)
-}, ownerState.color === 'inherit' && ownerState.variant !== 'buffer' && {
-  backgroundColor: 'none',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'currentColor',
-    opacity: 0.3
-  }
-}, ownerState.variant === 'buffer' && {
-  backgroundColor: 'transparent'
-}, ownerState.variant === 'query' && {
-  transform: 'rotate(180deg)'
-}));
-const LinearProgressDashed = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Dashed',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.dashed, styles[`dashedColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`]];
-  }
-})(({
-  ownerState,
-  theme
-}) => {
-  const backgroundColor = getColorShade(theme, ownerState.color);
-  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    position: 'absolute',
-    marginTop: 0,
-    height: '100%',
-    width: '100%'
-  }, ownerState.color === 'inherit' && {
-    opacity: 0.3
-  }, {
-    backgroundImage: `radial-gradient(${backgroundColor} 0%, ${backgroundColor} 16%, transparent 42%)`,
-    backgroundSize: '10px 10px',
-    backgroundPosition: '0 -23px'
-  });
-}, (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t4 || (_t4 = _`
-    animation: ${0} 3s infinite linear;
-  `), bufferKeyframe));
-const LinearProgressBar1 = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Bar1',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.bar, styles[`barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && styles.bar1Indeterminate, ownerState.variant === 'determinate' && styles.bar1Determinate, ownerState.variant === 'buffer' && styles.bar1Buffer];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  width: '100%',
-  position: 'absolute',
-  left: 0,
-  bottom: 0,
-  top: 0,
-  transition: 'transform 0.2s linear',
-  transformOrigin: 'left',
-  backgroundColor: ownerState.color === 'inherit' ? 'currentColor' : theme.palette[ownerState.color].main
-}, ownerState.variant === 'determinate' && {
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}, ownerState.variant === 'buffer' && {
-  zIndex: 1,
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}), ({
-  ownerState
-}) => (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t5 || (_t5 = _`
-      width: auto;
-      animation: ${0} 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-    `), indeterminate1Keyframe));
-const LinearProgressBar2 = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_10__["default"])('span', {
-  name: 'MuiLinearProgress',
-  slot: 'Bar2',
-  overridesResolver: (props, styles) => {
-    const {
-      ownerState
-    } = props;
-    return [styles.bar, styles[`barColor${(0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(ownerState.color)}`], (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && styles.bar2Indeterminate, ownerState.variant === 'buffer' && styles.bar2Buffer];
-  }
-})(({
-  ownerState,
-  theme
-}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-  width: '100%',
-  position: 'absolute',
-  left: 0,
-  bottom: 0,
-  top: 0,
-  transition: 'transform 0.2s linear',
-  transformOrigin: 'left'
-}, ownerState.variant !== 'buffer' && {
-  backgroundColor: ownerState.color === 'inherit' ? 'currentColor' : theme.palette[ownerState.color].main
-}, ownerState.color === 'inherit' && {
-  opacity: 0.3
-}, ownerState.variant === 'buffer' && {
-  backgroundColor: getColorShade(theme, ownerState.color),
-  transition: `transform .${TRANSITION_DURATION}s linear`
-}), ({
-  ownerState
-}) => (ownerState.variant === 'indeterminate' || ownerState.variant === 'query') && (0,_mui_system__WEBPACK_IMPORTED_MODULE_5__.css)(_t6 || (_t6 = _`
-      width: auto;
-      animation: ${0} 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
-    `), indeterminate2Keyframe));
-/**
- * ## ARIA
- *
- * If the progress bar is describing the loading progress of a particular region of a page,
- * you should use `aria-describedby` to point to the progress bar, and set the `aria-busy`
- * attribute to `true` on that region until it has finished loading.
- */
-
-const LinearProgress = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function LinearProgress(inProps, ref) {
-  const props = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_11__["default"])({
-    props: inProps,
-    name: 'MuiLinearProgress'
-  });
-
-  const {
-    className,
-    color = 'primary',
-    value,
-    valueBuffer,
-    variant = 'indeterminate'
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(props, _excluded);
-
-  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-    color,
-    variant
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  const theme = (0,_styles_useTheme__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  const rootProps = {};
-  const inlineStyles = {
-    bar1: {},
-    bar2: {}
-  };
-
-  if (variant === 'determinate' || variant === 'buffer') {
-    if (value !== undefined) {
-      rootProps['aria-valuenow'] = Math.round(value);
-      rootProps['aria-valuemin'] = 0;
-      rootProps['aria-valuemax'] = 100;
-      let transform = value - 100;
-
-      if (theme.direction === 'rtl') {
-        transform = -transform;
-      }
-
-      inlineStyles.bar1.transform = `translateX(${transform}%)`;
-    } else if (true) {
-      console.error('MUI: You need to provide a value prop ' + 'when using the determinate or buffer variant of LinearProgress .');
-    }
-  }
-
-  if (variant === 'buffer') {
-    if (valueBuffer !== undefined) {
-      let transform = (valueBuffer || 0) - 100;
-
-      if (theme.direction === 'rtl') {
-        transform = -transform;
-      }
-
-      inlineStyles.bar2.transform = `translateX(${transform}%)`;
-    } else if (true) {
-      console.error('MUI: You need to provide a valueBuffer prop ' + 'when using the buffer variant of LinearProgress.');
-    }
-  }
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(LinearProgressRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
-    ownerState: ownerState,
-    role: "progressbar"
-  }, rootProps, {
-    ref: ref
-  }, other, {
-    children: [variant === 'buffer' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressDashed, {
-      className: classes.dashed,
-      ownerState: ownerState
-    }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressBar1, {
-      className: classes.bar1,
-      ownerState: ownerState,
-      style: inlineStyles.bar1
-    }), variant === 'determinate' ? null : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(LinearProgressBar2, {
-      className: classes.bar2,
-      ownerState: ownerState,
-      style: inlineStyles.bar2
-    })]
-  }));
-});
- true ? LinearProgress.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object),
-
-  /**
-   * @ignore
-   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().string),
-
-  /**
-   * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
-   * @default 'primary'
-   */
-  color: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOf(['inherit', 'primary', 'secondary']), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().string)]),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_13___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_13___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_13___default().object)]),
-
-  /**
-   * The value of the progress indicator for the determinate and buffer variants.
-   * Value between 0 and 100.
-   */
-  value: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().number),
-
-  /**
-   * The value for the buffer variant.
-   * Value between 0 and 100.
-   */
-  valueBuffer: (prop_types__WEBPACK_IMPORTED_MODULE_13___default().number),
-
-  /**
-   * The variant to use.
-   * Use indeterminate or query when there is no progress value.
-   * @default 'indeterminate'
-   */
-  variant: prop_types__WEBPACK_IMPORTED_MODULE_13___default().oneOf(['buffer', 'determinate', 'indeterminate', 'query'])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LinearProgress);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/LinearProgress/linearProgressClasses.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/@mui/material/LinearProgress/linearProgressClasses.js ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getLinearProgressUtilityClass": () => (/* binding */ getLinearProgressUtilityClass)
-/* harmony export */ });
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/generateUtilityClass/generateUtilityClass.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/material/node_modules/@mui/base/generateUtilityClasses/generateUtilityClasses.js");
-
-function getLinearProgressUtilityClass(slot) {
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiLinearProgress', slot);
-}
-const linearProgressClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiLinearProgress', ['root', 'colorPrimary', 'colorSecondary', 'determinate', 'indeterminate', 'buffer', 'query', 'dashed', 'dashedColorPrimary', 'dashedColorSecondary', 'bar', 'barColorPrimary', 'barColorSecondary', 'bar1Indeterminate', 'bar1Determinate', 'bar1Buffer', 'bar2Indeterminate', 'bar2Buffer']);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (linearProgressClasses);
 
 /***/ }),
 
@@ -30890,16 +30478,16 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
 
 
 
-
 var Creditos = function Creditos(_ref) {
   _objectDestructuringEmpty(_ref);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "body-creditos",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      maxWidth: 'xl',
+      maxWidth: "xl",
       style: {
-        paddingTop: '40px',
-        paddingBottom: '50px'
+        paddingTop: "40px",
+        paddingBottom: "50px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
@@ -30997,15 +30585,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Fuentes = function Fuentes(_ref) {
   var fuentes = _ref.fuentes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "body-creditos",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      maxWidth: 'xl',
+      maxWidth: "xl",
       style: {
-        paddingTop: '40px',
-        paddingBottom: '50px'
+        paddingTop: "40px",
+        paddingBottom: "50px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
@@ -31503,24 +31091,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
-/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-map-interaction */ "./node_modules/react-map-interaction/dist/react-map-interaction.js");
-/* harmony import */ var react_map_interaction__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_map_interaction__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _mui_material_Drawer__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mui/material/Drawer */ "./node_modules/@mui/material/Drawer/Drawer.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowUp */ "./node_modules/@mui/icons-material/KeyboardArrowUp.js");
+/* harmony import */ var _mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mui/icons-material/KeyboardArrowDown */ "./node_modules/@mui/icons-material/KeyboardArrowDown.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-zoom-pan-pinch */ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
@@ -31543,6 +31130,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -31565,9 +31158,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
  //iconos
-
 
 
 
@@ -31593,7 +31184,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-swiper__WEBPACK_IMPORTED_MODULE_5__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_5__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_5__.Navigation]);
+swiper__WEBPACK_IMPORTED_MODULE_6__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_6__.Virtual, swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation]);
 var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_20__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
@@ -31638,17 +31229,17 @@ var TranslateButtonActive = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_19_
 var Relacion = function Relacion(_ref4) {
   var relation = _ref4.relation;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       open = _useState2[0],
       setOpen = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       data = _useState4[0],
       setData = _useState4[1];
 
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
@@ -31658,80 +31249,89 @@ var Relacion = function Relacion(_ref4) {
     setOpen(!open);
   }
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("geo"),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("geo"),
       _useState6 = _slicedToArray(_useState5, 2),
       contMap = _useState6[0],
       setContMap = _useState6[1];
 
-  var folios = [];
-  var textoFolios = [];
-  relation.invoices.forEach(function (folio) {
-    var textos = {};
-    folios.push(folio.imagen);
-    folio.transcriptions.forEach(function (transcription) {
-      textos[transcription.nombre] = transcription.texto;
-    });
-    textoFolios.push(textos);
-  });
-  console.log(folios);
-  var foliosa = ["/img/provisional/Culhuacan1.jpg", "/img/provisional/Culhuacan2.jpg", "/img/provisional/Culhuacan3.jpg", "/img/provisional/Culhuacan4.jpg", "/img/provisional/Culhuacan5.jpg", "/img/provisional/Culhuacan6.jpg", "/img/provisional/Culhuacan7.jpg", "/img/provisional/Culhuacan8.jpg"];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState8 = _slicedToArray(_useState7, 2),
       folioActive = _useState8[0],
       setFolioActive = _useState8[1];
 
-  var changeFolio = function changeFolio(index) {
-    setContMap("lienzo");
-    setFolioActive(index);
-    setOpen(false);
-    setIdActive(index);
-  };
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
       _useState10 = _slicedToArray(_useState9, 2),
-      idActive = _useState10[0],
-      setIdActive = _useState10[1];
+      textActive = _useState10[0],
+      setTextActive = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("acuna"),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
       _useState12 = _slicedToArray(_useState11, 2),
       activeTranslate = _useState12[0],
       setActiveTranslate = _useState12[1];
 
-  var textoFoliosa = [{
-    acuna: "En el pueblo de Culhuacan desta Nueva España, jurisdicción del corregimiento de Mexicaltzingo y su partido, cuya encomienda es de DON FERNANDO DE OÑATE, hijo legítimo de CRISTÓBAL DE OÑATE,  en diecisiete días del mes de enero de mil y quinientos y ochenta años, el ilustre señor GONZALO GALLEGOS, corregidor del, y por presencia de mí, el escribano y receptor de su Majestad yuso escrito, dijo que, por cuanto su Majestad, por una su Instrucción, tiene proveído y mandado que todos los corregidores y alcaldes mayores desta Nueva España hagan averiguación de la calidad, temple y descripción de la tierra, y otras cosas contenidas en la dicha Instrucción, para  cumplir lo que por ella se manda, como tal corregidor del dicho pueblo y su partido hizo las diligencias siguientes:",
-    valadez: "In the town of Culhuacan in New Spain, jurisdiction of the township of Mexicaltzingo and its party, whose charge is DON FERNANDO DE OÑATE, legitimate son of CRISTÓBAL DE OÑATE, on the seventeenth day of the month of January, one thousand and five hundred and eighty years old, the illustrious Mr. GONZALO GALLEGOS, mayor of, and in the presence of me, the notary and receiver of His Majesty and I use the writing, said that, since His Majesty, through his Instruction, has provided and ordered that all the mayors and mayors of this New Spain make an investigation of the quality, temper and description of the land, and other things contained in the said Instruction, to comply with what is ordered by it, as such corregidor of the said town and its party did the following steps:",
-    garza: "Na cidade de Culhuacan na Nova Espanha, jurisdição da comuna de Mexicaltzingo e sua parte, cujo cargo é DON FERNANDO DE OÑATE, filho legítimo de CRISTÓBAL DE OÑATE, no dia dezessete do mês de janeiro de mil e quinhentos e oitenta anos, o ilustre Sr. GONZALO GALLEGOS, prefeito de, e na minha presença, notário e síndico de Sua Majestade e eu uso a escrita, disse que, já que Sua Majestade, por sua Instrução, providenciou e ordenou que todos os prefeitos e prefeitos desta Nova Espanha fazem uma investigação da qualidade, temperamento e descrição da terra, e outras coisas contidas na referida Instrução, para cumprir o que é ordenado por ela, como corregedor da referida cidade e seus partido fez os seguintes passos:"
-  }, {
-    acuna: "Y luego, incontinente, el dicho señor corregidor dijo que, para hacer las dichas diligencias y declaraciones de los naturales del dicho pueblo de Culhuacan, convenía hacer parecer ante sí al gobernador, alcaldes, regidores y principales del, y que, para el dicho efecto, los había mandado venir y estaban presentes, para hacer con ellos la diligencia que conviniese, mediante DIEGO DE PAZ, teniente del dicho partido e intérprete de la lengua mexicana que hablan los dichos indios; y, para ello, le nombró por tal intérprete ante los cuales, y de FRAY JUAN NÚÑEZ, prior del monasterio del SEÑOR SANTO AGUSTÍN del dicho pueblo, que presente estaba y entendía la lengua mexicana. Y se juntaron para este efecto y declaración de la dicha Instrucción, y dijeron y declararon lo siguiente:",
-    valadez: "And then, incontinently, the said corregidor said that, in order to carry out the said proceedings and declarations of the natives of the said town of Culhuacan, it was convenient to make the governor, mayors, aldermen and principals appear before him, and that, for said effect , had ordered them to come and they were present, to do with them the appropriate diligence, through DIEGO DE PAZ, lieutenant of the said party and interpreter of the Mexican language spoken by the said Indians; and, for this, he appointed him by such interpreter before whom, and of FRAY JUAN NÚÑEZ, prior of the monastery of SEÑOR SANTO AGUSTÍN of said town, who was present and understood the Mexican language. And they met for this purpose and declaration of said Instruction, and said and declared the following:",
-    garza: "E então, incontinente, o dito corregedor disse que, para realizar os ditos atos e declarações dos nativos da dita cidade de Culhuacan, era conveniente fazer comparecer perante ele o governador, prefeitos, vereadores e diretores, e que , para o efeito, ordenou-lhes que viessem e estiveram presentes, para fazer com eles as devidas diligências, por intermédio de DIEGO DE PAZ, tenente da referida parte e intérprete da língua mexicana falada pelos referidos índios; e, para isso, o nomeou por tal intérprete perante o qual, e de FRAY JUAN NÚÑEZ, prior do mosteiro de SEÑOR SANTO AGUSTÍN dessa cidade, que estava presente e entendia a língua mexicana. E eles se reuniram para este fim e declaração da referida Instrução, e disseram e declararam o seguinte:"
-  }, {
-    acuna: "Al primero capítulo, dijo el dicho padre prior que este dicho pueblo de Culhuacan, que tiene a su cargo y donde administra los santos sacramentos, tiene dos nombres: el uno, profano y gentílico, de que los naturales dél usaban en tiempo de su gentilidad, y al presente lo usan, que es Culhuacan.  Y dijo que el nombre antiguo, en nuestro lenguaje, es “una punta de cerro corvado”. \n  Al segundo capítulo, dijeron los dichos señor corregidor y padre prior que la conquista y conquistador del dicho pueblo y su comarca fue el mismo que ganó y conquistó a la ciudad de México, de la cual dista dos leguas el dicho pueblo.\n Al tercero capítulo, dijeron que el dicho pueblo es algo frío y de el mismo temple que México, y está fundado en la Laguna todo él, y pasa por medio una acequia principal que va a la ciudad de México, y por ella andan los naturales en sus canoas de madera.  Y, de ordinario, hay mucha agua en la dicha Laguna y acequia, y en especial en tiempo de aguas, y, a esta causa, es húmedo. Y todo el año corren en él los vientos, y en especial, desde enero en adelante, es más ordinario ventar el norte en él.",
-    valadez: "In the first chapter, I said that the priest prior said that this villager of Culhuacan, who was in charge and where he administered the holy sacraments, had two names: the one, profane and gentile, of which the naturales of the usaban in time of su gentilidad, y al presente lo usan, que es Culhuacan. And he says that the old name, in our language, is “una point of cerro corvado”. \n In the second chapter, he said the señor corregidor and the priest prior who conquered the city and the conqueror of the said pueblo and its region was the same as the one who won and conquered the city of Mexico, from where the city is distant from the leagues.\n In the third chapter, I said that the pueblo is something cold and the mismo temple that Mexico, and is founded in the entire Lagoon, and passes through a main waterway that goes to the city of Mexico, and through it and an los naturales in their wooden canoes. Ordinarily, there is a lot of water in the basin, Laguna and acequia, and especially in the waters, and, for this reason, it is wet. And every year it runs in the winds, and in particular, since it's been in adelante, it's the most ordinary wind in the north.",
-    garza: "Al primero capítulo, dijo el dicho padre prior que este dicho pueblo de Culhuacan, que tiene a su cargo y donde administra los santos sacramentos, tiene dos nombres: el uno, profano y gentílico, de que los naturales dél usaban en tiempo de su gentilidad, y al presente lo usan, que es Culhuacan. Y dijo que el nombre antiguo, en nuestro lenguaje, é “una punta de cerro corvado”. \n No segundo capítulo, dijeron los dichos señor corregidor y padre prior que la conquista y conquistador del dicho pueblo y su comarca fue el mismo que ganó y conquistó a la ciudad de Mexico, de la cual dista dos leguas el dicho pueblo.\n Al tercero capítulo, dijeron que el dicho pueblo es algo frío y de el mismo temple que México, y está fundado em la Laguna todo él, y pasa por medio una acequia principal que va a la ciudad de México, y por ella andan los naturales em sus canoas de madera. Y, de ordinario, hay mucha agua en la dicha Laguna y acequia, y en especial en tiempo de aguas, y, a esta causa, es húmedo. Y todo el año corren en él los vientos, y en especial, desde enero en adelante, es más ordinario ventar el norte en él."
-  }, {
-    acuna: "Al cuarto capítulo, dijeron que el dicho pueblo es tierra llana y fresco, de muchas fuentes y manantiales de agua, ansí en tierra como en la laguna; y toda la dicha agua se convierte en la dicha Laguna, porque luego entra en ella. Y es tierra abundosa de maíz y de pastos cuando hay pocas aguas, a causa de la dicha Laguna y fuentes; porque se suelen anegar, como de presente están anegadas, muchas tierras de los dichos naturales, en que siembran. Críanse en él arboledas de sauces y cañaverales, y carrizos que se dan en la Laguna.",
-    valadez: "In the fourth chapter, they said that said town is flat and cool land, with many fountains and springs of water, both on land and in the lagoon; and all the said water becomes the said Lagoon, because then it enters it. And it is an abundant land of corn and pastures when there is little water, because of the said Lagoon and springs; because they are usually flooded, as they are now flooded, many lands of the natural sayings, in which they sow. Groves of willows and reeds grow in it, and reeds that grow in the Lagoon.",
-    garza: "No capítulo quarto, diziam que a referida vila é de terra plana e fresca, com muitas fontes e nascentes de água, tanto em terra como na lagoa; e toda a dita água torna-se a dita Lagoa, porque então entra nela. E é uma terra abundante de milho e pastagens quando há pouca água, por causa da dita Lagoa e nascentes; porque geralmente são inundadas, como agora estão inundadas, muitas terras dos ditos naturais, em que semeiam. Nele crescem salgueiros e juncos, e juncos que crescem na Lagoa."
-  }, {
-    acuna: "Al quinto capítulo, dijeron que este dicho pueblo de Culhuacan tiene novecientos tributarios enteros, sin contar los muchachos: que, cada tributario entero, son dos personas, y, una, hace medio. Y, en tiempos pasados, y después de conquistados, eran muy muchos más, y con enfermedades que han tenido, y en especial de pestilencias, que ellos llaman COCOLIZTE, se han muerto. Es pueblo fundado y poblado en orden, con sus calles y plazas. Su lengua, trato y manera de vivir de los dichos naturales dél, es como los de México, porque son todos mexicanos. Y, en general, se ocupan todos en llevar, en sus canoas, yerbas y piedra a vender a México.",
-    valadez: "In the fifth chapter, they said that this said town of Culhuacan has nine hundred entire tributaries, not counting the boys: that each entire tributary is two people, and one makes up half. And, in past times, and after they were conquered, there were many more, and with diseases that they have had, and especially pestilences, which they call COCOLIZTE, they have died. It is a town founded and populated in order, with its streets and squares. His language, treatment and way of living of the natural sayings of him, is like those of Mexico, because they are all Mexicans. And, in general, they all take care of carrying, in their canoes, herbs and stone to sell to Mexico.",
-    garza: "No quinto capítulo, eles disseram que esta cidade de Culhuacan tem novecentos afluentes inteiros, sem contar os meninos: que cada afluente inteiro é duas pessoas, e uma é a metade. E, em tempos passados, e depois de conquistados, foram muitos mais, e com as doenças que tiveram, e principalmente as pestilências, que chamam de COCOLIZTE, morreram. É uma cidade fundada e povoada em ordem, com suas ruas e praças. Sua linguagem, tratamento e modo de viver dos ditos naturais dele, é como os do México, porque são todos mexicanos. E, em geral, todos se encarregam de carregar, em suas canoas, ervas e pedras para vender ao México."
-  }, {
-    acuna: "Al sexto capítulo, dijeron que el dicho pueblo está en la altura y elevación que la ciudad de México, y que, el día de SAN BERNABÉ a medio día, está el sol en el medio cenit. Al octavo capítulo, dijeron que el dicho pueblo está a dos leguas de la ciudad de México, y a un cuarto de legua de los pueblos de Iztapalapa, Mexicaltzingo y Ocholobusco, poco más o menos; y a dos leguas del pueblo de Suchimilco, y a otras dos del pueblo de Cuitlahuaca. Y las leguas son comunes, y, toda, tierra llana, de buenos caminos y derechos. Con todos los cuales dichos pueblos parte términos.",
-    valadez: "In the sixth chapter, they said that said town is at the height and elevation of Mexico City, and that, on the day of SAN BERNABÉ at noon, the sun is at mid-zenith. In the eighth chapter, they said that the said town is two leagues from the city of Mexico, and a quarter of a league from the towns of Iztapalapa, Mexicaltzingo and Ocholobusco, a little more or less; and two leagues from the town of Suchimilco, and another two from the town of Cuitlahuaca. And the leagues are common, and, all, flat land, with good roads and rights. With all of whom said peoples part terms.",
-    garza: "No sexto capítulo, diziam que a dita cidade está à altura e elevação da Cidade do México, e que, no dia de SAN BERNABÉ ao meio-dia, o sol está no meio do zênite. No oitavo capítulo, diziam que a dita cidade fica a duas léguas da cidade do México, e um quarto de légua das cidades de Iztapalapa, Mexicaltzingo e Ocholobusco, um pouco mais ou menos; e duas léguas da cidade de Suchimilco, e outras duas da cidade de Cuitlahuaca. E as léguas são comuns, e, todas, planas, com boas estradas e direitos. Com todos os quais disse que os povos se separam."
-  }, {
-    acuna: "A los quince capítulos, dijeron que los naturales del dicho pueblo de Culhuacan tenían guerra, por mandado de MONTEZUMA, con los de Huexotzingo y Tlaxcala y otras partes, que eran contrarios del dicho MONTEZUMA. Y traían, en aquel tiempo, puestos unos pañetes por la cintura y, todo lo demás, en cueros, sin otra cosa. Y sus armas eran arcos, flechas, y macanas y rodelas. Andan, ahora, vestidos con camisas, zaragüelles y mantas blancas largas, todo de lienzo de la tierra, y en este hábito andan, y, en general, traen todos zapatos y sombreros. Su comida ordinaria es maíz, y yerbas que llaman QUILITES, y pescadillos de la Laguna; su especia es chile y tomates, y comen muchas veces carne. Las enfermedades que tienen son ordinarias, excepto cuando hay alguna pestilencia, como de presente, que mueren muchos de pujamiento de sangre.",
-    valadez: "After fifteen chapters, they said that the natives of the said town of Culhuacan were at war, by order of MONTEZUMA, with those of Huexotzingo and Tlaxcala and other parts, who were contrary to said MONTEZUMA. And they wore, at that time, some scarves around their waists and everything else, in leathers, without anything else. And their weapons were bows, arrows, clubs and shields. They now walk dressed in shirts, zaragüelles, and long white blankets, all made of cloth from the land, and they walk in this habit, and, in general, they all wear shoes and hats. Their ordinary food is corn, and herbs that they call QUILITES, and little fish from the Lagoon; their spice is chili and tomatoes, and they often eat meat. The illnesses they have are ordinary, except when there is some pestilence, as in the present, when many die of bloodshed.",
-    garza: "Depois de quinze capítulos, eles disseram que os nativos da dita cidade de Culhuacan estavam em guerra, por ordem de MONTEZUMA, com os de Huexotzingo e Tlaxcala e outras partes, que eram contrários a dita MONTEZUMA. E eles usavam, naquela época, alguns lenços na cintura e tudo mais, em couro, sem mais nada. E suas armas eram arcos, flechas, porretes e escudos. Eles agora andam vestidos com camisas, zaragüelles e longas mantas brancas, todas feitas de panos da terra, e andam com esse hábito e, em geral, todos usam sapatos e chapéus. Sua comida comum é milho e ervas que eles chamam de QUILITES, e peixinhos da Lagoa; seu tempero é pimenta e tomate, e muitas vezes comem carne. As doenças que eles têm são comuns, exceto quando há alguma pestilência, como no presente, quando muitos morrem de derramamento de sangue."
-  }, {
-    acuna: "A los veinte capítulos, dijeron que, en el monasterio del dicho pueblo, hay una fuente que hace un estanque grande, y, junto al dicho pueblo, otra fuente que llaman “del Estrella”, el agua de la cual se lleva a México, porque es de la mejor que hay en todo este reino. Hay en el dicho pueblo un molino y batán en que se hace papel, y procede de una fuente en donde está asentado. Hay, también, otras fuentes y manantiales, como está dicho. A los veinte y tres capítulos, dijeron que hay en el dicho pueblo algunas huertezuelas, en que hay árboles frutales de España, que dan fruto de membrillo, manzana, durazno y albaricoques, y otros árboles.",
-    valadez: "After twenty chapters, they said that, in the monastery of the said town, there is a fountain that makes a large pond, and, next to the said town, another fountain that they call “del Estrella”, the water from which is taken to Mexico, because it is the best there is in this whole kingdom. There is in the said town a mill and fulling mill in which paper is made, and it comes from a source where it is settled. There are also other fountains and springs, as has been said. At twenty-three chapters, they said that there are some orchards in the said town, in which there are fruit trees from Spain, which bear quince, apple, peach and apricot fruit, and other trees.",
-    garza: "Depois de vinte capítulos, diziam que, no mosteiro da dita vila, há uma fonte que faz um grande lago, e, junto à dita vila, outra fonte que chamam “del Estrella”, cuja água é retirada. para o México, porque é o melhor que existe em todo este reino. Existe na referida vila um moinho e um moinho onde se fabrica o papel, e este provém de uma fonte onde se instala. Existem também outras fontes e nascentes, como já foi dito. Em vinte e três capítulos, disseram que há alguns pomares na referida cidade, nos quais há árvores frutíferas da Espanha, que dão frutos de marmelo, macieira, pêssego e damasco, e outras árvores."
-  }];
+  function changeFolio(_x, _x2) {
+    return _changeFolio.apply(this, arguments);
+  }
+
+  function _changeFolio() {
+    _changeFolio = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(invoice, index) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setContMap("lienzo");
+              setFolioActive(invoice);
+
+              if (invoice.transcriptions && invoice.transcriptions.length > 0) {
+                setTextActive(invoice.transcriptions[0].texto);
+                setActiveTranslate(0);
+              } else {
+                setTextActive(null);
+                setActiveTranslate(0);
+              }
+
+              setOpen(false);
+              setIdActive(index);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _changeFolio.apply(this, arguments);
+  }
+
+  function changeText(_x3, _x4) {
+    return _changeText.apply(this, arguments);
+  }
+
+  function _changeText() {
+    _changeText = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(text, index) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              setTextActive(text);
+              setActiveTranslate(index);
+
+            case 2:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _changeText.apply(this, arguments);
+  }
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      idActive = _useState14[0],
+      setIdActive = _useState14[1];
   /** Leaflet **/
+
 
   var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.BaseLayer,
       Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl.Overlay;
@@ -31749,6 +31349,39 @@ var Relacion = function Relacion(_ref4) {
     return leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(coord["long"], coord.lat);
   }
 
+  var refContainer = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  var refImg = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState16 = _slicedToArray(_useState15, 2),
+      width = _useState16[0],
+      setWidth = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(true),
+      _useState18 = _slicedToArray(_useState17, 2),
+      ready = _useState18[0],
+      setReady = _useState18[1];
+
+  var setImageSize = function setImageSize() {
+    var img = new Image();
+    img.src = relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "";
+
+    img.onload = function () {
+      var _refContainer$current;
+
+      var height = img.height;
+      var width = img.width;
+      var newWidth = width * 600;
+      newWidth = newWidth / height;
+      var container = (_refContainer$current = refContainer.current) === null || _refContainer$current === void 0 ? void 0 : _refContainer$current.offsetWidth;
+      newWidth = newWidth / 2;
+      container = container / 2;
+      setWidth(container - newWidth);
+      setReady(false);
+      setReady(true);
+    };
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
       container: true,
@@ -31760,7 +31393,7 @@ var Relacion = function Relacion(_ref4) {
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
             href: "/",
             style: {
               display: "flex",
@@ -31782,7 +31415,7 @@ var Relacion = function Relacion(_ref4) {
       maxWidth: "xl",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
         className: contMap === "lienzo" ? "map-container grid-lienzo" : "map-container",
-        children: [contMap === "geo" && data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+        children: [contMap === "geo" && data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.MapContainer, {
             style: styleMap,
             center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
@@ -31845,14 +31478,27 @@ var Relacion = function Relacion(_ref4) {
               })]
             })
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_33__["default"], {}), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+        }), contMap === "picto" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "mapaPicto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("iframe", {
-            src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
-            style: {
-              width: '100%',
-              height: '100%'
-            }
+          ref: refContainer,
+          children: ready && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
+            centerZoomedOut: true,
+            initialPositionX: width,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
+              wrapperStyle: {
+                width: "100%"
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                src: relation.maps && relation.maps.length > 0 ? "/storage/relaciones/" + relation.maps[idActive].imagen : "",
+                alt: "",
+                style: {
+                  height: "600px",
+                  width: '100%'
+                },
+                id: "imagenprov",
+                ref: refImg
+              })
+            })
           })
         }), contMap === "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
@@ -31860,7 +31506,8 @@ var Relacion = function Relacion(_ref4) {
             spacing: 5,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              xs: 6,
+              xs: 12,
+              md: 7,
               style: {
                 display: "flex",
                 justifyContent: "flex-end"
@@ -31868,24 +31515,26 @@ var Relacion = function Relacion(_ref4) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                    src: '/storage/relaciones/' + folios[folioActive],
+                    src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
-                      height: "600px"
+                      height: "600px",
+                      width: '100%'
                     }
                   })
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              xs: 6,
+              xs: 12,
+              md: 5,
               style: {
                 display: "flex",
                 justifyContent: "flex-start"
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
                 className: "lienzo-text",
-                children: textoFolios[folioActive][activeTranslate]
+                children: textActive ? textActive : 'Sin Transcripción'
               })
             })]
           })
@@ -31911,6 +31560,7 @@ var Relacion = function Relacion(_ref4) {
             onClick: function onClick() {
               setContMap("picto");
               setIdActive(0);
+              setImageSize();
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
             className: "round-button-text",
@@ -31918,166 +31568,51 @@ var Relacion = function Relacion(_ref4) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "swiper-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
             spaceBetween: 15,
             freeMode: false,
             effect: "coverflow",
             grabCursor: true,
             slidesPerView: 5,
             navigation: true,
-            modules: [swiper__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_5__.FreeMode],
+            modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
             className: "leo-swiper",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(0);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 0 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini1.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(1);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 1 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini2.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(2);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 2 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini3.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(3);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 3 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini4.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(4);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 4 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini5.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(5);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 5 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini6.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(6);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 6 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini7.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
-              className: "mini-photo-container",
-              onClick: function onClick() {
-                return changeFolio(7);
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                className: contMap == "lienzo" && idActive == 7 ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                src: "/img/provisional/Cul_mini8.jpg",
-                style: {
-                  width: '66px',
-                  height: '100px'
-                }
-              })
-            })]
+            children: relation && relation.invoices.map(function (invoice, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+                className: "mini-photo-container",
+                onClick: function onClick() {
+                  return changeFolio(invoice, index);
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                  className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
+                  src: "/storage/relaciones/" + invoice.imagen,
+                  style: {
+                    width: '66px',
+                    height: '100px'
+                  }
+                })
+              }, index);
+            })
           })
-        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           className: "translate-container",
-          children: [activeTranslate == "acuna" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("acuna");
-            },
-            children: "Acu\xF1a"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("acuna");
-            },
-            children: "Acu\xF1a"
-          }), activeTranslate == "valadez" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("valadez");
-            },
-            children: "Valadez"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("valadez");
-            },
-            children: "Valadez"
-          }), activeTranslate == "garza" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("garza");
-            },
-            children: "De la Garza"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-            variant: "contained",
-            size: "large",
-            onClick: function onClick() {
-              setActiveTranslate("garza");
-            },
-            children: "De la Garza"
-          })]
+          children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
+            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
+              variant: "contained",
+              size: "large",
+              onClick: function onClick() {
+                return changeText(transcription.texto, index);
+              },
+              children: transcription.nombre
+            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
+              variant: "contained",
+              size: "large",
+              onClick: function onClick() {
+                return changeText(transcription.texto, index);
+              },
+              children: transcription.nombre
+            }, index);
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "container-controls",
@@ -32090,6 +31625,7 @@ var Relacion = function Relacion(_ref4) {
               onClick: function onClick() {
                 setContMap("picto");
                 setIdActive(index);
+                setImageSize();
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
               className: "round-button-text",
@@ -32103,34 +31639,50 @@ var Relacion = function Relacion(_ref4) {
           width: "100%",
           marginBottom: 70
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-          container: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-            item: true,
-            xs: 9,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-              className: "info-text-relacion",
-              children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-            item: true,
-            xs: 3,
-            style: {
-              display: "flex",
-              justifyContent: "center"
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.InertiaLink, {
-              href: route("sources.index", relation.uuid),
-              style: {
-                textDecoration: "none"
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(ColorButton, {
-                variant: "contained",
-                size: "large",
-                children: "Ver Fuentes"
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+          style: {
+            width: '90%',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            container: true,
+            justifyContent: 'space-between',
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              item: true,
+              sm: 7,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                className: "info-text-relacion",
+                children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
               })
-            })
-          })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              item: true,
+              sm: 5,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                container: true,
+                justifyContent: 'right',
+                sx: {
+                  mt: {
+                    xs: 3,
+                    sm: 0
+                  }
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+                  href: route("sources.index", relation.uuid),
+                  style: {
+                    textDecoration: "none"
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(ColorButton, {
+                    variant: "contained",
+                    size: "large",
+                    children: "Ver Fuentes"
+                  })
+                })
+              })
+            })]
+          })
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
@@ -32146,14 +31698,14 @@ var Relacion = function Relacion(_ref4) {
             cursor: "pointer"
           },
           onClick: toggleDrawer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_34__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowUp__WEBPACK_IMPORTED_MODULE_33__["default"], {
             style: {
               marginRight: 10
             }
           }), " Ver todos los folios"]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_35__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Drawer__WEBPACK_IMPORTED_MODULE_34__["default"], {
       anchor: "bottom",
       open: open //onClose={toggleDrawer}
       ,
@@ -32161,122 +31713,30 @@ var Relacion = function Relacion(_ref4) {
         className: "drawer-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
             container: true,
             spacing: 8,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 0 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini1.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(0);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 1"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 1 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini2.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(1);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 2"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 2 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini3.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(2);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 3"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 3 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini4.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(3);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 4"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 4 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini5.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(4);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 5"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 5 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini6.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(5);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 6"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 6 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini7.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(6);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 7"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-              item: true,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                className: contMap == "lienzo" && idActive == 7 ? "folio-mini-container active" : "folio-mini-container",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: "",
-                  src: "/img/provisional/Cul_mini8.jpg",
-                  onClick: function onClick() {
-                    return changeFolio(7);
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                  children: "Folio 8"
-                })]
-              })
-            })]
+            children: relation && relation.invoices.map(function (invoice, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                item: true,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                  className: contMap == "lienzo" && idActive == index ? "folio-mini-container active" : "folio-mini-container",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                    style: {
+                      width: 100,
+                      height: 139,
+                      objectFit: 'cover'
+                    },
+                    src: "/storage/relaciones/" + invoice.imagen,
+                    onClick: function onClick() {
+                      return changeFolio(invoice, index);
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    children: "Folio 1"
+                  })]
+                }, index)
+              });
+            })
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
@@ -32289,7 +31749,7 @@ var Relacion = function Relacion(_ref4) {
               cursor: "pointer"
             },
             onClick: toggleDrawer,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_36__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_icons_material_KeyboardArrowDown__WEBPACK_IMPORTED_MODULE_35__["default"], {
               style: {
                 marginRight: 10
               }
@@ -32302,7 +31762,7 @@ var Relacion = function Relacion(_ref4) {
 };
 
 Relacion.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: page,
     title: "Relaciones Geogr\xE1ficas",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -32933,7 +32393,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background-color: #304a71;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n}\r\n.big-text{\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".body-creditos {\r\n    background-color: #304a71;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n    min-height: calc(100vh - 348px);\r\n}\r\n.big-text {\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32981,7 +32441,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 100%;\r\n    height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 40%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: space-around;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n    padding-left:0px;\r\n    padding-right: 0px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 50%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n@media(max-width:1100px){\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -78874,1038 +78334,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/react-map-interaction/dist/react-map-interaction.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/react-map-interaction/dist/react-map-interaction.js ***!
-  \**************************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"), __webpack_require__(/*! react */ "./node_modules/react/index.js"));
-	else {}
-})(this, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __nested_webpack_require_754__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __nested_webpack_require_754__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__nested_webpack_require_754__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__nested_webpack_require_754__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__nested_webpack_require_754__.d = function(exports, name, getter) {
-/******/ 		if(!__nested_webpack_require_754__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__nested_webpack_require_754__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__nested_webpack_require_754__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __nested_webpack_require_754__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__nested_webpack_require_754__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __nested_webpack_require_754__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__nested_webpack_require_754__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__nested_webpack_require_754__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__nested_webpack_require_754__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__nested_webpack_require_754__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __nested_webpack_require_754__(__nested_webpack_require_754__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __nested_webpack_require_4438__) {
-
-"use strict";
-__nested_webpack_require_4438__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","amd":"React","root":"React"}
-var external_commonjs_react_commonjs2_react_amd_React_root_React_ = __nested_webpack_require_4438__(1);
-var external_commonjs_react_commonjs2_react_amd_React_root_React_default = /*#__PURE__*/__nested_webpack_require_4438__.n(external_commonjs_react_commonjs2_react_amd_React_root_React_);
-
-// EXTERNAL MODULE: external {"commonjs":"prop-types","commonjs2":"prop-types","commonj2s":"prop-types","amd":"prop-types","root":"PropTypes"}
-var external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_ = __nested_webpack_require_4438__(0);
-var external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default = /*#__PURE__*/__nested_webpack_require_4438__.n(external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_);
-
-// CONCATENATED MODULE: ./src/Controls.jsx
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Controls_Controls =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Controls, _Component);
-
-  function Controls() {
-    _classCallCheck(this, Controls);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Controls).apply(this, arguments));
-  }
-
-  _createClass(Controls, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var _this$props = this.props,
-          plusBtnContents = _this$props.plusBtnContents,
-          minusBtnContents = _this$props.minusBtnContents,
-          btnClass = _this$props.btnClass,
-          plusBtnClass = _this$props.plusBtnClass,
-          minusBtnClass = _this$props.minusBtnClass,
-          controlsClass = _this$props.controlsClass,
-          scale = _this$props.scale,
-          minScale = _this$props.minScale,
-          maxScale = _this$props.maxScale,
-          onClickPlus = _this$props.onClickPlus,
-          onClickMinus = _this$props.onClickMinus,
-          disableZoom = _this$props.disableZoom;
-      var btnStyle = {
-        width: 30,
-        paddingTop: 5,
-        marginBottom: 5
-      };
-      var controlsStyle = controlsClass ? undefined : {
-        position: 'absolute',
-        right: 10,
-        top: 10
-      };
-
-      function plusHandler(e) {
-        e.preventDefault();
-        e.target.blur();
-        if (disableZoom) return;
-        onClickPlus();
-      }
-
-      function minusHandler(e) {
-        e.preventDefault();
-        e.target.blur();
-        if (disableZoom) return;
-        onClickMinus();
-      }
-
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-        style: controlsStyle,
-        className: controlsClass
-      }, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", null, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("button", {
-        ref: function ref(node) {
-          _this.plusNode = node;
-        },
-        onClick: plusHandler,
-        onTouchEnd: plusHandler,
-        className: [btnClass ? btnClass : '', plusBtnClass ? plusBtnClass : ''].join(' '),
-        type: "button",
-        style: btnClass || plusBtnClass ? undefined : btnStyle,
-        disabled: disableZoom || scale >= maxScale
-      }, plusBtnContents)), external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", null, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("button", {
-        ref: function ref(node) {
-          _this.minusNode = node;
-        },
-        onClick: minusHandler,
-        onTouchEnd: minusHandler,
-        className: [btnClass ? btnClass : '', minusBtnClass ? minusBtnClass : ''].join(' '),
-        type: "button",
-        style: btnClass || minusBtnClass ? undefined : btnStyle,
-        disabled: disableZoom || scale <= minScale
-      }, minusBtnContents)));
-    }
-  }]);
-
-  return Controls;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-
-Controls_Controls.propTypes = {
-  onClickPlus: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-  onClickMinus: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-  plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-  minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-  btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-  scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool
-};
-Controls_Controls.defaultProps = {
-  plusBtnContents: '+',
-  minusBtnContents: '-',
-  disableZoom: false
-};
-/* harmony default export */ var src_Controls = (Controls_Controls);
-// CONCATENATED MODULE: ./src/geometry.js
-function clamp(min, value, max) {
-  return Math.max(min, Math.min(value, max));
-}
-
-function distance(p1, p2) {
-  var dx = p1.x - p2.x;
-  var dy = p1.y - p2.y;
-  return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-}
-
-function midpoint(p1, p2) {
-  return {
-    x: (p1.x + p2.x) / 2,
-    y: (p1.y + p2.y) / 2
-  };
-}
-
-function touchPt(touch) {
-  return {
-    x: touch.clientX,
-    y: touch.clientY
-  };
-}
-
-function touchDistance(t0, t1) {
-  var p0 = touchPt(t0);
-  var p1 = touchPt(t1);
-  return distance(p0, p1);
-}
-
-
-// CONCATENATED MODULE: ./src/makePassiveEventOption.js
-// We want to make event listeners non-passive, and to do so have to check
-// that browsers support EventListenerOptions in the first place.
-// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
-var passiveSupported = false;
-
-try {
-  var options = {
-    get passive() {
-      passiveSupported = true;
-    }
-
-  };
-  window.addEventListener("test", options, options);
-  window.removeEventListener("test", options, options);
-} catch (_unused) {
-  passiveSupported = false;
-}
-
-function makePassiveEventOption(passive) {
-  return passiveSupported ? {
-    passive: passive
-  } : passive;
-}
-
-/* harmony default export */ var src_makePassiveEventOption = (makePassiveEventOption);
-// CONCATENATED MODULE: ./src/MapInteraction.jsx
-function MapInteraction_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { MapInteraction_typeof = function _typeof(obj) { return typeof obj; }; } else { MapInteraction_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return MapInteraction_typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function MapInteraction_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function MapInteraction_possibleConstructorReturn(self, call) { if (call && (MapInteraction_typeof(call) === "object" || typeof call === "function")) { return call; } return MapInteraction_assertThisInitialized(self); }
-
-function MapInteraction_getPrototypeOf(o) { MapInteraction_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return MapInteraction_getPrototypeOf(o); }
-
-function MapInteraction_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function MapInteraction_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function MapInteraction_createClass(Constructor, protoProps, staticProps) { if (protoProps) MapInteraction_defineProperties(Constructor.prototype, protoProps); if (staticProps) MapInteraction_defineProperties(Constructor, staticProps); return Constructor; }
-
-function MapInteraction_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) MapInteraction_setPrototypeOf(subClass, superClass); }
-
-function MapInteraction_setPrototypeOf(o, p) { MapInteraction_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return MapInteraction_setPrototypeOf(o, p); }
-
-
-
-
-
- // The amount that a value of a dimension will change given a new scale
-
-var coordChange = function coordChange(coordinate, scaleRatio) {
-  return scaleRatio * coordinate - coordinate;
-};
-
-var translationShape = external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-  x: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-  y: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-});
-/*
-  This contains logic for providing a map-like interaction to any DOM node.
-  It allows a user to pinch, zoom, translate, etc, as they would an interactive map.
-  It renders its children with the current state of the translation and does not do any scaling
-  or translating on its own. This works on both desktop, and mobile.
-*/
-
-var MapInteraction_MapInteractionControlled =
-/*#__PURE__*/
-function (_Component) {
-  MapInteraction_inherits(MapInteractionControlled, _Component);
-
-  MapInteraction_createClass(MapInteractionControlled, null, [{
-    key: "propTypes",
-    get: function get() {
-      return {
-        // The content that will be transformed
-        children: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        // This is a controlled component
-        value: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }).isRequired,
-        onChange: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func.isRequired,
-        disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        disablePan: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        translationBounds: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          xMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          xMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-        }),
-        minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        showControls: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string
-      };
-    }
-  }, {
-    key: "defaultProps",
-    get: function get() {
-      return {
-        minScale: 0.05,
-        maxScale: 3,
-        showControls: false,
-        translationBounds: {},
-        disableZoom: false,
-        disablePan: false
-      };
-    }
-  }]);
-
-  function MapInteractionControlled(props) {
-    var _this;
-
-    MapInteraction_classCallCheck(this, MapInteractionControlled);
-
-    _this = MapInteraction_possibleConstructorReturn(this, MapInteraction_getPrototypeOf(MapInteractionControlled).call(this, props));
-    _this.state = {
-      shouldPreventTouchEndDefault: false
-    };
-    _this.startPointerInfo = undefined;
-    _this.onMouseDown = _this.onMouseDown.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchStart = _this.onTouchStart.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onMouseMove = _this.onMouseMove.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchMove = _this.onTouchMove.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onMouseUp = _this.onMouseUp.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onTouchEnd = _this.onTouchEnd.bind(MapInteraction_assertThisInitialized(_this));
-    _this.onWheel = _this.onWheel.bind(MapInteraction_assertThisInitialized(_this));
-    return _this;
-  }
-
-  MapInteraction_createClass(MapInteractionControlled, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var passiveOption = src_makePassiveEventOption(false);
-      this.getContainerNode().addEventListener('wheel', this.onWheel, passiveOption);
-      /*
-        Setup events for the gesture lifecycle: start, move, end touch
-      */
-      // start gesture
-
-      this.getContainerNode().addEventListener('touchstart', this.onTouchStart, passiveOption);
-      this.getContainerNode().addEventListener('mousedown', this.onMouseDown, passiveOption); // move gesture
-
-      window.addEventListener('touchmove', this.onTouchMove, passiveOption);
-      window.addEventListener('mousemove', this.onMouseMove, passiveOption); // end gesture
-
-      var touchAndMouseEndOptions = _objectSpread({
-        capture: true
-      }, passiveOption);
-
-      window.addEventListener('touchend', this.onTouchEnd, touchAndMouseEndOptions);
-      window.addEventListener('mouseup', this.onMouseUp, touchAndMouseEndOptions);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.getContainerNode().removeEventListener('wheel', this.onWheel); // Remove touch events
-
-      this.getContainerNode().removeEventListener('touchstart', this.onTouchStart);
-      window.removeEventListener('touchmove', this.onTouchMove);
-      window.removeEventListener('touchend', this.onTouchEnd); // Remove mouse events
-
-      this.getContainerNode().removeEventListener('mousedown', this.onMouseDown);
-      window.removeEventListener('mousemove', this.onMouseMove);
-      window.removeEventListener('mouseup', this.onMouseUp);
-    }
-    /*
-      Event handlers
-       All touch/mouse handlers preventDefault because we add
-      both touch and mouse handlers in the same session to support devicse
-      with both touch screen and mouse inputs. The browser may fire both
-      a touch and mouse event for a *single* user action, so we have to ensure
-      that only one handler is used by canceling the event in the first handler.
-       https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent
-    */
-
-  }, {
-    key: "onMouseDown",
-    value: function onMouseDown(e) {
-      e.preventDefault();
-      this.setPointerState([e]);
-    }
-  }, {
-    key: "onTouchStart",
-    value: function onTouchStart(e) {
-      e.preventDefault();
-      this.setPointerState(e.touches);
-    }
-  }, {
-    key: "onMouseUp",
-    value: function onMouseUp(e) {
-      this.setPointerState();
-    }
-  }, {
-    key: "onTouchEnd",
-    value: function onTouchEnd(e) {
-      this.setPointerState(e.touches);
-    }
-  }, {
-    key: "onMouseMove",
-    value: function onMouseMove(e) {
-      if (!this.startPointerInfo || this.props.disablePan) {
-        return;
-      }
-
-      e.preventDefault();
-      this.onDrag(e);
-    }
-  }, {
-    key: "onTouchMove",
-    value: function onTouchMove(e) {
-      if (!this.startPointerInfo) {
-        return;
-      }
-
-      e.preventDefault();
-      var _this$props = this.props,
-          disablePan = _this$props.disablePan,
-          disableZoom = _this$props.disableZoom;
-      var isPinchAction = e.touches.length == 2 && this.startPointerInfo.pointers.length > 1;
-
-      if (isPinchAction && !disableZoom) {
-        this.scaleFromMultiTouch(e);
-      } else if (e.touches.length === 1 && this.startPointerInfo && !disablePan) {
-        this.onDrag(e.touches[0]);
-      }
-    } // handles both touch and mouse drags
-
-  }, {
-    key: "onDrag",
-    value: function onDrag(pointer) {
-      var _this2 = this;
-
-      var _this$startPointerInf = this.startPointerInfo,
-          translation = _this$startPointerInf.translation,
-          pointers = _this$startPointerInf.pointers;
-      var startPointer = pointers[0];
-      var dragX = pointer.clientX - startPointer.clientX;
-      var dragY = pointer.clientY - startPointer.clientY;
-      var newTranslation = {
-        x: translation.x + dragX,
-        y: translation.y + dragY
-      };
-      var shouldPreventTouchEndDefault = Math.abs(dragX) > 1 || Math.abs(dragY) > 1;
-      this.setState({
-        shouldPreventTouchEndDefault: shouldPreventTouchEndDefault
-      }, function () {
-        _this2.props.onChange({
-          scale: _this2.props.value.scale,
-          translation: _this2.clampTranslation(newTranslation)
-        });
-      });
-    }
-  }, {
-    key: "onWheel",
-    value: function onWheel(e) {
-      if (this.props.disableZoom) {
-        return;
-      }
-
-      e.preventDefault();
-      e.stopPropagation();
-      var scaleChange = Math.pow(2, e.deltaY * 0.002);
-      var newScale = clamp(this.props.minScale, this.props.value.scale + (1 - scaleChange), this.props.maxScale);
-      var mousePos = this.clientPosToTranslatedPos({
-        x: e.clientX,
-        y: e.clientY
-      });
-      this.scaleFromPoint(newScale, mousePos);
-    }
-  }, {
-    key: "setPointerState",
-    value: function setPointerState(pointers) {
-      if (!pointers || pointers.length === 0) {
-        this.startPointerInfo = undefined;
-        return;
-      }
-
-      this.startPointerInfo = {
-        pointers: pointers,
-        scale: this.props.value.scale,
-        translation: this.props.value.translation
-      };
-    }
-  }, {
-    key: "clampTranslation",
-    value: function clampTranslation(desiredTranslation) {
-      var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.props;
-      var x = desiredTranslation.x,
-          y = desiredTranslation.y;
-      var _props$translationBou = props.translationBounds,
-          xMax = _props$translationBou.xMax,
-          xMin = _props$translationBou.xMin,
-          yMax = _props$translationBou.yMax,
-          yMin = _props$translationBou.yMin;
-      xMin = xMin != undefined ? xMin : -Infinity;
-      yMin = yMin != undefined ? yMin : -Infinity;
-      xMax = xMax != undefined ? xMax : Infinity;
-      yMax = yMax != undefined ? yMax : Infinity;
-      return {
-        x: clamp(xMin, x, xMax),
-        y: clamp(yMin, y, yMax)
-      };
-    }
-  }, {
-    key: "translatedOrigin",
-    value: function translatedOrigin() {
-      var translation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props.value.translation;
-      var clientOffset = this.getContainerBoundingClientRect();
-      return {
-        x: clientOffset.left + translation.x,
-        y: clientOffset.top + translation.y
-      };
-    } // From a given screen point return it as a point
-    // in the coordinate system of the given translation
-
-  }, {
-    key: "clientPosToTranslatedPos",
-    value: function clientPosToTranslatedPos(_ref) {
-      var x = _ref.x,
-          y = _ref.y;
-      var translation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.props.value.translation;
-      var origin = this.translatedOrigin(translation);
-      return {
-        x: x - origin.x,
-        y: y - origin.y
-      };
-    }
-  }, {
-    key: "scaleFromPoint",
-    value: function scaleFromPoint(newScale, focalPt) {
-      var _this$props$value = this.props.value,
-          translation = _this$props$value.translation,
-          scale = _this$props$value.scale;
-      var scaleRatio = newScale / (scale != 0 ? scale : 1);
-      var focalPtDelta = {
-        x: coordChange(focalPt.x, scaleRatio),
-        y: coordChange(focalPt.y, scaleRatio)
-      };
-      var newTranslation = {
-        x: translation.x - focalPtDelta.x,
-        y: translation.y - focalPtDelta.y
-      };
-      this.props.onChange({
-        scale: newScale,
-        translation: this.clampTranslation(newTranslation)
-      });
-    } // Given the start touches and new e.touches, scale and translate
-    // such that the initial midpoint remains as the new midpoint. This is
-    // to achieve the effect of keeping the content that was directly
-    // in the middle of the two fingers as the focal point throughout the zoom.
-
-  }, {
-    key: "scaleFromMultiTouch",
-    value: function scaleFromMultiTouch(e) {
-      var startTouches = this.startPointerInfo.pointers;
-      var newTouches = e.touches; // calculate new scale
-
-      var dist0 = touchDistance(startTouches[0], startTouches[1]);
-      var dist1 = touchDistance(newTouches[0], newTouches[1]);
-      var scaleChange = dist1 / dist0;
-      var startScale = this.startPointerInfo.scale;
-      var targetScale = startScale + (scaleChange - 1) * startScale;
-      var newScale = clamp(this.props.minScale, targetScale, this.props.maxScale); // calculate mid points
-
-      var startMidpoint = midpoint(touchPt(startTouches[0]), touchPt(startTouches[1]));
-      var newMidPoint = midpoint(touchPt(newTouches[0]), touchPt(newTouches[1])); // The amount we need to translate by in order for
-      // the mid point to stay in the middle (before thinking about scaling factor)
-
-      var dragDelta = {
-        x: newMidPoint.x - startMidpoint.x,
-        y: newMidPoint.y - startMidpoint.y
-      };
-      var scaleRatio = newScale / startScale; // The point originally in the middle of the fingers on the initial zoom start
-
-      var focalPt = this.clientPosToTranslatedPos(startMidpoint, this.startPointerInfo.translation); // The amount that the middle point has changed from this scaling
-
-      var focalPtDelta = {
-        x: coordChange(focalPt.x, scaleRatio),
-        y: coordChange(focalPt.y, scaleRatio)
-      }; // Translation is the original translation, plus the amount we dragged,
-      // minus what the scaling will do to the focal point. Subtracting the
-      // scaling factor keeps the midpoint in the middle of the touch points.
-
-      var newTranslation = {
-        x: this.startPointerInfo.translation.x - focalPtDelta.x + dragDelta.x,
-        y: this.startPointerInfo.translation.y - focalPtDelta.y + dragDelta.y
-      };
-      this.props.onChange({
-        scale: newScale,
-        translation: this.clampTranslation(newTranslation)
-      });
-    }
-  }, {
-    key: "discreteScaleStepSize",
-    value: function discreteScaleStepSize() {
-      var _this$props2 = this.props,
-          minScale = _this$props2.minScale,
-          maxScale = _this$props2.maxScale;
-      var delta = Math.abs(maxScale - minScale);
-      return delta / 10;
-    } // Scale using the center of the content as a focal point
-
-  }, {
-    key: "changeScale",
-    value: function changeScale(delta) {
-      var targetScale = this.props.value.scale + delta;
-      var _this$props3 = this.props,
-          minScale = _this$props3.minScale,
-          maxScale = _this$props3.maxScale;
-      var scale = clamp(minScale, targetScale, maxScale);
-      var rect = this.getContainerBoundingClientRect();
-      var x = rect.left + rect.width / 2;
-      var y = rect.top + rect.height / 2;
-      var focalPoint = this.clientPosToTranslatedPos({
-        x: x,
-        y: y
-      });
-      this.scaleFromPoint(scale, focalPoint);
-    } // Done like this so it is mockable
-
-  }, {
-    key: "getContainerNode",
-    value: function getContainerNode() {
-      return this.containerNode;
-    }
-  }, {
-    key: "getContainerBoundingClientRect",
-    value: function getContainerBoundingClientRect() {
-      return this.getContainerNode().getBoundingClientRect();
-    }
-  }, {
-    key: "renderControls",
-    value: function renderControls() {
-      var _this3 = this;
-
-      var step = this.discreteScaleStepSize();
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(src_Controls, {
-        onClickPlus: function onClickPlus() {
-          return _this3.changeScale(step);
-        },
-        onClickMinus: function onClickMinus() {
-          return _this3.changeScale(-step);
-        },
-        plusBtnContents: this.props.plusBtnContents,
-        minusBtnContents: this.props.minusBtnContents,
-        btnClass: this.props.btnClass,
-        plusBtnClass: this.props.plusBtnClass,
-        minusBtnClass: this.props.minusBtnClass,
-        controlsClass: this.props.controlsClass,
-        scale: this.props.value.scale,
-        minScale: this.props.minScale,
-        maxScale: this.props.maxScale,
-        disableZoom: this.props.disableZoom
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      var _this$props4 = this.props,
-          showControls = _this$props4.showControls,
-          children = _this$props4.children;
-      var scale = this.props.value.scale; // Defensively clamp the translation. This should not be necessary if we properly set state elsewhere.
-
-      var translation = this.clampTranslation(this.props.value.translation);
-      /*
-        This is a little trick to allow the following ux: We want the parent of this
-        component to decide if elements inside the map are clickable. Normally, you wouldn't
-        want to trigger a click event when the user *drags* on an element (only if they click
-        and then release w/o dragging at all). However we don't want to assume this
-        behavior here, so we call `preventDefault` and then let the parent check
-        `e.defaultPrevented`. That value being true means that we are signalling that
-        a drag event ended, not a click.
-      */
-
-      var handleEventCapture = function handleEventCapture(e) {
-        if (_this4.state.shouldPreventTouchEndDefault) {
-          e.preventDefault();
-
-          _this4.setState({
-            shouldPreventTouchEndDefault: false
-          });
-        }
-      };
-
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-        ref: function ref(node) {
-          _this4.containerNode = node;
-        },
-        style: {
-          height: '100%',
-          width: '100%',
-          position: 'relative',
-          // for absolutely positioned children
-          touchAction: 'none'
-        },
-        onClickCapture: handleEventCapture,
-        onTouchEndCapture: handleEventCapture
-      }, (children || undefined) && children({
-        translation: translation,
-        scale: scale
-      }), (showControls || undefined) && this.renderControls());
-    }
-  }]);
-
-  return MapInteractionControlled;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-/*
-  Main entry point component.
-  Determines if it's parent is controlling (eg it manages state) or leaving us uncontrolled
-  (eg we manage our own internal state)
-*/
-
-var MapInteraction_MapInteractionController =
-/*#__PURE__*/
-function (_Component2) {
-  MapInteraction_inherits(MapInteractionController, _Component2);
-
-  MapInteraction_createClass(MapInteractionController, null, [{
-    key: "propTypes",
-    get: function get() {
-      return {
-        children: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        value: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }),
-        defaultValue: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          scale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number.isRequired,
-          translation: translationShape.isRequired
-        }),
-        disableZoom: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        disablePan: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        onChange: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.func,
-        translationBounds: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.shape({
-          xMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          xMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMin: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-          yMax: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number
-        }),
-        minScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        maxScale: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.number,
-        showControls: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.bool,
-        plusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        minusBtnContents: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.node,
-        btnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        plusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        minusBtnClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string,
-        controlsClass: external_commonjs_prop_types_commonjs2_prop_types_commonj2s_prop_types_amd_prop_types_root_PropTypes_default.a.string
-      };
-    }
-  }]);
-
-  function MapInteractionController(props) {
-    var _this5;
-
-    MapInteraction_classCallCheck(this, MapInteractionController);
-
-    _this5 = MapInteraction_possibleConstructorReturn(this, MapInteraction_getPrototypeOf(MapInteractionController).call(this, props));
-    var controlled = MapInteractionController.isControlled(props);
-
-    if (controlled) {
-      _this5.state = {
-        lastKnownValueFromProps: props.value
-      };
-    } else {
-      // Set the necessary state for controlling map interaction ourselves
-      _this5.state = {
-        value: props.defaultValue || {
-          scale: 1,
-          translation: {
-            x: 0,
-            y: 0
-          }
-        },
-        lastKnownValueFromProps: undefined
-      };
-    }
-
-    return _this5;
-  }
-  /*
-    Handle the parent switchg form controlled to uncontrolled or vice versa.
-    This is at most a best-effort attempt. It is not gauranteed by our API
-    but it will do its best to maintain the state such that if the parent
-    accidentally switches between controlled/uncontrolled there won't be
-    any jankiness or jumpiness.
-     This tries to mimick how the React <input /> component behaves.
-  */
-
-
-  MapInteraction_createClass(MapInteractionController, [{
-    key: "innerProps",
-    // The subset of this component's props that need to be passed
-    // down to the core RMI component
-    value: function innerProps() {
-      var _this$props5 = this.props,
-          value = _this$props5.value,
-          defaultValue = _this$props5.defaultValue,
-          onChange = _this$props5.onChange,
-          innerProps = _objectWithoutProperties(_this$props5, ["value", "defaultValue", "onChange"]);
-
-      return innerProps;
-    }
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      var controlled = MapInteractionController.isControlled(this.props);
-      return controlled ? this.props.value : this.state.value;
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this6 = this;
-
-      var _this$props6 = this.props,
-          _onChange = _this$props6.onChange,
-          children = _this$props6.children;
-      var controlled = MapInteractionController.isControlled(this.props);
-      var value = controlled ? this.props.value : this.state.value;
-      return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(MapInteraction_MapInteractionControlled, _extends({
-        onChange: function onChange(value) {
-          controlled ? _onChange(value) : _this6.setState({
-            value: value
-          });
-        },
-        value: value
-      }, this.innerProps()), children);
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      var nowControlled = MapInteractionController.isControlled(props);
-      var wasControlled = state.lastKnownValueFromProps && MapInteractionController.isControlled({
-        value: state.lastKnownValueFromProps
-      });
-      /*
-        State transitions:
-          uncontrolled --> controlled   (unset internal state, set last props from parent)
-          controlled   --> uncontrolled (set internal state to last props from parent)
-          controlled   --> controlled   (update last props from parent)
-          uncontrolled --> uncontrolled (do nothing)
-         Note that the second two (no change in control) will also happen on the
-        initial render because we set lastKnownValueFromProps in the constructor.
-      */
-
-      if (!wasControlled && nowControlled) {
-        return {
-          value: undefined,
-          lastKnownValueFromProps: props.value
-        };
-      } else if (wasControlled && !nowControlled) {
-        return {
-          value: state.lastKnownValueFromProps,
-          lastKnownValueFromProps: undefined
-        };
-      } else if (wasControlled && nowControlled) {
-        return {
-          lastKnownValueFromProps: props.value
-        };
-      } else if (!wasControlled && !nowControlled) {
-        return null;
-      }
-    }
-  }, {
-    key: "isControlled",
-    value: function isControlled(props) {
-      // Similar to React's <input /> API, setting a value declares
-      // that you want to control this component.
-      return props.value != undefined;
-    }
-  }]);
-
-  return MapInteractionController;
-}(external_commonjs_react_commonjs2_react_amd_React_root_React_["Component"]);
-
-/* harmony default export */ var MapInteraction = (MapInteraction_MapInteractionController);
-// CONCATENATED MODULE: ./src/MapInteractionCSS.jsx
-
-
-/*
-  This component provides a map like interaction to any content that you place in it. It will let
-  the user zoom and pan the children by scaling and translating props.children using css.
-*/
-
-var MapInteractionCSS_MapInteractionCSS = function MapInteractionCSS(props) {
-  return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement(MapInteraction, props, function (_ref) {
-    var translation = _ref.translation,
-        scale = _ref.scale;
-    // Translate first and then scale.  Otherwise, the scale would affect the translation.
-    var transform = "translate(".concat(translation.x, "px, ").concat(translation.y, "px) scale(").concat(scale, ")");
-    return external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-      style: {
-        height: '100%',
-        width: '100%',
-        position: 'relative',
-        // for absolutely positioned children
-        overflow: 'hidden',
-        touchAction: 'none',
-        // Not supported in Safari :(
-        msTouchAction: 'none',
-        cursor: 'all-scroll',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        msUserSelect: 'none'
-      }
-    }, external_commonjs_react_commonjs2_react_amd_React_root_React_default.a.createElement("div", {
-      style: {
-        display: 'inline-block',
-        // size to content
-        transform: transform,
-        transformOrigin: '0 0 '
-      }
-    }, props.children));
-  });
-};
-
-/* harmony default export */ var src_MapInteractionCSS = (MapInteractionCSS_MapInteractionCSS);
-// CONCATENATED MODULE: ./src/index.js
-/* concated harmony reexport MapInteractionCSS */__nested_webpack_require_4438__.d(__webpack_exports__, "MapInteractionCSS", function() { return src_MapInteractionCSS; });
-/* concated harmony reexport MapInteraction */__nested_webpack_require_4438__.d(__webpack_exports__, "MapInteraction", function() { return MapInteraction; });
-
-
-
-/* harmony default export */ var src = __webpack_exports__["default"] = (MapInteraction);
-
-/***/ })
-/******/ ]);
-});
-
-/***/ }),
-
 /***/ "./node_modules/react-zoom-pan-pinch/dist/index.esm.js":
 /*!*************************************************************!*\
   !*** ./node_modules/react-zoom-pan-pinch/dist/index.esm.js ***!
@@ -85149,6 +83577,770 @@ if (false) {} else {
 
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-jsx-runtime.development.js */ "./node_modules/react/cjs/react-jsx-runtime.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  define(IteratorPrototype, iteratorSymbol, function () {
+    return this;
+  });
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = GeneratorFunctionPrototype;
+  define(Gp, "constructor", GeneratorFunctionPrototype);
+  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+    return this;
+  });
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  define(Gp, iteratorSymbol, function() {
+    return this;
+  });
+
+  define(Gp, "toString", function() {
+    return "[object Generator]";
+  });
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, in modern engines
+  // we can explicitly access globalThis. In older engines we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  if (typeof globalThis === "object") {
+    globalThis.regeneratorRuntime = runtime;
+  } else {
+    Function("r", "regeneratorRuntime = r")(runtime);
+  }
 }
 
 
