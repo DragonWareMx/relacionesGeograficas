@@ -30890,16 +30890,16 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
 
 
 
-
 var Creditos = function Creditos(_ref) {
   _objectDestructuringEmpty(_ref);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "body-creditos",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      maxWidth: 'xl',
+      maxWidth: "xl",
       style: {
-        paddingTop: '40px',
-        paddingBottom: '50px'
+        paddingTop: "40px",
+        paddingBottom: "50px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
@@ -30997,15 +30997,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Fuentes = function Fuentes(_ref) {
   var fuentes = _ref.fuentes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "body-creditos",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      maxWidth: 'xl',
+      maxWidth: "xl",
       style: {
-        paddingTop: '40px',
-        paddingBottom: '50px'
+        paddingTop: "40px",
+        paddingBottom: "50px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
@@ -31772,13 +31772,10 @@ var Relacion = function Relacion(_ref4) {
     img.onload = function () {
       var _refContainer$current;
 
-      console.log(img.height);
-      console.log(img.width);
       var height = img.height;
       var width = img.width;
       var newWidth = width * 600;
       newWidth = newWidth / height;
-      console.log(newWidth);
       var container = (_refContainer$current = refContainer.current) === null || _refContainer$current === void 0 ? void 0 : _refContainer$current.offsetWidth;
       newWidth = newWidth / 2;
       container = container / 2;
@@ -32985,7 +32982,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background-color: #304a71;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n}\r\n.big-text{\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".body-creditos {\r\n    background-color: #304a71;\r\n    color: white;\r\n    font-size: 15px;\r\n    font-weight: 300;\r\n    min-height: calc(100vh - 348px);\r\n}\r\n.big-text {\r\n    font-size: 25px;\r\n    font-weight: 400;\r\n    margin-bottom: 50px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
