@@ -13,6 +13,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('inicio');
 
 Route::get('/creditos', function () {
@@ -33,7 +34,7 @@ Route::name('admin.')->middleware('auth')->group(function () {
     Route::post('/admin/store', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
