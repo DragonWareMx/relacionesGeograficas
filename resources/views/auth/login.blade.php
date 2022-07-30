@@ -6,7 +6,7 @@
         background-repeat: no-repeat;
         background-position: center; 
         background-size:cover;  
-        background-color:Red;
+        background-color: white;
         width:100%;
         height:100vh;
     "
