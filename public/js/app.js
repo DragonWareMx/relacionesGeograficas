@@ -29656,21 +29656,19 @@ var Create = function Create() {
       setTranscriptions = _useState8[1];
 
   function addTranscription() {
-    if (transcription.name === '') {
-      setErrorMessagge('Ingresa nombre de la transcripción');
-      setOpen(true);
-      return false;
-    }
-
-    if (transcription.text === '') {
-      setErrorMessagge('Ingresa texto de la transcripción');
-      setOpen(true);
-      return false;
-    }
-
+    // if(transcription.name === ''){
+    //     setErrorMessagge('Ingresa nombre de la transcripción');
+    //     setOpen(true);
+    //     return false;
+    // }
+    // if(transcription.text === ''){
+    //     setErrorMessagge('Ingresa texto de la transcripción');
+    //     setOpen(true);
+    //     return false;
+    // }
     var trans = {
-      name: transcription.name,
-      text: transcription.text
+      name: transcription.name || '',
+      text: transcription.text || ''
     };
     setTranscriptions([].concat(_toConsumableArray(transcriptions), [trans]));
     setTranscription(function (values) {
@@ -29845,19 +29843,19 @@ var Create = function Create() {
     } else {
       errors.imageMin = null;
       values.error = false;
-    }
-
-    if (!values.fuentes || values.fuentes === '') {
-      setErrorMessagge('Debes ingresar las fuentes');
-      errors.fuentes = 'Ingresa las fuentes';
-      values.error = true;
-      setActiveStep(0);
-      setOpen(true);
-      return false;
-    } else {
-      errors.fuentes = null;
-      values.error = false;
-    } // if(!values.mapa_geografico || values.mapa_geografico === ''){
+    } // if(!values.fuentes || values.fuentes === ''){
+    //     setErrorMessagge('Debes ingresar las fuentes');
+    //     errors.fuentes='Ingresa las fuentes';
+    //     values.error = true;
+    //     setActiveStep(0);
+    //     setOpen(true);
+    //     return false;
+    // }
+    // else{
+    //     errors.fuentes=null;
+    //     values.error = false;
+    // }
+    // if(!values.mapa_geografico || values.mapa_geografico === ''){
     //     setErrorMessagge('Debes ingresar el mapa geográfico');
     //     errors.mapa_geografico='Ingresa el mapa geográfico';
     //     values.error = true;
@@ -30299,7 +30297,7 @@ var Create = function Create() {
                           className: "separator"
                         })]
                       }, index);
-                    }), transcriptions && transcriptions.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
                       variant: "contained",
                       onClick: function onClick() {
                         return addFolio();
@@ -30640,10 +30638,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
@@ -30655,17 +30653,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
 /* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
 /* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
 /* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -30710,6 +30710,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 /** Axios Imports **/
+
 
 
 
@@ -30805,22 +30806,23 @@ var Home = function Home(_ref) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-      className: "row",
-      style: {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      component: "section",
+      sx: {
         backgroundColor: '#193661'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_17__["default"], {
-        maxWidth: "md",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
-          navigation: true,
+          slidesPerView: 3,
+          spaceBetween: 10,
+          navigation: false,
           pagination: {
             dynamicBullets: true,
             clickable: true
           },
           mousewheel: false,
           keyboard: true,
-          modules: [swiper__WEBPACK_IMPORTED_MODULE_9__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_9__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_9__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_9__.Keyboard],
+          modules: [swiper__WEBPACK_IMPORTED_MODULE_9__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_9__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_9__.Keyboard],
           className: "oski-swiper",
           loop: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
@@ -30859,81 +30861,68 @@ var Home = function Home(_ref) {
           })]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_17__["default"], {
-      maxWidth: 'xl',
-      style: {
-        paddingTop: '60px',
-        paddingBottom: '50px'
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      sx: {
+        pt: 5,
+        paddingBottom: 5
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           item: true,
           xs: 12,
           sm: 6,
-          className: "pd-ri-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
-            children: "Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana. La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+            align: "justify",
+            children: ["Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           item: true,
           xs: 12,
           sm: 6,
-          style: {
-            display: 'flex',
-            justifyContent: 'center'
-          },
-          className: "pd-le-50",
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
-            src: "/img/assets/asset1.png",
-            style: {
-              marginTop: '20px'
-            }
+            src: "/img/assets/asset1.png"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
         direction: "row-reverse",
-        style: {
-          marginTop: '30px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           item: true,
           xs: 12,
           sm: 6,
-          className: "pd-le-50",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
-            children: "Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas,  la  cultura,  la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores. Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+            align: "justify",
+            children: ["Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas,  la  cultura,  la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           item: true,
           xs: 12,
           sm: 6,
-          style: {
-            display: 'flex',
-            justifyContent: 'center'
-          },
-          className: "pd-ri-50",
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
             src: "/img/assets/asset2.png",
             style: {
-              width: '35%',
-              marginTop: '20px'
+              width: '60%'
             }
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         container: true,
         alignItems: "flex-end",
         justifyContent: "space-between",
         direction: "row-reverse",
-        style: {
-          marginTop: '30px'
-        },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
           href: "#!",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
@@ -30944,7 +30933,7 @@ var Home = function Home(_ref) {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
       container: true,
       justifyContent: "center",
       spacing: 2,
@@ -30953,7 +30942,7 @@ var Home = function Home(_ref) {
         backgroundColor: '#475e80',
         padding: '10px'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -30961,12 +30950,12 @@ var Home = function Home(_ref) {
         style: {
           paddingTop: '0px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
           className: "btn-op",
           onClick: showMapa,
           children: "MAPA"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -30974,63 +30963,68 @@ var Home = function Home(_ref) {
         style: {
           paddingTop: '0px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
           className: "btn-op",
           onClick: showAlfa,
           children: "ALFAB\xC9TICO"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_20__.MapContainer, {
-      id: "mapa",
-      style: styleMap,
-      center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
-      zoom: data.infoMapa.zoom.inicial,
-      minZoom: data.infoMapa.zoom.min,
-      maxZoom: data.infoMapa.zoom.max,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
-        position: "topleft",
-        collapsed: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(BaseLayer, {
-          checked: true,
-          name: "ESRI Satellite",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_21__.TileLayer, {
-            attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
-            url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.LayerGroup, {
-          children: data.capas !== null ? data.capas.map(function (item, i) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.CircleMarker, {
-              center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(item.Y, item.X),
-              radius: 5,
-              color: "white",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_24__.Tooltip, {
-                children: item.cNombre
-              })
-            }, item.idDS);
-          }) : ''
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.ScaleControl, {
-          position: "bottomright",
-          metric: true,
-          imperial: true
-        })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      maxWidth: "false",
+      sx: {
+        maxWidth: '90%'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.MapContainer, {
+        id: "mapa",
+        style: styleMap,
+        center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
+        zoom: data.infoMapa.zoom.inicial,
+        minZoom: data.infoMapa.zoom.min,
+        maxZoom: data.infoMapa.zoom.max,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
+          position: "topleft",
+          collapsed: false,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(BaseLayer, {
+            checked: true,
+            name: "ESRI Satellite",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.TileLayer, {
+              attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
+              url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_24__.LayerGroup, {
+            children: data.capas !== null ? data.capas.map(function (item, i) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.CircleMarker, {
+                center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(item.Y, item.X),
+                radius: 5,
+                color: "white",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.Tooltip, {
+                  children: item.cNombre
+                })
+              }, item.idDS);
+            }) : ''
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.ScaleControl, {
+            position: "bottomright",
+            metric: true,
+            imperial: true
+          })]
+        })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_17__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
       id: "alfabetico",
-      maxWidth: 'xl',
       style: {
         paddingTop: '60px',
         paddingBottom: '30px',
         display: 'none'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         container: true,
         alignItems: "stretch",
         children: relaciones && relaciones.length > 0 ? relaciones.map(function (rel, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
             item: true,
             xs: 4,
-            sm: 3,
-            md: 2,
+            sm: 12 / 5,
+            md: 12 / 7,
             style: {
               display: 'flex',
               justifyContent: 'center',
@@ -31047,7 +31041,7 @@ var Home = function Home(_ref) {
                 justifyContent: 'center',
                 flexWrap: 'wrap'
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_26__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__["default"], {
                 alt: rel.nombre,
                 src: '/storage/relaciones/' + rel.miniatura,
                 sx: {
@@ -31060,7 +31054,7 @@ var Home = function Home(_ref) {
               })]
             })
           }, index);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           children: "No se encontraron resultados, intentalo m\xE1s tarde."
         })
       })
@@ -31240,7 +31234,7 @@ var Relacion = function Relacion(_ref4) {
       setData = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/94").then(function (response) {
       setData(response.data);
     })["catch"](function (error) {});
   }, []);
@@ -31508,18 +31502,16 @@ var Relacion = function Relacion(_ref4) {
               item: true,
               xs: 12,
               md: 7,
-              style: {
-                display: "flex",
-                justifyContent: "flex-end"
-              },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
+                  wrapperStyle: {
+                    width: '100%'
+                  },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                     src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
-                      height: "600px",
-                      width: '100%'
+                      height: "600px"
                     }
                   })
                 })
@@ -31896,7 +31888,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -31915,44 +31909,54 @@ function Footer() {
         container: true,
         alignItems: "center",
         justifyContent: "center",
-        style: {
-          padding: '25px'
-        },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
           item: true,
           xs: 12,
           sm: 12,
           md: 7,
-          style: {
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexWrap: 'wrap'
-          },
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Cultura.PNG",
-            style: {
-              marginBottom: '15px'
-            }
+            src: "/img/assets/Cultura.PNG"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Conacyt.PNG",
-            style: {
-              marginBottom: '15px'
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
-            href: "/creditos",
-            style: {
-              marginBottom: '25px'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-              src: "/img/assets/Creditos.PNG"
-            })
+            src: "/img/assets/Conacyt.PNG"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
           item: true,
           xs: 12,
-          style: {
-            display: 'flex',
-            justifyContent: 'center'
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          sx: {
+            mt: 1,
+            mb: 1
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+            href: "/creditos",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              size: "large",
+              sx: {
+                color: "white",
+                textDecoration: "underline",
+                ":hover": {
+                  textDecoration: "underline"
+                }
+              },
+              children: "Cr\xE9ditos"
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          item: true,
+          xs: 12,
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          sx: {
+            mb: 2
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
             href: "https://dragonware.com.mx",
@@ -32345,7 +32349,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element{\r\n    width: 100%;\r\n    height: 450px;\r\n}\r\n\r\n.oski-carousel-img{ \r\n    width: 100%;\r\n    height: 100%; \r\n    -o-object-fit: cover; \r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title{\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor:default;\r\n}\r\n\r\n.oski-swiper{\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width:920px) {\r\n    .oski-swiper{\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 400px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -170px;\r\n        padding-right: 100px;\r\n        font-size: 35px;\r\n    }\r\n}\r\n\r\n@media (max-width:770px) {\r\n    .oski-swiper{\r\n        width: 600px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width:650px) {\r\n    .oski-swiper{\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 320px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -130px;\r\n        padding-right: 55px;\r\n        font-size: 28px;\r\n    }\r\n}\r\n\r\n@media (max-width:538px) {\r\n    .oski-swiper{\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 250px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -100px;\r\n        padding-right: 45px;\r\n        font-size: 24px;\r\n    }\r\n}\r\n\r\n@media (max-width:486px) {\r\n    .oski-swiper{\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width:440px) {\r\n    .oski-swiper{\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element{\r\n    width: 100%;\r\n    height: 450px;\r\n}\r\n\r\n.oski-carousel-img{ \r\n    width: 100%;\r\n    height: 100%; \r\n    -o-object-fit: cover; \r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title{\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor:default;\r\n}\r\n\r\n.oski-swiper{\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width:1200px) {\r\n    .oski-swiper{\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 400px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -170px;\r\n        padding-right: 100px;\r\n        font-size: 35px;\r\n    }\r\n}\r\n\r\n@media (max-width:770px) {\r\n    .oski-swiper{\r\n        width: 600px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width:650px) {\r\n    .oski-swiper{\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 320px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -130px;\r\n        padding-right: 55px;\r\n        font-size: 28px;\r\n    }\r\n}\r\n\r\n@media (max-width:538px) {\r\n    .oski-swiper{\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 250px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -100px;\r\n        padding-right: 45px;\r\n        font-size: 24px;\r\n    }\r\n}\r\n\r\n@media (max-width:486px) {\r\n    .oski-swiper{\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width:440px) {\r\n    .oski-swiper{\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

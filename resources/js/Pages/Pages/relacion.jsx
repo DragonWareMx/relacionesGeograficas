@@ -93,7 +93,7 @@ const Relacion = ({ relation }) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/` + relation.idDS)
+            .get(`https://decm.arqueodata.com/api/v1/mapa/94`)
             .then((response) => {
                 setData(response.data);
             })
@@ -366,17 +366,13 @@ const Relacion = ({ relation }) => {
                                     item
                                     xs={12}
                                     md={7}
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "flex-end",
-                                    }}
                                 >
                                     <TransformWrapper>
-                                        <TransformComponent>
+                                        <TransformComponent wrapperStyle={{width:'100%'}}>
                                             <img
                                                 src={'/storage/relaciones/'+folioActive?.imagen}
                                                 alt=""
-                                                style={{ height: "600px", width:'100%'}}
+                                                style={{ height: "600px"}}
                                             />
                                         </TransformComponent>
                                     </TransformWrapper>

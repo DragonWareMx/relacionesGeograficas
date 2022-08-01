@@ -50,7 +50,7 @@ class RelationController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
-            'fuentes' => 'required|string',
+            'fuentes' => 'nullable|string',
             'idDS'=>'required|numeric',
 
             'imageBanner' => 'required',
@@ -122,13 +122,15 @@ class RelationController extends Controller
 
                     $relation->invoices()->save($folioM);
 
-                    foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
-                        $transcription = new Transcription;
-                        $transcription->uuid = Str::uuid();
-                        $transcription->nombre = $transcripcion["name"];
-                        $transcription->texto = $transcripcion["text"];
-                        $transcription->invoice_id = $folioM->id;
-                        $transcription->save();
+                    if(isset($folio["transcriptions"]) && count($folio["transcriptions"])>0){
+                        foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
+                            $transcription = new Transcription;
+                            $transcription->uuid = Str::uuid();
+                            $transcription->nombre = $transcripcion["name"];
+                            $transcription->texto = $transcripcion["text"];
+                            $transcription->invoice_id = $folioM->id;
+                            $transcription->save();
+                        }
                     }
                 }
             }
@@ -174,6 +176,7 @@ class RelationController extends Controller
                     Storage::delete($mapa);
                 }
             }
+            dd($th);
 
             return Redirect::route('admin.create')->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
         }

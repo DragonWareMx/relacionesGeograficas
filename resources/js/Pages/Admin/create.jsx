@@ -170,19 +170,19 @@ const Create = () => {
     const [transcriptions, setTranscriptions] = useState([]);
 
     function addTranscription(){
-        if(transcription.name === ''){
-            setErrorMessagge('Ingresa nombre de la transcripción');
-            setOpen(true);
-            return false;
-        }
-        if(transcription.text === ''){
-            setErrorMessagge('Ingresa texto de la transcripción');
-            setOpen(true);
-            return false;
-        }
+        // if(transcription.name === ''){
+        //     setErrorMessagge('Ingresa nombre de la transcripción');
+        //     setOpen(true);
+        //     return false;
+        // }
+        // if(transcription.text === ''){
+        //     setErrorMessagge('Ingresa texto de la transcripción');
+        //     setOpen(true);
+        //     return false;
+        // }
         let trans={
-            name:transcription.name,
-            text:transcription.text
+            name:transcription.name || '',
+            text:transcription.text || '',
         };
         setTranscriptions([
             ...transcriptions,
@@ -349,18 +349,18 @@ const Create = () => {
             errors.imageMin=null;
             values.error = false;
         }
-        if(!values.fuentes || values.fuentes === ''){
-            setErrorMessagge('Debes ingresar las fuentes');
-            errors.fuentes='Ingresa las fuentes';
-            values.error = true;
-            setActiveStep(0);
-            setOpen(true);
-            return false;
-        }
-        else{
-            errors.fuentes=null;
-            values.error = false;
-        }
+        // if(!values.fuentes || values.fuentes === ''){
+        //     setErrorMessagge('Debes ingresar las fuentes');
+        //     errors.fuentes='Ingresa las fuentes';
+        //     values.error = true;
+        //     setActiveStep(0);
+        //     setOpen(true);
+        //     return false;
+        // }
+        // else{
+        //     errors.fuentes=null;
+        //     values.error = false;
+        // }
         // if(!values.mapa_geografico || values.mapa_geografico === ''){
         //     setErrorMessagge('Debes ingresar el mapa geográfico');
         //     errors.mapa_geografico='Ingresa el mapa geográfico';
@@ -748,14 +748,12 @@ const Create = () => {
                                                     <div className='separator'></div>
                                                 </Grid>
                                             ))}
-                                            {transcriptions && transcriptions.length > 0 &&
-                                                <Button
-                                                    variant='contained'
-                                                    onClick={()=>addFolio()}
-                                                >
-                                                    Agregar folio
-                                                </Button>
-                                            }
+                                            <Button
+                                                variant='contained'
+                                                onClick={()=>addFolio()}
+                                            >
+                                                Agregar folio
+                                            </Button>
                                         </Grid>
                                     </Grid>
                                 </Grid>
