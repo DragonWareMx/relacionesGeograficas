@@ -30297,12 +30297,15 @@ var Create = function Create() {
                           className: "separator"
                         })]
                       }, index);
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                      variant: "contained",
-                      onClick: function onClick() {
-                        return addFolio();
-                      },
-                      children: "Agregar folio"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                      container: true,
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                        variant: "contained",
+                        onClick: function onClick() {
+                          return addFolio();
+                        },
+                        children: "Agregar folio"
+                      })
                     })]
                   })]
                 })]
@@ -31520,10 +31523,7 @@ var Relacion = function Relacion(_ref4) {
               item: true,
               xs: 12,
               md: 5,
-              style: {
-                display: "flex",
-                justifyContent: "flex-start"
-              },
+              className: "textContainer-alt",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
                 className: "lienzo-text",
                 children: textActive ? textActive : 'Sin Transcripción'
@@ -31531,81 +31531,110 @@ var Relacion = function Relacion(_ref4) {
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "container-controls",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-          className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-            className: contMap === "geo" && idActive == 0 ? "round-button active" : "round-button",
-            onClick: function onClick() {
-              setContMap("geo");
-              setIdActive(0);
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-            className: "round-button-text",
-            children: "Mapa geogr\xE1fico"
-          })]
-        }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-          className: "round-button-container",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-            className: contMap === "picto" && idActive === 0 ? "round-button active" : "round-button",
-            onClick: function onClick() {
-              setContMap("picto");
-              setIdActive(0);
-              setImageSize();
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-            className: "round-button-text",
-            children: "Mapa pictogr\xE1fico 1"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-          className: "swiper-container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
-            spaceBetween: 15,
-            freeMode: false,
-            effect: "coverflow",
-            grabCursor: true,
-            slidesPerView: 5,
-            navigation: true,
-            modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
-            className: "leo-swiper",
-            children: relation && relation.invoices.map(function (invoice, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
-                className: "mini-photo-container",
-                onClick: function onClick() {
-                  return changeFolio(invoice, index);
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          container: true,
+          alignContent: 'center',
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            item: true,
+            xs: 12,
+            md: 7,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              container: true,
+              spacing: 2,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                item: true,
+                xs: 3,
+                style: {
+                  display: 'flex',
+                  gap: 15
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                  className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                  src: "/storage/relaciones/" + invoice.imagen,
-                  style: {
-                    width: '66px',
-                    height: '100px'
-                  }
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                  className: "round-button-container",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: contMap === "geo" && idActive == 0 ? "round-button active" : "round-button",
+                    onClick: function onClick() {
+                      setContMap("geo");
+                      setIdActive(0);
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: "round-button-text",
+                    children: "Mapa geogr\xE1fico"
+                  })]
+                }), relation.maps && relation.maps.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                  className: "round-button-container",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: contMap === "picto" && idActive === 0 ? "round-button active" : "round-button",
+                    onClick: function onClick() {
+                      setContMap("picto");
+                      setIdActive(0);
+                      setImageSize();
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: "round-button-text",
+                    children: "Mapa pictogr\xE1fico 1"
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                xs: 9,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                  className: "swiper-container",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.Swiper, {
+                    spaceBetween: 15,
+                    freeMode: false,
+                    effect: "coverflow",
+                    grabCursor: true,
+                    slidesPerView: 5,
+                    navigation: true,
+                    modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
+                    className: "leo-swiper",
+                    children: relation && relation.invoices.map(function (invoice, index) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+                        className: "mini-photo-container",
+                        onClick: function onClick() {
+                          return changeFolio(invoice, index);
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                          className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
+                          src: "/storage/relaciones/" + invoice.imagen,
+                          style: {
+                            width: '66px',
+                            height: '100px'
+                          }
+                        })
+                      }, index);
+                    })
+                  })
                 })
-              }, index);
+              })]
             })
-          })
-        }), contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-          className: "translate-container",
-          children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
-            return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
-              variant: "contained",
-              size: "large",
-              onClick: function onClick() {
-                return changeText(transcription.texto, index);
-              },
-              children: transcription.nombre
-            }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
-              variant: "contained",
-              size: "large",
-              onClick: function onClick() {
-                return changeText(transcription.texto, index);
-              },
-              children: transcription.nombre
-            }, index);
-          })
-        })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            item: true,
+            xs: 12,
+            md: 5,
+            children: contMap == "lienzo" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+              className: "translate-container",
+              children: folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 && folioActive.transcriptions.map(function (transcription, index) {
+                return activeTranslate == index ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButtonActive, {
+                  variant: "contained",
+                  size: "large",
+                  onClick: function onClick() {
+                    return changeText(transcription.texto, index);
+                  },
+                  children: transcription.nombre
+                }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(TranslateButton, {
+                  variant: "contained",
+                  size: "large",
+                  onClick: function onClick() {
+                    return changeText(transcription.texto, index);
+                  },
+                  children: transcription.nombre
+                }, index);
+              })
+            })
+          })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
         className: "container-controls",
         children: relation.maps && relation.maps.length > 0 && relation.maps.map(function (map, index) {
@@ -32445,7 +32474,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    width: 100px;\r\n    justify-content: center;\r\n    margin-right: 15px;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n    padding-left:0px;\r\n    padding-right: 0px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    padding-left: 20px;\r\n    padding-right: 20px;\r\n    width: 455px;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 50%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-width: 500px;\r\n    padding: 30px 25px;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n@media(max-width:1100px){\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n    border: 6px solid #FFFFFF;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: flex-start;\r\n    width: 100px;\r\n    justify-content: center;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n    padding-left:0px;\r\n    padding-right: 0px;\r\n    font-size: 12px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    width: 95%;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 100%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-height: 540px !important;\r\n    overflow-y: scroll !important;\r\n    padding: 20px !important;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n.textContainer-alt{\r\n    display: flex;\r\n    padding: 0px !important;\r\n    margin-top: 40px !important;\r\n}\r\n\r\n@media(max-width:1100px){\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -381,10 +381,7 @@ const Relacion = ({ relation }) => {
                                     item
                                     xs={12}
                                     md={5}
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "flex-start",
-                                    }}
+                                    className='textContainer-alt'
                                 >
                                     <div className={"lienzo-text"}>
                                         {textActive ? textActive : 'Sin Transcripción'}
@@ -395,96 +392,108 @@ const Relacion = ({ relation }) => {
                     )}
                 </div>
                 <div className="container-controls">
-                    <div className="round-button-container">
-                        <div
-                            className={
-                                contMap === "geo" && idActive == 0
-                                    ? "round-button active"
-                                    : "round-button"
-                            }
-                            onClick={() => {
-                                setContMap("geo");
-                                setIdActive(0);
-                            }}
-                        ></div>
-                        <div className="round-button-text">Mapa geográfico</div>
-                    </div>
-                    {relation.maps && relation.maps.length > 0 && (
-                        <div className="round-button-container">
-                            <div
-                                className={
-                                    contMap === "picto" && idActive === 0
-                                        ? "round-button active"
-                                        : "round-button"
-                                }
-                                onClick={() => {
-                                    setContMap("picto");
-                                    setIdActive(0);
-                                    setImageSize();
-                                }}
-                            ></div>
-                            <div className="round-button-text">
-                                Mapa pictográfico 1
-                            </div>
-                        </div>
-                    )}
-                    <div className="swiper-container">
-                        <Swiper
-                            spaceBetween={15}
-                            freeMode={false}
-                            effect={"coverflow"}
-                            grabCursor={true}
-                            slidesPerView={5}
-                            navigation={true}
-                            modules={[Navigation, FreeMode]}
-                            className="leo-swiper"
-                        >
-                            {relation && relation.invoices.map((invoice, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    className='mini-photo-container'
-                                    onClick={()=>changeFolio(invoice, index)}
-                                >
-                                    <img
-                                        className={
-                                            contMap == "lienzo" && idActive == index
-                                                ? "oski-customGallery-miniPhoto active"
-                                                : "oski-customGallery-miniPhoto"
-                                        }
-                                        src={"/storage/relaciones/"+invoice.imagen}
-                                        style={{width:'66px',height:'100px'}}
-                                    />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
-                    {contMap == "lienzo" && (
-                        <div className="translate-container">
-                            {folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 &&
-                                folioActive.transcriptions.map((transcription, index) => (
-                                    activeTranslate == index ? (
-                                    <TranslateButtonActive
-                                        key={index}
-                                        variant="contained"
-                                        size={"large"}
-                                        onClick={() =>changeText(transcription.texto,index)}
-                                    >
-                                        {transcription.nombre}
-                                    </TranslateButtonActive>
-                                    )
-                                :(
-                                    <TranslateButton
-                                        key={index}
-                                        variant="contained"
-                                        size={"large"}
-                                        onClick={() =>changeText(transcription.texto,index)}
-                                    >
-                                        {transcription.nombre}
-                                    </TranslateButton>
-                                )
-                            ))}
-                        </div>
-                    )}
+                    <Grid container alignContent={'center'}>
+                        <Grid item xs={12} md={7}>
+                           <Grid container spacing={2}>
+                                <Grid item xs={3} style={{display:'flex',gap:15}}>
+                                    <div className="round-button-container">
+                                        <div
+                                            className={
+                                                contMap === "geo" && idActive == 0
+                                                    ? "round-button active"
+                                                    : "round-button"
+                                            }
+                                            onClick={() => {
+                                                setContMap("geo");
+                                                setIdActive(0);
+                                            }}
+                                        ></div>
+                                        <div className="round-button-text">Mapa geográfico</div>
+                                    </div>
+                                    {relation.maps && relation.maps.length > 0 && (
+                                        <div className="round-button-container">
+                                            <div
+                                                className={
+                                                    contMap === "picto" && idActive === 0
+                                                        ? "round-button active"
+                                                        : "round-button"
+                                                }
+                                                onClick={() => {
+                                                    setContMap("picto");
+                                                    setIdActive(0);
+                                                    setImageSize();
+                                                }}
+                                            ></div>
+                                            <div className="round-button-text">
+                                                Mapa pictográfico 1
+                                            </div>
+                                        </div>
+                                    )}
+                                </Grid>
+                                <Grid xs={9}>
+                                    <div className="swiper-container">
+                                        <Swiper
+                                            spaceBetween={15}
+                                            freeMode={false}
+                                            effect={"coverflow"}
+                                            grabCursor={true}
+                                            slidesPerView={5}
+                                            navigation={true}
+                                            modules={[Navigation, FreeMode]}
+                                            className="leo-swiper"
+                                        >
+                                            {relation && relation.invoices.map((invoice, index) => (
+                                                <SwiperSlide
+                                                    key={index}
+                                                    className='mini-photo-container'
+                                                    onClick={()=>changeFolio(invoice, index)}
+                                                >
+                                                    <img
+                                                        className={
+                                                            contMap == "lienzo" && idActive == index
+                                                                ? "oski-customGallery-miniPhoto active"
+                                                                : "oski-customGallery-miniPhoto"
+                                                        }
+                                                        src={"/storage/relaciones/"+invoice.imagen}
+                                                        style={{width:'66px',height:'100px'}}
+                                                    />
+                                                </SwiperSlide>
+                                            ))}
+                                        </Swiper>
+                                    </div>
+                                </Grid>
+                           </Grid>
+                        </Grid>
+                        <Grid item xs={12} md={5}>
+                            {contMap == "lienzo" && (
+                                <div className="translate-container">
+                                    {folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 &&
+                                        folioActive.transcriptions.map((transcription, index) => (
+                                            activeTranslate == index ? (
+                                            <TranslateButtonActive
+                                                key={index}
+                                                variant="contained"
+                                                size={"large"}
+                                                onClick={() =>changeText(transcription.texto,index)}
+                                            >
+                                                {transcription.nombre}
+                                            </TranslateButtonActive>
+                                            )
+                                        :(
+                                            <TranslateButton
+                                                key={index}
+                                                variant="contained"
+                                                size={"large"}
+                                                onClick={() =>changeText(transcription.texto,index)}
+                                            >
+                                                {transcription.nombre}
+                                            </TranslateButton>
+                                        )
+                                    ))}
+                                </div>
+                            )}
+                        </Grid>
+                    </Grid>
                 </div>
                 <div className="container-controls">
                     {relation.maps &&

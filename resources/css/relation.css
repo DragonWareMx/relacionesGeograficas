@@ -22,6 +22,7 @@
     width: 55px;
     background-color: #4BA0AF;
     cursor: pointer;
+    border: 6px solid #FFFFFF;
 }
 
 .round-button.active {
@@ -31,10 +32,9 @@
 .round-button-container {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: flex-start;
     width: 100px;
     justify-content: center;
-    margin-right: 15px;
 }
 
 .round-button-text {
@@ -43,6 +43,7 @@
     font-family: 'Nunito';
     padding-left:0px;
     padding-right: 0px;
+    font-size: 12px;
 }
 
 .info-text-relacion {
@@ -70,9 +71,7 @@
 }
 
 .swiper-container {
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 455px;
+    width: 95%;
 }
 
 .leo-swiper {
@@ -86,7 +85,7 @@
 
 .translate-container {
     display: flex;
-    width: 50%;
+    width: 100%;
     align-items: center;
     align-content: center;
     justify-content: right;
@@ -166,11 +165,18 @@
 }
 
 .lienzo-text {
-    max-width: 500px;
-    padding: 30px 25px;
+    max-height: 540px !important;
+    overflow-y: scroll !important;
+    padding: 20px !important;
     color: white;
     text-align: justify;
     font-size: 13px;
+}
+
+.textContainer-alt{
+    display: flex;
+    padding: 0px !important;
+    margin-top: 40px !important;
 }
 
 @media(max-width:1100px){

@@ -748,12 +748,14 @@ const Create = () => {
                                                     <div className='separator'></div>
                                                 </Grid>
                                             ))}
-                                            <Button
-                                                variant='contained'
-                                                onClick={()=>addFolio()}
-                                            >
-                                                Agregar folio
-                                            </Button>
+                                            <Grid container>
+                                                <Button
+                                                    variant='contained'
+                                                    onClick={()=>addFolio()}
+                                                >
+                                                    Agregar folio
+                                                </Button>
+                                            </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
