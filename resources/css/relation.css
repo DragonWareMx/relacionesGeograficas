@@ -2,7 +2,7 @@
     width: 90%;
     min-height: 600px;
     background-color: #ffffff;
-    border: solid 1px #4D7DB3;
+    border: solid 1px #4d7db3;
     margin-left: auto;
     margin-right: auto;
 }
@@ -20,13 +20,13 @@
     border-radius: 50%;
     height: 55px;
     width: 55px;
-    background-color: #4BA0AF;
+    background-color: #4ba0af;
     cursor: pointer;
-    border: 6px solid #FFFFFF;
+    border: 6px solid #ffffff;
 }
 
 .round-button.active {
-    border: 6px solid #F25E0D;
+    border: 6px solid #f25e0d;
 }
 
 .round-button-container {
@@ -40,14 +40,14 @@
 .round-button-text {
     margin-top: 10px;
     text-align: center;
-    font-family: 'Nunito';
-    padding-left:0px;
+    font-family: "Nunito";
+    padding-left: 0px;
     padding-right: 0px;
     font-size: 12px;
 }
 
 .info-text-relacion {
-    font-family: 'Nunito';
+    font-family: "Nunito";
 }
 
 .mini-photo-container {
@@ -67,7 +67,7 @@
     width: 100px;
     object-fit: cover;
     height: 140px;
-    border: 6px solid #F25E0D;
+    border: 6px solid #f25e0d;
 }
 
 .swiper-container {
@@ -76,7 +76,6 @@
 
 .leo-swiper {
     padding: 0px 40px !important;
-
 }
 
 .leo-swiper .swiper-button-next {
@@ -90,7 +89,7 @@
     align-content: center;
     justify-content: right;
     flex-wrap: wrap;
-    gap:15px;
+    gap: 15px;
 }
 
 .footer-all-folios {
@@ -99,14 +98,14 @@
     left: 0px;
     width: 100%;
     height: 35px;
-    background-color: #4D7DB3;
+    background-color: #4d7db3;
 }
 
 .folios-button {
     display: flex;
     align-items: center;
     height: 35px;
-    font-family: 'Nunito';
+    font-family: "Nunito";
     font-weight: 700;
     color: white;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -114,7 +113,7 @@
 
 .drawer-content {
     min-height: 50vh;
-    background-color: #4D7DB3;
+    background-color: #4d7db3;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -133,7 +132,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Nunito';
+    font-family: "Nunito";
     color: white;
     width: 100px;
 }
@@ -144,7 +143,7 @@
 
 .folio-mini-container.active img {
     cursor: pointer;
-    border: 6px solid #F25E0D;
+    border: 6px solid #f25e0d;
 }
 
 .mapaPicto {
@@ -165,21 +164,30 @@
 }
 
 .lienzo-text {
-    max-height: 540px !important;
+    max-height: 473px !important;
     overflow-y: scroll !important;
-    padding: 20px !important;
+    padding: 10px 20px 20px 20px !important;
     color: white;
     text-align: justify;
     font-size: 13px;
 }
 
-.textContainer-alt{
+.lienzo-title {
+    padding-left: 20px !important;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.textContainer-alt {
     display: flex;
     padding: 0px !important;
     margin-top: 40px !important;
 }
 
-@media(max-width:1100px){
+@media (max-width: 1100px) {
     .container-controls {
         flex-wrap: wrap !important;
     }

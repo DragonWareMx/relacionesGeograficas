@@ -1,22 +1,22 @@
-body{
+body {
     margin: 0px !important;
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     background-color: white;
 }
 /* LAYOUT */
-#search-bar{
+#search-bar {
     margin-right: 24px;
     display: flex;
     align-items: center;
 }
 /* PAG INICIO */
-.pd-ri-50{
+.pd-ri-50 {
     padding-right: 50px;
 }
-.pd-le-50{
+.pd-le-50 {
     padding-left: 50px;
 }
-.btn-op{
+.btn-op {
     text-align: center;
     font-weight: 600;
     margin: 10px;
@@ -29,34 +29,58 @@ body{
     border: 5px solid white;
     transition: all 0.25s ease-in-out;
 }
-.btn-op:hover, .btn-op:active, .btn-op:focus{
+.btn-op:hover,
+.btn-op:active,
+.btn-op:focus {
     border: 5px solid #f37946;
     transition: all 0.25s ease-in-out;
 }
-.circle-name{
+.circle-name {
     text-align: center;
     margin: 5px 0px 0px 0px;
     font-weight: 700;
     font-size: 14px;
     width: 100%;
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
-@media(max-width:1540px){
-    #no-mg-1540-l{
+@media (max-width: 1540px) {
+    #no-mg-1540-l {
         margin-left: 0px !important;
     }
-    #search-bar{
+    #search-bar {
         margin-right: 0px;
     }
 }
-@media(max-width:600px){
-    #search-bar{
+@media (max-width: 600px) {
+    #search-bar {
         margin-top: 10px;
     }
-    .pd-ri-50{
+    .pd-ri-50 {
         padding-right: 0px;
     }
-    .pd-le-50{
+    .pd-le-50 {
         padding-left: 0px;
     }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #304a71 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #304a71;
+    border-radius: 10px;
+    border: 0px solid #ffffff;
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Relation;
+
 class HomeController extends Controller
 {
     // /**
@@ -22,10 +23,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(){
+    public function index()
+    {
         // Listar las relaciones alfabeticamente, nombre, miniatura, uuid
-        $relaciones = Relation::select('uuid','nombre','miniatura')->orderBy('nombre')->get();
+        $relaciones = Relation::select('uuid', 'nombre', 'miniatura')->orderBy('nombre')->get();
+        $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
 
-        return Inertia::render('Pages/index',['relaciones' => $relaciones]);
+        return Inertia::render('Pages/index', ['relaciones' => $relaciones, 'banners' => $banners]);
     }
 }
