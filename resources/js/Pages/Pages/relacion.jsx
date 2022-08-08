@@ -93,9 +93,15 @@ const Relacion = ({ relation }) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/94`)
+            .get(`https://decm.arqueodata.com/api/v1/mapa/`+relation.idDS)
             .then((response) => {
                 setData(response.data);
+            })
+            .catch((error) => {});
+        axios
+            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .then((response) => {
+                console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: relacion.jsx ~ line 99 ~ .then ~ response.data", response.data);
             })
             .catch((error) => {});
     }, []);

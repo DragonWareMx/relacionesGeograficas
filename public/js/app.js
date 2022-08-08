@@ -31237,8 +31237,11 @@ var Relacion = function Relacion(_ref4) {
       setData = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/94").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
+    })["catch"](function (error) {});
+    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/relaciones").then(function (response) {
+      console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: relacion.jsx ~ line 99 ~ .then ~ response.data", response.data);
     })["catch"](function (error) {});
   }, []);
 
