@@ -30,8 +30,9 @@ Route::name('relations.')->group(function () {
 
 Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/admin/create', [App\Http\Controllers\RelationController::class, 'create'])->name('create');
-    Route::get('/admin/index', [App\Http\Controllers\RelationController::class, 'index'])->name('index');
+    Route::get('/admin/index', [App\Http\Controllers\AdminController::class, 'relations'])->name('index');
     Route::post('/admin/store', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
+    Route::get('/admin/relations/{id}', [App\Http\Controllers\AdminController::class, 'show'])->name('show');
 });
 
 Auth::routes(['register' => false]);
