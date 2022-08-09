@@ -20,7 +20,7 @@ class CreateRelationsTable extends Migration
             $table->string('nombre', 255);
             $table->text('banner');
             $table->text('miniatura');
-
+            $table->text('fuentes');
             $table->timestamps();
         });
     }

@@ -247,6 +247,7 @@ const Create = () => {
     const [relation, setRelation] = React.useState('');
 
     const handleChangeSelect = (event) => {
+        console.log(event.target.value);
         setRelation(event.target.value);
     };
 

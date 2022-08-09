@@ -22,7 +22,7 @@ class AdminController extends Controller
 
     public function show($id)
     {
-        $relation = Relation::findOrFail($id);
-        return Inertia::render('Admin/edit', ['relation' => $relation]);
+        $relation = Relation::with('maps')->findOrFail($id);
+        return Inertia::render('Admin/edit', ['oldRelation' => $relation]);
     }
 }
