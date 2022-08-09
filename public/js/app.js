@@ -29411,7 +29411,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
@@ -30618,8 +30618,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
@@ -30727,8 +30727,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -30799,8 +30799,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
 /* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../css/carousel.css */ "./public/css/carousel.css");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
@@ -30874,13 +30874,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function showAlfa() {
-  document.getElementById('mapa').style.display = "none";
-  document.getElementById('alfabetico').style.display = "block";
+  document.getElementById("mapa").style.display = "none";
+  document.getElementById("alfabetico").style.display = "block";
 }
 
 function showMapa() {
-  document.getElementById('mapa').style.display = "block";
-  document.getElementById('alfabetico').style.display = "none";
+  document.getElementById("mapa").style.display = "block";
+  document.getElementById("alfabetico").style.display = "none";
 }
 
 function limitChar(nombre) {
@@ -30888,7 +30888,8 @@ function limitChar(nombre) {
 }
 
 var Home = function Home(_ref) {
-  var relaciones = _ref.relaciones;
+  var relaciones = _ref.relaciones,
+      banners = _ref.banners;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     infoMapa: {
@@ -30965,10 +30966,11 @@ var Home = function Home(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
       component: "section",
       sx: {
-        backgroundColor: '#193661'
+        backgroundColor: "#193661"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
+        maxWidth: "xl",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
           slidesPerView: 3,
           spaceBetween: 10,
           navigation: false,
@@ -30981,40 +30983,17 @@ var Home = function Home(_ref) {
           modules: [swiper__WEBPACK_IMPORTED_MODULE_9__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_9__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_9__.Keyboard],
           className: "oski-swiper",
           loop: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-              className: "oski-carousel-element",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
-                src: "img/assets/carrusel1.png",
-                className: "oski-carousel-img"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-                className: "oski-carousel-title",
-                children: "Meztitl\xE1n"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-              className: "oski-carousel-element",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
-                src: "img/assets/carrusel2.png",
-                className: "oski-carousel-img"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-                className: "oski-carousel-title",
-                children: "P\xE1tzcuaro"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-              className: "oski-carousel-element",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
-                src: "img/assets/carrusel3.png",
-                className: "oski-carousel-img"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-                className: "oski-carousel-title",
-                children: "Tac\xE1mbaro"
-              })]
-            })
-          })]
+          children: banners && banners.length > 0 && banners.map(function (banner) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+                className: "oski-carousel-element",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
+                  src: "/storage/relaciones/" + banner.banner,
+                  className: "oski-carousel-img"
+                })
+              })
+            });
+          })
         })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -31030,6 +31009,11 @@ var Home = function Home(_ref) {
           item: true,
           xs: 12,
           sm: 6,
+          sx: {
+            paddingRight: {
+              sm: 3
+            }
+          },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
             align: "justify",
             children: ["Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."]
@@ -31055,9 +31039,14 @@ var Home = function Home(_ref) {
           item: true,
           xs: 12,
           sm: 6,
+          sx: {
+            paddingLeft: {
+              sm: 3
+            }
+          },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
             align: "justify",
-            children: ["Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas,  la  cultura,  la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."]
+            children: ["Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas, la cultura, la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
           item: true,
@@ -31070,7 +31059,7 @@ var Home = function Home(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
             src: "/img/assets/asset2.png",
             style: {
-              width: '60%'
+              width: "60%"
             }
           })
         })]
@@ -31083,7 +31072,7 @@ var Home = function Home(_ref) {
           href: "#!",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
             style: {
-              width: '250px'
+              width: "250px"
             },
             src: "/img/assets/btn1.PNG"
           })
@@ -31095,8 +31084,8 @@ var Home = function Home(_ref) {
       spacing: 2,
       alignItems: "center",
       style: {
-        backgroundColor: '#475e80',
-        padding: '10px'
+        backgroundColor: "#475e80",
+        padding: "10px"
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         item: true,
@@ -31104,7 +31093,7 @@ var Home = function Home(_ref) {
         sm: 4,
         md: 2,
         style: {
-          paddingTop: '0px'
+          paddingTop: "0px"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
           className: "btn-op",
@@ -31117,7 +31106,7 @@ var Home = function Home(_ref) {
         sm: 4,
         md: 2,
         style: {
-          paddingTop: '0px'
+          paddingTop: "0px"
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
           className: "btn-op",
@@ -31128,7 +31117,7 @@ var Home = function Home(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
       maxWidth: "false",
       sx: {
-        maxWidth: '90%'
+        maxWidth: "90%"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.MapContainer, {
         id: "mapa",
@@ -31157,7 +31146,7 @@ var Home = function Home(_ref) {
                   children: item.cNombre
                 })
               }, item.idDS);
-            }) : ''
+            }) : ""
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.ScaleControl, {
             position: "bottomright",
             metric: true,
@@ -31168,9 +31157,9 @@ var Home = function Home(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
       id: "alfabetico",
       style: {
-        paddingTop: '60px',
-        paddingBottom: '30px',
-        display: 'none'
+        paddingTop: "60px",
+        paddingBottom: "30px",
+        display: "none"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
         container: true,
@@ -31182,24 +31171,24 @@ var Home = function Home(_ref) {
             sm: 12 / 5,
             md: 12 / 7,
             style: {
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              padding: '0px',
-              marginBottom: '35px'
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              padding: "0px",
+              marginBottom: "35px"
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
-              href: route('relations.index', rel.uuid),
+              href: route("relations.index", rel.uuid),
               style: {
-                textDecoration: 'none',
-                color: 'black',
-                display: 'flex',
-                justifyContent: 'center',
-                flexWrap: 'wrap'
+                textDecoration: "none",
+                color: "black",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap"
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__["default"], {
                 alt: rel.nombre,
-                src: '/storage/relaciones/' + rel.miniatura,
+                src: "/storage/relaciones/" + rel.miniatura,
                 sx: {
                   width: 90,
                   height: 90
@@ -31248,7 +31237,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
@@ -31392,9 +31381,6 @@ var Relacion = function Relacion(_ref4) {
   (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/mapa/" + relation.idDS).then(function (response) {
       setData(response.data);
-    })["catch"](function (error) {});
-    axios__WEBPACK_IMPORTED_MODULE_17___default().get("https://decm.arqueodata.com/api/v1/relaciones").then(function (response) {
-      console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: relacion.jsx ~ line 99 ~ .then ~ response.data", response.data);
     })["catch"](function (error) {});
   }, []);
 
@@ -31646,7 +31632,7 @@ var Relacion = function Relacion(_ref4) {
                 alt: "",
                 style: {
                   height: "600px",
-                  width: '100%'
+                  width: "100%"
                 },
                 id: "imagenprov",
                 ref: refImg
@@ -31664,10 +31650,10 @@ var Relacion = function Relacion(_ref4) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformWrapper, {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_zoom_pan_pinch__WEBPACK_IMPORTED_MODULE_8__.TransformComponent, {
                   wrapperStyle: {
-                    width: '100%'
+                    width: "100%"
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                    src: '/storage/relaciones/' + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
+                    src: "/storage/relaciones/" + (folioActive === null || folioActive === void 0 ? void 0 : folioActive.imagen),
                     alt: "",
                     style: {
                       height: "600px"
@@ -31675,15 +31661,27 @@ var Relacion = function Relacion(_ref4) {
                   })
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
               xs: 12,
               md: 5,
               className: "textContainer-alt",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+              style: {
+                flexWrap: "wrap"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                className: "lienzo-title",
+                style: {
+                  width: "100%"
+                },
+                children: ["Folio: ", folioActive.folio, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Nombre: ", folioActive.nombre, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Descripcion: ", folioActive.descripcion]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
                 className: "lienzo-text",
-                children: textActive ? textActive : 'Sin Transcripción'
-              })
+                style: {
+                  width: "100%"
+                },
+                children: textActive ? textActive : "Sin Transcripción"
+              })]
             })]
           })
         })]
@@ -31691,7 +31689,7 @@ var Relacion = function Relacion(_ref4) {
         className: "container-controls",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
           container: true,
-          alignContent: 'center',
+          alignContent: "center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
             item: true,
             xs: 12,
@@ -31703,7 +31701,7 @@ var Relacion = function Relacion(_ref4) {
                 item: true,
                 xs: 3,
                 style: {
-                  display: 'flex',
+                  display: "flex",
                   gap: 15
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
@@ -31755,8 +31753,8 @@ var Relacion = function Relacion(_ref4) {
                           className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
                           src: "/storage/relaciones/" + invoice.imagen,
                           style: {
-                            width: '66px',
-                            height: '100px'
+                            width: "66px",
+                            height: "100px"
                           }
                         })
                       }, index);
@@ -31818,28 +31816,30 @@ var Relacion = function Relacion(_ref4) {
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           style: {
-            width: '90%',
-            marginLeft: 'auto',
-            marginRight: 'auto'
+            width: "90%",
+            marginLeft: "auto",
+            marginRight: "auto"
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
             container: true,
-            justifyContent: 'space-between',
+            justifyContent: "space-between",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              sm: 7,
+              sm: 8,
+              md: 9,
               xs: 12,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
                 className: "info-text-relacion",
-                children: ["Relaci\xF3n de la Alcald\xEDa Mayor de Metzititl\xE1n y su Jurisdicci\xF3n", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
+                children: [relation.nombre, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("br", {}), "Reproducci\xF3n por cortes\xEDa de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
               item: true,
-              sm: 5,
+              sm: 4,
+              md: 3,
               xs: 12,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
                 container: true,
-                justifyContent: 'right',
+                justifyContent: "right",
                 sx: {
                   mt: {
                     xs: 3,
@@ -31890,29 +31890,38 @@ var Relacion = function Relacion(_ref4) {
         className: "drawer-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_23__["default"], {
           maxWidth: "xl",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-            container: true,
-            spacing: 8,
-            children: relation && relation.invoices.map(function (invoice, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
-                item: true,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
-                  className: contMap == "lienzo" && idActive == index ? "folio-mini-container active" : "folio-mini-container",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
-                    style: {
-                      width: 100,
-                      height: 139,
-                      objectFit: 'cover'
-                    },
-                    src: "/storage/relaciones/" + invoice.imagen,
-                    onClick: function onClick() {
-                      return changeFolio(invoice, index);
-                    }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
-                    children: "Folio 1"
-                  })]
-                }, index)
-              });
+          style: {
+            display: "flex",
+            justifyContent: "center"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+            style: {
+              width: "90%"
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+              container: true,
+              spacing: 8,
+              children: relation && relation.invoices.map(function (invoice, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                  item: true,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                    className: contMap == "lienzo" && idActive == index ? "folio-mini-container active" : "folio-mini-container",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                      style: {
+                        width: 100,
+                        height: 139,
+                        objectFit: "cover"
+                      },
+                      src: "/storage/relaciones/" + invoice.imagen,
+                      onClick: function onClick() {
+                        return changeFolio(invoice, index);
+                      }
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                      children: "Folio 1"
+                    })]
+                  }, index)
+                });
+              })
             })
           })
         })
@@ -32014,7 +32023,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/Layout/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/Layout/parts/Footer.jsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2, _templateObject3;
 
@@ -32086,10 +32095,10 @@ __webpack_require__.r(__webpack_exports__);
 function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     style: {
-      backgroundColor: '#304a71'
+      backgroundColor: "#304a71"
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      maxWidth: 'xl',
+      maxWidth: "xl",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
         container: true,
         alignItems: "center",
@@ -32104,9 +32113,16 @@ function Footer() {
           justifyContent: "center",
           alignItems: "center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Cultura.PNG"
+            src: "/img/assets/Cultura.PNG",
+            style: {
+              marginTop: 8
+            }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Conacyt.PNG"
+            src: "/img/assets/Conacyt.PNG",
+            style: {
+              height: 50,
+              marginLeft: 10
+            }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
           item: true,
@@ -32147,16 +32163,16 @@ function Footer() {
             href: "https://dragonware.com.mx",
             target: "_blank",
             style: {
-              textDecoration: 'none',
-              color: '#919EAB',
-              fontSize: '13px'
+              textDecoration: "none",
+              color: "#919EAB",
+              fontSize: "13px"
             },
             children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
               src: "/img/assets/dragonBlanco1.png",
               style: {
-                width: '19px',
-                height: '13px',
-                marginLeft: '10px'
+                width: "19px",
+                height: "13px",
+                marginLeft: "10px"
               }
             })]
           })
@@ -32534,7 +32550,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element{\r\n    width: 100%;\r\n    height: 450px;\r\n}\r\n\r\n.oski-carousel-img{ \r\n    width: 100%;\r\n    height: 100%; \r\n    -o-object-fit: cover; \r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title{\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor:default;\r\n}\r\n\r\n.oski-swiper{\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width:1200px) {\r\n    .oski-swiper{\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 400px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -170px;\r\n        padding-right: 100px;\r\n        font-size: 35px;\r\n    }\r\n}\r\n\r\n@media (max-width:770px) {\r\n    .oski-swiper{\r\n        width: 600px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width:650px) {\r\n    .oski-swiper{\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 320px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -130px;\r\n        padding-right: 55px;\r\n        font-size: 28px;\r\n    }\r\n}\r\n\r\n@media (max-width:538px) {\r\n    .oski-swiper{\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 250px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -100px;\r\n        padding-right: 45px;\r\n        font-size: 24px;\r\n    }\r\n}\r\n\r\n@media (max-width:486px) {\r\n    .oski-swiper{\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width:440px) {\r\n    .oski-swiper{\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element{\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title{\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element {\r\n    width: 100%;\r\n    height: 350px;\r\n}\r\n\r\n.oski-carousel-img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title {\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor: default;\r\n}\r\n\r\n.oski-swiper {\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n    .oski-swiper {\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -170px;\r\n        padding-right: 100px;\r\n        font-size: 35px;\r\n    }\r\n}\r\n\r\n@media (max-width: 770px) {\r\n    .oski-swiper {\r\n        width: 600px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width: 650px) {\r\n    .oski-swiper {\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 320px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -130px;\r\n        padding-right: 55px;\r\n        font-size: 28px;\r\n    }\r\n}\r\n\r\n@media (max-width: 538px) {\r\n    .oski-swiper {\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 250px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -100px;\r\n        padding-right: 45px;\r\n        font-size: 24px;\r\n    }\r\n}\r\n\r\n@media (max-width: 486px) {\r\n    .oski-swiper {\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 440px) {\r\n    .oski-swiper {\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32558,7 +32574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    margin: 0px !important;\r\n    font-family: 'Noto Sans';\r\n    background-color: white;\r\n}\r\n/* LAYOUT */\r\n#search-bar{\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50{\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50{\r\n    padding-left: 50px;\r\n}\r\n.btn-op{\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover, .btn-op:active, .btn-op:focus{\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name{\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap:break-word;\r\n}\r\n@media(max-width:1540px){\r\n    #no-mg-1540-l{\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar{\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media(max-width:600px){\r\n    #search-bar{\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50{\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50{\r\n        padding-left: 0px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n    margin: 0px !important;\r\n    font-family: \"Noto Sans\";\r\n    background-color: white;\r\n}\r\n/* LAYOUT */\r\n#search-bar {\r\n    margin-right: 24px;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n/* PAG INICIO */\r\n.pd-ri-50 {\r\n    padding-right: 50px;\r\n}\r\n.pd-le-50 {\r\n    padding-left: 50px;\r\n}\r\n.btn-op {\r\n    text-align: center;\r\n    font-weight: 600;\r\n    margin: 10px;\r\n    border-radius: 0px !important;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\r\n    cursor: pointer;\r\n    align-items: center;\r\n    background-color: white;\r\n    border: 5px solid white;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.btn-op:hover,\r\n.btn-op:active,\r\n.btn-op:focus {\r\n    border: 5px solid #f37946;\r\n    transition: all 0.25s ease-in-out;\r\n}\r\n.circle-name {\r\n    text-align: center;\r\n    margin: 5px 0px 0px 0px;\r\n    font-weight: 700;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    overflow-wrap: break-word;\r\n}\r\n@media (max-width: 1540px) {\r\n    #no-mg-1540-l {\r\n        margin-left: 0px !important;\r\n    }\r\n    #search-bar {\r\n        margin-right: 0px;\r\n    }\r\n}\r\n@media (max-width: 600px) {\r\n    #search-bar {\r\n        margin-top: 10px;\r\n    }\r\n    .pd-ri-50 {\r\n        padding-right: 0px;\r\n    }\r\n    .pd-le-50 {\r\n        padding-left: 0px;\r\n    }\r\n}\r\n\r\n/* ===== Scrollbar CSS ===== */\r\n/* Firefox */\r\n* {\r\n    scrollbar-width: auto;\r\n    scrollbar-color: #304a71 #ffffff;\r\n}\r\n\r\n/* Chrome, Edge, and Safari */\r\n*::-webkit-scrollbar {\r\n    width: 8px;\r\n}\r\n\r\n*::-webkit-scrollbar-track {\r\n    background: #ffffff;\r\n}\r\n\r\n*::-webkit-scrollbar-thumb {\r\n    background-color: #304a71;\r\n    border-radius: 10px;\r\n    border: 0px solid #ffffff;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32630,7 +32646,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4D7DB3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4BA0AF;\r\n    cursor: pointer;\r\n    border: 6px solid #FFFFFF;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: flex-start;\r\n    width: 100px;\r\n    justify-content: center;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: 'Nunito';\r\n    padding-left:0px;\r\n    padding-right: 0px;\r\n    font-size: 12px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: 'Nunito';\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.swiper-container {\r\n    width: 95%;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 100%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap:15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4D7DB3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: 'Nunito';\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4D7DB3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: 'Nunito';\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #F25E0D;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-height: 540px !important;\r\n    overflow-y: scroll !important;\r\n    padding: 20px !important;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n.textContainer-alt{\r\n    display: flex;\r\n    padding: 0px !important;\r\n    margin-top: 40px !important;\r\n}\r\n\r\n@media(max-width:1100px){\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".map-container {\r\n    width: 90%;\r\n    min-height: 600px;\r\n    background-color: #ffffff;\r\n    border: solid 1px #4d7db3;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.container-controls {\r\n    display: flex;\r\n    margin-top: 25px;\r\n    padding: 0px;\r\n    width: 90%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.round-button {\r\n    border-radius: 50%;\r\n    height: 55px;\r\n    width: 55px;\r\n    background-color: #4ba0af;\r\n    cursor: pointer;\r\n    border: 6px solid #ffffff;\r\n}\r\n\r\n.round-button.active {\r\n    border: 6px solid #f25e0d;\r\n}\r\n\r\n.round-button-container {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    align-content: flex-start;\r\n    width: 100px;\r\n    justify-content: center;\r\n}\r\n\r\n.round-button-text {\r\n    margin-top: 10px;\r\n    text-align: center;\r\n    font-family: \"Nunito\";\r\n    padding-left: 0px;\r\n    padding-right: 0px;\r\n    font-size: 12px;\r\n}\r\n\r\n.info-text-relacion {\r\n    font-family: \"Nunito\";\r\n}\r\n\r\n.mini-photo-container {\r\n    /* background-color: darkcyan; */\r\n    width: -webkit-fit-content !important;\r\n    width: -moz-fit-content !important;\r\n    width: fit-content !important;\r\n    margin-top: 10px;\r\n}\r\n\r\n.oski-customGallery-miniPhoto {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    cursor: pointer;\r\n}\r\n\r\n.oski-customGallery-miniPhoto.active {\r\n    width: 100px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    height: 140px;\r\n    border: 6px solid #f25e0d;\r\n}\r\n\r\n.swiper-container {\r\n    width: 95%;\r\n}\r\n\r\n.leo-swiper {\r\n    padding: 0px 40px !important;\r\n}\r\n\r\n.leo-swiper .swiper-button-next {\r\n    right: 0px !important;\r\n}\r\n\r\n.translate-container {\r\n    display: flex;\r\n    width: 100%;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: right;\r\n    flex-wrap: wrap;\r\n    gap: 15px;\r\n}\r\n\r\n.footer-all-folios {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 35px;\r\n    background-color: #4d7db3;\r\n}\r\n\r\n.folios-button {\r\n    display: flex;\r\n    align-items: center;\r\n    height: 35px;\r\n    font-family: \"Nunito\";\r\n    font-weight: 700;\r\n    color: white;\r\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.drawer-content {\r\n    min-height: 50vh;\r\n    background-color: #4d7db3;\r\n    padding-top: 50px;\r\n    padding-bottom: 50px;\r\n}\r\n\r\n.footer-drawer {\r\n    position: relative;\r\n    bottom: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    height: 25px;\r\n    z-index: 999;\r\n}\r\n\r\n.folio-mini-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-family: \"Nunito\";\r\n    color: white;\r\n    width: 100px;\r\n}\r\n\r\n.folio-mini-container img {\r\n    cursor: pointer;\r\n}\r\n\r\n.folio-mini-container.active img {\r\n    cursor: pointer;\r\n    border: 6px solid #f25e0d;\r\n}\r\n\r\n.mapaPicto {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.lienzo-container {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.grid-lienzo {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\n.lienzo-text {\r\n    max-height: 473px !important;\r\n    overflow-y: scroll !important;\r\n    padding: 10px 20px 20px 20px !important;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 13px;\r\n}\r\n\r\n.lienzo-title {\r\n    padding-left: 20px !important;\r\n    padding-top: 10px;\r\n    margin-bottom: 10px;\r\n    color: white;\r\n    text-align: justify;\r\n    font-size: 14px;\r\n}\r\n\r\n.textContainer-alt {\r\n    display: flex;\r\n    padding: 0px !important;\r\n    margin-top: 40px !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .container-controls {\r\n        flex-wrap: wrap !important;\r\n    }\r\n\r\n    .swiper-container {\r\n        padding-left: 20px;\r\n        width: auto !important;\r\n    }\r\n\r\n    .translate-container {\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: center;\r\n        margin-top: 30px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -102398,7 +102414,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

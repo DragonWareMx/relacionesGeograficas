@@ -93,15 +93,9 @@ const Relacion = ({ relation }) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/`+relation.idDS)
+            .get(`https://decm.arqueodata.com/api/v1/mapa/` + relation.idDS)
             .then((response) => {
                 setData(response.data);
-            })
-            .catch((error) => {});
-        axios
-            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
-            .then((response) => {
-                console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: relacion.jsx ~ line 99 ~ .then ~ response.data", response.data);
             })
             .catch((error) => {});
     }, []);
@@ -116,14 +110,13 @@ const Relacion = ({ relation }) => {
     const [textActive, setTextActive] = useState(null);
     const [activeTranslate, setActiveTranslate] = useState(0);
 
-    async function changeFolio(invoice, index){
+    async function changeFolio(invoice, index) {
         setContMap("lienzo");
         setFolioActive(invoice);
-        if(invoice.transcriptions && invoice.transcriptions.length > 0){
+        if (invoice.transcriptions && invoice.transcriptions.length > 0) {
             setTextActive(invoice.transcriptions[0].texto);
             setActiveTranslate(0);
-        }
-        else{
+        } else {
             setTextActive(null);
             setActiveTranslate(0);
         }
@@ -131,7 +124,7 @@ const Relacion = ({ relation }) => {
         setIdActive(index);
     }
 
-    async function changeText(text, index){
+    async function changeText(text, index) {
         setTextActive(text);
         setActiveTranslate(index);
     }
@@ -355,7 +348,7 @@ const Relacion = ({ relation }) => {
                                             alt=""
                                             style={{
                                                 height: "600px",
-                                                width: '100%'
+                                                width: "100%",
                                             }}
                                             id="imagenprov"
                                             ref={refImg}
@@ -368,17 +361,18 @@ const Relacion = ({ relation }) => {
                     {contMap === "lienzo" && (
                         <div>
                             <Grid container spacing={5}>
-                                <Grid
-                                    item
-                                    xs={12}
-                                    md={7}
-                                >
+                                <Grid item xs={12} md={7}>
                                     <TransformWrapper>
-                                        <TransformComponent wrapperStyle={{width:'100%'}}>
+                                        <TransformComponent
+                                            wrapperStyle={{ width: "100%" }}
+                                        >
                                             <img
-                                                src={'/storage/relaciones/'+folioActive?.imagen}
+                                                src={
+                                                    "/storage/relaciones/" +
+                                                    folioActive?.imagen
+                                                }
                                                 alt=""
-                                                style={{ height: "600px"}}
+                                                style={{ height: "600px" }}
                                             />
                                         </TransformComponent>
                                     </TransformWrapper>
@@ -387,10 +381,26 @@ const Relacion = ({ relation }) => {
                                     item
                                     xs={12}
                                     md={5}
-                                    className='textContainer-alt'
+                                    className="textContainer-alt"
+                                    style={{ flexWrap: "wrap" }}
                                 >
-                                    <div className={"lienzo-text"}>
-                                        {textActive ? textActive : 'Sin Transcripción'}
+                                    <div
+                                        className={"lienzo-title"}
+                                        style={{ width: "100%" }}
+                                    >
+                                        Folio: {folioActive.folio}
+                                        <br />
+                                        Nombre: {folioActive.nombre}
+                                        <br />
+                                        Descripcion: {folioActive.descripcion}
+                                    </div>
+                                    <div
+                                        className={"lienzo-text"}
+                                        style={{ width: "100%" }}
+                                    >
+                                        {textActive
+                                            ? textActive
+                                            : "Sin Transcripción"}
                                     </div>
                                 </Grid>
                             </Grid>
@@ -398,14 +408,19 @@ const Relacion = ({ relation }) => {
                     )}
                 </div>
                 <div className="container-controls">
-                    <Grid container alignContent={'center'}>
+                    <Grid container alignContent={"center"}>
                         <Grid item xs={12} md={7}>
-                           <Grid container spacing={2}>
-                                <Grid item xs={3} style={{display:'flex',gap:15}}>
+                            <Grid container spacing={2}>
+                                <Grid
+                                    item
+                                    xs={3}
+                                    style={{ display: "flex", gap: 15 }}
+                                >
                                     <div className="round-button-container">
                                         <div
                                             className={
-                                                contMap === "geo" && idActive == 0
+                                                contMap === "geo" &&
+                                                idActive == 0
                                                     ? "round-button active"
                                                     : "round-button"
                                             }
@@ -414,13 +429,16 @@ const Relacion = ({ relation }) => {
                                                 setIdActive(0);
                                             }}
                                         ></div>
-                                        <div className="round-button-text">Mapa geográfico</div>
+                                        <div className="round-button-text">
+                                            Mapa geográfico
+                                        </div>
                                     </div>
                                     {relation.maps && relation.maps.length > 0 && (
                                         <div className="round-button-container">
                                             <div
                                                 className={
-                                                    contMap === "picto" && idActive === 0
+                                                    contMap === "picto" &&
+                                                    idActive === 0
                                                         ? "round-button active"
                                                         : "round-button"
                                                 }
@@ -448,54 +466,83 @@ const Relacion = ({ relation }) => {
                                             modules={[Navigation, FreeMode]}
                                             className="leo-swiper"
                                         >
-                                            {relation && relation.invoices.map((invoice, index) => (
-                                                <SwiperSlide
-                                                    key={index}
-                                                    className='mini-photo-container'
-                                                    onClick={()=>changeFolio(invoice, index)}
-                                                >
-                                                    <img
-                                                        className={
-                                                            contMap == "lienzo" && idActive == index
-                                                                ? "oski-customGallery-miniPhoto active"
-                                                                : "oski-customGallery-miniPhoto"
-                                                        }
-                                                        src={"/storage/relaciones/"+invoice.imagen}
-                                                        style={{width:'66px',height:'100px'}}
-                                                    />
-                                                </SwiperSlide>
-                                            ))}
+                                            {relation &&
+                                                relation.invoices.map(
+                                                    (invoice, index) => (
+                                                        <SwiperSlide
+                                                            key={index}
+                                                            className="mini-photo-container"
+                                                            onClick={() =>
+                                                                changeFolio(
+                                                                    invoice,
+                                                                    index
+                                                                )
+                                                            }
+                                                        >
+                                                            <img
+                                                                className={
+                                                                    contMap ==
+                                                                        "lienzo" &&
+                                                                    idActive ==
+                                                                        index
+                                                                        ? "oski-customGallery-miniPhoto active"
+                                                                        : "oski-customGallery-miniPhoto"
+                                                                }
+                                                                src={
+                                                                    "/storage/relaciones/" +
+                                                                    invoice.imagen
+                                                                }
+                                                                style={{
+                                                                    width: "66px",
+                                                                    height: "100px",
+                                                                }}
+                                                            />
+                                                        </SwiperSlide>
+                                                    )
+                                                )}
                                         </Swiper>
                                     </div>
                                 </Grid>
-                           </Grid>
+                            </Grid>
                         </Grid>
                         <Grid item xs={12} md={5}>
                             {contMap == "lienzo" && (
                                 <div className="translate-container">
-                                    {folioActive && folioActive.transcriptions && folioActive.transcriptions.length > 0 &&
-                                        folioActive.transcriptions.map((transcription, index) => (
-                                            activeTranslate == index ? (
-                                            <TranslateButtonActive
-                                                key={index}
-                                                variant="contained"
-                                                size={"large"}
-                                                onClick={() =>changeText(transcription.texto,index)}
-                                            >
-                                                {transcription.nombre}
-                                            </TranslateButtonActive>
-                                            )
-                                        :(
-                                            <TranslateButton
-                                                key={index}
-                                                variant="contained"
-                                                size={"large"}
-                                                onClick={() =>changeText(transcription.texto,index)}
-                                            >
-                                                {transcription.nombre}
-                                            </TranslateButton>
-                                        )
-                                    ))}
+                                    {folioActive &&
+                                        folioActive.transcriptions &&
+                                        folioActive.transcriptions.length > 0 &&
+                                        folioActive.transcriptions.map(
+                                            (transcription, index) =>
+                                                activeTranslate == index ? (
+                                                    <TranslateButtonActive
+                                                        key={index}
+                                                        variant="contained"
+                                                        size={"large"}
+                                                        onClick={() =>
+                                                            changeText(
+                                                                transcription.texto,
+                                                                index
+                                                            )
+                                                        }
+                                                    >
+                                                        {transcription.nombre}
+                                                    </TranslateButtonActive>
+                                                ) : (
+                                                    <TranslateButton
+                                                        key={index}
+                                                        variant="contained"
+                                                        size={"large"}
+                                                        onClick={() =>
+                                                            changeText(
+                                                                transcription.texto,
+                                                                index
+                                                            )
+                                                        }
+                                                    >
+                                                        {transcription.nombre}
+                                                    </TranslateButton>
+                                                )
+                                        )}
                                 </div>
                             )}
                         </Grid>
@@ -531,26 +578,42 @@ const Relacion = ({ relation }) => {
                 </div>
 
                 <div style={{ marginTop: 50, width: "100%", marginBottom: 70 }}>
-                    <div style={{width:'90%', marginLeft:'auto', marginRight:'auto'}}>
-                        <Grid container justifyContent={'space-between'}>
-                            <Grid item sm={7} xs={12}>
+                    <div
+                        style={{
+                            width: "90%",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                        }}
+                    >
+                        <Grid container justifyContent={"space-between"}>
+                            <Grid item sm={8} md={9} xs={12}>
                                 <div className="info-text-relacion">
-                                    Relación de la Alcaldía Mayor de Metzititlán y
-                                    su Jurisdicción
+                                    {relation.nombre}
                                     <br />
                                     Reproducción por cortesía de la Benson Latin
-                                    America Collection. The General Libraries, The
-                                    University of Texas Austin (JGI-XXIV-12).
+                                    America Collection. The General Libraries,
+                                    The University of Texas Austin
+                                    (JGI-XXIV-12).
                                 </div>
                             </Grid>
-                            <Grid item sm={5} xs={12}>
+                            <Grid item sm={4} md={3} xs={12}>
                                 {/* reemplazar por el uuid de la relacion por fa */}
-                                <Grid container justifyContent={'right'} sx={{mt:{xs:3, sm:0}}}>
+                                <Grid
+                                    container
+                                    justifyContent={"right"}
+                                    sx={{ mt: { xs: 3, sm: 0 } }}
+                                >
                                     <InertiaLink
-                                        href={route("sources.index", relation.uuid)}
+                                        href={route(
+                                            "sources.index",
+                                            relation.uuid
+                                        )}
                                         style={{ textDecoration: "none" }}
                                     >
-                                        <ColorButton variant="contained" size={"large"}>
+                                        <ColorButton
+                                            variant="contained"
+                                            size={"large"}
+                                        >
                                             Ver Fuentes
                                         </ColorButton>
                                     </InertiaLink>
@@ -579,28 +642,47 @@ const Relacion = ({ relation }) => {
                 //onClose={toggleDrawer}
             >
                 <div className="drawer-content">
-                    <Container maxWidth={"xl"}>
-                        <Grid container spacing={8}>
-                            {relation && relation.invoices.map((invoice, index) => (
-                                <Grid item>
-                                    <div
-                                        key={index}
-                                        className={
-                                            contMap == "lienzo" && idActive == index
-                                                ? "folio-mini-container active"
-                                                : "folio-mini-container"
-                                        }
-                                    >
-                                        <img
-                                            style={{width:100,height:139,objectFit:'cover'}}
-                                            src={"/storage/relaciones/"+invoice.imagen}
-                                            onClick={() => changeFolio(invoice, index)}
-                                        />
-                                        <div>Folio 1</div>
-                                    </div>
-                                </Grid>
-                            ))}
-                        </Grid>
+                    <Container
+                        maxWidth={"xl"}
+                        style={{ display: "flex", justifyContent: "center" }}
+                    >
+                        <div style={{ width: "90%" }}>
+                            <Grid container spacing={8}>
+                                {relation &&
+                                    relation.invoices.map((invoice, index) => (
+                                        <Grid item>
+                                            <div
+                                                key={index}
+                                                className={
+                                                    contMap == "lienzo" &&
+                                                    idActive == index
+                                                        ? "folio-mini-container active"
+                                                        : "folio-mini-container"
+                                                }
+                                            >
+                                                <img
+                                                    style={{
+                                                        width: 100,
+                                                        height: 139,
+                                                        objectFit: "cover",
+                                                    }}
+                                                    src={
+                                                        "/storage/relaciones/" +
+                                                        invoice.imagen
+                                                    }
+                                                    onClick={() =>
+                                                        changeFolio(
+                                                            invoice,
+                                                            index
+                                                        )
+                                                    }
+                                                />
+                                                <div>Folio 1</div>
+                                            </div>
+                                        </Grid>
+                                    ))}
+                            </Grid>
+                        </div>
                     </Container>
                 </div>
                 <div className="footer-all-folios">

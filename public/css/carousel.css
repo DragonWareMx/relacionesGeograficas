@@ -1,16 +1,16 @@
-.oski-carousel-element{
+.oski-carousel-element {
     width: 100%;
-    height: 450px;
+    height: 350px;
 }
 
-.oski-carousel-img{ 
+.oski-carousel-img {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.oski-carousel-title{
+.oski-carousel-title {
     width: auto;
     margin-top: -200px;
     text-align: right;
@@ -18,103 +18,103 @@
     z-index: 99;
     font-size: 35px;
     color: white;
-    cursor:default;
+    cursor: default;
 }
 
-.oski-swiper{
+.oski-swiper {
     width: 100%;
 }
 
-@media (max-width:1200px) {
-    .oski-swiper{
+@media (max-width: 1200px) {
+    .oski-swiper {
         width: 700px;
     }
 
-    .oski-carousel-element{
-        height: 400px;
+    .oski-carousel-element {
+        height: 350px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -170px;
         padding-right: 100px;
         font-size: 35px;
     }
 }
 
-@media (max-width:770px) {
-    .oski-swiper{
+@media (max-width: 770px) {
+    .oski-swiper {
         width: 600px;
     }
 
-    .oski-carousel-element{
+    .oski-carousel-element {
         height: 350px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -150px;
         padding-right: 80px;
         font-size: 32px;
     }
 }
 
-@media (max-width:650px) {
-    .oski-swiper{
+@media (max-width: 650px) {
+    .oski-swiper {
         width: 500px;
     }
 
-    .oski-carousel-element{
+    .oski-carousel-element {
         height: 320px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -130px;
         padding-right: 55px;
         font-size: 28px;
     }
 }
 
-@media (max-width:538px) {
-    .oski-swiper{
+@media (max-width: 538px) {
+    .oski-swiper {
         width: 400px;
     }
 
-    .oski-carousel-element{
+    .oski-carousel-element {
         height: 250px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -100px;
         padding-right: 45px;
         font-size: 24px;
     }
 }
 
-@media (max-width:486px) {
-    .oski-swiper{
+@media (max-width: 486px) {
+    .oski-swiper {
         width: 350px;
     }
 
-    .oski-carousel-element{
+    .oski-carousel-element {
         height: 200px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -80px;
         padding-right: 50px;
         font-size: 20px;
     }
 }
 
-@media (max-width:440px) {
-    .oski-swiper{
+@media (max-width: 440px) {
+    .oski-swiper {
         width: 300px;
     }
 
-    .oski-carousel-element{
+    .oski-carousel-element {
         height: 150px;
     }
 
-    .oski-carousel-title{
+    .oski-carousel-title {
         margin-top: -65px;
         padding-right: 45px;
         font-size: 15px;
