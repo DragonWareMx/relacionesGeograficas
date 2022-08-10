@@ -31050,6 +31050,7 @@ var Relations = function Relations(_ref2) {
   function selectedFolio(folio) {
     setFolioValues(function () {
       return {
+        id: folio.id,
         no_folio: folio.folio,
         nombre: folio.nombre,
         descripcion: folio.descripcion,
@@ -31081,6 +31082,7 @@ var Relations = function Relations(_ref2) {
       nombre: '',
       texto: ''
     });
+    setTranscriptionIndex(null);
     setOpenTranscription(true);
   }
 
@@ -31095,7 +31097,49 @@ var Relations = function Relations(_ref2) {
     setOpenTranscription(false);
   }
 
-  function handleSubmitFolio() {}
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState20 = _slicedToArray(_useState19, 2),
+      transcriptionIndex = _useState20[0],
+      setTranscriptionIndex = _useState20[1];
+
+  function editTranscription(transcription, index) {
+    setTranscriptionValues({
+      nombre: transcription.nombre,
+      texto: transcription.texto
+    });
+    setTranscriptionIndex(index);
+    setOpenTranscription(true);
+  }
+
+  function patchTranscription() {
+    var transcriptions = folioValues.transcriptions;
+    transcriptions[transcriptionIndex] = {
+      nombre: transcriptionValues.nombre,
+      texto: transcriptionValues.texto
+    };
+    setFolioValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        transcriptions: transcriptions
+      });
+    });
+    setOpenTranscription(false);
+  }
+
+  function handleSubmitFolio() {
+    e.preventDefault();
+    var data = folioValues;
+    console.log(data);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update'), data, {
+      onSuccess: function onSuccess() {},
+      onError: function onError() {
+        setValues(function (values) {
+          return _objectSpread(_objectSpread({}, values), {}, {
+            error: true
+          });
+        });
+      }
+    });
+  }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -31351,9 +31395,9 @@ var Relations = function Relations(_ref2) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
             variant: "h6",
             children: "Editar folio"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
             onSubmit: handleSubmitFolio,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
                 id: "no_folio",
@@ -31417,7 +31461,10 @@ var Relations = function Relations(_ref2) {
                       color: "primary",
                       children: transcription.nombre
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material__WEBPACK_IMPORTED_MODULE_26__["default"], {
-                      color: "primary"
+                      color: "primary",
+                      onClick: function onClick() {
+                        return editTranscription(transcription, index);
+                      }
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
                     variant: "body2",
@@ -31432,7 +31479,12 @@ var Relations = function Relations(_ref2) {
                   })]
                 }, index);
               })]
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              type: "submit",
+              variant: "contained",
+              mt: 2,
+              children: "Guardar"
+            })]
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
@@ -31470,13 +31522,25 @@ var Relations = function Relations(_ref2) {
             style: {
               marginTop: '40px',
               marginBottom: '0px'
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            },
+            rows: 8,
+            multiline: true
+          }), transcriptionIndex === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
             variant: "contained",
             type: "button",
             onClick: pushTranscription,
-            mt: 2,
+            style: {
+              marginTop: 15
+            },
             children: "Agregar transcripci\xF3n"
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            variant: "contained",
+            type: "button",
+            onClick: patchTranscription,
+            style: {
+              marginTop: 15
+            },
+            children: "Guardar"
           })]
         })
       })]

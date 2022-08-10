@@ -197,6 +197,7 @@ const Relations = ({oldRelation}) => {
 
     function selectedFolio(folio){
         setFolioValues(() => ({
+            id:folio.id,
             no_folio: folio.folio,
             nombre: folio.nombre,
             descripcion: folio.descripcion,
@@ -229,6 +230,7 @@ const Relations = ({oldRelation}) => {
             nombre:'',
             texto:''
         });
+        setTranscriptionIndex(null);
         setOpenTranscription(true);
     }
 
@@ -244,8 +246,42 @@ const Relations = ({oldRelation}) => {
         setOpenTranscription(false);
     }
 
-    function handleSubmitFolio(){
+    const [transcriptionIndex, setTranscriptionIndex] = useState(null);
 
+    function editTranscription(transcription, index){
+        setTranscriptionValues({
+            nombre:transcription.nombre,
+            texto:transcription.texto
+        });
+        setTranscriptionIndex(index);
+        setOpenTranscription(true);
+    }
+
+    function patchTranscription(){
+        let transcriptions = folioValues.transcriptions;
+        transcriptions[transcriptionIndex] = {nombre:transcriptionValues.nombre,texto:transcriptionValues.texto};        
+        setFolioValues(values => ({
+            ...values,
+            transcriptions,
+        }));
+        setOpenTranscription(false);
+    }
+
+    function handleSubmitFolio(){
+        e.preventDefault();
+        const data=folioValues;
+        console.log(data);
+        Inertia.post(route('folio.update'), data, {
+            onSuccess: () => {
+
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
     }
 
     return (
@@ -480,7 +516,7 @@ const Relations = ({oldRelation}) => {
                                     <Grid container key={index}>
                                         <Grid container justifyContent={'space-between'}>
                                             <Typography variant='body' color='primary'>{transcription.nombre}</Typography>
-                                            <Edit color='primary'/>
+                                            <Edit color='primary' onClick={()=>editTranscription(transcription, index)}/>
                                         </Grid>
                                         <Typography variant='body2' 
                                             style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}
@@ -491,6 +527,9 @@ const Relations = ({oldRelation}) => {
                                     </Grid>
                                 ))}
                             </Grid>
+                            <Button type='submit' variant='contained' mt={2}>
+                                Guardar
+                            </Button>
                         </form>
                     </Paper>
                 </Modal>
@@ -524,10 +563,28 @@ const Relations = ({oldRelation}) => {
                             error={errors.texto && transcriptionValues.error}
                             helperText={transcriptionValues.error === true && errors.texto}
                             style={{marginTop:'40px',marginBottom:'0px'}}
+                            rows={8}
+                            multiline
                         />
-                        <Button variant='contained' type='button' onClick={pushTranscription} mt={2}>
-                            Agregar transcripción
-                        </Button>
+                        {transcriptionIndex === null ?
+                            <Button 
+                                variant='contained' 
+                                type='button' 
+                                onClick={pushTranscription} 
+                                style={{marginTop:15}}
+                            >
+                                Agregar transcripción
+                            </Button>
+                            :
+                            <Button 
+                                variant='contained' 
+                                type='button' 
+                                onClick={patchTranscription} 
+                                style={{marginTop:15}}
+                            >
+                                Guardar
+                            </Button>
+                        }
                     </Paper>
                 </Modal>
             </Container>
