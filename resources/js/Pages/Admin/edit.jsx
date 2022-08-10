@@ -19,6 +19,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import '../../../css/relation.css'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { Edit } from '@mui/icons-material';
+import { Inertia } from '@inertiajs/inertia';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -150,7 +151,7 @@ const Relations = ({oldRelation}) => {
         let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS, deletedPictos}
         console.log(data);
 
-        Inertia.post(route('admin.update'), data, {
+        Inertia.post(route('admin.update', oldRelation.id), data, {
             onSuccess: () => {
 
             },

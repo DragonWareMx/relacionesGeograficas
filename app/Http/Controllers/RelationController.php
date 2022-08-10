@@ -74,6 +74,7 @@ class RelationController extends Controller
             $relation->uuid = Str::uuid();
             $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
+            $relation->fuentes = $request->fuentes;
             if ($request->imageBanner) {
                 //Se sube foto
                 $foto = $request->file('imageBanner')[0]->store('public/relaciones');
@@ -211,9 +212,149 @@ class RelationController extends Controller
      * @param  \App\Models\Relation  $relation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Relation $relation)
+    public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'nombre' => 'required|max:255|string',
+            'fuentes' => 'nullable|max:1000|string',
+            'idDS'=>'required|numeric',
+            
+            'imageBanner' => 'nullable',
+            'imageBanner.*' => 'image',
+            'imageMin' => 'nullable',
+            'imageMin.*' => 'image'
+            // 'mapImages' => 'required',
+            // 'folios' => 'required',
+            
+            // 'folios' => 'nullable',
+            // 'descripcion' => 'nullable',
+            // 'imageFolio' => 'nullable',
+        ]);
+
+        // dd($request);
+        $foto = null;
+        $fotoMin = null;
+        $mapasFolios = null;
+        $mapas = null;
+        DB::beginTransaction();
+
+        try {
+            $relation = Relation::findOrFail($id);
+            $relation->idDS = $request->idDS;
+            $relation->nombre = $request->nombre;
+            $relation->fuentes = $request->fuentes;
+
+            //images
+            if($request->imageBanner && $request->imageBanner[0]){
+                // si ya tenia una en el sistema, se borra
+                if($relation->banner){
+                    \Storage::delete('public/relaciones/'.$relation->banner);
+                }
+                
+                $foto = $request->file('imageBanner')[0]->store('public/relaciones');
+                $fileName = $request->file('imageBanner')[0]->hashName();
+                // $image = Image::make(Storage::get($foto));
+
+                // $image->resize(1280, null, function ($constraint) {
+                //     $constraint->aspectRatio();
+                //     $constraint->upsize();
+                // });
+
+                // Storage::put($foto, (string) $image->encode('jpg', 30));
+                $relation->banner = $fileName;
+            }
+
+            // if($request->imageMin && $request->imageMin[0]){
+            //     // si ya tenia una en el sistema, se borra
+            //     if($relation->banner){
+            //         \Storage::delete('public/relaciones/'.$relation->banner);
+            //     }
+                
+            //     $fotoMin = $request->file('imageMin')[0]->store('public/relaciones');
+            //     $fileName = $request->file('imageMin')[0]->hashName();
+            //     // $image = Image::make(Storage::get($foto));
+
+            //     // $image->resize(1280, null, function ($constraint) {
+            //     //     $constraint->aspectRatio();
+            //     //     $constraint->upsize();
+            //     // });
+
+            //     // Storage::put($foto, (string) $image->encode('jpg', 30));
+            //     $relation->banner = $fileName;
+            // }
+
+            if ($request->imageMin && $request->imageMin[0]) {
+                if($relation->miniatura){
+                    \Storage::delete('public/relaciones/'.$relation->miniatura);
+                }
+                //Se sube foto
+                $fotoMin = $request->file('imageMin')[0]->store('public/relaciones');
+                $fileName = $request->file('imageMin')[0]->hashName();
+                // $image = Image::make(Storage::get($foto));
+
+                // $image->resize(1280, null, function ($constraint) {
+                //     $constraint->aspectRatio();
+                //     $constraint->upsize();
+                // });
+
+                // Storage::put($foto, (string) $image->encode('jpg', 30));
+                $relation->miniatura = $fileName;
+            }
+
+            $relation->save();
+
+            if ($request->deletedPictos) {
+                foreach ($request->deletedPictos as $key => $mapId) {
+                    $map = Map::find($mapId);
+                    //Se elimina la foto
+                    \Storage::delete('public/relaciones/'.$map->imagen);
+
+                    $map->delete();
+                }
+            }
+
+            if ($request->mapImages) {
+                $mapas = [];
+                foreach ($request->mapImages as $key => $mapa) {
+                    $map = new Map;
+                    $map->uuid = Str::uuid();
+                    //Se sube foto
+                    $mapas[$key] = $mapa->store('public/relaciones');
+                    $fileName = $mapa->hashName();
+    
+                    $map->imagen = $fileName;
+                    $map->relation_id = $relation->id;
+                    $map->save();
+                }
+            }
+
+            DB::commit();
+            return Redirect::route('admin.index')->with('success', '¡Relación editada con éxito!');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            //Si hay foto se elimina del servidor
+            if ($foto) {
+                Storage::delete($foto);
+            }
+            if ($fotoMin) {
+                Storage::delete($fotoMin);
+            }
+
+            if($mapasFolios && count($mapasFolios) > 0){
+                foreach ($mapasFolios as $key => $mapa) {
+                    Storage::delete($mapa);
+                }
+            }
+
+            if($mapas && count($mapas) > 0){
+                foreach ($mapas as $key => $mapa) {
+                    Storage::delete($mapa);
+                }
+            }
+            dd($th);
+        }
     }
 
     /**
