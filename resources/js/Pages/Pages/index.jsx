@@ -58,6 +58,17 @@ function limitChar(nombre) {
 }
 
 const Home = ({ relaciones, banners }) => {
+    let locationSearch = window.location.search;
+    let params = new URLSearchParams(locationSearch);
+    let search = params.get('search');
+    
+    useEffect(() => {
+        if(search){
+            showAlfa()
+        }
+    }, [])
+    
+
     const [data, setData] = useState({
         infoMapa: {
             centro: {
@@ -307,7 +318,7 @@ const Home = ({ relaciones, banners }) => {
                         MAPA
                     </Paper>
                 </Grid>
-                <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }}>
+                <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }} id="alfabetico2">
                     <Paper className="btn-op" onClick={showAlfa}>
                         ALFABÉTICO
                     </Paper>

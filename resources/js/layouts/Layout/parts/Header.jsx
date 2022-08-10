@@ -9,6 +9,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import { InertiaLink } from "@inertiajs/inertia-react";
+import Log from "laravel-mix/src/Log";
+import { Inertia } from "@inertiajs/inertia";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -53,6 +55,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+    const [values, setValues] = useState({
+        search: "",
+    })
+    
+    function handleChange(e) {
+        const key = e.target.id;
+        const value = e.target.value
+        setValues(values => ({
+            ...values,
+            [key]: value,
+        }))
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        Inertia.get('/#alfabetico2', values)
+    }
+
     return (
 
         <Box sx={{ flexGrow: 1 }}>
@@ -73,15 +93,21 @@ export default function Header() {
                             </Typography>
                         </div>
                         </a>
-                        <Search id="search-bar">
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Buscar…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
+                        
+                        <form onSubmit={handleSubmit} noValidate>
+                            <Search id="search-bar">
+                                <SearchIconWrapper>
+                                    <SearchIcon />
+                                </SearchIconWrapper>
+                                <StyledInputBase
+                                    placeholder="Buscar…"
+                                    inputProps={{ 'aria-label': 'search' }}
+                                    id="search"
+                                    value={values.search}
+                                    onChange={handleChange}
+                                />
+                            </Search>
+                        </form>
                     </Container>
                 </Toolbar>
             </AppBar>

@@ -23,10 +23,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         // Listar las relaciones alfabeticamente, nombre, miniatura, uuid
-        $relaciones = Relation::select('uuid', 'nombre', 'miniatura')->orderBy('nombre')->get();
+        $relaciones = Relation::select('uuid', 'nombre', 'miniatura')
+        ->when($request->search, function ($query, $search) {
+            return $query->where('nombre', 'LIKE', "%".$search."%");
+        })
+        ->orderBy('nombre')
+        ->get();
         $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
 
         return Inertia::render('Pages/index', ['relaciones' => $relaciones, 'banners' => $banners]);
