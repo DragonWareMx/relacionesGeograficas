@@ -223,8 +223,11 @@ class RelationController extends Controller
             'imageBanner' => 'nullable',
             'imageBanner.*' => 'image',
             'imageMin' => 'nullable',
-            'imageMin.*' => 'image'
-            // 'mapImages' => 'required',
+            'imageMin.*' => 'image',
+            'mapImages' => 'nullable',
+            'mapImages.*' => 'image',
+            'deletedPictos' => 'nullable',
+            'deletedPictos.*' => 'numeric',
             // 'folios' => 'required',
             
             // 'folios' => 'nullable',
@@ -303,6 +306,36 @@ class RelationController extends Controller
             }
 
             $relation->save();
+
+            if($request->folios){
+                $mapasFolios = [];
+                foreach ($request->folios as $key => $folio) {
+                    $folioM = new Invoice;
+                    $folioM->uuid = Str::uuid();
+                    $folioM->nombre = $folio["nombre"];
+                    $folioM->folio = $folio["no_folio"];
+                    $folioM->descripcion = $folio["descripcion"];
+                    
+                    $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
+                    $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
+                    $folioM->imagen = $fileName;
+
+                    $folioM->save();
+
+                    $relation->invoices()->save($folioM);
+
+                    if(isset($folio["transcriptions"]) && count($folio["transcriptions"])>0){
+                        foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
+                            $transcription = new Transcription;
+                            $transcription->uuid = Str::uuid();
+                            $transcription->nombre = $transcripcion["name"];
+                            $transcription->texto = $transcripcion["text"];
+                            $transcription->invoice_id = $folioM->id;
+                            $transcription->save();
+                        }
+                    }
+                }
+            }
 
             if ($request->deletedPictos) {
                 foreach ($request->deletedPictos as $key => $mapId) {
