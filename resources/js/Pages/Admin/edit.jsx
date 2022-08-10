@@ -128,19 +128,23 @@ const Relations = ({oldRelation}) => {
 
 
     function handleSubmit(e) {
-        //Validando que todo esté llenito
-        if(!checkInputs()) return false;
         e.preventDefault();
         let finalRelation=JSON.parse(relation);
-        let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS}
-        Inertia.post(route('admin.store'), data, {
+        let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS, deletedPictos}
+        console.log(data);
+
+        Inertia.post(route('admin.update'), data, {
+            onSuccess: () => {
+
+            },
             onError: () => {
                 setValues((values) => ({
                     ...values,
                     error: true,
                 }));
             },
-        })
+        });
+        // folio.update
     }
 
     const [deletedPictos, setDeletedPictos] = useState([]);
@@ -300,6 +304,9 @@ const Relations = ({oldRelation}) => {
                                         ))}
                                     </Grid>
                                 </div>
+                                <Grid container justifyContent='right'>
+                                    <ColorButton type='submit'>Guardar</ColorButton>            
+                                </Grid>
                             </form>
                         </CardContent>
                     </Card>

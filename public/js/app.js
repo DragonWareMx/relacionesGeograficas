@@ -30935,17 +30935,18 @@ var Relations = function Relations(_ref2) {
   }
 
   function handleSubmit(e) {
-    //Validando que todo esté llenito
-    if (!checkInputs()) return false;
     e.preventDefault();
     var finalRelation = JSON.parse(relation);
 
     var data = _objectSpread(_objectSpread({}, values), {}, {
       nombre: finalRelation.cNombre,
-      idDS: finalRelation.idDS
+      idDS: finalRelation.idDS,
+      deletedPictos: deletedPictos
     });
 
-    Inertia.post(route('admin.store'), data, {
+    console.log(data);
+    Inertia.post(route('admin.update'), data, {
+      onSuccess: function onSuccess() {},
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -30953,7 +30954,7 @@ var Relations = function Relations(_ref2) {
           });
         });
       }
-    });
+    }); // admin
   }
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
@@ -31172,6 +31173,13 @@ var Relations = function Relations(_ref2) {
                       })]
                     }, index);
                   })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                container: true,
+                justifyContent: "right",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ColorButton, {
+                  type: "submit",
+                  children: "Guardar"
                 })
               })]
             })
