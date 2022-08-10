@@ -181,6 +181,7 @@ const Relations = ({oldRelation}) => {
     const [open, setOpen] = useState(false);
     const [openTranscription, setOpenTranscription] = useState(false);
     const [folioValues, setFolioValues] = useState({
+        id:'',
         no_folio: '',
         nombre:'',
         descripcion:'',
