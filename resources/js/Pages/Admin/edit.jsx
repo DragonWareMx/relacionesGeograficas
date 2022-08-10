@@ -4,6 +4,9 @@ import {Container,Typography, Grid, Card,
     CardContent, FormControl, InputLabel, 
     Select, Button, TextField, MenuItem,
     IconButton,
+    Modal,
+    Box,
+    Paper,
 } from '@mui/material';
 import '/css/common.css'
 import '../../../css/admin.css'
@@ -13,7 +16,9 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { styled } from '@mui/material/styles';
 import axios from "axios";
 import CloseIcon from '@mui/icons-material/Close';
+import '../../../css/relation.css'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { Edit } from '@mui/icons-material';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -46,7 +51,19 @@ const CssTextField = styled(TextField)({
         color: '#D9D9D9',
         fontSize:'14px'
     },
-  });
+});
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90%',
+    maxWidth: 600,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
 
 
 const Relations = ({oldRelation}) => {
@@ -157,6 +174,76 @@ const Relations = ({oldRelation}) => {
         setOldPictos(
             anotherArray.filter((o, i) => i !== index)
         )   
+    }
+
+
+    const [open, setOpen] = useState(false);
+    const [openTranscription, setOpenTranscription] = useState(false);
+    const [folioValues, setFolioValues] = useState({
+        no_folio: '',
+        nombre:'',
+        descripcion:'',
+        image: '',
+        transcriptions: [],
+
+        error: false
+    });
+    const [transcriptionValues, setTranscriptionValues] = useState({
+        nombre: '',
+        texto:'',
+    });
+
+    function selectedFolio(folio){
+        setFolioValues(() => ({
+            no_folio: folio.folio,
+            nombre: folio.nombre,
+            descripcion: folio.descripcion,
+            image: folio.imagen,
+            transcriptions: folio.transcriptions
+        }));
+        setOpen(true);
+    }
+
+    function handleChangeFolio(e) {
+        const key = e.target.id;
+        const value = e.target.value
+        setFolioValues(values => ({
+            ...values,
+            [key]: value,
+        }))
+    }
+
+    function handleChangeTranscription(e) {
+        const key = e.target.id;
+        const value = e.target.value
+        setTranscriptionValues(values => ({
+            ...values,
+            [key]: value,
+        }))
+    }
+
+    function addTranscription(){
+        setTranscriptionValues({
+            nombre:'',
+            texto:''
+        });
+        setOpenTranscription(true);
+    }
+
+    function pushTranscription(){
+        let transcriptions = folioValues.transcriptions;
+        transcriptions=[...transcriptions,
+            transcriptionValues
+        ];
+        setFolioValues(values => ({
+            ...values,
+            transcriptions,
+        }));
+        setOpenTranscription(false);
+    }
+
+    function handleSubmitFolio(){
+
     }
 
     return (
@@ -308,9 +395,139 @@ const Relations = ({oldRelation}) => {
                                     <ColorButton type='submit'>Guardar</ColorButton>            
                                 </Grid>
                             </form>
+                            <Grid container spacing={3} mt={2} style={{maxHeight:350,overflowY:'scroll'}}>
+                                {oldRelation.invoices && oldRelation.invoices.length && oldRelation.invoices.map((invoice, index)=>(
+                                    <Grid item 
+                                        xs={1} 
+                                        style={{cursor:'pointer'}}
+                                        key={index}
+                                        onClick={()=>selectedFolio(invoice)}
+                                    >
+                                        <img 
+                                            src={'/storage/relaciones/'+invoice.imagen}
+                                            style={{width:'100%', objectFit:'cover'}}
+                                        />
+                                        <Grid container justifyContent='center'>
+                                            <Typography variant='body2' align='center'>
+                                                Folio no. {invoice.folio}
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </CardContent>
                     </Card>
                 </Grid>
+                <Modal
+                    open={open}
+                    onClose={()=>setOpen(false)}
+                >
+                    <Paper sx={style}>
+                        <Typography variant="h6">
+                            Editar folio
+                        </Typography>
+                        <form onSubmit={handleSubmitFolio}>
+                            <Grid container>
+                                <TextField 
+                                    id='no_folio'
+                                    label='Número de folio'
+                                    required
+                                    fullWidth
+                                    value={folioValues.no_folio}
+                                    onChange={handleChangeFolio}
+                                    error={errors.errors && folioValues.no_folio}
+                                    helperText={folioValues.error === true && errors.no_folio}
+                                    style={{marginTop:'40px',marginBottom:'0px'}}
+                                    type="number"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                />
+                                <TextField
+                                    id='nombre' 
+                                    label='Nombre' 
+                                    required
+                                    fullWidth
+                                    value={folioValues.nombre}
+                                    onChange={handleChangeFolio} 
+                                    error={errors.nombre && folioValues.nombre}
+                                    helperText={folioValues.error === true && errors.nombre}
+                                    style={{marginTop:'40px',marginBottom:'0px'}}
+                                />
+                                <TextField
+                                    id='descripcion' 
+                                    label='Descripción' 
+                                    required
+                                    fullWidth
+                                    value={folioValues.descripcion}
+                                    onChange={handleChangeFolio} 
+                                    error={errors.descripcion && folioValues.descripcion}
+                                    helperText={folioValues.error === true && errors.descripcion}
+                                    style={{marginTop:'30px',marginBottom:'25px'}}
+                                />
+                                <Button 
+                                    type='button' 
+                                    variant='contained' 
+                                    style={{marginBottom:'15px'}}
+                                    onClick={addTranscription}
+                                >
+                                    Agregar transcripción
+                                </Button>
+                                {folioValues.transcriptions && folioValues.transcriptions.length > 0 
+                                    && folioValues.transcriptions.map((transcription, index)=>(
+                                    <Grid container key={index}>
+                                        <Grid container justifyContent={'space-between'}>
+                                            <Typography variant='body' color='primary'>{transcription.nombre}</Typography>
+                                            <Edit color='primary'/>
+                                        </Grid>
+                                        <Typography variant='body2' 
+                                            style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}
+                                        >
+                                            {transcription.texto}
+                                        </Typography>
+                                        <div className='separator'></div>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </form>
+                    </Paper>
+                </Modal>
+                {/* TRANSCRIPTIONS MODAL */}
+                <Modal
+                    open={openTranscription}
+                    onClose={()=>setOpenTranscription(false)}
+                >
+                    <Paper sx={style}>
+                        <Typography variant="h6">
+                            Transcripción
+                        </Typography>
+                        <TextField
+                            id='nombre' 
+                            label='Nombre' 
+                            required
+                            fullWidth
+                            value={transcriptionValues.nombre}
+                            onChange={handleChangeTranscription} 
+                            error={errors.nombre && transcriptionValues.error}
+                            helperText={transcriptionValues.error === true && errors.nombre}
+                            style={{marginTop:'40px',marginBottom:'0px'}}
+                        />
+                        <TextField
+                            id='texto' 
+                            label='Texto' 
+                            required
+                            fullWidth
+                            value={transcriptionValues.texto}
+                            onChange={handleChangeTranscription} 
+                            error={errors.texto && transcriptionValues.error}
+                            helperText={transcriptionValues.error === true && errors.texto}
+                            style={{marginTop:'40px',marginBottom:'0px'}}
+                        />
+                        <Button variant='contained' type='button' onClick={pushTranscription} mt={2}>
+                            Agregar transcripción
+                        </Button>
+                    </Paper>
+                </Modal>
             </Container>
         </>
     )

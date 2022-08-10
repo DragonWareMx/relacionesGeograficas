@@ -22,7 +22,9 @@ class AdminController extends Controller
 
     public function show($id)
     {
-        $relation = Relation::with('maps')->findOrFail($id);
+        $relation = Relation::with('maps')
+            ->with('invoices', 'invoices.transcriptions')
+        ->findOrFail($id);
         return Inertia::render('Admin/edit', ['oldRelation' => $relation]);
     }
 }
