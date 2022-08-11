@@ -201,7 +201,8 @@ const Relations = ({oldRelation}) => {
             no_folio: folio.folio,
             nombre: folio.nombre,
             descripcion: folio.descripcion,
-            image: folio.imagen,
+            image: null,
+            oldImage:folio.imagen,
             transcriptions: folio.transcriptions
         }));
         setOpen(true);
@@ -267,10 +268,32 @@ const Relations = ({oldRelation}) => {
         setOpenTranscription(false);
     }
 
-    function handleSubmitFolio(){
+    function removeTranscription(){
+        let transcriptions = folioValues.transcriptions;
+        transcriptions = transcriptions.filter((o, i) => i !== transcriptionIndex);
+        setFolioValues(values => ({
+            ...values,
+            transcriptions
+        }));
+        setOpenTranscription(false);
+    }
+
+    function changeFolioImage(){
+        var input = document.getElementById('folioImage');
+        if (input.files) {
+            let arr=[];
+            arr.push(input.files[0]);
+            setFolioValues((values) => ({
+                ...values,
+                image: arr,
+            }));
+        }
+    }
+
+    function handleSubmitFolio(e){
         e.preventDefault();
         const data=folioValues;
-        console.log(data);
+        console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: edit.jsx ~ line 296 ~ handleSubmitFolio ~ data", data);
         Inertia.post(route('folio.update'), data, {
             onSuccess: () => {
 
@@ -503,10 +526,32 @@ const Relations = ({oldRelation}) => {
                                     helperText={folioValues.error === true && errors.descripcion}
                                     style={{marginTop:'30px',marginBottom:'25px'}}
                                 />
+                                <Grid container>
+                                    <input
+                                        accept="image/*"
+                                        id="folioImage"
+                                        type="file"
+                                        style={{ display: 'none' }}
+                                        onChange={()=>changeFolioImage()}
+                                    />
+                                    <label htmlFor="folioImage">
+                                        <div 
+                                            id='folioImageContainer' 
+                                            className={'maps-skelleton'}
+                                            style={ folioValues.image !== null && folioValues.image.length>0 
+                                                ? {backgroundImage:'url('+URL.createObjectURL(folioValues.image[0])+')',border:'none'} 
+                                                : {backgroundImage: 'url(/storage/relaciones/'+folioValues.oldImage+')'}}
+                                        >
+                                            <FileUploadIcon 
+                                        />
+                                            <div>Cambiar imagen</div>
+                                        </div>
+                                    </label>
+                                </Grid>
                                 <Button 
                                     type='button' 
                                     variant='contained' 
-                                    style={{marginBottom:'15px'}}
+                                    style={{marginBottom:'15px', marginTop:15}}
                                     onClick={addTranscription}
                                 >
                                     Agregar transcripción
@@ -527,9 +572,11 @@ const Relations = ({oldRelation}) => {
                                     </Grid>
                                 ))}
                             </Grid>
-                            <Button type='submit' variant='contained' mt={2}>
-                                Guardar
-                            </Button>
+                            <Grid container justifyContent={'right'}>
+                                <Button type='submit' variant='contained' mt={2}>
+                                    Guardar
+                                </Button>
+                            </Grid>
                         </form>
                     </Paper>
                 </Modal>
@@ -539,9 +586,19 @@ const Relations = ({oldRelation}) => {
                     onClose={()=>setOpenTranscription(false)}
                 >
                     <Paper sx={style}>
-                        <Typography variant="h6">
-                            Transcripción
-                        </Typography>
+                        <Grid container justifyContent='space-between'>
+                            <Typography variant="h6">
+                                Transcripción
+                            </Typography>
+                            <Button 
+                                type='button' 
+                                onClick={removeTranscription}
+                                variant='outlined'
+                                color='error'
+                            >
+                                Eliminar
+                            </Button>
+                        </Grid>
                         <TextField
                             id='nombre' 
                             label='Nombre' 
