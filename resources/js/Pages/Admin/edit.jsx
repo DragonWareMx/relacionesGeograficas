@@ -66,6 +66,18 @@ const style = {
     p: 4,
 };
 
+const style2 = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '80%',
+    maxWidth: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
+
 
 const Relations = ({oldRelation}) => {
 
@@ -293,7 +305,8 @@ const Relations = ({oldRelation}) => {
     function handleSubmitFolio(e){
         e.preventDefault();
         const data=folioValues;
-        console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: edit.jsx ~ line 296 ~ handleSubmitFolio ~ data", data);
+        console.log(data, 'EDIT FOLIO');
+        return true;
         Inertia.post(route('folio.update'), data, {
             onSuccess: () => {
 
@@ -307,6 +320,74 @@ const Relations = ({oldRelation}) => {
         });
     }
 
+    function submitDelete(e){
+        e.preventDefault();
+        console.log(oldRelation.id,'DELETE');
+        return true;
+        Inertia.delete(route('admin.delete'), oldRelation.id, {
+            onSuccess: () => {
+
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
+    }
+
+    function submitDeleteFolio(e){
+        e.preventDefault();
+        console.log(folioValues.id,'DELETE FOLIO');
+        setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
+        return true;
+        Inertia.delete(route('folio.delete'), folioValues.id, {
+            onSuccess: () => {
+
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
+    }
+
+    function addNewFolio(){
+        setFolioValues({
+            id:null,
+            no_folio: '',
+            nombre:'',
+            descripcion:'',
+            image: null,
+            transcriptions: [],
+        });
+        setOpen(true);
+    }
+
+    function handleNewFolio(e){
+        e.preventDefault();
+        const data=folioValues;
+        console.log(data, 'NEW FOLIO');
+        return true;
+        Inertia.post(route('folio.create'), data, {
+            onSuccess: () => {
+
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
+    }
+
+    const [openDelete, setOpenDelete] = useState(false);
+    const [openDeleteFolio, setOpenDeleteFolio] = useState(false);
+
     return (
         <>
             <Container style={{marginTop:'36px'}}>
@@ -314,6 +395,41 @@ const Relations = ({oldRelation}) => {
                 <Grid container mt={2}>
                     <Card style={{width:'100%', marginBottom:50}}>
                         <CardContent>
+                            <Grid container justifyContent={'right'}>
+                                <Button 
+                                    type='button'
+                                    variant='outlined'
+                                    color='error'
+                                    onClick={()=> setOpenDelete(true)}
+                                >
+                                    Eliminar
+                                </Button>
+                                <Modal
+                                    open={openDelete}
+                                    onClose={()=>setOpenDelete(false)}
+                                >
+                                    <Card sx={style2}>
+                                        <Typography color='error' variant='h6'>
+                                            ¿Seguro que deseas eliminar esta relación?
+                                        </Typography>
+                                        <Typography>Esta acción es irreversible, 
+                                            se perderán todos los folios y transcripciones 
+                                            de esta relación
+                                        </Typography>
+                                        <form onSubmit={submitDelete}>
+                                            <Grid container justifyContent={'right'}>
+                                                <Button 
+                                                    type='submit'
+                                                    color='error'
+                                                    variant='outlined'
+                                                >
+                                                    Eliminar
+                                                </Button>
+                                            </Grid>
+                                        </form>
+                                    </Card>
+                                </Modal>
+                            </Grid>
                             <form onSubmit={handleSubmit}>
                                 <FormControl fullWidth style={{marginTop:'40px',marginBottom:'25px'}}>
                                     <InputLabel id="relation-names">Nombre</InputLabel>
@@ -453,7 +569,7 @@ const Relations = ({oldRelation}) => {
                                     </Grid>
                                 </div>
                                 <Grid container justifyContent='right'>
-                                    <ColorButton type='submit'>Guardar</ColorButton>            
+                                    <Button type='submit' color='primary' variant='contained'>Guardar</Button>            
                                 </Grid>
                             </form>
                             <Grid container spacing={3} mt={2} style={{maxHeight:350,overflowY:'scroll'}}>
@@ -476,6 +592,16 @@ const Relations = ({oldRelation}) => {
                                     </Grid>
                                 ))}
                             </Grid>
+                            <Grid container justifyContent={'right'}>
+                                    <Button 
+                                        variant='outlined'
+                                        color='primary'
+                                        type='button'
+                                        onClick={addNewFolio}
+                                    >
+                                        Agregar folio
+                                    </Button>
+                            </Grid>
                         </CardContent>
                     </Card>
                 </Grid>
@@ -484,10 +610,46 @@ const Relations = ({oldRelation}) => {
                     onClose={()=>setOpen(false)}
                 >
                     <Paper sx={style}>
-                        <Typography variant="h6">
-                            Editar folio
-                        </Typography>
-                        <form onSubmit={handleSubmitFolio}>
+                        <Grid container justifyContent={'space-between'}>
+                            <Typography variant="h6">
+                                {folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'}
+                            </Typography>
+                            <Button
+                                type='button'
+                                color='error'
+                                variant='outlined'
+                                onClick={()=>setOpenDeleteFolio(true)}
+                                style={folioValues.id === null ? {display:'none'} : {display:'block'}}
+                            >
+                                Eliminar
+                            </Button>
+                            <Modal
+                                open={openDeleteFolio}
+                                onClose={()=>setOpenDeleteFolio(false)}
+                            >
+                                <Card sx={style2}>
+                                    <Typography color='error' variant='h6'>
+                                        ¿Seguro que deseas eliminar este folio?
+                                    </Typography>
+                                    <Typography>Esta acción es irreversible, 
+                                        se perderán todas las transcripciones 
+                                        de este folio
+                                    </Typography>
+                                    <form onSubmit={submitDeleteFolio}>
+                                        <Grid container justifyContent={'right'}>
+                                            <Button 
+                                                type='submit'
+                                                color='error'
+                                                variant='outlined'
+                                            >
+                                                Eliminar
+                                            </Button>
+                                        </Grid>
+                                    </form>
+                                </Card>
+                            </Modal>
+                        </Grid>
+                        <form onSubmit={folioValues.id === null ? handleNewFolio : handleSubmitFolio}>
                             <Grid container>
                                 <TextField 
                                     id='no_folio'

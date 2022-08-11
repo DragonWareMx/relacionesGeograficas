@@ -30781,21 +30781,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/FormControl/FormControl.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Select/Select.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Modal/Modal.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Modal/Modal.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/FormControl/FormControl.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Select/Select.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
+/* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/Close */ "./node_modules/@mui/icons-material/Close.js");
+/* harmony import */ var _mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/Close */ "./node_modules/@mui/icons-material/Close.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_icons_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material */ "./node_modules/@mui/icons-material/esm/Edit.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
@@ -30885,6 +30885,17 @@ var style = {
   transform: 'translate(-50%, -50%)',
   width: '90%',
   maxWidth: 600,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4
+};
+var style2 = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '80%',
+  maxWidth: 400,
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4
@@ -31156,7 +31167,8 @@ var Relations = function Relations(_ref2) {
   function handleSubmitFolio(e) {
     e.preventDefault();
     var data = folioValues;
-    console.log("👻 🥲 👻 🥲 👻 🥲 👻 🥲  ~ file: edit.jsx ~ line 296 ~ handleSubmitFolio ~ data", data);
+    console.log(data, 'EDIT FOLIO');
+    return true;
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update'), data, {
       onSuccess: function onSuccess() {},
       onError: function onError() {
@@ -31168,6 +31180,79 @@ var Relations = function Relations(_ref2) {
       }
     });
   }
+
+  function submitDelete(e) {
+    e.preventDefault();
+    console.log(oldRelation.id, 'DELETE');
+    return true;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('admin.delete'), oldRelation.id, {
+      onSuccess: function onSuccess() {},
+      onError: function onError() {
+        setValues(function (values) {
+          return _objectSpread(_objectSpread({}, values), {}, {
+            error: true
+          });
+        });
+      }
+    });
+  }
+
+  function submitDeleteFolio(e) {
+    e.preventDefault();
+    console.log(folioValues.id, 'DELETE FOLIO');
+    setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
+
+    return true;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('folio.delete'), folioValues.id, {
+      onSuccess: function onSuccess() {},
+      onError: function onError() {
+        setValues(function (values) {
+          return _objectSpread(_objectSpread({}, values), {}, {
+            error: true
+          });
+        });
+      }
+    });
+  }
+
+  function addNewFolio() {
+    setFolioValues({
+      id: null,
+      no_folio: '',
+      nombre: '',
+      descripcion: '',
+      image: null,
+      transcriptions: []
+    });
+    setOpen(true);
+  }
+
+  function handleNewFolio(e) {
+    e.preventDefault();
+    var data = folioValues;
+    console.log(data, 'NEW FOLIO');
+    return true;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.create'), data, {
+      onSuccess: function onSuccess() {},
+      onError: function onError() {
+        setValues(function (values) {
+          return _objectSpread(_objectSpread({}, values), {}, {
+            error: true
+          });
+        });
+      }
+    });
+  }
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState22 = _slicedToArray(_useState21, 2),
+      openDelete = _useState22[0],
+      setOpenDelete = _useState22[1];
+
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState24 = _slicedToArray(_useState23, 2),
+      openDeleteFolio = _useState24[0],
+      setOpenDeleteFolio = _useState24[1];
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -31187,18 +31272,57 @@ var Relations = function Relations(_ref2) {
             marginBottom: 50
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"], {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+              container: true,
+              justifyContent: 'right',
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                type: "button",
+                variant: "outlined",
+                color: "error",
+                onClick: function onClick() {
+                  return setOpenDelete(true);
+                },
+                children: "Eliminar"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                open: openDelete,
+                onClose: function onClose() {
+                  return setOpenDelete(false);
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                  sx: style2,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                    color: "error",
+                    variant: "h6",
+                    children: "\xBFSeguro que deseas eliminar esta relaci\xF3n?"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                    children: "Esta acci\xF3n es irreversible, se perder\xE1n todos los folios y transcripciones de esta relaci\xF3n"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
+                    onSubmit: submitDelete,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                      container: true,
+                      justifyContent: 'right',
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                        type: "submit",
+                        color: "error",
+                        variant: "outlined",
+                        children: "Eliminar"
+                      })
+                    })
+                  })]
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
               onSubmit: handleSubmit,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
                 fullWidth: true,
                 style: {
                   marginTop: '40px',
                   marginBottom: '25px'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
                   id: "relation-names",
                   children: "Nombre"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
                   labelId: "relation-names",
                   id: "nombre",
                   value: relation || '',
@@ -31207,7 +31331,7 @@ var Relations = function Relations(_ref2) {
                   error: errors.nombre && values.error == true && true,
                   helperText: values.error == true && errors.nombre,
                   children: data && data.length > 0 && data.map(function (rel, index) {
-                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
                       value: JSON.stringify({
                         idDS: rel.idDS,
                         cNombre: rel.cNombre
@@ -31240,7 +31364,7 @@ var Relations = function Relations(_ref2) {
                       backgroundImage: 'url(/storage/relaciones/' + oldRelation.banner + ')'
                     },
                     children: values.imageBanner.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_21__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Imagen Banner"
                       })]
                     })
@@ -31267,7 +31391,7 @@ var Relations = function Relations(_ref2) {
                       backgroundImage: 'url(/storage/relaciones/' + oldRelation.miniatura + ')'
                     },
                     children: values.imageMin.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_21__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Miniatura"
                       })]
                     })
@@ -31311,14 +31435,14 @@ var Relations = function Relations(_ref2) {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       id: "mapImagesContainer",
                       className: errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton',
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_21__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Agregar mapas"
                       })]
                     })
                   }), values.mapImages && values.mapImages.length > 0 && values.mapImages.map(function (preview, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       item: true,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
                         "aria-label": "delete",
                         size: "small",
                         style: {
@@ -31332,7 +31456,7 @@ var Relations = function Relations(_ref2) {
                         onClick: function onClick() {
                           return removeImg('mapImages', index);
                         },
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], {
                           fontSize: "inherit"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
@@ -31343,7 +31467,7 @@ var Relations = function Relations(_ref2) {
                   }), oldPictos && oldPictos.length > 0 && oldPictos.map(function (map, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       item: true,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
                         "aria-label": "delete",
                         size: "small",
                         style: {
@@ -31357,7 +31481,7 @@ var Relations = function Relations(_ref2) {
                         onClick: function onClick() {
                           return toDelete(map.id, index);
                         },
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], {
                           fontSize: "inherit"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
@@ -31370,8 +31494,10 @@ var Relations = function Relations(_ref2) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                 container: true,
                 justifyContent: "right",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(ColorButton, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                   type: "submit",
+                  color: "primary",
+                  variant: "contained",
                   children: "Guardar"
                 })
               })]
@@ -31410,21 +31536,75 @@ var Relations = function Relations(_ref2) {
                   })]
                 }, index);
               })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+              container: true,
+              justifyContent: 'right',
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                variant: "outlined",
+                color: "primary",
+                type: "button",
+                onClick: addNewFolio,
+                children: "Agregar folio"
+              })
             })]
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
         open: open,
         onClose: function onClose() {
           return setOpen(false);
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_25__["default"], {
           sx: style,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
-            variant: "h6",
-            children: "Editar folio"
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            container: true,
+            justifyContent: 'space-between',
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              variant: "h6",
+              children: folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              type: "button",
+              color: "error",
+              variant: "outlined",
+              onClick: function onClick() {
+                return setOpenDeleteFolio(true);
+              },
+              style: folioValues.id === null ? {
+                display: 'none'
+              } : {
+                display: 'block'
+              },
+              children: "Eliminar"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+              open: openDeleteFolio,
+              onClose: function onClose() {
+                return setOpenDeleteFolio(false);
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                sx: style2,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  color: "error",
+                  variant: "h6",
+                  children: "\xBFSeguro que deseas eliminar este folio?"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  children: "Esta acci\xF3n es irreversible, se perder\xE1n todas las transcripciones de este folio"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
+                  onSubmit: submitDeleteFolio,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                    container: true,
+                    justifyContent: 'right',
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                      type: "submit",
+                      color: "error",
+                      variant: "outlined",
+                      children: "Eliminar"
+                    })
+                  })
+                })]
+              })
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
-            onSubmit: handleSubmitFolio,
+            onSubmit: folioValues.id === null ? handleNewFolio : handleSubmitFolio,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -31493,7 +31673,7 @@ var Relations = function Relations(_ref2) {
                     } : {
                       backgroundImage: 'url(/storage/relaciones/' + folioValues.oldImage + ')'
                     },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_21__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       children: "Cambiar imagen"
                     })]
                   })
@@ -31548,7 +31728,7 @@ var Relations = function Relations(_ref2) {
             })]
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
         open: openTranscription,
         onClose: function onClose() {
           return setOpenTranscription(false);
