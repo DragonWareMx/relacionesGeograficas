@@ -30995,7 +30995,6 @@ var Relations = function Relations(_ref2) {
       deletedPictos: deletedPictos
     });
 
-    console.log(data);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('admin.update', oldRelation.id), data, {
       onSuccess: function onSuccess() {},
       onError: function onError() {
@@ -31167,9 +31166,7 @@ var Relations = function Relations(_ref2) {
   function handleSubmitFolio(e) {
     e.preventDefault();
     var data = folioValues;
-    console.log(data, 'EDIT FOLIO');
-    return true;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update'), data, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
       onSuccess: function onSuccess() {},
       onError: function onError() {
         setValues(function (values) {
@@ -31183,9 +31180,8 @@ var Relations = function Relations(_ref2) {
 
   function submitDelete(e) {
     e.preventDefault();
-    console.log(oldRelation.id, 'DELETE');
-    return true;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('admin.delete'), oldRelation.id, {
+    console.log(route('admin.delete', oldRelation.id), 'DELETE');
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('admin.delete', oldRelation.id), {
       onSuccess: function onSuccess() {},
       onError: function onError() {
         setValues(function (values) {
@@ -31199,11 +31195,9 @@ var Relations = function Relations(_ref2) {
 
   function submitDeleteFolio(e) {
     e.preventDefault();
-    console.log(folioValues.id, 'DELETE FOLIO');
     setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
 
-    return true;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('folio.delete'), folioValues.id, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('folio.delete', [oldRelation.id, folioValues.id]), {
       onSuccess: function onSuccess() {},
       onError: function onError() {
         setValues(function (values) {
@@ -31230,11 +31224,10 @@ var Relations = function Relations(_ref2) {
   function handleNewFolio(e) {
     e.preventDefault();
     var data = folioValues;
-    console.log(data, 'NEW FOLIO');
-    return true;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.create'), data, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.store', oldRelation.id), data, {
       onSuccess: function onSuccess() {},
       onError: function onError() {
+        console.log(errors, 'error');
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
             error: true
