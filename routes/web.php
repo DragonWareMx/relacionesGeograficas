@@ -29,9 +29,9 @@ Route::name('relations.')->group(function () {
 });
 
 Route::name('folio.')->middleware('auth')->group(function () {
+    Route::post('/admin/{relation}/folio/{invoice}', [App\Http\Controllers\InvoiceController::class, 'update'])->scopeBindings()->name('update');
     Route::post('/admin/{relation}/folio', [App\Http\Controllers\InvoiceController::class, 'store'])->name('store');
-    Route::post('/admin/folio/{id}', [App\Http\Controllers\InvoiceController::class, 'update'])->name('update');
-    Route::delete('/admin/folio/{id}', [App\Http\Controllers\InvoiceController::class, 'delete'])->name('delete');
+    Route::delete('/admin/{relation}/folio/{invoice}', [App\Http\Controllers\InvoiceController::class, 'delete'])->scopeBindings()->name('delete');
 });
 
 Route::name('admin.')->middleware('auth')->group(function () {
@@ -39,7 +39,7 @@ Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/admin/index', [App\Http\Controllers\AdminController::class, 'relations'])->name('index');
     Route::post('/admin', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
     Route::post('/admin/{id}', [App\Http\Controllers\RelationController::class, 'update'])->name('update');
-    Route::delete('/admin/{id}', [App\Http\Controllers\AdminController::class, 'delete'])->name('delete');
+    Route::delete('/admin/{relation}', [App\Http\Controllers\RelationController::class, 'destroy'])->name('delete');
     Route::get('/admin/relations/{id}', [App\Http\Controllers\AdminController::class, 'show'])->name('show');
 });
 

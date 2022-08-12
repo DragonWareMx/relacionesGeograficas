@@ -177,7 +177,6 @@ class RelationController extends Controller
                     Storage::delete($mapa);
                 }
             }
-            dd($th);
 
             return Redirect::route('admin.create')->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
         }
@@ -398,6 +397,41 @@ class RelationController extends Controller
      */
     public function destroy(Relation $relation)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            //delete all maps
+            foreach ($relation->maps as $key => $map) {
+                if($map->imagen){
+                    \Storage::delete('public/relaciones/'.$map->imagen);
+                }
+            }
+            $relation->maps()->delete();
+
+            //delete invoices images
+            foreach ($relation->invoices as $key => $invoice) {
+                if($invoice->imagen){
+                    \Storage::delete('public/relaciones/'.$invoice->imagen);
+                }
+                $invoice->transcriptions()->delete();
+            }
+            $relation->invoices()->delete();
+
+            if($relation->banner){
+                \Storage::delete('public/relaciones/'.$relation->banner);
+            }
+            if($relation->miniatura){
+                \Storage::delete('public/relaciones/'.$relation->miniatura);
+            }
+
+            $relation->delete();
+
+            DB::commit();
+            return Redirect::route('admin.index')->with('success', '¡Relación eliminada con éxito!');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return Redirect::back()->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+        }
     }
 }

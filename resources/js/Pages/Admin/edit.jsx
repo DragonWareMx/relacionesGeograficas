@@ -161,7 +161,6 @@ const Relations = ({oldRelation}) => {
         e.preventDefault();
         let finalRelation=JSON.parse(relation);
         let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS, deletedPictos}
-        console.log(data);
 
         Inertia.post(route('admin.update', oldRelation.id), data, {
             onSuccess: () => {
@@ -305,9 +304,7 @@ const Relations = ({oldRelation}) => {
     function handleSubmitFolio(e){
         e.preventDefault();
         const data=folioValues;
-        console.log(data, 'EDIT FOLIO');
-        // return true;
-        Inertia.post(route('folio.update'), data, {
+        Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
             onSuccess: () => {
 
             },
@@ -322,8 +319,7 @@ const Relations = ({oldRelation}) => {
 
     function submitDelete(e){
         e.preventDefault();
-        console.log(oldRelation.id,'DELETE');
-        return true;
+        console.log(route('admin.delete', oldRelation.id),'DELETE');
         Inertia.delete(route('admin.delete', oldRelation.id), {
             onSuccess: () => {
 
@@ -339,10 +335,9 @@ const Relations = ({oldRelation}) => {
 
     function submitDeleteFolio(e){
         e.preventDefault();
-        console.log(folioValues.id,'DELETE FOLIO');
         setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
-        return true;
-        Inertia.delete(route('folio.delete', folioValues.id), {
+
+        Inertia.delete(route('folio.delete', [oldRelation.id, folioValues.id]), {
             onSuccess: () => {
 
             },
