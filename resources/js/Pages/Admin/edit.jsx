@@ -306,7 +306,7 @@ const Relations = ({oldRelation}) => {
         e.preventDefault();
         const data=folioValues;
         console.log(data, 'EDIT FOLIO');
-        return true;
+        // return true;
         Inertia.post(route('folio.update'), data, {
             onSuccess: () => {
 
@@ -324,7 +324,7 @@ const Relations = ({oldRelation}) => {
         e.preventDefault();
         console.log(oldRelation.id,'DELETE');
         return true;
-        Inertia.delete(route('admin.delete'), oldRelation.id, {
+        Inertia.delete(route('admin.delete', oldRelation.id), {
             onSuccess: () => {
 
             },
@@ -342,7 +342,7 @@ const Relations = ({oldRelation}) => {
         console.log(folioValues.id,'DELETE FOLIO');
         setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
         return true;
-        Inertia.delete(route('folio.delete'), folioValues.id, {
+        Inertia.delete(route('folio.delete', folioValues.id), {
             onSuccess: () => {
 
             },
@@ -370,13 +370,13 @@ const Relations = ({oldRelation}) => {
     function handleNewFolio(e){
         e.preventDefault();
         const data=folioValues;
-        console.log(data, 'NEW FOLIO');
-        return true;
-        Inertia.post(route('folio.create'), data, {
+
+        Inertia.post(route('folio.store', oldRelation.id), data, {
             onSuccess: () => {
 
             },
             onError: () => {
+                console.log(errors, 'error');
                 setValues((values) => ({
                     ...values,
                     error: true,

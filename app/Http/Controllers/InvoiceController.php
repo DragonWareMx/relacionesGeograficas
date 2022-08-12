@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invoice;
+use App\Models\Relation;
+use App\Models\Transcription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class InvoiceController extends Controller
 {
@@ -33,9 +39,76 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Relation $relation, Request $request)
     {
-        //
+        $validated = $request->validate([
+            'no_folio' => 'required|numeric',
+            'nombre' => 'required|max:255|string',
+            'descripcion' => 'nullable',
+            'image.*' => 'required|array',
+            'image.*' => 'required|image',
+            'transcriptions' => 'nullable|array',
+            'transcriptions.*.nombre' => 'nullable|string|max:255',
+            'transcriptions.*.texto' => 'nullable|string',
+        ]);
+
+        $image = null;
+        DB::beginTransaction();
+
+        try {
+
+            $folio = new Invoice;
+            $folio->uuid = Str::uuid();
+            $folio->folio = $request->no_folio;
+            $folio->nombre = $request->nombre;
+            $folio->descripcion = $request->descripcion;
+
+            if ($request->image) {
+                //Se sube foto
+                $image = $request->file('image')[0]->store('public/relaciones');
+                $fileName = $request->file('image')[0]->hashName();
+                // $image = Image::make(Storage::get($foto));
+
+                // $image->resize(1280, null, function ($constraint) {
+                //     $constraint->aspectRatio();
+                //     $constraint->upsize();
+                // });
+
+                // Storage::put($foto, (string) $image->encode('jpg', 30));
+                $folio->imagen = $fileName;
+            }
+
+            
+            $folio->save();
+            
+            if($request->transcriptions){
+                foreach ($request->transcriptions as $key => $transcription) {
+                    if($transcription["nombre"] && $transcription["texto"]){
+                        $newTranscription = new Transcription;
+                        $newTranscription->uuid = Str::uuid();
+                        $newTranscription->nombre = $transcription["nombre"];
+                        $newTranscription->texto = $transcription["texto"];
+                        $newTranscription->save();
+
+                        $folio->transcriptions()->save($newTranscription);
+                    }
+                }
+            }
+
+            $relation->invoices()->save($folio);
+
+
+            DB::commit();
+            return Redirect::back()->with('success', '¡Relación creada con éxito!');
+        } catch (\Throwable $th) {
+            dd($th);
+            DB::rollBack();
+
+            if ($image) {
+                Storage::delete($image);
+            }
+            return Redirect::back()->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+        }
     }
 
     /**

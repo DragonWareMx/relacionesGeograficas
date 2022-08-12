@@ -28,13 +28,21 @@ Route::name('relations.')->group(function () {
     Route::get('/relaciones-geograficas/{id}', [App\Http\Controllers\RelationController::class, 'index'])->name('index');
 });
 
+Route::name('folio.')->middleware('auth')->group(function () {
+    Route::post('/admin/{relation}/folio', [App\Http\Controllers\InvoiceController::class, 'store'])->name('store');
+    Route::post('/admin/folio/{id}', [App\Http\Controllers\InvoiceController::class, 'update'])->name('update');
+    Route::delete('/admin/folio/{id}', [App\Http\Controllers\InvoiceController::class, 'delete'])->name('delete');
+});
+
 Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/admin/create', [App\Http\Controllers\RelationController::class, 'create'])->name('create');
     Route::get('/admin/index', [App\Http\Controllers\AdminController::class, 'relations'])->name('index');
-    Route::post('/admin/store', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
+    Route::post('/admin', [App\Http\Controllers\RelationController::class, 'store'])->name('store');
     Route::post('/admin/{id}', [App\Http\Controllers\RelationController::class, 'update'])->name('update');
+    Route::delete('/admin/{id}', [App\Http\Controllers\AdminController::class, 'delete'])->name('delete');
     Route::get('/admin/relations/{id}', [App\Http\Controllers\AdminController::class, 'show'])->name('show');
 });
+
 
 Auth::routes(['register' => false]);
 
