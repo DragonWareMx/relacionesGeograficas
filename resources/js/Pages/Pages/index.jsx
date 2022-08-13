@@ -115,6 +115,7 @@ const Home = ({ relaciones, banners }) => {
             .get(`https://decm.arqueodata.com/api/v1/relaciones`)
             .then((response) => {
                 let new_data = data;
+                console.log(data.infoMapa.zoom)
                 new_data.capas = response.data;
                 setData({ ...data, new_data });
             })
@@ -334,9 +335,9 @@ const Home = ({ relaciones, banners }) => {
                         data.infoMapa.centro.lat,
                         data.infoMapa.centro.long
                     )}
-                    zoom={data.infoMapa.zoom.inicial}
-                    minZoom={data.infoMapa.zoom.min}
-                    maxZoom={data.infoMapa.zoom.max}
+                    zoom={5}
+                    minZoom={5}
+                    maxZoom={10}
                 >
                     <LayersControl position="topleft" collapsed={false}>
                         <BaseLayer checked name="ESRI Satellite">

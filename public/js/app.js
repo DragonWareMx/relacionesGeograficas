@@ -32267,6 +32267,7 @@ var Home = function Home(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_14___default().get("https://decm.arqueodata.com/api/v1/relaciones").then(function (response) {
       var new_data = data;
+      console.log(data.infoMapa.zoom);
       new_data.capas = response.data;
       setData(_objectSpread(_objectSpread({}, data), {}, {
         new_data: new_data
@@ -32453,9 +32454,9 @@ var Home = function Home(_ref) {
         id: "mapa",
         style: styleMap,
         center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
-        zoom: data.infoMapa.zoom.inicial,
-        minZoom: data.infoMapa.zoom.min,
-        maxZoom: data.infoMapa.zoom.max,
+        zoom: 5,
+        minZoom: 5,
+        maxZoom: 10,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
           position: "topleft",
           collapsed: false,
@@ -32887,10 +32888,13 @@ var Relacion = function Relacion(_ref4) {
         children: [contMap === "geo" && data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.MapContainer, {
             style: styleMap,
-            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
-            zoom: data.infoMapa.zoom.inicial,
-            minZoom: data.infoMapa.zoom.min,
-            maxZoom: data.infoMapa.zoom.max,
+            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]) // zoom={data.infoMapa.zoom.inicial}
+            // minZoom={data.infoMapa.zoom.min}
+            // maxZoom={data.infoMapa.zoom.max}
+            ,
+            zoom: 5,
+            minZoom: 5,
+            maxZoom: 10,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl, {
               position: "topleft",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
@@ -33997,7 +34001,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element {\r\n    width: 100%;\r\n    height: 350px;\r\n}\r\n\r\n.oski-carousel-img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title {\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor: default;\r\n}\r\n\r\n.oski-swiper {\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width: 1536px){\r\n    .oski-swiper {\r\n        width: 1200px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 300px;\r\n    }\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n    .oski-swiper {\r\n        width: 1000px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 250px;\r\n    }\r\n\r\n}\r\n\r\n@media (max-width: 1050px) {\r\n    .oski-swiper {\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width: 750px) {\r\n    .oski-swiper {\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 180px;\r\n    }\r\n}\r\n\r\n@media (max-width: 550px) {\r\n    .oski-swiper {\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 130px;\r\n    }\r\n}\r\n\r\n@media (max-width: 486px) {\r\n    .oski-swiper {\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 440px) {\r\n    .oski-swiper {\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element {\r\n    width: 100%;\r\n    height: 350px;\r\n}\r\n\r\n.oski-carousel-img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title {\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor: default;\r\n}\r\n\r\n.oski-swiper {\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width: 1536px){\r\n    .oski-swiper {\r\n        width: 1200px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 300px;\r\n    }\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n    .oski-swiper {\r\n        width: 1000px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 250px;\r\n    }\r\n\r\n}\r\n\r\n@media (max-width: 1050px) {\r\n    .oski-swiper {\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width: 750px) {\r\n    .oski-swiper {\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 180px;\r\n    }\r\n}\r\n\r\n@media (max-width: 550px) {\r\n    .oski-swiper {\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 130px;\r\n    }\r\n}\r\n\r\n@media (max-width: 486px) {\r\n    .oski-swiper {\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 130px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 440px) {\r\n    .oski-swiper {\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
