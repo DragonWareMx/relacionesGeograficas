@@ -47,6 +47,7 @@ class InvoiceController extends Controller
             'descripcion' => 'nullable',
             'image.*' => 'required|array',
             'image.*' => 'required|image',
+            'image'=>'required',
             'transcriptions' => 'nullable|array',
             'transcriptions.*.nombre' => 'nullable|string|max:255',
             'transcriptions.*.texto' => 'nullable|string',
@@ -106,7 +107,7 @@ class InvoiceController extends Controller
             if ($image) {
                 Storage::delete($image);
             }
-            return Redirect::back()->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
 
@@ -207,7 +208,7 @@ class InvoiceController extends Controller
             if ($image) {
                 Storage::delete($image);
             }
-            return Redirect::back()->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
 
