@@ -178,7 +178,7 @@ class RelationController extends Controller
                 }
             }
 
-            return Redirect::route('admin.create')->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
 
@@ -385,7 +385,7 @@ class RelationController extends Controller
                     Storage::delete($mapa);
                 }
             }
-            dd($th);
+            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
 
@@ -430,8 +430,7 @@ class RelationController extends Controller
             return Redirect::route('admin.index')->with('success', '¡Relación eliminada con éxito!');
         } catch (\Throwable $th) {
             DB::rollBack();
-
-            return Redirect::back()->with('error', 'Ha ocurrido un error con su solicitud, inténtelo de nuevo más tarde');
+            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
 }

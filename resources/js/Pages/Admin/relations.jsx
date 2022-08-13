@@ -1,18 +1,18 @@
 import Layout from '../../layouts/Layout'
 import React, { useState, useEffect } from 'react';
-import {Container,Typography, Grid} from '@mui/material';
+import {Container,Typography, Grid, Button} from '@mui/material';
 import '/css/common.css'
 import '../../../css/admin.css'
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 
 
 const Relations = ({relations}) => {
-
+    console.log(usePage().props, 'PROPS')
     return (
         <>
             <Container style={{marginTop:'36px'}}>
                 <Typography variant='h5' color='primary'>Todas las Relaciones</Typography>
-                <Grid container spacing={2} mt={5}>
+                <Grid container spacing={2} mt={5} style={{maxHeight:600, overflowY:'scroll'}}>
                     {relations && relations.length > 0 && relations.map((relation, index) => (
                         <Grid item xs={2} key={index}>
                             <InertiaLink href={"/admin/relations/"+relation.id} style={{textDecoration:'none',color:'black'}}>
@@ -36,6 +36,13 @@ const Relations = ({relations}) => {
                             </ InertiaLink>
                         </Grid>
                     ))}
+                </Grid>
+                <Grid container justifyContent={'right'}>
+                    <InertiaLink href={route("admin.create")} style={{textDecoration:'none'}}>
+                        <Button color='primary' variant='contained'>
+                            Agregar relación
+                        </Button>
+                    </InertiaLink>
                 </Grid>
             </Container>
         </>

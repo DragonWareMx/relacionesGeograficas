@@ -4,6 +4,7 @@ import { InertiaLink } from "@inertiajs/inertia-react";
 import Grid from "@mui/material/Grid";
 import { Inertia } from "@inertiajs/inertia";
 import { Button } from "@mui/material";
+import logos from "./logos.png"
 
 export default function Footer() {
     return (
@@ -21,12 +22,8 @@ export default function Footer() {
                         alignItems="center"
                     >
                         <img
-                            src="/img/assets/Cultura.PNG"
-                            style={{ marginTop: 8 }}
-                        />
-                        <img
-                            src="/img/assets/Conacyt.PNG"
-                            style={{ height: 50, marginLeft: 10 }}
+                            src={logos}
+                            style={{ marginTop:18, width:'100%' }}
                         />
                     </Grid>
 

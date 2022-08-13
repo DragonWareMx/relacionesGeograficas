@@ -29721,7 +29721,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
@@ -30154,31 +30154,7 @@ var Create = function Create() {
     } else {
       errors.imageMin = null;
       values.error = false;
-    } // if(!values.fuentes || values.fuentes === ''){
-    //     setErrorMessagge('Debes ingresar las fuentes');
-    //     errors.fuentes='Ingresa las fuentes';
-    //     values.error = true;
-    //     setActiveStep(0);
-    //     setOpen(true);
-    //     return false;
-    // }
-    // else{
-    //     errors.fuentes=null;
-    //     values.error = false;
-    // }
-    // if(!values.mapa_geografico || values.mapa_geografico === ''){
-    //     setErrorMessagge('Debes ingresar el mapa geográfico');
-    //     errors.mapa_geografico='Ingresa el mapa geográfico';
-    //     values.error = true;
-    //     setActiveStep(1);
-    //     setOpen(true);
-    //     return false;
-    // }
-    // else{
-    //     errors.mapa_geografico=null;
-    //     values.error = false;
-    // }
-
+    }
 
     if (!values.mapImages || values.mapImages.length == 0) {
       setErrorMessagge('Debes ingresar al menos una imagen del mapa geográfico');
@@ -30350,7 +30326,6 @@ var Create = function Create() {
               multiline: true,
               label: "Fuentes",
               rows: 4,
-              required: true,
               fullWidth: true,
               value: values.fuentes,
               onChange: handleChange,
@@ -30776,29 +30751,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Modal/Modal.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/FormControl/FormControl.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Select/Select.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Modal/Modal.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/FormControl/FormControl.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Select/Select.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
+/* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/Close */ "./node_modules/@mui/icons-material/Close.js");
+/* harmony import */ var _mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/icons-material/Close */ "./node_modules/@mui/icons-material/Close.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
-/* harmony import */ var _mui_icons_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/icons-material */ "./node_modules/@mui/icons-material/esm/Edit.js");
+/* harmony import */ var _mui_icons_material__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @mui/icons-material */ "./node_modules/@mui/icons-material/esm/Edit.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _mui_material_Alert__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Alert */ "./node_modules/@mui/material/Alert/Alert.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -30807,12 +30783,6 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -30825,6 +30795,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -30900,6 +30877,13 @@ var style2 = {
   boxShadow: 24,
   p: 4
 };
+var Alert = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function Alert(props, ref) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Alert__WEBPACK_IMPORTED_MODULE_12__["default"], _objectSpread({
+    elevation: 6,
+    ref: ref,
+    variant: "filled"
+  }, props));
+});
 
 var Relations = function Relations(_ref2) {
   var oldRelation = _ref2.oldRelation;
@@ -30909,7 +30893,9 @@ var Relations = function Relations(_ref2) {
     })["catch"](function (error) {});
   }, []); //form data
 
-  var errors = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.errors;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props,
+      errors = _usePage$props.errors,
+      status = _usePage$props.status;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     imageBanner: [],
@@ -30996,7 +30982,9 @@ var Relations = function Relations(_ref2) {
     });
 
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('admin.update', oldRelation.id), data, {
-      onSuccess: function onSuccess() {},
+      onSuccess: function onSuccess() {
+        setOpenSnack(true);
+      },
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -31167,7 +31155,10 @@ var Relations = function Relations(_ref2) {
     e.preventDefault();
     var data = folioValues;
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
-      onSuccess: function onSuccess() {},
+      onSuccess: function onSuccess() {
+        setOpenSnack(true);
+        setOpen(false);
+      },
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -31180,9 +31171,11 @@ var Relations = function Relations(_ref2) {
 
   function submitDelete(e) {
     e.preventDefault();
-    console.log(route('admin.delete', oldRelation.id), 'DELETE');
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('admin.delete', oldRelation.id), {
-      onSuccess: function onSuccess() {},
+      onSuccess: function onSuccess() {
+        setOpen(false);
+        setOpenSnack(true);
+      },
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -31195,10 +31188,12 @@ var Relations = function Relations(_ref2) {
 
   function submitDeleteFolio(e) {
     e.preventDefault();
-    setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
-
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('folio.delete', [oldRelation.id, folioValues.id]), {
-      onSuccess: function onSuccess() {},
+      onSuccess: function onSuccess() {
+        setOpenDeleteFolio(false);
+        setOpen(false);
+        setOpenSnack(true);
+      },
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -31225,9 +31220,11 @@ var Relations = function Relations(_ref2) {
     e.preventDefault();
     var data = folioValues;
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.store', oldRelation.id), data, {
-      onSuccess: function onSuccess() {},
+      onSuccess: function onSuccess() {
+        setOpenSnack(true);
+        setOpen(false);
+      },
       onError: function onError() {
-        console.log(errors, 'error');
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
             error: true
@@ -31247,16 +31244,17 @@ var Relations = function Relations(_ref2) {
       openDeleteFolio = _useState24[0],
       setOpenDeleteFolio = _useState24[1];
 
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState26 = _slicedToArray(_useState25, 2),
+      openSnack = _useState26[0],
+      setOpenSnack = _useState26[1];
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
       style: {
         marginTop: '36px'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        variant: "h5",
-        color: "primary",
-        children: oldRelation === null || oldRelation === void 0 ? void 0 : oldRelation.nombre
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
         container: true,
         mt: 2,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -31267,8 +31265,13 @@ var Relations = function Relations(_ref2) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"], {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
-              justifyContent: 'right',
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              justifyContent: 'space-between',
+              alignContent: "center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                variant: "h5",
+                color: "primary",
+                children: oldRelation === null || oldRelation === void 0 ? void 0 : oldRelation.nombre
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                 type: "button",
                 variant: "outlined",
                 color: "error",
@@ -31276,18 +31279,18 @@ var Relations = function Relations(_ref2) {
                   return setOpenDelete(true);
                 },
                 children: "Eliminar"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
                 open: openDelete,
                 onClose: function onClose() {
                   return setOpenDelete(false);
                 },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
                   sx: style2,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                     color: "error",
                     variant: "h6",
                     children: "\xBFSeguro que deseas eliminar esta relaci\xF3n?"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                     children: "Esta acci\xF3n es irreversible, se perder\xE1n todos los folios y transcripciones de esta relaci\xF3n"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
                     onSubmit: submitDelete,
@@ -31306,16 +31309,16 @@ var Relations = function Relations(_ref2) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
               onSubmit: handleSubmit,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
                 fullWidth: true,
                 style: {
                   marginTop: '40px',
                   marginBottom: '25px'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
                   id: "relation-names",
                   children: "Nombre"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
                   labelId: "relation-names",
                   id: "nombre",
                   value: relation || '',
@@ -31324,7 +31327,7 @@ var Relations = function Relations(_ref2) {
                   error: errors.nombre && values.error == true && true,
                   helperText: values.error == true && errors.nombre,
                   children: data && data.length > 0 && data.map(function (rel, index) {
-                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
                       value: JSON.stringify({
                         idDS: rel.idDS,
                         cNombre: rel.cNombre
@@ -31357,7 +31360,7 @@ var Relations = function Relations(_ref2) {
                       backgroundImage: 'url(/storage/relaciones/' + oldRelation.banner + ')'
                     },
                     children: values.imageBanner.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Imagen Banner"
                       })]
                     })
@@ -31384,7 +31387,7 @@ var Relations = function Relations(_ref2) {
                       backgroundImage: 'url(/storage/relaciones/' + oldRelation.miniatura + ')'
                     },
                     children: values.imageMin.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Miniatura"
                       })]
                     })
@@ -31428,14 +31431,14 @@ var Relations = function Relations(_ref2) {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       id: "mapImagesContainer",
                       className: errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton',
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Agregar mapas"
                       })]
                     })
                   }), values.mapImages && values.mapImages.length > 0 && values.mapImages.map(function (preview, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       item: true,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
                         "aria-label": "delete",
                         size: "small",
                         style: {
@@ -31449,7 +31452,7 @@ var Relations = function Relations(_ref2) {
                         onClick: function onClick() {
                           return removeImg('mapImages', index);
                         },
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_25__["default"], {
                           fontSize: "inherit"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
@@ -31460,7 +31463,7 @@ var Relations = function Relations(_ref2) {
                   }), oldPictos && oldPictos.length > 0 && oldPictos.map(function (map, index) {
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       item: true,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
                         "aria-label": "delete",
                         size: "small",
                         style: {
@@ -31474,7 +31477,7 @@ var Relations = function Relations(_ref2) {
                         onClick: function onClick() {
                           return toDelete(map.id, index);
                         },
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_25__["default"], {
                           fontSize: "inherit"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
@@ -31521,7 +31524,7 @@ var Relations = function Relations(_ref2) {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
                     justifyContent: "center",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                       variant: "body2",
                       align: "center",
                       children: ["Folio no. ", invoice.folio]
@@ -31542,17 +31545,17 @@ var Relations = function Relations(_ref2) {
             })]
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
         open: open,
         onClose: function onClose() {
           return setOpen(false);
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_25__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_26__["default"], {
           sx: style,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
             container: true,
             justifyContent: 'space-between',
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
               variant: "h6",
               children: folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -31568,18 +31571,18 @@ var Relations = function Relations(_ref2) {
                 display: 'block'
               },
               children: "Eliminar"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
               open: openDeleteFolio,
               onClose: function onClose() {
                 return setOpenDeleteFolio(false);
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
                 sx: style2,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   color: "error",
                   variant: "h6",
                   children: "\xBFSeguro que deseas eliminar este folio?"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   children: "Esta acci\xF3n es irreversible, se perder\xE1n todas las transcripciones de este folio"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
                   onSubmit: submitDeleteFolio,
@@ -31659,14 +31662,14 @@ var Relations = function Relations(_ref2) {
                   htmlFor: "folioImage",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     id: "folioImageContainer",
-                    className: 'maps-skelleton',
+                    className: !errors.image ? 'maps-skelleton' : 'maps-skelleton-error',
                     style: folioValues.image !== null && folioValues.image.length > 0 ? {
                       backgroundImage: 'url(' + URL.createObjectURL(folioValues.image[0]) + ')',
                       border: 'none'
                     } : {
                       backgroundImage: 'url(/storage/relaciones/' + folioValues.oldImage + ')'
                     },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_22__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       children: "Cambiar imagen"
                     })]
                   })
@@ -31686,17 +31689,17 @@ var Relations = function Relations(_ref2) {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
                     justifyContent: 'space-between',
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                       variant: "body",
                       color: "primary",
                       children: transcription.nombre
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material__WEBPACK_IMPORTED_MODULE_26__["default"], {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material__WEBPACK_IMPORTED_MODULE_27__["default"], {
                       color: "primary",
                       onClick: function onClick() {
                         return editTranscription(transcription, index);
                       }
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                     variant: "body2",
                     style: {
                       whiteSpace: 'nowrap',
@@ -31721,17 +31724,17 @@ var Relations = function Relations(_ref2) {
             })]
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
         open: openTranscription,
         onClose: function onClose() {
           return setOpenTranscription(false);
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_25__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_26__["default"], {
           sx: style,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
             container: true,
             justifyContent: "space-between",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
               variant: "h6",
               children: "Transcripci\xF3n"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -31820,7 +31823,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -31836,6 +31840,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Relations = function Relations(_ref) {
   var relations = _ref.relations;
+  console.log((0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props, 'PROPS');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
       style: {
@@ -31849,6 +31854,10 @@ var Relations = function Relations(_ref) {
         container: true,
         spacing: 2,
         mt: 5,
+        style: {
+          maxHeight: 600,
+          overflowY: 'scroll'
+        },
         children: relations && relations.length > 0 && relations.map(function (relation, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
             item: true,
@@ -31884,6 +31893,20 @@ var Relations = function Relations(_ref) {
             })
           }, index);
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        container: true,
+        justifyContent: 'right',
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
+          href: route("admin.create"),
+          style: {
+            textDecoration: 'none'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            color: "primary",
+            variant: "contained",
+            children: "Agregar relaci\xF3n"
+          })
+        })
       })]
     })
   });
@@ -31916,8 +31939,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
@@ -32025,8 +32048,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -32097,8 +32120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
 /* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../css/carousel.css */ "./public/css/carousel.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
@@ -32244,6 +32267,7 @@ var Home = function Home(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_14___default().get("https://decm.arqueodata.com/api/v1/relaciones").then(function (response) {
       var new_data = data;
+      console.log(data.infoMapa.zoom);
       new_data.capas = response.data;
       setData(_objectSpread(_objectSpread({}, data), {}, {
         new_data: new_data
@@ -32430,9 +32454,9 @@ var Home = function Home(_ref) {
         id: "mapa",
         style: styleMap,
         center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
-        zoom: data.infoMapa.zoom.inicial,
-        minZoom: data.infoMapa.zoom.min,
-        maxZoom: data.infoMapa.zoom.max,
+        zoom: 5,
+        minZoom: 5,
+        maxZoom: 10,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
           position: "topleft",
           collapsed: false,
@@ -32544,7 +32568,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
@@ -32864,10 +32888,13 @@ var Relacion = function Relacion(_ref4) {
         children: [contMap === "geo" && data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.MapContainer, {
             style: styleMap,
-            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
-            zoom: data.infoMapa.zoom.inicial,
-            minZoom: data.infoMapa.zoom.min,
-            maxZoom: data.infoMapa.zoom.max,
+            center: leaflet__WEBPACK_IMPORTED_MODULE_13___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]) // zoom={data.infoMapa.zoom.inicial}
+            // minZoom={data.infoMapa.zoom.min}
+            // maxZoom={data.infoMapa.zoom.max}
+            ,
+            zoom: 5,
+            minZoom: 5,
+            maxZoom: 10,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_21__.LayersControl, {
               position: "topleft",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(BaseLayer, {
@@ -33329,10 +33356,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/Layout/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/Layout/parts/Footer.jsx");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Snackbar/Snackbar.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["title", "pageTitle", "children"];
+
 var _templateObject, _templateObject2, _templateObject3;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -33344,28 +33392,79 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Grid = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin:0px;\n    grid: \"header header\" min-content\n                          \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
-var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n"])));
-var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n"])));
+
+
+
+var Grid = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin:0px;\n    grid: \"header header\" min-content\n                          \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
+var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n"])));
+var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n"])));
 function Layout(_ref) {
   var title = _ref.title,
       pageTitle = _ref.pageTitle,
-      children = _ref.children;
+      children = _ref.children,
+      rest = _objectWithoutProperties(_ref, _excluded);
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     document.title = title;
   }, [title]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Grid, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GridHeader, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_parts_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(GridMain, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      openSnack = _useState2[0],
+      setOpenSnack = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      message = _useState4[0],
+      setMessage = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('info'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      type = _useState6[0],
+      setType = _useState6[1];
+
+  var flash = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.flash;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (flash.success) {
+      setMessage(flash.success);
+      setType('success');
+      setOpenSnack(true);
+    }
+
+    if (flash.error) {
+      setMessage(flash.error);
+      setType('error');
+      setOpenSnack(true);
+    }
+  }, [flash]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Grid, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        open: openSnack,
+        autoHideDuration: 3000,
+        onClose: function onClose() {
+          return setOpenSnack(false);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          onClose: function onClose() {
+            return setOpenSnack(false);
+          },
+          severity: type,
+          sx: {
+            width: '100%'
+          },
+          children: message
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(GridHeader, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_parts_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(GridMain, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           style: {
             minHeight: 'calc(100vh - 349px)',
             paddingTop: '0px'
           },
           children: children
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_parts_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_parts_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
       })]
     })
   });
@@ -33385,12 +33484,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Footer)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _logos_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logos.png */ "./resources/js/layouts/Layout/parts/logos.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -33400,17 +33501,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     style: {
       backgroundColor: "#304a71"
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
       maxWidth: "xl",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           sm: 12,
@@ -33419,19 +33520,14 @@ function Footer() {
           direction: "row",
           justifyContent: "center",
           alignItems: "center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Cultura.PNG",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            src: _logos_png__WEBPACK_IMPORTED_MODULE_3__["default"],
             style: {
-              marginTop: 8
+              marginTop: 18,
+              width: '100%'
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "/img/assets/Conacyt.PNG",
-            style: {
-              height: 50,
-              marginLeft: 10
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           container: true,
@@ -33442,9 +33538,9 @@ function Footer() {
             mt: 1,
             mb: 1
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
             href: "/creditos",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
               size: "large",
               sx: {
                 color: "white",
@@ -33456,7 +33552,7 @@ function Footer() {
               children: "Cr\xE9ditos"
             })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
           item: true,
           xs: 12,
           container: true,
@@ -33466,7 +33562,7 @@ function Footer() {
           sx: {
             mb: 2
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
             href: "https://dragonware.com.mx",
             target: "_blank",
             style: {
@@ -33474,7 +33570,7 @@ function Footer() {
               color: "#919EAB",
               fontSize: "13px"
             },
-            children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
               src: "/img/assets/dragonBlanco1.png",
               style: {
                 width: "19px",
@@ -33905,7 +34001,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element {\r\n    width: 100%;\r\n    height: 350px;\r\n}\r\n\r\n.oski-carousel-img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title {\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor: default;\r\n}\r\n\r\n.oski-swiper {\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n    .oski-swiper {\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -170px;\r\n        padding-right: 100px;\r\n        font-size: 35px;\r\n    }\r\n}\r\n\r\n@media (max-width: 770px) {\r\n    .oski-swiper {\r\n        width: 600px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 350px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width: 650px) {\r\n    .oski-swiper {\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 320px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -130px;\r\n        padding-right: 55px;\r\n        font-size: 28px;\r\n    }\r\n}\r\n\r\n@media (max-width: 538px) {\r\n    .oski-swiper {\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 250px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -100px;\r\n        padding-right: 45px;\r\n        font-size: 24px;\r\n    }\r\n}\r\n\r\n@media (max-width: 486px) {\r\n    .oski-swiper {\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 440px) {\r\n    .oski-swiper {\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".oski-carousel-element {\r\n    width: 100%;\r\n    height: 350px;\r\n}\r\n\r\n.oski-carousel-img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    -o-object-position: center;\r\n       object-position: center;\r\n}\r\n\r\n.oski-carousel-title {\r\n    width: auto;\r\n    margin-top: -200px;\r\n    text-align: right;\r\n    padding-right: 125px;\r\n    z-index: 99;\r\n    font-size: 35px;\r\n    color: white;\r\n    cursor: default;\r\n}\r\n\r\n.oski-swiper {\r\n    width: 100%;\r\n}\r\n\r\n@media (max-width: 1536px){\r\n    .oski-swiper {\r\n        width: 1200px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 300px;\r\n    }\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n    .oski-swiper {\r\n        width: 1000px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 250px;\r\n    }\r\n\r\n}\r\n\r\n@media (max-width: 1050px) {\r\n    .oski-swiper {\r\n        width: 700px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 200px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -150px;\r\n        padding-right: 80px;\r\n        font-size: 32px;\r\n    }\r\n}\r\n\r\n@media (max-width: 750px) {\r\n    .oski-swiper {\r\n        width: 500px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 180px;\r\n    }\r\n}\r\n\r\n@media (max-width: 550px) {\r\n    .oski-swiper {\r\n        width: 400px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 130px;\r\n    }\r\n}\r\n\r\n@media (max-width: 486px) {\r\n    .oski-swiper {\r\n        width: 350px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 130px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -80px;\r\n        padding-right: 50px;\r\n        font-size: 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 440px) {\r\n    .oski-swiper {\r\n        width: 300px;\r\n    }\r\n\r\n    .oski-carousel-element {\r\n        height: 150px;\r\n    }\r\n\r\n    .oski-carousel-title {\r\n        margin-top: -65px;\r\n        padding-right: 45px;\r\n        font-size: 15px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33977,7 +34073,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".backpage-header{\r\n    /* width: 100%; */\r\n    display: flex;\r\n    background-color: #304A71;\r\n    height: 70px;\r\n    color: #FAFAFA;\r\n    padding-left: 20px;\r\n    align-items: center;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 100;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n\r\n.stepper-card{\r\n    /* width: 100%; */\r\n    background-color: #FFFFFF;\r\n    border-radius: 9px; \r\n    box-shadow: 1px 2px 1px 2px rgba(0,0,0,0.46);\r\n    padding: 35px 30px;\r\n    margin-bottom: 100px;\r\n}\r\n\r\n.banner-skelleton{\r\n    width: 183px;\r\n    height: 90px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 4px;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n}\r\n\r\n.banner-skelleton.error,.imageMin-skelleton.error, .maps-skelleton.error{\r\n    border-color: red;\r\n}\r\n\r\n.imageMin-skelleton{\r\n    width: 98px;\r\n    height: 98px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 50%;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n}\r\n\r\n.maps-skelleton{\r\n    width: 150px;\r\n    height: 90px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 4px;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    margin-top:5px;\r\n}\r\n\r\n.maps-preview{\r\n    width: 150px;\r\n    height: 90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-radius: 4px;\r\n}\r\n\r\n.banner-skelleton:hover, .imageMin-skelleton:hover, .maps-skelleton:hover{\r\n    border: 2px dashed #304A71;\r\n    color: #304A71;\r\n    transition: ease-in 0.2s;\r\n}\r\n\r\n.flex-container{\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n    gap: 30px;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.buttons-container{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin-top: 50px;\r\n}\r\n\r\n.title{\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: 15px;\r\n    color: #707070;\r\n    font-weight: 400;\r\n    margin-top: 25px;\r\n    margin-bottom: 25px;\r\n}\r\n\r\n.separator{\r\n    background-color: #D3D3D3;\r\n    display: flex;\r\n    width: 100%;\r\n    height: 1px;\r\n    margin-top: 15px;\r\n    margin-bottom: 17px;\r\n}\r\n\r\n.trans-title{\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 14px;\r\n    line-height: 19px;\r\n    text-align: center;\r\n    color: #444444;\r\n}\r\n\r\n.trans-text{\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    font-size: 14px;\r\n    line-height: 19px;\r\n    text-align: justify;\r\n    color: #626262;\r\n    margin-top: 7px;\r\n}\r\n\r\n.folio-preview{\r\n    width: 100%;\r\n    height: 90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-radius: 4px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".backpage-header{\r\n    /* width: 100%; */\r\n    display: flex;\r\n    background-color: #304A71;\r\n    height: 70px;\r\n    color: #FAFAFA;\r\n    padding-left: 20px;\r\n    align-items: center;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 100;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n\r\n.stepper-card{\r\n    /* width: 100%; */\r\n    background-color: #FFFFFF;\r\n    border-radius: 9px; \r\n    box-shadow: 1px 2px 1px 2px rgba(0,0,0,0.46);\r\n    padding: 35px 30px;\r\n    margin-bottom: 100px;\r\n}\r\n\r\n.banner-skelleton{\r\n    width: 183px;\r\n    height: 90px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 4px;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n}\r\n\r\n.banner-skelleton.error,.imageMin-skelleton.error, .maps-skelleton.error{\r\n    border-color: red;\r\n}\r\n\r\n.imageMin-skelleton{\r\n    width: 98px;\r\n    height: 98px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 50%;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n}\r\n\r\n.maps-skelleton{\r\n    width: 150px;\r\n    height: 90px;\r\n    border: 2px dashed #C1C1C1;\r\n    border-radius: 4px;\r\n    color: #707070;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    margin-top:5px;\r\n}\r\n\r\n.maps-skelleton-error{\r\n    width: 150px;\r\n    height: 90px;\r\n    border: 2px dashed red;\r\n    border-radius: 4px;\r\n    color: red;\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-weight: 300;\r\n    font-size: 12px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    gap: 8px;\r\n    cursor: pointer;\r\n    transition: ease-in 0.05s;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    margin-top:5px;\r\n}\r\n\r\n.maps-preview{\r\n    width: 150px;\r\n    height: 90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-radius: 4px;\r\n}\r\n\r\n.banner-skelleton:hover, .imageMin-skelleton:hover, .maps-skelleton:hover{\r\n    border: 2px dashed #304A71;\r\n    color: #304A71;\r\n    transition: ease-in 0.2s;\r\n}\r\n\r\n.flex-container{\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n    gap: 30px;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.buttons-container{\r\n    display: flex;\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin-top: 50px;\r\n}\r\n\r\n.title{\r\n    font-style: normal;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: 15px;\r\n    color: #707070;\r\n    font-weight: 400;\r\n    margin-top: 25px;\r\n    margin-bottom: 25px;\r\n}\r\n\r\n.separator{\r\n    background-color: #D3D3D3;\r\n    display: flex;\r\n    width: 100%;\r\n    height: 1px;\r\n    margin-top: 15px;\r\n    margin-bottom: 17px;\r\n}\r\n\r\n.trans-title{\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 14px;\r\n    line-height: 19px;\r\n    text-align: center;\r\n    color: #444444;\r\n}\r\n\r\n.trans-text{\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    font-size: 14px;\r\n    line-height: 19px;\r\n    text-align: justify;\r\n    color: #626262;\r\n    margin-top: 7px;\r\n}\r\n\r\n.folio-preview{\r\n    width: 100%;\r\n    height: 90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-radius: 4px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34329,6 +34425,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/vendor/leaflet/dist/marker-shadow.png?a0c6cc1401c107b501efee6477816891");
+
+/***/ }),
+
+/***/ "./resources/js/layouts/Layout/parts/logos.png":
+/*!*****************************************************!*\
+  !*** ./resources/js/layouts/Layout/parts/logos.png ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logos.png?79359c2532ec23165afaabe8921a86ef");
 
 /***/ }),
 
@@ -105769,7 +105880,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

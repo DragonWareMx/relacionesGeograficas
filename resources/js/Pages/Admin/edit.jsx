@@ -7,6 +7,7 @@ import {Container,Typography, Grid, Card,
     Modal,
     Box,
     Paper,
+    Snackbar,
 } from '@mui/material';
 import '/css/common.css'
 import '../../../css/admin.css'
@@ -20,6 +21,7 @@ import '../../../css/relation.css'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { Edit } from '@mui/icons-material';
 import { Inertia } from '@inertiajs/inertia';
+import MuiAlert from '@mui/material/Alert';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: '#ffffff',
@@ -78,6 +80,10 @@ const style2 = {
     p: 4,
 };
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
 
 const Relations = ({oldRelation}) => {
 
@@ -92,7 +98,7 @@ const Relations = ({oldRelation}) => {
 
 
     //form data
-    const { errors } = usePage().props;
+    const { errors, status } = usePage().props;
 
     const [values, setValues] = useState({
         imageBanner: [],
@@ -164,7 +170,7 @@ const Relations = ({oldRelation}) => {
 
         Inertia.post(route('admin.update', oldRelation.id), data, {
             onSuccess: () => {
-
+                setOpenSnack(true);
             },
             onError: () => {
                 setValues((values) => ({
@@ -306,7 +312,8 @@ const Relations = ({oldRelation}) => {
         const data=folioValues;
         Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
             onSuccess: () => {
-
+                setOpenSnack(true);
+                setOpen(false);
             },
             onError: () => {
                 setValues((values) => ({
@@ -319,10 +326,10 @@ const Relations = ({oldRelation}) => {
 
     function submitDelete(e){
         e.preventDefault();
-        console.log(route('admin.delete', oldRelation.id),'DELETE');
         Inertia.delete(route('admin.delete', oldRelation.id), {
             onSuccess: () => {
-
+                setOpen(false);
+                setOpenSnack(true);
             },
             onError: () => {
                 setValues((values) => ({
@@ -335,11 +342,11 @@ const Relations = ({oldRelation}) => {
 
     function submitDeleteFolio(e){
         e.preventDefault();
-        setOpenDeleteFolio(false); // MOVE THIS LINE TO THE onSuccess OPTION OF THE INERTIA DELETE MANUAL VISIT
-
         Inertia.delete(route('folio.delete', [oldRelation.id, folioValues.id]), {
             onSuccess: () => {
-
+                setOpenDeleteFolio(false);
+                setOpen(false);
+                setOpenSnack(true);
             },
             onError: () => {
                 setValues((values) => ({
@@ -368,10 +375,10 @@ const Relations = ({oldRelation}) => {
 
         Inertia.post(route('folio.store', oldRelation.id), data, {
             onSuccess: () => {
-
+                setOpenSnack(true);
+                setOpen(false);
             },
             onError: () => {
-                console.log(errors, 'error');
                 setValues((values) => ({
                     ...values,
                     error: true,
@@ -382,15 +389,21 @@ const Relations = ({oldRelation}) => {
 
     const [openDelete, setOpenDelete] = useState(false);
     const [openDeleteFolio, setOpenDeleteFolio] = useState(false);
+    const [openSnack, setOpenSnack] = useState(false);
 
     return (
         <>
             <Container style={{marginTop:'36px'}}>
-                <Typography variant='h5' color='primary'>{oldRelation?.nombre}</Typography>
+                {/* <Snackbar open={openSnack} autoHideDuration={1500} onClose={()=>setOpenSnack(false)}>
+                    <Alert onClose={()=>setOpenSnack(false)} severity="success" sx={{ width: '100%' }}>
+                        Éxito
+                    </Alert>
+                </Snackbar> */}
                 <Grid container mt={2}>
                     <Card style={{width:'100%', marginBottom:50}}>
                         <CardContent>
-                            <Grid container justifyContent={'right'}>
+                            <Grid container justifyContent={'space-between'} alignContent='center'>
+                                <Typography variant='h5' color='primary'>{oldRelation?.nombre}</Typography>
                                 <Button 
                                     type='button'
                                     variant='outlined'
@@ -694,7 +707,7 @@ const Relations = ({oldRelation}) => {
                                     <label htmlFor="folioImage">
                                         <div 
                                             id='folioImageContainer' 
-                                            className={'maps-skelleton'}
+                                            className={!errors.image ? 'maps-skelleton' : 'maps-skelleton-error'}
                                             style={ folioValues.image !== null && folioValues.image.length>0 
                                                 ? {backgroundImage:'url('+URL.createObjectURL(folioValues.image[0])+')',border:'none'} 
                                                 : {backgroundImage: 'url(/storage/relaciones/'+folioValues.oldImage+')'}}

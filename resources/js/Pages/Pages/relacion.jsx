@@ -212,9 +212,12 @@ const Relacion = ({ relation }) => {
                                     data.infoMapa.centro.lat,
                                     data.infoMapa.centro.long
                                 )}
-                                zoom={data.infoMapa.zoom.inicial}
-                                minZoom={data.infoMapa.zoom.min}
-                                maxZoom={data.infoMapa.zoom.max}
+                                // zoom={data.infoMapa.zoom.inicial}
+                                // minZoom={data.infoMapa.zoom.min}
+                                // maxZoom={data.infoMapa.zoom.max}
+                                zoom={5}
+                                minZoom={5}
+                                maxZoom={10}
                             >
                                 <LayersControl position="topleft">
                                     <BaseLayer checked name="ESRI Satellite">

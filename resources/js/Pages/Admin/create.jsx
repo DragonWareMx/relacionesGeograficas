@@ -350,30 +350,6 @@ const Create = () => {
             errors.imageMin=null;
             values.error = false;
         }
-        // if(!values.fuentes || values.fuentes === ''){
-        //     setErrorMessagge('Debes ingresar las fuentes');
-        //     errors.fuentes='Ingresa las fuentes';
-        //     values.error = true;
-        //     setActiveStep(0);
-        //     setOpen(true);
-        //     return false;
-        // }
-        // else{
-        //     errors.fuentes=null;
-        //     values.error = false;
-        // }
-        // if(!values.mapa_geografico || values.mapa_geografico === ''){
-        //     setErrorMessagge('Debes ingresar el mapa geográfico');
-        //     errors.mapa_geografico='Ingresa el mapa geográfico';
-        //     values.error = true;
-        //     setActiveStep(1);
-        //     setOpen(true);
-        //     return false;
-        // }
-        // else{
-        //     errors.mapa_geografico=null;
-        //     values.error = false;
-        // }
         if(!values.mapImages || values.mapImages.length == 0){
             setErrorMessagge('Debes ingresar al menos una imagen del mapa geográfico');
             errors.mapImages='Ingresa una imagen del mapa geográfico';
@@ -517,7 +493,6 @@ const Create = () => {
                                 multiline
                                 label='Fuentes'
                                 rows={4}
-                                required
                                 fullWidth
                                 value={values.fuentes}
                                 onChange={handleChange} 
