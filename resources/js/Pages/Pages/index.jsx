@@ -101,9 +101,19 @@ const Home = ({ relaciones, banners }) => {
             },
             mapasBase: {
                 0: {
+                    nombre: "INEGI",
+                    atribution: "INEGI",
+                    link: "http://172.16.4.115/inegi50k/{z}/{x}/{y}.png",
+                },
+                1: {
                     nombre: "ESRI",
                     atribution: "ESRI",
                     link: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
+                },
+                2: {
+                    nombre: "GOOGLE",
+                    atribution: "GOOGLE",
+                    link: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga",
                 },
             },
         },
@@ -156,8 +166,8 @@ const Home = ({ relaciones, banners }) => {
                     >
                         {banners &&
                             banners.length > 0 &&
-                            banners.map((banner) => (
-                                <SwiperSlide>
+                            banners.map((banner, index) => (
+                                <SwiperSlide key={index + "swiper"}>
                                     <div className="oski-carousel-element">
                                         <img
                                             src={
@@ -340,27 +350,50 @@ const Home = ({ relaciones, banners }) => {
                     maxZoom={10}
                 >
                     <LayersControl position="topleft" collapsed={false}>
-                        <BaseLayer checked name="ESRI Satellite">
-                            <TileLayer
-                                attribution={
-                                    '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
-                                }
-                                url={
-                                    "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                                }
-                            />
-                        </BaseLayer>
+                        {data && Object.values(data.infoMapa.mapasBase) ?
+                        Object.values(data.infoMapa.mapasBase).map((mapa, index) => (
+                            <BaseLayer checked={index === 0} name={mapa.nombre} key={index + "baselayer"}>
+                                <TileLayer
+                                    attribution={
+                                        '&copy; <a href="http://osm.org/copyright">' + mapa.nombre + '</a> contributors'
+                                    }
+                                    url={
+                                        mapa.link
+                                    }
+                                />
+                            </BaseLayer>
+                        ))
+                    :
+                    <BaseLayer checked name="ESRI Satellite">
+                        <TileLayer
+                            attribution={
+                                '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                            }
+                            url={
+                                "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+                            }
+                        />
+                    </BaseLayer>
+                    }
                         <LayerGroup>
                             {data.capas !== null
                                 ? data.capas.map((item, i) => {
                                       return (
                                           <CircleMarker
-                                              key={item.idDS}
+                                              key={item.idDS + "layergroup"}
                                               center={L.latLng(item.Y, item.X)}
                                               radius={5}
                                               color={"white"}
+                                              onClick={e => {
+                                                console.log("click");
+                                              }}
+                                              eventHandlers={{
+                                                click: e => {
+                                                    console.log("si dio clioc")
+                                                }
+                                              }}
                                           >
-                                              <Tooltip>{item.cNombre}</Tooltip>
+                                            <Tooltip>{item.cNombre}</Tooltip>
                                           </CircleMarker>
                                       );
                                   })

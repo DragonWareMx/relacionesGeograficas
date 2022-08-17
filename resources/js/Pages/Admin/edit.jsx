@@ -617,7 +617,7 @@ const Relations = ({oldRelation}) => {
                     open={open}
                     onClose={()=>setOpen(false)}
                 >
-                    <Paper sx={style}>
+                    <Paper sx={{...style, overflowY: "scroll",height: 500}}>
                         <Grid container justifyContent={'space-between'}>
                             <Typography variant="h6">
                                 {folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'}
@@ -734,7 +734,7 @@ const Relations = ({oldRelation}) => {
                                             <Edit color='primary' onClick={()=>editTranscription(transcription, index)}/>
                                         </Grid>
                                         <Typography variant='body2' 
-                                            style={{whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}
+                                            style={{whiteSpace:'pre-line',overflow:'hidden',textOverflow:'ellipsis'}}
                                         >
                                             {transcription.texto}
                                         </Typography>
@@ -754,6 +754,7 @@ const Relations = ({oldRelation}) => {
                 <Modal
                     open={openTranscription}
                     onClose={()=>setOpenTranscription(false)}
+                    sx={{overflowY: "scroll"}}
                 >
                     <Paper sx={style}>
                         <Grid container justifyContent='space-between'>
