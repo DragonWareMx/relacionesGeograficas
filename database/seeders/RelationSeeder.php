@@ -20,6 +20,7 @@ class RelationSeeder extends Seeder
             'uuid' => '1234567890',
             'idDS' => 1,
             'nombre' => 'Culhuacan',
+            'alt_nombre'=>'Culhuacan',
             'banner' => 'banner_culhuacan.jpg',
             'miniatura' => '/storage/uploads/1234567890/culhuacan.png',
         ]);

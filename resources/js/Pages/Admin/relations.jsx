@@ -30,7 +30,7 @@ const Relations = ({relations}) => {
                                         src={'/storage/relaciones/'+relation.miniatura}
                                     />
                                     <Typography align='center' style={{width:'100%'}}>
-                                        {relation.nombre}
+                                        {relation.alt_nombre}
                                     </Typography>
                                 </Grid>
                             </ InertiaLink>

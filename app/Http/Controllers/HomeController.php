@@ -26,11 +26,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         // Listar las relaciones alfabeticamente, nombre, miniatura, uuid
-        $relaciones = Relation::select('uuid', 'nombre', 'miniatura')
+        $relaciones = Relation::select('uuid', 'nombre', 'alt_nombre', 'miniatura')
         ->when($request->search, function ($query, $search) {
-            return $query->where('nombre', 'LIKE', "%".$search."%");
+            return $query->where('alt_nombre', 'LIKE', "%".$search."%");
         })
-        ->orderBy('nombre')
+        ->orderBy('alt_nombre')
         ->get();
         $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
 

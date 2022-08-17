@@ -18,6 +18,7 @@ class CreateRelationsTable extends Migration
             $table->uuid('uuid')->unique();
             $table->unsignedBigInteger('idDS');
             $table->string('nombre', 255);
+            $table->string('alt_nombre',255);
             $table->text('banner');
             $table->text('miniatura');
             $table->text('fuentes')->nullable();

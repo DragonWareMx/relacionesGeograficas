@@ -191,7 +191,7 @@ const Relacion = ({ relation }) => {
                         >
                             <ArrowBackIosIcon />
                             <p style={{ fontSize: "20px" }}>
-                                {relation.nombre}
+                                {relation.alt_nombre}
                             </p>
                         </InertiaLink>
                     </Container>
@@ -601,7 +601,7 @@ const Relacion = ({ relation }) => {
                         <Grid container justifyContent={"space-between"}>
                             <Grid item sm={8} md={9} xs={12}>
                                 <div className="info-text-relacion">
-                                    {relation.nombre}
+                                    {relation.alt_nombre}
                                     <br />
                                     Reproducción por cortesía de la Benson Latin
                                     America Collection. The General Libraries,

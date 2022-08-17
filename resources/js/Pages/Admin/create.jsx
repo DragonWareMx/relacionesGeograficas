@@ -156,6 +156,7 @@ const Create = () => {
         mapImages: [],
         folios:[],
         nombre:'',
+        alt_nombre:'',
         no_folio:'',
         descripcion:'',
         imageFolio:[],
@@ -382,7 +383,9 @@ const Create = () => {
         if(!checkInputs()) return false;
         e.preventDefault();
         let finalRelation=JSON.parse(relation);
+        console.log(values.alt_nombre);
         let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS}
+        if(!values.alt_nombre || values.alt_nombre === '')  data.alt_nombre=finalRelation.cNombre;
         Inertia.post(route('admin.store'), data, {
             onError: () => {
                 setValues((values) => ({
@@ -444,6 +447,16 @@ const Create = () => {
                                     ))}
                                 </Select>
                             </FormControl>
+                            <TextField
+                                id='alt_nombre'
+                                label='Cambiar Nombre'
+                                fullWidth
+                                value={values.alt_nombre}
+                                onChange={handleChange} 
+                                error={errors.alt_nombre && values.error == true && true}
+                                helperText={values.error == true && errors.alt_nombre}
+                                style={{marginBottom:'25px'}}
+                            />
                             <div className='flex-container'>
                                 {/* BANNER IMAGE */}
                                 <input

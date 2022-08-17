@@ -102,6 +102,7 @@ const Relations = ({oldRelation}) => {
 
     const [values, setValues] = useState({
         imageBanner: [],
+        alt_nombre: oldRelation.alt_nombre,
         imageMin:[],
         fuentes:oldRelation.fuentes || '',
         mapImages: [],
@@ -394,11 +395,6 @@ const Relations = ({oldRelation}) => {
     return (
         <>
             <Container style={{marginTop:'36px'}}>
-                {/* <Snackbar open={openSnack} autoHideDuration={1500} onClose={()=>setOpenSnack(false)}>
-                    <Alert onClose={()=>setOpenSnack(false)} severity="success" sx={{ width: '100%' }}>
-                        Éxito
-                    </Alert>
-                </Snackbar> */}
                 <Grid container mt={2}>
                     <Card style={{width:'100%', marginBottom:50}}>
                         <CardContent>
@@ -460,6 +456,17 @@ const Relations = ({oldRelation}) => {
                                         ))}
                                     </Select>
                                 </FormControl>
+                                <TextField
+                                    id='alt_nombre'
+                                    label='Cambiar nombre'
+                                    required
+                                    fullWidth
+                                    value={values.alt_nombre}
+                                    onChange={handleChange} 
+                                    error={errors.alt_nombre && values.error == true && true}
+                                    helperText={values.error == true && errors.alt_nombre}
+                                    style={{marginBottom:'25px'}}
+                                />
                                 <div className='flex-container'>
                                     {/* BANNER IMAGE */}
                                     <input

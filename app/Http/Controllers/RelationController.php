@@ -53,6 +53,7 @@ class RelationController extends Controller
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|string',
             'idDS' => 'required|numeric',
+            'alt_nombre'=>'nullable|string|max:255',
 
             'imageBanner' => 'required',
             'imageMin' => 'required',
@@ -75,6 +76,7 @@ class RelationController extends Controller
             $relation->uuid = Str::uuid();
             $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
+            $relation->alt_nombre = $request->alt_nombre;
             $relation->fuentes = $request->fuentes;
             if ($request->imageBanner) {
                 //Se sube foto
@@ -219,6 +221,7 @@ class RelationController extends Controller
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|max:1000|string',
             'idDS' => 'required|numeric',
+            'alt_nombre'=>'nullable|string|max:255',
 
             'imageBanner' => 'nullable',
             'imageBanner.*' => 'image',
@@ -246,6 +249,7 @@ class RelationController extends Controller
             $relation = Relation::findOrFail($id);
             $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
+            $relation->alt_nombre = $request->alt_nombre;
             $relation->fuentes = $request->fuentes;
 
             //images

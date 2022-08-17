@@ -447,7 +447,7 @@ const Home = ({ relaciones, banners }) => {
                                     }}
                                 >
                                     <Avatar
-                                        alt={rel.nombre}
+                                        alt={rel.alt_nombre}
                                         src={
                                             "/storage/relaciones/" +
                                             rel.miniatura
@@ -455,7 +455,7 @@ const Home = ({ relaciones, banners }) => {
                                         sx={{ width: 90, height: 90 }}
                                     />
                                     <p className="circle-name">
-                                        {limitChar(rel.nombre)}
+                                        {limitChar(rel.alt_nombre)}
                                     </p>
                                 </InertiaLink>
                             </Grid>
