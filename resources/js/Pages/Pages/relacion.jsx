@@ -49,6 +49,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 /** Axios Imports **/
 import axios from "axios";
+import { Typography } from "@mui/material";
 
 // install Virtual module
 SwiperCore.use([Virtual, Navigation]);
@@ -204,7 +205,7 @@ const Relacion = ({ relation }) => {
                             : "map-container"
                     }
                 >
-                    {contMap === "geo" && data && (
+                    {contMap === "geo" && data !== null && (
                         <div>
                             <MapContainer
                                 style={styleMap}
@@ -215,35 +216,38 @@ const Relacion = ({ relation }) => {
                                 // zoom={data.infoMapa.zoom.inicial}
                                 // minZoom={data.infoMapa.zoom.min}
                                 // maxZoom={data.infoMapa.zoom.max}
-                                zoom={5}
-                                minZoom={5}
-                                maxZoom={10}
+                                zoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.inicial && (data.infoMapa.zoom.inicial < data.infoMapa.zoom.max) && (data.infoMapa.zoom.inicial > data.infoMapa.zoom.min)) ? data.infoMapa.zoom.inicial : 5}
+                                minZoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.max && data.infoMapa.zoom.min && (data.infoMapa.zoom.min < data.infoMapa.zoom.max)) ? data.infoMapa.zoom.min : (data?.infoMapa?.zoom?.inicial ?? 5)}
+                                maxZoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.max && data.infoMapa.zoom.min && (data.infoMapa.zoom.max > data.infoMapa.zoom.min)) ? data.infoMapa.zoom.max : 12}
                             >
-                                <LayersControl position="topleft">
-                                    <BaseLayer checked name="ESRI Satellite">
-                                        <TileLayer
-                                            attribution={
-                                                '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                                <LayersControl position="topleft" collapsed={false}>
+                                    {(data?.infoMapa?.mapasBase && Object.values(data.infoMapa.mapasBase).length) ?
+                                        Object.values(data.infoMapa.mapasBase).map(
+                                            (item, i) => {
+                                                return (
+                                                    <BaseLayer key={i + "baseLayerrEL"} name={item.nombre} checked={i === 0}>
+                                                        <TileLayer
+                                                            attribution={
+                                                                item.atribution
+                                                            }
+                                                            url={item.link}
+                                                        />
+                                                    </BaseLayer>
+                                                );
                                             }
-                                            url={
-                                                "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                                            }
-                                        />
-                                    </BaseLayer>
-                                    {Object.values(data.infoMapa.mapasBase).map(
-                                        (item, i) => {
-                                            return (
-                                                <BaseLayer name={item.nombre}>
-                                                    <TileLayer
-                                                        attribution={
-                                                            item.atribution
-                                                        }
-                                                        url={item.link}
-                                                    />
-                                                </BaseLayer>
-                                            );
-                                        }
-                                    )}
+                                        )
+                                    :
+                                        <BaseLayer checked name="ESRI Satellite">
+                                            <TileLayer
+                                                attribution={
+                                                    '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                                                }
+                                                url={
+                                                    "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+                                                }
+                                            />
+                                        </BaseLayer>
+                                    }
 
                                     {Object.values(data.capas).map(
                                         (item, i) => {
@@ -251,6 +255,7 @@ const Relacion = ({ relation }) => {
                                                 <Overlay
                                                     checked
                                                     name={item.nombre}
+                                                    key={i + "overlayRel"}
                                                 >
                                                     <LayerGroup
                                                         key={item.nombre}
@@ -264,6 +269,7 @@ const Relacion = ({ relation }) => {
                                                             ) {
                                                                 return (
                                                                     <CircleMarker
+                                                                        key={ind = "circleMakerRel"}
                                                                         center={getCoords(
                                                                             el.coordenadas
                                                                         )}
@@ -401,9 +407,13 @@ const Relacion = ({ relation }) => {
                                         className={"lienzo-text"}
                                         style={{ width: "100%" }}
                                     >
-                                        {textActive
-                                            ? textActive
-                                            : "Sin Transcripción"}
+                                        <Typography
+                                            style={{whiteSpace: 'pre-line'}}
+                                        >
+                                            {textActive
+                                                ? textActive
+                                                : "Sin Transcripción"}
+                                        </Typography>
                                     </div>
                                 </Grid>
                             </Grid>
@@ -518,7 +528,7 @@ const Relacion = ({ relation }) => {
                                             (transcription, index) =>
                                                 activeTranslate == index ? (
                                                     <TranslateButtonActive
-                                                        key={index}
+                                                        key={index + "TransButton"}
                                                         variant="contained"
                                                         size={"large"}
                                                         onClick={() =>
@@ -558,7 +568,7 @@ const Relacion = ({ relation }) => {
                             if (index === 0) return;
 
                             return (
-                                <div className="round-button-container">
+                                <div key={index + "div"} className="round-button-container">
                                     <div
                                         className={
                                             contMap == "picto" &&
@@ -642,7 +652,7 @@ const Relacion = ({ relation }) => {
             <Drawer
                 anchor={"bottom"}
                 open={open}
-                //onClose={toggleDrawer}
+                onClose={toggleDrawer}
             >
                 <div className="drawer-content">
                     <Container
@@ -655,7 +665,7 @@ const Relacion = ({ relation }) => {
                                     relation.invoices.map((invoice, index) => (
                                         <Grid item>
                                             <div
-                                                key={index}
+                                                key={index + "grid"}
                                                 className={
                                                     contMap == "lienzo" &&
                                                     idActive == index
