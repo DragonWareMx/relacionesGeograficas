@@ -49,7 +49,3 @@ Auth::routes(['register' => false]);
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
-
-Route::get('/php', function () {
-    dd(phpinfo());
-});
