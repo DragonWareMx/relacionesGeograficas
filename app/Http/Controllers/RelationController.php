@@ -25,7 +25,10 @@ class RelationController extends Controller
     {
         //
         $relation = Relation::where('uuid', $id)
-            ->with(['maps', 'invoices', 'invoices.transcriptions'])
+            ->with(['invoices' => function ($query) {
+                $query->orderBy('folio', 'ASC');
+            },'invoices.transcriptions'])
+            ->with(['maps'])
         ->firstOrFail();
 
         $api=Api::firstOrFail();

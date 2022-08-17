@@ -30,8 +30,7 @@ class AdminController extends Controller
         $relation = Relation::with('maps')
             ->with(['invoices' => function ($query) {
                 $query->orderBy('folio', 'ASC');
-            }])
-            ->with('invoices.transcriptions')
+            }, 'invoices.transcriptions'])
         ->findOrFail($id);
         $api = Api::firstOrFail();
 
