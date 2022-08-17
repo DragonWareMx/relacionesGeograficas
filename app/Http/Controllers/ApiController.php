@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Api;
+use App\Models\api;
 use App\Models\Relation;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -11,13 +11,14 @@ use Inertia\Inertia;
 
 class ApiController extends Controller
 {
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         DB::beginTransaction();
         try {
             $api = Api::firstOrFail();
-            $api->url=$request->url;
+            $api->url = $request->url;
             $api->save();
-            
+
             DB::commit();
             return Redirect::back()->with('success', '¡Api editada con éxito!');
         } catch (\Throwable $th) {
@@ -26,8 +27,9 @@ class ApiController extends Controller
         }
     }
 
-    public function fromapi($idDS){
-        $relation = Relation::where('idDS',$idDS)->firstOrFail();
-         return Redirect::route('relations.index',$relation->uuid);
+    public function fromapi($idDS)
+    {
+        $relation = Relation::where('idDS', $idDS)->firstOrFail();
+        return Redirect::route('relations.index', $relation->uuid);
     }
 }

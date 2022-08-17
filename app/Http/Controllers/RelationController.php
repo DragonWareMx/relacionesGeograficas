@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Relation;
 use App\Models\Invoice;
-use App\Models\Api;
+use App\Models\api;
 use App\Models\Transcription;
 use App\Models\Map;
 use Illuminate\Http\Request;
@@ -27,11 +27,11 @@ class RelationController extends Controller
         $relation = Relation::where('uuid', $id)
             ->with(['invoices' => function ($query) {
                 $query->orderBy('folio', 'ASC');
-            },'invoices.transcriptions'])
+            }, 'invoices.transcriptions'])
             ->with(['maps'])
-        ->firstOrFail();
+            ->firstOrFail();
 
-        $api=Api::firstOrFail();
+        $api = Api::firstOrFail();
 
         return Inertia::render('Pages/relacion', [
             'relation' => $relation,
@@ -46,8 +46,8 @@ class RelationController extends Controller
      */
     public function create()
     {
-        $api=Api::firstOrFail();
-        return Inertia::render('Admin/create',['api'=>$api]);
+        $api = Api::firstOrFail();
+        return Inertia::render('Admin/create', ['api' => $api]);
     }
 
     /**
@@ -63,7 +63,7 @@ class RelationController extends Controller
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|string',
             'idDS' => 'required|numeric',
-            'alt_nombre'=>'nullable|string|max:255',
+            'alt_nombre' => 'nullable|string|max:255',
 
             'imageBanner' => 'required',
             'imageMin' => 'required',
@@ -231,7 +231,7 @@ class RelationController extends Controller
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|max:1000|string',
             'idDS' => 'required|numeric',
-            'alt_nombre'=>'nullable|string|max:255',
+            'alt_nombre' => 'nullable|string|max:255',
 
             'imageBanner' => 'nullable',
             'imageBanner.*' => 'image',

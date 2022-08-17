@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Relation;
-use App\Models\Api;
+use App\Models\api;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -31,7 +31,7 @@ class AdminController extends Controller
             ->with(['invoices' => function ($query) {
                 $query->orderBy('folio', 'ASC');
             }, 'invoices.transcriptions'])
-        ->findOrFail($id);
+            ->findOrFail($id);
         $api = Api::firstOrFail();
 
         return Inertia::render('Admin/edit', [
