@@ -48,10 +48,10 @@ class RelationController extends Controller
      */
     public function store(Request $request)
     {
-        ini_set('upload_max_filesize', '50M');
-        ini_set('post_max_size', '50M');
-        ini_set('max_input_time', 300);
-        ini_set('max_execution_time', 300);
+        ini_set('upload_max_filesize', '150M');
+        ini_set('post_max_size', '150M');
+        ini_set('max_input_time', 500);
+        ini_set('max_execution_time', 500);
 
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
