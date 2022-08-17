@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ApiSeeder extends Seeder
 {
@@ -13,6 +15,8 @@ class ApiSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('apis')->insert([
+            'url' => 'https://decm.arqueodata.com/api/v1/',
+        ]);
     }
 }

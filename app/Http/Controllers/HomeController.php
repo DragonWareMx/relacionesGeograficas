@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Relation;
+use App\Models\Api;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,12 @@ class HomeController extends Controller
         ->orderBy('alt_nombre')
         ->get();
         $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
+        $api = Api::firstOrFail();
 
-        return Inertia::render('Pages/index', ['relaciones' => $relaciones, 'banners' => $banners]);
+        return Inertia::render('Pages/index', [
+            'relaciones' => $relaciones, 
+            'banners' => $banners,
+            'api' => $api
+        ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Relation;
+use App\Models\Api;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -16,8 +17,12 @@ class AdminController extends Controller
     public function relations()
     {
         $relations = Relation::orderBy('nombre')->get();
+        $api = Api::firstOrFail();
 
-        return Inertia::render('Admin/relations', ['relations' => $relations]);
+        return Inertia::render('Admin/relations', [
+            'relations' => $relations,
+            'api' => $api
+        ]);
     }
 
     public function show($id)
@@ -28,6 +33,11 @@ class AdminController extends Controller
             }])
             ->with('invoices.transcriptions')
         ->findOrFail($id);
-        return Inertia::render('Admin/edit', ['oldRelation' => $relation]);
+        $api = Api::firstOrFail();
+
+        return Inertia::render('Admin/edit', [
+            'oldRelation' => $relation,
+            'api' => $api
+        ]);
     }
 }

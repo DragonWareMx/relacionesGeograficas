@@ -88,13 +88,13 @@ const TranslateButtonActive = styled(Button)(({ theme }) => ({
     border: "6px solid #F25E0D",
 }));
 
-const Relacion = ({ relation }) => {
+const Relacion = ({ relation, api }) => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(null);
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/mapa/` + relation.idDS)
+            .get(api.url+`mapa/` + relation.idDS)
             .then((response) => {
                 setData(response.data);
             })

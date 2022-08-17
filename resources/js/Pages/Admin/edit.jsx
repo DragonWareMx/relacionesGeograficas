@@ -85,11 +85,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   });
 
 
-const Relations = ({oldRelation}) => {
+const Relations = ({oldRelation, api}) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .get(api.url+`relaciones`)
             .then((response) => {
                 setData(response.data);
             })

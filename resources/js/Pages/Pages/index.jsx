@@ -57,7 +57,7 @@ function limitChar(nombre) {
     return nombre.substring(0, 61);
 }
 
-const Home = ({ relaciones, banners }) => {
+const Home = ({ relaciones, banners, api }) => {
     let locationSearch = window.location.search;
     let params = new URLSearchParams(locationSearch);
     let search = params.get('search');
@@ -122,7 +122,7 @@ const Home = ({ relaciones, banners }) => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .get(api.url+`relaciones`)
             .then((response) => {
                 let new_data = data;
                 console.log(data.infoMapa.zoom)

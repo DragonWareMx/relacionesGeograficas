@@ -15,6 +15,7 @@ class CreateApisTable extends Migration
     {
         Schema::create('apis', function (Blueprint $table) {
             $table->id();
+            $table->string('url',255);
             $table->timestamps();
         });
     }

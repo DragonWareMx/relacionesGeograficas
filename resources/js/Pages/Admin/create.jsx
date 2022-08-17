@@ -61,7 +61,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 
 const steps = ['NOMBRE', 'MAPAS', 'FOLIOS']
-const Create = () => {
+const Create = (api) => {
     //Control steps
     const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
@@ -139,7 +139,7 @@ const Create = () => {
 
     useEffect(() => {
         axios
-            .get(`https://decm.arqueodata.com/api/v1/relaciones`)
+            .get(api.api.url+`relaciones`)
             .then((response) => {
                 setData(response.data);
             })

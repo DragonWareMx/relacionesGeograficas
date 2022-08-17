@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Relation;
 use App\Models\Invoice;
+use App\Models\Api;
 use App\Models\Transcription;
 use App\Models\Map;
 use Illuminate\Http\Request;
@@ -25,9 +26,14 @@ class RelationController extends Controller
         //
         $relation = Relation::where('uuid', $id)
             ->with(['maps', 'invoices', 'invoices.transcriptions'])
-            ->firstOrFail();
+        ->firstOrFail();
 
-        return Inertia::render('Pages/relacion', ['relation' => $relation]);
+        $api=Api::firstOrFail();
+
+        return Inertia::render('Pages/relacion', [
+            'relation' => $relation,
+            'api' => $api
+        ]);
     }
 
     /**
@@ -37,7 +43,8 @@ class RelationController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/create');
+        $api=Api::firstOrFail();
+        return Inertia::render('Admin/create',['api'=>$api]);
     }
 
     /**
