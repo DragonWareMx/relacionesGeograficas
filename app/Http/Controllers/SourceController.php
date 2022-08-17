@@ -17,8 +17,8 @@ class SourceController extends Controller
     public function index($id)
     {
         // Buscar la relación
-        $rel = Relation::select('id')->where('uuid',$id)->firstOrFail();
-        $fuentes = Source::where('relation_id',$rel->id)->get();
+        $rel = Relation::where('uuid',$id)->firstOrFail();
+        $fuentes = $rel->fuentes;
         return Inertia::render('Pages/fuentes',['fuentes' => $fuentes]);
     }
 
