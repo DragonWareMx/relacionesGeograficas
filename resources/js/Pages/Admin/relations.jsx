@@ -10,6 +10,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
+import { Inertia } from '@inertiajs/inertia';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -30,7 +31,7 @@ const Relations = ({relations, api}) => {
     const { errors, status } = usePage().props;
 
     const [values, setValues] = useState({
-        url:'',
+        url:api?.url || '',
         error:false
     });
 
@@ -45,7 +46,7 @@ const Relations = ({relations, api}) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.post(route('api.update'), data, {
+        Inertia.post(route('api.update'), values, {
             onSuccess: () => {
                 setOpen(false);
             },
@@ -106,6 +107,8 @@ const Relations = ({relations, api}) => {
                     keepMounted
                     onClose={handleClose}
                     aria-describedby="alert-dialog-slide-description"
+                    maxWidth={'md'}
+                    fullWidth
                 >
                     <form onSubmit={handleSubmit}>
                         <DialogTitle>Cambiar url del API</DialogTitle>
@@ -118,13 +121,13 @@ const Relations = ({relations, api}) => {
                             onChange={handleChange} 
                             error={errors.url && values.error == true && true}
                             helperText={values.error == true && errors.url}
-                            style={{marginBottom:'25px'}}
+                            style={{margin:'25px 0px'}}
                         />
                         </DialogContent>
-                        <DialogActions>
-                        <Button onClick={handleClose}variant='text'>Cancelar</Button>
-                        <Button onClick={handleClose} variant='contained'>Cambiar</Button>
-                        </DialogActions>
+                        <Grid container justifyContent={'space-around'} style={{marginBottom:25}}>
+                            <Button onClick={handleClose} type='button' variant='text'>Cancelar</Button>
+                            <Button type='submit' variant='contained'>Cambiar</Button>
+                        </Grid>
                     </form>
                 </Dialog>
             </Container>
