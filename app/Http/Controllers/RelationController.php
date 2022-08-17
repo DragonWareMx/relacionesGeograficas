@@ -24,8 +24,8 @@ class RelationController extends Controller
     {
         //
         $relation = Relation::where('uuid', $id)
-        ->with(['maps', 'invoices', 'invoices.transcriptions'])
-        ->firstOrFail();
+            ->with(['maps', 'invoices', 'invoices.transcriptions'])
+            ->firstOrFail();
 
         return Inertia::render('Pages/relacion', ['relation' => $relation]);
     }
@@ -48,10 +48,15 @@ class RelationController extends Controller
      */
     public function store(Request $request)
     {
+        ini_set('upload_max_filesize', '50M');
+        ini_set('post_max_size', '50M');
+        ini_set('max_input_time', 300);
+        ini_set('max_execution_time', 300);
+
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|string',
-            'idDS'=>'required|numeric',
+            'idDS' => 'required|numeric',
 
             'imageBanner' => 'required',
             'imageMin' => 'required',
@@ -106,7 +111,7 @@ class RelationController extends Controller
 
             $relation->save();
 
-            if($request->folios){
+            if ($request->folios) {
                 $mapasFolios = [];
                 foreach ($request->folios as $key => $folio) {
                     $folioM = new Invoice;
@@ -114,7 +119,7 @@ class RelationController extends Controller
                     $folioM->nombre = $folio["nombre"];
                     $folioM->folio = $folio["no_folio"];
                     $folioM->descripcion = $folio["descripcion"];
-                    
+
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
                     $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
                     $folioM->imagen = $fileName;
@@ -123,7 +128,7 @@ class RelationController extends Controller
 
                     $relation->invoices()->save($folioM);
 
-                    if(isset($folio["transcriptions"]) && count($folio["transcriptions"])>0){
+                    if (isset($folio["transcriptions"]) && count($folio["transcriptions"]) > 0) {
                         foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
                             $transcription = new Transcription;
                             $transcription->uuid = Str::uuid();
@@ -144,7 +149,7 @@ class RelationController extends Controller
                     //Se sube foto
                     $mapas[$key] = $mapa->store('public/relaciones');
                     $fileName = $mapa->hashName();
-    
+
                     $map->imagen = $fileName;
                     $map->relation_id = $relation->id;
                     $map->save();
@@ -166,19 +171,19 @@ class RelationController extends Controller
                 Storage::delete($fotoMin);
             }
 
-            if($mapasFolios && count($mapasFolios) > 0){
+            if ($mapasFolios && count($mapasFolios) > 0) {
                 foreach ($mapasFolios as $key => $mapa) {
                     Storage::delete($mapa);
                 }
             }
 
-            if($mapas && count($mapas) > 0){
+            if ($mapas && count($mapas) > 0) {
                 foreach ($mapas as $key => $mapa) {
                     Storage::delete($mapa);
                 }
             }
 
-            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
+            return Redirect::back()->with('error', 'Error: ' . $th->getMessage());
         }
     }
 
@@ -217,8 +222,8 @@ class RelationController extends Controller
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
             'fuentes' => 'nullable|max:1000|string',
-            'idDS'=>'required|numeric',
-            
+            'idDS' => 'required|numeric',
+
             'imageBanner' => 'nullable',
             'imageBanner.*' => 'image',
             'imageMin' => 'nullable',
@@ -228,7 +233,7 @@ class RelationController extends Controller
             'deletedPictos' => 'nullable',
             'deletedPictos.*' => 'numeric',
             // 'folios' => 'required',
-            
+
             // 'folios' => 'nullable',
             // 'descripcion' => 'nullable',
             // 'imageFolio' => 'nullable',
@@ -248,12 +253,12 @@ class RelationController extends Controller
             $relation->fuentes = $request->fuentes;
 
             //images
-            if($request->imageBanner && $request->imageBanner[0]){
+            if ($request->imageBanner && $request->imageBanner[0]) {
                 // si ya tenia una en el sistema, se borra
-                if($relation->banner){
-                    \Storage::delete('public/relaciones/'.$relation->banner);
+                if ($relation->banner) {
+                    \Storage::delete('public/relaciones/' . $relation->banner);
                 }
-                
+
                 $foto = $request->file('imageBanner')[0]->store('public/relaciones');
                 $fileName = $request->file('imageBanner')[0]->hashName();
                 // $image = Image::make(Storage::get($foto));
@@ -272,7 +277,7 @@ class RelationController extends Controller
             //     if($relation->banner){
             //         \Storage::delete('public/relaciones/'.$relation->banner);
             //     }
-                
+
             //     $fotoMin = $request->file('imageMin')[0]->store('public/relaciones');
             //     $fileName = $request->file('imageMin')[0]->hashName();
             //     // $image = Image::make(Storage::get($foto));
@@ -287,8 +292,8 @@ class RelationController extends Controller
             // }
 
             if ($request->imageMin && $request->imageMin[0]) {
-                if($relation->miniatura){
-                    \Storage::delete('public/relaciones/'.$relation->miniatura);
+                if ($relation->miniatura) {
+                    \Storage::delete('public/relaciones/' . $relation->miniatura);
                 }
                 //Se sube foto
                 $fotoMin = $request->file('imageMin')[0]->store('public/relaciones');
@@ -306,7 +311,7 @@ class RelationController extends Controller
 
             $relation->save();
 
-            if($request->folios){
+            if ($request->folios) {
                 $mapasFolios = [];
                 foreach ($request->folios as $key => $folio) {
                     $folioM = new Invoice;
@@ -314,7 +319,7 @@ class RelationController extends Controller
                     $folioM->nombre = $folio["nombre"];
                     $folioM->folio = $folio["no_folio"];
                     $folioM->descripcion = $folio["descripcion"];
-                    
+
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
                     $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
                     $folioM->imagen = $fileName;
@@ -323,7 +328,7 @@ class RelationController extends Controller
 
                     $relation->invoices()->save($folioM);
 
-                    if(isset($folio["transcriptions"]) && count($folio["transcriptions"])>0){
+                    if (isset($folio["transcriptions"]) && count($folio["transcriptions"]) > 0) {
                         foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
                             $transcription = new Transcription;
                             $transcription->uuid = Str::uuid();
@@ -340,7 +345,7 @@ class RelationController extends Controller
                 foreach ($request->deletedPictos as $key => $mapId) {
                     $map = Map::find($mapId);
                     //Se elimina la foto
-                    \Storage::delete('public/relaciones/'.$map->imagen);
+                    \Storage::delete('public/relaciones/' . $map->imagen);
 
                     $map->delete();
                 }
@@ -354,7 +359,7 @@ class RelationController extends Controller
                     //Se sube foto
                     $mapas[$key] = $mapa->store('public/relaciones');
                     $fileName = $mapa->hashName();
-    
+
                     $map->imagen = $fileName;
                     $map->relation_id = $relation->id;
                     $map->save();
@@ -374,18 +379,18 @@ class RelationController extends Controller
                 Storage::delete($fotoMin);
             }
 
-            if($mapasFolios && count($mapasFolios) > 0){
+            if ($mapasFolios && count($mapasFolios) > 0) {
                 foreach ($mapasFolios as $key => $mapa) {
                     Storage::delete($mapa);
                 }
             }
 
-            if($mapas && count($mapas) > 0){
+            if ($mapas && count($mapas) > 0) {
                 foreach ($mapas as $key => $mapa) {
                     Storage::delete($mapa);
                 }
             }
-            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
+            return Redirect::back()->with('error', 'Error: ' . $th->getMessage());
         }
     }
 
@@ -402,26 +407,26 @@ class RelationController extends Controller
         try {
             //delete all maps
             foreach ($relation->maps as $key => $map) {
-                if($map->imagen){
-                    \Storage::delete('public/relaciones/'.$map->imagen);
+                if ($map->imagen) {
+                    \Storage::delete('public/relaciones/' . $map->imagen);
                 }
             }
             $relation->maps()->delete();
 
             //delete invoices images
             foreach ($relation->invoices as $key => $invoice) {
-                if($invoice->imagen){
-                    \Storage::delete('public/relaciones/'.$invoice->imagen);
+                if ($invoice->imagen) {
+                    \Storage::delete('public/relaciones/' . $invoice->imagen);
                 }
                 $invoice->transcriptions()->delete();
             }
             $relation->invoices()->delete();
 
-            if($relation->banner){
-                \Storage::delete('public/relaciones/'.$relation->banner);
+            if ($relation->banner) {
+                \Storage::delete('public/relaciones/' . $relation->banner);
             }
-            if($relation->miniatura){
-                \Storage::delete('public/relaciones/'.$relation->miniatura);
+            if ($relation->miniatura) {
+                \Storage::delete('public/relaciones/' . $relation->miniatura);
             }
 
             $relation->delete();
@@ -430,7 +435,7 @@ class RelationController extends Controller
             return Redirect::route('admin.index')->with('success', '¡Relación eliminada con éxito!');
         } catch (\Throwable $th) {
             DB::rollBack();
-            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
+            return Redirect::back()->with('error', 'Error: ' . $th->getMessage());
         }
     }
 }
