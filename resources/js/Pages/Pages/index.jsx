@@ -44,6 +44,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 /** Axios Imports **/
 import axios from "axios";
 import { Box, Button, Typography } from "@mui/material";
+import { Inertia } from "@inertiajs/inertia";
 
 function showAlfa() {
     document.getElementById("mapa").style.display = "none";
@@ -125,7 +126,7 @@ const Home = ({ relaciones, banners, api }) => {
             .get(api.url+`relaciones`)
             .then((response) => {
                 let new_data = data;
-                console.log(data.infoMapa.zoom)
+                // console.log(data.infoMapa.zoom)
                 new_data.capas = response.data;
                 setData({ ...data, new_data });
             })
@@ -389,7 +390,7 @@ const Home = ({ relaciones, banners, api }) => {
                                               }}
                                               eventHandlers={{
                                                 click: e => {
-                                                    console.log("si dio clioc")
+                                                    Inertia.get(route('fromapi',item.idDS));
                                                 }
                                               }}
                                           >

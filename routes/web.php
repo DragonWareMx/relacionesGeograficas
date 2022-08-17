@@ -48,6 +48,8 @@ Route::name('api.')->middleware('auth')->group(function () {
     Route::post('/updateApi', [App\Http\Controllers\ApiController::class, 'update'])->name('update');
 });
 
+Route::get('/fromapi/{idDS}', [App\Http\Controllers\ApiController::class, 'fromapi'])->name('fromapi');
+
 Auth::routes(['register' => false]);
 
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

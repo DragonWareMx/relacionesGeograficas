@@ -33087,10 +33087,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
@@ -33101,21 +33101,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayersControl.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/MapContainer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/TileLayer.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/LayerGroup.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/CircleMarker.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/Tooltip.js");
+/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/lib/ScaleControl.js");
 /* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
 /* harmony import */ var leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! leaflet/dist/images/marker-icon.png */ "./node_modules/leaflet/dist/images/marker-icon.png");
 /* harmony import */ var leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! leaflet/dist/images/marker-shadow.png */ "./node_modules/leaflet/dist/images/marker-shadow.png");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -33159,6 +33160,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 /** Axios Imports **/
+
 
 
 
@@ -33249,8 +33251,8 @@ var Home = function Home(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_14___default().get(api.url + "relaciones").then(function (response) {
-      var new_data = data;
-      console.log(data.infoMapa.zoom);
+      var new_data = data; // console.log(data.infoMapa.zoom)
+
       new_data.capas = response.data;
       setData(_objectSpread(_objectSpread({}, data), {}, {
         new_data: new_data
@@ -33259,8 +33261,8 @@ var Home = function Home(_ref) {
   }, []);
   /** Leaflet Consts and Functions **/
 
-  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl.BaseLayer,
-      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl.Overlay;
+  var BaseLayer = react_leaflet__WEBPACK_IMPORTED_MODULE_17__.LayersControl.BaseLayer,
+      Overlay = react_leaflet__WEBPACK_IMPORTED_MODULE_17__.LayersControl.Overlay;
   var DefaultIcon = leaflet__WEBPACK_IMPORTED_MODULE_10___default().icon({
     iconUrl: leaflet_dist_images_marker_icon_png__WEBPACK_IMPORTED_MODULE_12__["default"],
     shadowUrl: leaflet_dist_images_marker_shadow_png__WEBPACK_IMPORTED_MODULE_13__["default"]
@@ -33275,15 +33277,15 @@ var Home = function Home(_ref) {
     return leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(coord["long"], coord.lat);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
       component: "section",
       sx: {
         backgroundColor: "#193661"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_19__["default"], {
         maxWidth: "xl",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper, {
           slidesPerView: 3,
           spaceBetween: 10,
           navigation: false,
@@ -33297,10 +33299,10 @@ var Home = function Home(_ref) {
           className: "oski-swiper",
           loop: true,
           children: banners && banners.length > 0 && banners.map(function (banner, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
                 className: "oski-carousel-element",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("img", {
                   src: "/storage/relaciones/" + banner.banner,
                   className: "oski-carousel-img"
                 })
@@ -33309,16 +33311,16 @@ var Home = function Home(_ref) {
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_19__["default"], {
       sx: {
         pt: 5,
         paddingBottom: 5
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -33327,11 +33329,11 @@ var Home = function Home(_ref) {
               sm: 3
             }
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
             align: "justify",
-            children: ["Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."]
+            children: ["Este proyecto describe la metodolog\xEDa y los primeros resultados del proyecto Explorando el M\xE9xico Colonial Temprano: Un an\xE1lisis computacional a gran escala de fuentes hist\xF3ricas del siglo XVI. Como el t\xEDtulo sugiere, el objetivo es desarrollar m\xE9todos y herramientas computacionales que faciliten la extracci\xF3n de datos hist\xF3rico-geogr\xE1ficos de manera autom\xE1tica para responder preguntas acerca de la sociedad novohispana.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("br", {}), "La investigaci\xF3n utiliza como fuente principal el conjunto de documentos conocido como Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a, espec\xEDficamente los reportes redactados entre 1577 y 1585 en varias provincias de M\xE9xico y Guatemala por orden del rey Felipe II. Estos informes describen c\xF3mo eran la organizaci\xF3n territorial y el modo de vida de los habitantes de Nueva Espa\xF1a seis d\xE9cadas despu\xE9s de consumada la conquista de M\xE9xico-Tenochtitlan."]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -33339,16 +33341,16 @@ var Home = function Home(_ref) {
           direction: "row",
           justifyContent: "center",
           alignItems: "center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("img", {
             src: "/img/assets/asset1.png"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         container: true,
         alignItems: "center",
         justifyContent: "space-between",
         direction: "row-reverse",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -33357,11 +33359,11 @@ var Home = function Home(_ref) {
               sm: 3
             }
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
             align: "justify",
-            children: ["Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas, la cultura, la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("br", {}), "Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."]
+            children: ["Las Relaciones se componen de textos y mapas en cuya elaboraci\xF3n participaron informantes ind\xEDgenas y oficiales espa\xF1oles. Debido a la riqueza y variedad del contenido, el corpus constituye una de las fuentes m\xE1s importantes para analizar la historia, la geograf\xEDa, las jurisdicciones administrativas, la cultura, la religi\xF3n, la econom\xEDa, la interacci\xF3n social y los procesos de transculturaci\xF3n que afectaron a las comunidades nativas y a los colonizadores.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("br", {}), "Otra aportaci\xF3n del proyecto es la compilaci\xF3n de un directorio de nombres geogr\xE1ficos del siglo XVI, el cual provee las coordenadas geogr\xE1ficas de cerca de 4000 top\xF3nimos, acompa\xF1adas de otros rubros de informaci\xF3n tem\xE1tica extra\xEDda de los documentos (lo que en ingl\xE9s se denomina gazetteer). Una tercera contribuci\xF3n es la conversi\xF3n del corpus de las Relaciones Geogr\xE1ficas del medio anal\xF3gico a un formato legible por computadora. Esta versi\xF3n digital estar\xE1 disponible en distintas plataformas gracias a la tecnolog\xEDa de datos vinculados (i.e. linked data) para que pueda ser reutilizada por otros equipos de investigaci\xF3n."]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
           item: true,
           xs: 12,
           sm: 6,
@@ -33369,21 +33371,21 @@ var Home = function Home(_ref) {
           direction: "row",
           justifyContent: "center",
           alignItems: "center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("img", {
             src: "/img/assets/asset2.png",
             style: {
               width: "60%"
             }
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         container: true,
         alignItems: "flex-end",
         justifyContent: "space-between",
         direction: "row-reverse",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
           href: "#!",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("img", {
             style: {
               width: "250px"
             },
@@ -33391,7 +33393,7 @@ var Home = function Home(_ref) {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
       container: true,
       justifyContent: "center",
       spacing: 2,
@@ -33400,7 +33402,7 @@ var Home = function Home(_ref) {
         backgroundColor: "#475e80",
         padding: "10px"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -33408,12 +33410,12 @@ var Home = function Home(_ref) {
         style: {
           paddingTop: "0px"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_22__["default"], {
           className: "btn-op",
           onClick: showMapa,
           children: "MAPA"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         item: true,
         xs: 6,
         sm: 4,
@@ -33422,46 +33424,46 @@ var Home = function Home(_ref) {
           paddingTop: "0px"
         },
         id: "alfabetico2",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Paper__WEBPACK_IMPORTED_MODULE_22__["default"], {
           className: "btn-op",
           onClick: showAlfa,
           children: "ALFAB\xC9TICO"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_19__["default"], {
       maxWidth: "false",
       sx: {
         maxWidth: "90%"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_22__.MapContainer, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.MapContainer, {
         id: "mapa",
         style: styleMap,
         center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(data.infoMapa.centro.lat, data.infoMapa.centro["long"]),
         zoom: 5,
         minZoom: 5,
         maxZoom: 10,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_16__.LayersControl, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_leaflet__WEBPACK_IMPORTED_MODULE_17__.LayersControl, {
           position: "topleft",
           collapsed: false,
           children: [data && Object.values(data.infoMapa.mapasBase) ? Object.values(data.infoMapa.mapasBase).map(function (mapa, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(BaseLayer, {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(BaseLayer, {
               checked: index === 0,
               name: mapa.nombre,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.TileLayer, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_24__.TileLayer, {
                 attribution: '&copy; <a href="http://osm.org/copyright">' + mapa.nombre + '</a> contributors',
                 url: mapa.link
               })
             }, index + "baselayer");
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(BaseLayer, {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(BaseLayer, {
             checked: true,
             name: "ESRI Satellite",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_23__.TileLayer, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_24__.TileLayer, {
               attribution: '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors',
               url: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_24__.LayerGroup, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.LayerGroup, {
             children: data.capas !== null ? data.capas.map(function (item, i) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_25__.CircleMarker, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.CircleMarker, {
                 center: leaflet__WEBPACK_IMPORTED_MODULE_10___default().latLng(item.Y, item.X),
                 radius: 5,
                 color: "white",
@@ -33470,33 +33472,33 @@ var Home = function Home(_ref) {
                 },
                 eventHandlers: {
                   click: function click(e) {
-                    console.log("si dio clioc");
+                    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_15__.Inertia.get(route('fromapi', item.idDS));
                   }
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_26__.Tooltip, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.Tooltip, {
                   children: item.cNombre
                 })
               }, item.idDS + "layergroup");
             }) : ""
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_27__.ScaleControl, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_leaflet__WEBPACK_IMPORTED_MODULE_28__.ScaleControl, {
             position: "bottomright",
             metric: true,
             imperial: true
           })]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_18__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_19__["default"], {
       id: "alfabetico",
       style: {
         paddingTop: "60px",
         paddingBottom: "30px",
         display: "none"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
         container: true,
         alignItems: "stretch",
         children: relaciones && relaciones.length > 0 ? relaciones.map(function (rel, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
             item: true,
             xs: 4,
             sm: 12 / 5,
@@ -33508,7 +33510,7 @@ var Home = function Home(_ref) {
               padding: "0px",
               marginBottom: "35px"
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
               href: route("relations.index", rel.uuid),
               style: {
                 textDecoration: "none",
@@ -33517,20 +33519,20 @@ var Home = function Home(_ref) {
                 justifyContent: "center",
                 flexWrap: "wrap"
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_28__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_29__["default"], {
                 alt: rel.alt_nombre,
                 src: "/storage/relaciones/" + rel.miniatura,
                 sx: {
                   width: 90,
                   height: 90
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("p", {
                 className: "circle-name",
                 children: limitChar(rel.alt_nombre)
               })]
             })
           }, index);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_20__["default"], {
           children: "No se encontraron resultados, intentalo m\xE1s tarde."
         })
       })
@@ -33539,7 +33541,7 @@ var Home = function Home(_ref) {
 };
 
 Home.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Relaciones Geogr\xE1ficas",
     pageTitle: "Relaciones Geogr\xE1ficas"
