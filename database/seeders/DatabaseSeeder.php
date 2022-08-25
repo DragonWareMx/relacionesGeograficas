@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             // TranscriptionSeeder::class,
             UsersSeeder::class,
             ApiSeeder::class,
+            UserINAHSeeder::class,
         ]);
     }
 }
