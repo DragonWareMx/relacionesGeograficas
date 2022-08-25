@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserINAHSeeder extends Seeder
 {
@@ -43,8 +45,5 @@ class UserINAHSeeder extends Seeder
             'email' =>  'mosolau@gmail.com',
             'password' => Hash::make('lauMoINAH20222'),
         ]);
-
-
-
     }
 }
