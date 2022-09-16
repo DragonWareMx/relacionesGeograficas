@@ -34129,19 +34129,22 @@ var Relacion = function Relacion(_ref4) {
                     modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
                     className: "leo-swiper",
                     children: relation && relation.invoices.map(function (invoice, index) {
-                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
                         className: "mini-photo-container",
                         onClick: function onClick() {
                           return changeFolio(invoice, index);
                         },
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                           className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
                           src: "/storage/relaciones/" + invoice.imagen,
                           style: {
                             width: "66px",
                             height: "100px"
                           }
-                        })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_33__["default"], {
+                          align: "center",
+                          children: ["Folio ", invoice.folio]
+                        })]
                       }, index);
                     })
                   })
@@ -34773,7 +34776,6 @@ function Header() {
       flexGrow: 1
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      position: "static",
       style: {
         boxShadow: 'none'
       },

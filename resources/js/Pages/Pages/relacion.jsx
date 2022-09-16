@@ -509,6 +509,7 @@ const Relacion = ({ relation, api }) => {
                                                                     height: "100px",
                                                                 }}
                                                             />
+                                                            <Typography align='center'>Folio {invoice.folio}</Typography>
                                                         </SwiperSlide>
                                                     )
                                                 )}

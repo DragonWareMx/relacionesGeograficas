@@ -77,7 +77,7 @@ export default function Header() {
 
         <Box sx={{ flexGrow: 1 }}>
             
-            <AppBar position="static" style={{boxShadow:'none'}}>
+            <AppBar style={{boxShadow:'none'}}>
                 <Toolbar style={{backgroundColor:'#383a3a'}}>
                     <Container maxWidth={'xl'} style={{display:'flex',flexWrap:'wrap',padding:'10px 0px 10px 0px', justifyContent:'space-between'}} alignItems="center" >
                         <a href="/" style={{textDecoration:'none',display:'flex',flexWrap:'wrap', color:'white'}}>
