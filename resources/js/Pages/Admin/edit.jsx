@@ -421,7 +421,8 @@ const Relations = ({oldRelation, api}) => {
                                             de esta relación
                                         </Typography>
                                         <form onSubmit={submitDelete}>
-                                            <Grid container justifyContent={'right'}>
+                                            <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
+                                                <Button type='button' onClick={()=>setOpenDelete(false)} style={{color:'#A1A1A1'}}>Cancelar</Button>
                                                 <Button 
                                                     type='submit'
                                                     color='error'
@@ -651,7 +652,14 @@ const Relations = ({oldRelation, api}) => {
                                         de este folio
                                     </Typography>
                                     <form onSubmit={submitDeleteFolio}>
-                                        <Grid container justifyContent={'right'}>
+                                        <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
+                                            <Button 
+                                                type='button' 
+                                                onClick={()=>setOpenDeleteFolio(false)} 
+                                                style={{color:'#A1A1A1'}}
+                                            >
+                                                Cancelar
+                                            </Button>
                                             <Button 
                                                 type='submit'
                                                 color='error'
@@ -748,7 +756,14 @@ const Relations = ({oldRelation, api}) => {
                                     </Grid>
                                 ))}
                             </Grid>
-                            <Grid container justifyContent={'right'}>
+                            <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
+                                <Button 
+                                    type='button' 
+                                    onClick={()=>setOpen(false)} 
+                                    style={{color:'#A1A1A1'}}
+                                >
+                                    Cancelar
+                                </Button>
                                 <Button type='submit' variant='contained' mt={2}>
                                     Guardar
                                 </Button>
@@ -767,14 +782,16 @@ const Relations = ({oldRelation, api}) => {
                             <Typography variant="h6">
                                 Transcripción
                             </Typography>
-                            <Button 
-                                type='button' 
-                                onClick={removeTranscription}
-                                variant='outlined'
-                                color='error'
-                            >
-                                Eliminar
-                            </Button>
+                            {transcriptionIndex !== null &&
+                                <Button 
+                                    type='button' 
+                                    onClick={removeTranscription}
+                                    variant='outlined'
+                                    color='error'
+                                >
+                                    Eliminar
+                                </Button>
+                            }
                         </Grid>
                         <TextField
                             id='nombre' 
@@ -800,25 +817,34 @@ const Relations = ({oldRelation, api}) => {
                             rows={8}
                             multiline
                         />
-                        {transcriptionIndex === null ?
+                        <Grid container justifyContent='space-between' style={{marginTop:10}} alignItems='center'>
                             <Button 
-                                variant='contained' 
                                 type='button' 
-                                onClick={pushTranscription} 
-                                style={{marginTop:15}}
+                                onClick={()=>setOpenTranscription(false)} 
+                                style={{color:'#A1A1A1'}}
                             >
-                                Agregar transcripción
+                                Cancelar
                             </Button>
-                            :
-                            <Button 
-                                variant='contained' 
-                                type='button' 
-                                onClick={patchTranscription} 
-                                style={{marginTop:15}}
-                            >
-                                Guardar
-                            </Button>
-                        }
+                            {transcriptionIndex === null ?
+                                <Button 
+                                    variant='contained' 
+                                    type='button' 
+                                    onClick={pushTranscription} 
+                                    style={{marginTop:15}}
+                                >
+                                    Agregar transcripción
+                                </Button>
+                                :
+                                <Button 
+                                    variant='contained' 
+                                    type='button' 
+                                    onClick={patchTranscription} 
+                                    style={{marginTop:15}}
+                                >
+                                    Guardar
+                                </Button>
+                            }
+                        </Grid>
                     </Paper>
                 </Modal>
             </Container>

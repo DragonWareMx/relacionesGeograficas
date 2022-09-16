@@ -32088,15 +32088,27 @@ var Relations = function Relations(_ref2) {
                     children: "Esta acci\xF3n es irreversible, se perder\xE1n todos los folios y transcripciones de esta relaci\xF3n"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
                     onSubmit: submitDelete,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       container: true,
-                      justifyContent: 'right',
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                      justifyContent: 'space-between',
+                      style: {
+                        marginTop: 10
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                        type: "button",
+                        onClick: function onClick() {
+                          return setOpenDelete(false);
+                        },
+                        style: {
+                          color: '#A1A1A1'
+                        },
+                        children: "Cancelar"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                         type: "submit",
                         color: "error",
                         variant: "outlined",
                         children: "Eliminar"
-                      })
+                      })]
                     })
                   })]
                 })
@@ -32381,15 +32393,27 @@ var Relations = function Relations(_ref2) {
                   children: "Esta acci\xF3n es irreversible, se perder\xE1n todas las transcripciones de este folio"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
                   onSubmit: submitDeleteFolio,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
-                    justifyContent: 'right',
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                    justifyContent: 'space-between',
+                    style: {
+                      marginTop: 10
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                      type: "button",
+                      onClick: function onClick() {
+                        return setOpenDeleteFolio(false);
+                      },
+                      style: {
+                        color: '#A1A1A1'
+                      },
+                      children: "Cancelar"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                       type: "submit",
                       color: "error",
                       variant: "outlined",
                       children: "Eliminar"
-                    })
+                    })]
                   })
                 })]
               })
@@ -32506,15 +32530,27 @@ var Relations = function Relations(_ref2) {
                   })]
                 }, index);
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
-              justifyContent: 'right',
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              justifyContent: 'space-between',
+              style: {
+                marginTop: 10
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                type: "button",
+                onClick: function onClick() {
+                  return setOpen(false);
+                },
+                style: {
+                  color: '#A1A1A1'
+                },
+                children: "Cancelar"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                 type: "submit",
                 variant: "contained",
                 mt: 2,
                 children: "Guardar"
-              })
+              })]
             })]
           })]
         })
@@ -32534,7 +32570,7 @@ var Relations = function Relations(_ref2) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
               variant: "h6",
               children: "Transcripci\xF3n"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            }), transcriptionIndex !== null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
               type: "button",
               onClick: removeTranscription,
               variant: "outlined",
@@ -32569,22 +32605,39 @@ var Relations = function Relations(_ref2) {
             },
             rows: 8,
             multiline: true
-          }), transcriptionIndex === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
-            variant: "contained",
-            type: "button",
-            onClick: pushTranscription,
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            container: true,
+            justifyContent: "space-between",
             style: {
-              marginTop: 15
+              marginTop: 10
             },
-            children: "Agregar transcripci\xF3n"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
-            variant: "contained",
-            type: "button",
-            onClick: patchTranscription,
-            style: {
-              marginTop: 15
-            },
-            children: "Guardar"
+            alignItems: "center",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              type: "button",
+              onClick: function onClick() {
+                return setOpenTranscription(false);
+              },
+              style: {
+                color: '#A1A1A1'
+              },
+              children: "Cancelar"
+            }), transcriptionIndex === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "contained",
+              type: "button",
+              onClick: pushTranscription,
+              style: {
+                marginTop: 15
+              },
+              children: "Agregar transcripci\xF3n"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "contained",
+              type: "button",
+              onClick: patchTranscription,
+              style: {
+                marginTop: 15
+              },
+              children: "Guardar"
+            })]
           })]
         })
       })]
@@ -34776,6 +34829,7 @@ function Header() {
       flexGrow: 1
     },
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      position: "static",
       style: {
         boxShadow: 'none'
       },
