@@ -151,7 +151,7 @@ const Create = (api) => {
     const [values, setValues] = useState({
         imageBanner:[],
         imageMin:[],
-        fuentes:'',
+        // fuentes:'',
         // mapa_geografico: '',
         mapImages: [],
         folios:[],
@@ -206,11 +206,6 @@ const Create = (api) => {
             setOpen(true);
             return false; 
         }
-        if(values.descripcion === ''){
-            setErrorMessagge('Agrega una descripción del folio');
-            setOpen(true);
-            return false;
-        }
         if(values.imageFolio.length==0){
             setErrorMessagge('Agrega una imagen del folio');
             setOpen(true);
@@ -220,7 +215,7 @@ const Create = (api) => {
         let folio={
             no_folio:values.no_folio,
             nombre:values.nombre,
-            descripcion:values.descripcion,
+            descripcion:values.descripcion || '',
             imageFolio:values.imageFolio,
             transcriptions:transcriptions,
         }
@@ -398,7 +393,7 @@ const Create = (api) => {
 
     return (
         <>
-            <InertiaLink href="/" className='backpage-header' >
+            <InertiaLink href={route('admin.index')} className='backpage-header' >
                 <ArrowBackIosIcon />
                 <div>AGREGAR RELACIÓN</div>
             </InertiaLink>
@@ -501,7 +496,7 @@ const Create = (api) => {
                                     </div>
                                 </label>
                             </div>
-                            <CssTextField
+                            {/* <CssTextField
                                 id='fuentes'
                                 multiline
                                 label='Fuentes'
@@ -512,7 +507,7 @@ const Create = (api) => {
                                 error={errors.fuentes && values.error == true && true}
                                 helperText={values.error == true && errors.fuentes}
                                 style={{marginTop:'25px'}}
-                            />
+                            /> */}
                         </>
                     }
                     {activeStep == 1 &&
@@ -624,7 +619,6 @@ const Create = (api) => {
                                         <TextField
                                             id='descripcion' 
                                             label='Descripción' 
-                                            required
                                             fullWidth
                                             value={values.descripcion}
                                             onChange={handleChange} 
@@ -691,7 +685,7 @@ const Create = (api) => {
                                             </Grid>
                                             <TextField
                                                 id='name' 
-                                                label='Nombre' 
+                                                label='Autor' 
                                                 required
                                                 value={transcription.name}
                                                 onChange={handleTranscription} 

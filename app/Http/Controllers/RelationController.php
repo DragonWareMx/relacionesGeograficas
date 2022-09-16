@@ -126,7 +126,7 @@ class RelationController extends Controller
                     $folioM->uuid = Str::uuid();
                     $folioM->nombre = $folio["nombre"];
                     $folioM->folio = $folio["no_folio"];
-                    $folioM->descripcion = $folio["descripcion"];
+                    $folioM->descripcion = $folio["descripcion"] ?? null;
 
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
                     $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
@@ -328,7 +328,7 @@ class RelationController extends Controller
                     $folioM->uuid = Str::uuid();
                     $folioM->nombre = $folio["nombre"];
                     $folioM->folio = $folio["no_folio"];
-                    $folioM->descripcion = $folio["descripcion"];
+                    $folioM->descripcion = $folio["descripcion"] ?? null;
 
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
                     $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();

@@ -197,7 +197,7 @@ const Relacion = ({ relation, api }) => {
                     </Container>
                 </Grid>
             </Grid>
-            <Container maxWidth={"xl"}>
+            <Container maxWidth={"xl"} style={{marginTop:25}}>
                 <div
                     className={
                         contMap === "lienzo"
@@ -397,11 +397,9 @@ const Relacion = ({ relation, api }) => {
                                         className={"lienzo-title"}
                                         style={{ width: "100%" }}
                                     >
-                                        Folio: {folioActive.folio}
+                                        {folioActive.nombre}
                                         <br />
-                                        Nombre: {folioActive.nombre}
-                                        <br />
-                                        Descripcion: {folioActive.descripcion}
+                                        {folioActive.descripcion}
                                     </div>
                                     <div
                                         className={"lienzo-text"}
@@ -460,6 +458,7 @@ const Relacion = ({ relation, api }) => {
                                                     setIdActive(0);
                                                     setImageSize();
                                                 }}
+                                                style={{backgroundImage:'url(/storage/relaciones/'+relation.maps[0].imagen+')'}}
                                             ></div>
                                             <div className="round-button-text">
                                                 Mapa pictográfico 1
@@ -581,6 +580,7 @@ const Relacion = ({ relation, api }) => {
                                             setIdActive(index);
                                             setImageSize();
                                         }}
+                                        style={{backgroundImage:'url(/storage/relaciones/'+map.imagen+')'}}
                                     ></div>
                                     <div className="round-button-text">
                                         Mapa pictográfico {index + 1}
@@ -690,7 +690,7 @@ const Relacion = ({ relation, api }) => {
                                                         )
                                                     }
                                                 />
-                                                <div>Folio 1</div>
+                                                <div>{invoice.nombre}</div>
                                             </div>
                                         </Grid>
                                     ))}

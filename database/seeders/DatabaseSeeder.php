@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
             // SourceSeeder::class,
             // InvoiceSeeder::class,
             // TranscriptionSeeder::class,
-            //UsersSeeder::class,
-            //ApiSeeder::class,
-            UserINAHSeeder::class,
+            // UsersSeeder::class,
+            // ApiSeeder::class,
+            // UserINAHSeeder::class,
         ]);
     }
 }

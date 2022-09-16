@@ -21,8 +21,11 @@
     height: 55px;
     width: 55px;
     background-color: #4ba0af;
+    background-position: center;
     cursor: pointer;
     border: 6px solid #ffffff;
+
+    background-size: cover;
 }
 
 .round-button.active {

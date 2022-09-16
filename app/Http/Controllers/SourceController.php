@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Source;
+use App\Models\Api;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Relation;
@@ -18,8 +19,13 @@ class SourceController extends Controller
     {
         // Buscar la relación
         $rel = Relation::where('uuid',$id)->firstOrFail();
-        $fuentes = $rel->fuentes;
-        return Inertia::render('Pages/fuentes',['fuentes' => $fuentes]);
+        $idDS = $rel->idDS;
+        $api = Api::firstOrFail();
+        return Inertia::render('Pages/fuentes',[
+            'idDS' => $idDS,
+            'api' => $api,
+            'uuid' => $id
+        ]);
     }
 
     /**

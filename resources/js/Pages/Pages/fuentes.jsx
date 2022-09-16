@@ -5,8 +5,24 @@ import Grid from "@mui/material/Grid";
 import "/css/creditos.css";
 import "/css/common.css";
 import { Typography } from "@mui/material";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import ArrowBackIcon from '@mui/icons-material/ArrowBackIos';
+import { InertiaLink } from "@inertiajs/inertia-react";
 
-const Fuentes = ({ fuentes }) => {
+const Fuentes = ({ idDS, api, uuid }) => {
+    const [fuentes, setFuentes] = useState(null);
+    useEffect(() => {
+        axios
+            .get(api.url+`relaciones/` + idDS)
+            .then((response) => {
+                setFuentes(response.data);
+                console.log('LAS FUENTES: ', response);
+            })
+            .catch((error) => {});
+    }, []);
+    
     return (
         <div className={"body-creditos"}>
             <Container
@@ -15,9 +31,14 @@ const Fuentes = ({ fuentes }) => {
             >
                 <Grid container justifyContent="space-between">
                     <Grid item xs={12}>
-                        <p className="big-text">Fuentes</p>
+                        <Grid container alignItems='center'>
+                            <InertiaLink href={route("relations.index", uuid)}>
+                                <ArrowBackIcon style={{color:'white', marginRight:10, marginTop:4}}/>
+                            </InertiaLink>
+                            <Typography variant='h5'>Fuentes</Typography>
+                        </Grid>
                         <Typography style={{whiteSpace:'pre-line',overflow:'hidden',textOverflow:'ellipsis'}}>
-                            {fuentes || 'Sin fuentes'}
+                            {/* {fuentes || 'Sin fuentes'} */}
                         </Typography>
                     </Grid>
                 </Grid>

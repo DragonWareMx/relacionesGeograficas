@@ -49,10 +49,14 @@ import { Inertia } from "@inertiajs/inertia";
 function showAlfa() {
     document.getElementById("mapa").style.display = "none";
     document.getElementById("alfabetico").style.display = "block";
+    document.getElementById("btn-mapa").style.border = "5px solid white";
+    document.getElementById("btn-alfa").style.border = "5px solid #f37946";
 }
 function showMapa() {
     document.getElementById("mapa").style.display = "block";
     document.getElementById("alfabetico").style.display = "none";
+    document.getElementById("btn-mapa").style.border = "5px solid #f37946";
+    document.getElementById("btn-alfa").style.border = "5px solid white";
 }
 function limitChar(nombre) {
     return nombre.substring(0, 61);
@@ -322,23 +326,28 @@ const Home = ({ relaciones, banners, api }) => {
                 alignItems="center"
                 style={{ backgroundColor: "#475e80", padding: "10px" }}
             >
+                <Grid xs={12}>
+                    <Typography align="center" style={{color:'white'}}>
+                        Puedes consultar las relaciones geográficas por medio de las dos opciones siguientes:
+                    </Typography>
+                </Grid>
                 <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }}>
                     {/* <Button variant="outlined" sx={{}}>
                     MAPA
                 </Button> */}
-                    <Paper className="btn-op" onClick={showMapa}>
+                    <Paper id='btn-mapa' className="btn-op" onClick={showMapa} style={{border:'5px solid #f37946'}}>
                         MAPA
                     </Paper>
                 </Grid>
                 <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }} id="alfabetico2">
-                    <Paper className="btn-op" onClick={showAlfa}>
-                        ALFABÉTICO
+                    <Paper id='btn-alfa' className="btn-op" onClick={showAlfa}>
+                        LISTA
                     </Paper>
                 </Grid>
             </Grid>
 
             {/* APARTADO DE MAPA LEAFLET */}
-            <Container maxWidth="false" sx={{ maxWidth: "90%" }}>
+            <Container maxWidth="false" sx={{ maxWidth: "90%", border:'10px solid white' }}>
                 <MapContainer
                     id="mapa"
                     style={styleMap}

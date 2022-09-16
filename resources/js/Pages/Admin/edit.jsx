@@ -104,7 +104,7 @@ const Relations = ({oldRelation, api}) => {
         imageBanner: [],
         alt_nombre: oldRelation.alt_nombre,
         imageMin:[],
-        fuentes:oldRelation.fuentes || '',
+        // fuentes:oldRelation.fuentes || '',
         mapImages: [],
 
         error: false
@@ -218,7 +218,7 @@ const Relations = ({oldRelation, api}) => {
             id:folio.id,
             no_folio: folio.folio,
             nombre: folio.nombre,
-            descripcion: folio.descripcion,
+            descripcion: folio.descripcion || '',
             image: null,
             oldImage:folio.imagen,
             transcriptions: folio.transcriptions
@@ -514,7 +514,7 @@ const Relations = ({oldRelation, api}) => {
                                         </div>
                                     </label>
                                 </div>
-                                <CssTextField
+                                {/* <CssTextField
                                     id='fuentes'
                                     multiline
                                     label='Fuentes'
@@ -526,7 +526,7 @@ const Relations = ({oldRelation, api}) => {
                                     error={errors.fuentes && values.error == true && true}
                                     helperText={values.error == true && errors.fuentes}
                                     style={{marginTop:'25px'}}
-                                />
+                                /> */}
                                 <div className='title'>Mapas pictográficos</div>
                                 <div className='flex-container'>
                                     {/* IMAGENES */}
@@ -694,8 +694,7 @@ const Relations = ({oldRelation, api}) => {
                                 />
                                 <TextField
                                     id='descripcion' 
-                                    label='Descripción' 
-                                    required
+                                    label='Descripción'
                                     fullWidth
                                     value={folioValues.descripcion}
                                     onChange={handleChangeFolio} 
@@ -779,7 +778,7 @@ const Relations = ({oldRelation, api}) => {
                         </Grid>
                         <TextField
                             id='nombre' 
-                            label='Nombre' 
+                            label='Autor' 
                             required
                             fullWidth
                             value={transcriptionValues.nombre}
