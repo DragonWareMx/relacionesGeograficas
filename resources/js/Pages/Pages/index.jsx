@@ -127,12 +127,13 @@ const Home = ({ relaciones, banners, api }) => {
 
     useEffect(() => {
         axios
-            .get(api.url+`relaciones`)
+            .get(api.url+`mgeneral`)
             .then((response) => {
                 let new_data = data;
                 // console.log(data.infoMapa.zoom)
                 new_data.capas = response.data;
                 setData({ ...data, new_data });
+                console.log(response)
             })
             .catch((error) => {});
     }, []);

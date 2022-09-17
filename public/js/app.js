@@ -30519,7 +30519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
@@ -31555,7 +31555,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
@@ -31841,13 +31841,15 @@ var Relations = function Relations(_ref2) {
 
   function selectedFolio(folio) {
     setFolioValues(function () {
+      var _folio$min;
+
       return {
         id: folio.id,
         no_folio: folio.folio,
         nombre: folio.nombre,
         descripcion: folio.descripcion || "",
         image: null,
-        oldImage: folio.imagen,
+        oldImage: (_folio$min = folio.min) !== null && _folio$min !== void 0 ? _folio$min : folio.imagen,
         transcriptions: folio.transcriptions
       };
     });
@@ -32310,6 +32312,8 @@ var Relations = function Relations(_ref2) {
                 overflowY: "scroll"
               },
               children: oldRelation.invoices && oldRelation.invoices.length && oldRelation.invoices.map(function (invoice, index) {
+                var _invoice$min;
+
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                   item: true,
                   xs: 1,
@@ -32320,7 +32324,7 @@ var Relations = function Relations(_ref2) {
                     return selectedFolio(invoice);
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-                    src: "/storage/relaciones/" + invoice.imagen,
+                    src: "/storage/relaciones/" + ((_invoice$min = invoice.min) !== null && _invoice$min !== void 0 ? _invoice$min : invoice.imagen),
                     style: {
                       width: "100%",
                       objectFit: "cover"
@@ -32675,7 +32679,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material_Dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Dialog */ "./node_modules/@mui/material/Dialog/Dialog.js");
@@ -32924,8 +32928,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
@@ -33033,8 +33037,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
@@ -33157,8 +33161,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
 /* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../css/carousel.css */ "./public/css/carousel.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
@@ -33319,13 +33323,14 @@ var Home = function Home(_ref) {
       setData = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_14___default().get(api.url + "relaciones").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_14___default().get(api.url + "mgeneral").then(function (response) {
       var new_data = data; // console.log(data.infoMapa.zoom)
 
       new_data.capas = response.data;
       setData(_objectSpread(_objectSpread({}, data), {}, {
         new_data: new_data
       }));
+      console.log(response);
     })["catch"](function (error) {});
   }, []);
   /** Leaflet Consts and Functions **/
@@ -33654,7 +33659,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
@@ -34182,6 +34187,8 @@ var Relacion = function Relacion(_ref4) {
                     modules: [swiper__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
                     className: "leo-swiper",
                     children: relation && relation.invoices.map(function (invoice, index) {
+                      var _invoice$min;
+
                       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(swiper_react__WEBPACK_IMPORTED_MODULE_7__.SwiperSlide, {
                         className: "mini-photo-container",
                         onClick: function onClick() {
@@ -34189,7 +34196,7 @@ var Relacion = function Relacion(_ref4) {
                         },
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
                           className: contMap == "lienzo" && idActive == index ? "oski-customGallery-miniPhoto active" : "oski-customGallery-miniPhoto",
-                          src: "/storage/relaciones/" + invoice.imagen,
+                          src: "/storage/relaciones/" + ((_invoice$min = invoice.min) !== null && _invoice$min !== void 0 ? _invoice$min : invoice.imagen),
                           style: {
                             width: "66px",
                             height: "100px"
@@ -34467,7 +34474,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/LayoutAdmin/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/LayoutAdmin/parts/Footer.jsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Snackbar/Snackbar.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
@@ -34914,7 +34921,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/Layout/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/Layout/parts/Footer.jsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Snackbar/Snackbar.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
@@ -107452,7 +107459,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

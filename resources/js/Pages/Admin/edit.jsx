@@ -227,7 +227,7 @@ const Relations = ({ oldRelation, api }) => {
             nombre: folio.nombre,
             descripcion: folio.descripcion || "",
             image: null,
-            oldImage: folio.imagen,
+            oldImage: folio.min ?? folio.imagen,
             transcriptions: folio.transcriptions,
         }));
         setOpen(true);
@@ -770,7 +770,7 @@ const Relations = ({ oldRelation, api }) => {
                                                 <img
                                                     src={
                                                         "/storage/relaciones/" +
-                                                        invoice.imagen
+                                                        (invoice.min ?? invoice.imagen)
                                                     }
                                                     style={{
                                                         width: "100%",
