@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "/css/common.css";
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { Head, InertiaLink } from "@inertiajs/inertia-react";
 import "../../../css/relation.css";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
@@ -94,7 +94,7 @@ const Relacion = ({ relation, api }) => {
 
     useEffect(() => {
         axios
-            .get(api.url+`mapa/` + relation.idDS)
+            .get(api.url + `mapa/` + relation.idDS)
             .then((response) => {
                 setData(response.data);
             })
@@ -177,15 +177,65 @@ const Relacion = ({ relation, api }) => {
     const folioRef = useRef();
 
     function scrollToComponent() {
-        if (window.location.hash === '#folio-id') {
+        if (window.location.hash === "#folio-id") {
             folioRef.current.scrollIntoView();
             folioRef.current.focus();
         }
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }
+
+    console.log(relation);
 
     return (
         <>
+            <Head>
+                <meta name="twitter:card" content="summary" />
+                <meta
+                    name="twitter:title"
+                    content={relation.alt_nombre + " - Relaciones Geográficas"}
+                />
+                <meta
+                    name="twitter:description"
+                    content={
+                        relation.alt_nombre +
+                        ". Reproducción por cortesía de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."
+                    }
+                />
+
+                <meta name="og:type" content="article" />
+                <meta
+                    name="og:url"
+                    content={
+                        "https://relacionesgeograficas.inah.gob.mx/relaciones-geograficas/" +
+                        relation.uuid
+                    }
+                />
+                <meta
+                    name="og:title"
+                    content={relation.alt_nombre + " - Relaciones Geográficas"}
+                />
+                <meta
+                    name="og:description"
+                    content={
+                        relation.alt_nombre +
+                        ". Reproducción por cortesía de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."
+                    }
+                />
+                <meta
+                    name="description"
+                    content={
+                        relation.alt_nombre +
+                        ". Reproducción por cortesía de la Benson Latin America Collection. The General Libraries, The University of Texas Austin (JGI-XXIV-12)."
+                    }
+                />
+                <meta
+                    name="og:image"
+                    content={
+                        "https://relacionesgeograficas.inah.gob.mx/storage/relaciones/" +
+                        relation.miniatura
+                    }
+                />
+            </Head>
             <Grid container>
                 <Grid item xs={12} style={{ backgroundColor: "#193661" }}>
                     <Container maxWidth={"xl"}>
@@ -207,7 +257,7 @@ const Relacion = ({ relation, api }) => {
                     </Container>
                 </Grid>
             </Grid>
-            <Container maxWidth={"xl"} style={{marginTop:25}}>
+            <Container maxWidth={"xl"} style={{ marginTop: 25 }}>
                 <div
                     className={
                         contMap === "lienzo"
@@ -226,28 +276,71 @@ const Relacion = ({ relation, api }) => {
                                 // zoom={data.infoMapa.zoom.inicial}
                                 // minZoom={data.infoMapa.zoom.min}
                                 // maxZoom={data.infoMapa.zoom.max}
-                                zoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.inicial && (data.infoMapa.zoom.inicial < data.infoMapa.zoom.max) && (data.infoMapa.zoom.inicial > data.infoMapa.zoom.min)) ? data.infoMapa.zoom.inicial : 5}
-                                minZoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.max && data.infoMapa.zoom.min && (data.infoMapa.zoom.min < data.infoMapa.zoom.max)) ? data.infoMapa.zoom.min : (data?.infoMapa?.zoom?.inicial ?? 5)}
-                                maxZoom={(data && data.infoMapa && data.infoMapa.zoom && data.infoMapa.zoom.max && data.infoMapa.zoom.min && (data.infoMapa.zoom.max > data.infoMapa.zoom.min)) ? data.infoMapa.zoom.max : 12}
+                                zoom={
+                                    data &&
+                                    data.infoMapa &&
+                                    data.infoMapa.zoom &&
+                                    data.infoMapa.zoom.inicial &&
+                                    data.infoMapa.zoom.inicial <
+                                        data.infoMapa.zoom.max &&
+                                    data.infoMapa.zoom.inicial >
+                                        data.infoMapa.zoom.min
+                                        ? data.infoMapa.zoom.inicial
+                                        : 5
+                                }
+                                minZoom={
+                                    data &&
+                                    data.infoMapa &&
+                                    data.infoMapa.zoom &&
+                                    data.infoMapa.zoom.max &&
+                                    data.infoMapa.zoom.min &&
+                                    data.infoMapa.zoom.min <
+                                        data.infoMapa.zoom.max
+                                        ? data.infoMapa.zoom.min
+                                        : data?.infoMapa?.zoom?.inicial ?? 5
+                                }
+                                maxZoom={
+                                    data &&
+                                    data.infoMapa &&
+                                    data.infoMapa.zoom &&
+                                    data.infoMapa.zoom.max &&
+                                    data.infoMapa.zoom.min &&
+                                    data.infoMapa.zoom.max >
+                                        data.infoMapa.zoom.min
+                                        ? data.infoMapa.zoom.max
+                                        : 12
+                                }
                             >
-                                <LayersControl position="topleft" collapsed={false}>
-                                    {(data?.infoMapa?.mapasBase && Object.values(data.infoMapa.mapasBase).length) ?
-                                        Object.values(data.infoMapa.mapasBase).map(
-                                            (item, i) => {
-                                                return (
-                                                    <BaseLayer key={i + "baseLayerrEL"} name={item.nombre} checked={i === 0}>
-                                                        <TileLayer
-                                                            attribution={
-                                                                item.atribution
-                                                            }
-                                                            url={item.link}
-                                                        />
-                                                    </BaseLayer>
-                                                );
-                                            }
-                                        )
-                                    :
-                                        <BaseLayer checked name="ESRI Satellite">
+                                <LayersControl
+                                    position="topleft"
+                                    collapsed={false}
+                                >
+                                    {data?.infoMapa?.mapasBase &&
+                                    Object.values(data.infoMapa.mapasBase)
+                                        .length ? (
+                                        Object.values(
+                                            data.infoMapa.mapasBase
+                                        ).map((item, i) => {
+                                            return (
+                                                <BaseLayer
+                                                    key={i + "baseLayerrEL"}
+                                                    name={item.nombre}
+                                                    checked={i === 0}
+                                                >
+                                                    <TileLayer
+                                                        attribution={
+                                                            item.atribution
+                                                        }
+                                                        url={item.link}
+                                                    />
+                                                </BaseLayer>
+                                            );
+                                        })
+                                    ) : (
+                                        <BaseLayer
+                                            checked
+                                            name="ESRI Satellite"
+                                        >
                                             <TileLayer
                                                 attribution={
                                                     '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
@@ -257,7 +350,7 @@ const Relacion = ({ relation, api }) => {
                                                 }
                                             />
                                         </BaseLayer>
-                                    }
+                                    )}
 
                                     {Object.values(data.capas).map(
                                         (item, i) => {
@@ -279,7 +372,10 @@ const Relacion = ({ relation, api }) => {
                                                             ) {
                                                                 return (
                                                                     <CircleMarker
-                                                                        key={ind = "circleMakerRel"}
+                                                                        key={
+                                                                            (ind =
+                                                                                "circleMakerRel")
+                                                                        }
                                                                         center={getCoords(
                                                                             el.coordenadas
                                                                         )}
@@ -418,7 +514,7 @@ const Relacion = ({ relation, api }) => {
                                         ref={folioRef}
                                     >
                                         <Typography
-                                            style={{whiteSpace: 'pre-line'}}
+                                            style={{ whiteSpace: "pre-line" }}
                                         >
                                             {textActive
                                                 ? textActive
@@ -470,7 +566,13 @@ const Relacion = ({ relation, api }) => {
                                                     setIdActive(0);
                                                     setImageSize();
                                                 }}
-                                                style={{backgroundImage:'url(/storage/relaciones/'+relation.maps[0].imagen+')'}}
+                                                style={{
+                                                    backgroundImage:
+                                                        "url(/storage/relaciones/" +
+                                                        relation.maps[0]
+                                                            .imagen +
+                                                        ")",
+                                                }}
                                             ></div>
                                             <div className="round-button-text">
                                                 Mapa pictográfico 1
@@ -496,13 +598,13 @@ const Relacion = ({ relation, api }) => {
                                                         <SwiperSlide
                                                             key={index}
                                                             className="mini-photo-container"
-                                                            onClick={() =>{
+                                                            onClick={() => {
                                                                 changeFolio(
                                                                     invoice,
                                                                     index
-                                                                )
-                                                                scrollToComponent()
-                                                            } }
+                                                                );
+                                                                scrollToComponent();
+                                                            }}
                                                         >
                                                             <img
                                                                 className={
@@ -515,14 +617,18 @@ const Relacion = ({ relation, api }) => {
                                                                 }
                                                                 src={
                                                                     "/storage/relaciones/" +
-                                                                    (invoice.min ?? invoice.imagen)
+                                                                    (invoice.min ??
+                                                                        invoice.imagen)
                                                                 }
                                                                 style={{
                                                                     width: "66px",
                                                                     height: "100px",
                                                                 }}
                                                             />
-                                                            <Typography align='center'>Folio {invoice.folio}</Typography>
+                                                            <Typography align="center">
+                                                                Folio{" "}
+                                                                {invoice.folio}
+                                                            </Typography>
                                                         </SwiperSlide>
                                                     )
                                                 )}
@@ -541,7 +647,10 @@ const Relacion = ({ relation, api }) => {
                                             (transcription, index) =>
                                                 activeTranslate == index ? (
                                                     <TranslateButtonActive
-                                                        key={index + "TransButton"}
+                                                        key={
+                                                            index +
+                                                            "TransButton"
+                                                        }
                                                         variant="contained"
                                                         size={"large"}
                                                         onClick={() =>
@@ -581,7 +690,10 @@ const Relacion = ({ relation, api }) => {
                             if (index === 0) return;
 
                             return (
-                                <div key={index + "div"} className="round-button-container">
+                                <div
+                                    key={index + "div"}
+                                    className="round-button-container"
+                                >
                                     <div
                                         className={
                                             contMap == "picto" &&
@@ -594,7 +706,12 @@ const Relacion = ({ relation, api }) => {
                                             setIdActive(index);
                                             setImageSize();
                                         }}
-                                        style={{backgroundImage:'url(/storage/relaciones/'+map.imagen+')'}}
+                                        style={{
+                                            backgroundImage:
+                                                "url(/storage/relaciones/" +
+                                                map.imagen +
+                                                ")",
+                                        }}
                                     ></div>
                                     <div className="round-button-text">
                                         Mapa pictográfico {index + 1}
@@ -663,11 +780,7 @@ const Relacion = ({ relation, api }) => {
                     </div>
                 </Container>
             </div>
-            <Drawer
-                anchor={"bottom"}
-                open={open}
-                onClose={toggleDrawer}
-            >
+            <Drawer anchor={"bottom"} open={open} onClose={toggleDrawer}>
                 <div className="drawer-content">
                     <Container
                         maxWidth={"xl"}

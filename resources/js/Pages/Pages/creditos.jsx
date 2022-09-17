@@ -4,10 +4,44 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import "/css/creditos.css";
 import "/css/common.css";
+import { Head } from "@inertiajs/inertia-react";
 
 const Creditos = ({}) => {
     return (
         <div className={"body-creditos"}>
+            <Head>
+                <meta name="twitter:card" content="summary" />
+                <meta
+                    name="twitter:title"
+                    content="Relaciones Geográficas de la Nueva España - Créditos"
+                />
+                <meta
+                    name="twitter:description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+
+                <meta name="og:type" content="article" />
+                <meta
+                    name="og:url"
+                    content="https://relacionesgeograficas.inah.gob.mx"
+                />
+                <meta
+                    name="og:title"
+                    content="Relaciones Geográficas de la Nueva España - Créditos"
+                />
+                <meta
+                    name="og:description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+                <meta
+                    name="description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+                <meta
+                    name="og:image"
+                    content="https://relacionesgeograficas.inah.gob.mx/img/assets/asset1.png"
+                />
+            </Head>
             <Container
                 maxWidth={"xl"}
                 style={{ paddingTop: "40px", paddingBottom: "50px" }}
