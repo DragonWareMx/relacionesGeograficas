@@ -30502,7 +30502,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var _layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/LayoutAdmin */ "./resources/js/layouts/LayoutAdmin/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
@@ -30519,7 +30519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
@@ -30585,35 +30585,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
-    color: '#ffffff',
-    backgroundColor: '#4D7DB3',
-    '&:hover': {
-      backgroundColor: '#4D7DB3'
+    color: "#ffffff",
+    backgroundColor: "#4D7DB3",
+    "&:hover": {
+      backgroundColor: "#4D7DB3"
     },
     borderRadius: 0,
-    padding: '20px 40px',
-    fontFamily: 'Nunito'
+    padding: "20px 40px",
+    fontFamily: "Nunito"
   };
 });
 var CssTextField = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"])({
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#D9D9D9',
-      borderRadius: '10px'
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#D9D9D9",
+      borderRadius: "10px"
     },
-    '&.Mui-focused fieldset': {
-      borderColor: '#304A71'
+    "&.Mui-focused fieldset": {
+      borderColor: "#304A71"
     },
-    '&:hover fieldset': {
-      borderColor: '#D9D9D9'
+    "&:hover fieldset": {
+      borderColor: "#D9D9D9"
     }
   },
-  '& label.Mui-focused': {
-    color: '#304A71'
+  "& label.Mui-focused": {
+    color: "#304A71"
   },
-  '& label.Mui': {
-    color: '#D9D9D9',
-    fontSize: '14px'
+  "& label.Mui": {
+    color: "#D9D9D9",
+    fontSize: "14px"
   }
 });
 var Alert = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function Alert(props, ref) {
@@ -30623,7 +30623,7 @@ var Alert = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function 
     variant: "filled"
   }, props));
 });
-var steps = ['NOMBRE', 'MAPAS', 'FOLIOS'];
+var steps = ["NOMBRE", "MAPAS", "FOLIOS"];
 
 var Create = function Create(api) {
   //Control steps
@@ -30648,7 +30648,7 @@ var Create = function Create(api) {
       open = _React$useState8[0],
       setOpen = _React$useState8[1];
 
-  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_1__.useState(''),
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_1__.useState(""),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       errorMessagge = _React$useState10[0],
       setErrorMessagge = _React$useState10[1];
@@ -30658,7 +30658,7 @@ var Create = function Create(api) {
   };
 
   var handleClose = function handleClose(event, reason) {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
 
@@ -30740,10 +30740,10 @@ var Create = function Create(api) {
     // mapa_geografico: '',
     mapImages: [],
     folios: [],
-    nombre: '',
-    alt_nombre: '',
-    no_folio: '',
-    descripcion: '',
+    nombre: "",
+    alt_nombre: "",
+    no_folio: "",
+    descripcion: "",
     imageFolio: [],
     error: false
   }),
@@ -30752,8 +30752,8 @@ var Create = function Create(api) {
       setValues = _useState4[1];
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    name: '',
-    text: ''
+    name: "",
+    text: ""
   }),
       _useState6 = _slicedToArray(_useState5, 2),
       transcription = _useState6[0],
@@ -30776,33 +30776,33 @@ var Create = function Create(api) {
     //     return false;
     // }
     var trans = {
-      name: transcription.name || '',
-      text: transcription.text || ''
+      name: transcription.name || "",
+      text: transcription.text || ""
     };
     setTranscriptions([].concat(_toConsumableArray(transcriptions), [trans]));
     setTranscription(function (values) {
       return {
-        name: '',
-        text: ''
+        name: "",
+        text: ""
       };
     });
   }
 
   function addFolio() {
-    if (values.nombre === '') {
-      setErrorMessagge('Agrega un nombre al folio');
+    if (values.nombre === "") {
+      setErrorMessagge("Agrega un nombre al folio");
       setOpen(true);
       return false;
     }
 
-    if (values.no_folio === '') {
-      setErrorMessagge('Agrega un número al folio');
+    if (values.no_folio === "") {
+      setErrorMessagge("Agrega un número al folio");
       setOpen(true);
       return false;
     }
 
     if (values.imageFolio.length == 0) {
-      setErrorMessagge('Agrega una imagen del folio');
+      setErrorMessagge("Agrega una imagen del folio");
       setOpen(true);
       return false;
     }
@@ -30811,7 +30811,7 @@ var Create = function Create(api) {
     var folio = {
       no_folio: values.no_folio,
       nombre: values.nombre,
-      descripcion: values.descripcion || '',
+      descripcion: values.descripcion || "",
       imageFolio: values.imageFolio,
       transcriptions: transcriptions
     };
@@ -30820,9 +30820,9 @@ var Create = function Create(api) {
       return _objectSpread(_objectSpread({}, values), {}, {
         folios: folios,
         imageFolio: [],
-        descripcion: '',
-        no_folio: '',
-        nombre: ''
+        descripcion: "",
+        no_folio: "",
+        nombre: ""
       });
     });
     setTranscriptions([]);
@@ -30836,7 +30836,7 @@ var Create = function Create(api) {
     });
   }
 
-  var _React$useState11 = react__WEBPACK_IMPORTED_MODULE_1__.useState(''),
+  var _React$useState11 = react__WEBPACK_IMPORTED_MODULE_1__.useState(""),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       relation = _React$useState12[0],
       setRelation = _React$useState12[1];
@@ -30856,7 +30856,7 @@ var Create = function Create(api) {
 
   function loadImage(id) {
     var input = document.getElementById(id);
-    var container = document.getElementById(id + 'Container');
+    var container = document.getElementById(id + "Container");
 
     if (input.files) {
       var arr = [];
@@ -30914,8 +30914,8 @@ var Create = function Create(api) {
 
   function checkInputs() {
     if (!relation) {
-      setErrorMessagge('Debes seleccionar una relación');
-      errors.nombre = 'Selecciona una relación';
+      setErrorMessagge("Debes seleccionar una relación");
+      errors.nombre = "Selecciona una relación";
       values.error = true;
       setActiveStep(0);
       setOpen(true);
@@ -30926,8 +30926,8 @@ var Create = function Create(api) {
     }
 
     if (!values.imageBanner || values.imageBanner.length == 0) {
-      setErrorMessagge('Debes ingresar una imagen de banner');
-      errors.imageBanner = 'Ingresa una imagen';
+      setErrorMessagge("Debes ingresar una imagen de banner");
+      errors.imageBanner = "Ingresa una imagen";
       values.error = true;
       setActiveStep(0);
       setOpen(true);
@@ -30938,8 +30938,8 @@ var Create = function Create(api) {
     }
 
     if (!values.imageMin || values.imageMin.length == 0) {
-      setErrorMessagge('Debes ingresar una imagen miniatura');
-      errors.imageMin = 'Ingresa una imagen';
+      setErrorMessagge("Debes ingresar una imagen miniatura");
+      errors.imageMin = "Ingresa una imagen";
       values.error = true;
       setActiveStep(0);
       setOpen(true);
@@ -30950,8 +30950,8 @@ var Create = function Create(api) {
     }
 
     if (!values.mapImages || values.mapImages.length == 0) {
-      setErrorMessagge('Debes ingresar al menos una imagen del mapa geográfico');
-      errors.mapImages = 'Ingresa una imagen del mapa geográfico';
+      setErrorMessagge("Debes ingresar al menos una imagen del mapa geográfico");
+      errors.mapImages = "Ingresa una imagen del mapa geográfico";
       values.error = true;
       setActiveStep(1);
       setOpen(true);
@@ -30962,8 +30962,8 @@ var Create = function Create(api) {
     }
 
     if (!values.folios || values.folios.length == 0) {
-      setErrorMessagge('Debes ingresar al menos folio');
-      errors.folios = 'Ingresa una imagen del mapa geográfico';
+      setErrorMessagge("Debes ingresar al menos folio");
+      errors.folios = "Ingresa una imagen del mapa geográfico";
       values.error = true;
       setActiveStep(2);
       setOpen(true);
@@ -30988,8 +30988,8 @@ var Create = function Create(api) {
       idDS: finalRelation.idDS
     });
 
-    if (!values.alt_nombre || values.alt_nombre === '') data.alt_nombre = finalRelation.cNombre;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route('admin.store'), data, {
+    if (!values.alt_nombre || values.alt_nombre === "") data.alt_nombre = finalRelation.cNombre;
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post(route("admin.store"), data, {
       onError: function onError() {
         setValues(function (values) {
           return _objectSpread(_objectSpread({}, values), {}, {
@@ -31002,14 +31002,14 @@ var Create = function Create(api) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
-      href: route('admin.index'),
+      href: route("admin.index"),
       className: "backpage-header",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_13__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         children: "AGREGAR RELACI\xD3N"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
       style: {
-        marginTop: '36px'
+        marginTop: "36px"
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "stepper-card",
@@ -31029,7 +31029,7 @@ var Create = function Create(api) {
         }), completed[activeStep] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
           variant: "caption",
           sx: {
-            display: 'inline-block'
+            display: "inline-block"
           },
           children: ["Paso ", activeStep + 1, " completado"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
@@ -31038,8 +31038,8 @@ var Create = function Create(api) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
               fullWidth: true,
               style: {
-                marginTop: '40px',
-                marginBottom: '25px'
+                marginTop: "40px",
+                marginBottom: "25px"
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
                 id: "relation-names",
@@ -31047,7 +31047,7 @@ var Create = function Create(api) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
                 labelId: "relation-names",
                 id: "nombre",
-                value: relation || '',
+                value: relation || "",
                 defaultValue: "",
                 label: "Nombre",
                 onChange: handleChangeSelect,
@@ -31059,7 +31059,7 @@ var Create = function Create(api) {
                       idDS: rel.idDS,
                       cNombre: rel.cNombre
                     }),
-                    children: rel.idDS + ' ' + rel.cNombre
+                    children: rel.idDS + " " + rel.cNombre
                   }, index);
                 })
               })]
@@ -31072,7 +31072,7 @@ var Create = function Create(api) {
               error: errors.alt_nombre && values.error == true && true,
               helperText: values.error == true && errors.alt_nombre,
               style: {
-                marginBottom: '25px'
+                marginBottom: "25px"
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               className: "flex-container",
@@ -31081,19 +31081,19 @@ var Create = function Create(api) {
                 id: "imageBanner",
                 type: "file",
                 style: {
-                  display: 'none'
+                  display: "none"
                 },
                 onChange: function onChange() {
-                  return loadImage('imageBanner');
+                  return loadImage("imageBanner");
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                 htmlFor: "imageBanner",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                   id: "imageBannerContainer",
-                  className: errors.imageBanner ? 'banner-skelleton error' : 'banner-skelleton',
+                  className: errors.imageBanner ? "banner-skelleton error" : "banner-skelleton",
                   style: values.imageBanner.length > 0 ? {
-                    backgroundImage: 'url(' + URL.createObjectURL(values.imageBanner[0]) + ')',
-                    border: 'none'
+                    backgroundImage: "url(" + URL.createObjectURL(values.imageBanner[0]) + ")",
+                    border: "none"
                   } : {},
                   children: values.imageBanner.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -31106,19 +31106,19 @@ var Create = function Create(api) {
                 id: "imageMin",
                 type: "file",
                 style: {
-                  display: 'none'
+                  display: "none"
                 },
                 onChange: function onChange() {
-                  return loadImage('imageMin');
+                  return loadImage("imageMin");
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                 htmlFor: "imageMin",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                   id: "imageMinContainer",
-                  className: errors.imageMin ? 'imageMin-skelleton error' : 'imageMin-skelleton',
+                  className: errors.imageMin ? "imageMin-skelleton error" : "imageMin-skelleton",
                   style: values.imageMin.length > 0 ? {
-                    backgroundImage: 'url(' + URL.createObjectURL(values.imageMin[0]) + ')',
-                    border: 'none'
+                    backgroundImage: "url(" + URL.createObjectURL(values.imageMin[0]) + ")",
+                    border: "none"
                   } : {},
                   children: values.imageMin.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -31143,16 +31143,16 @@ var Create = function Create(api) {
                   multiple: true,
                   type: "file",
                   style: {
-                    display: 'none'
+                    display: "none"
                   },
                   onChange: function onChange() {
-                    return addImages('mapImages');
+                    return addImages("mapImages");
                   }
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                   htmlFor: "mapImages",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     id: "mapImagesContainer",
-                    className: errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton',
+                    className: errors.mapImages ? "maps-skelleton error" : "maps-skelleton",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       children: "Agregar mapas"
                     })]
@@ -31164,15 +31164,15 @@ var Create = function Create(api) {
                       "aria-label": "delete",
                       size: "small",
                       style: {
-                        position: 'absolute',
-                        zIndex: '999',
-                        marginTop: '5px',
-                        marginLeft: '5px',
-                        backgroundColor: 'rgba(232,232,232,0.7)',
-                        color: '#F4F4F4'
+                        position: "absolute",
+                        zIndex: "999",
+                        marginTop: "5px",
+                        marginLeft: "5px",
+                        backgroundColor: "rgba(232,232,232,0.7)",
+                        color: "#F4F4F4"
                       },
                       onClick: function onClick() {
-                        return removeImg('mapImages', index);
+                        return removeImg("mapImages", index);
                       },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_26__["default"], {
                         fontSize: "inherit"
@@ -31216,8 +31216,8 @@ var Create = function Create(api) {
                     error: errors.errors && values.no_folio,
                     helperText: values.error === true && errors.no_folio,
                     style: {
-                      marginTop: '40px',
-                      marginBottom: '0px'
+                      marginTop: "40px",
+                      marginBottom: "0px"
                     },
                     type: "number",
                     InputLabelProps: {
@@ -31237,8 +31237,8 @@ var Create = function Create(api) {
                     error: errors.nombre && values.nombre,
                     helperText: values.error === true && errors.nombre,
                     style: {
-                      marginTop: '40px',
-                      marginBottom: '0px'
+                      marginTop: "40px",
+                      marginBottom: "0px"
                     }
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
@@ -31253,8 +31253,8 @@ var Create = function Create(api) {
                     error: errors.descripcion && values.descripcion,
                     helperText: values.error === true && errors.descripcion,
                     style: {
-                      marginTop: '30px',
-                      marginBottom: '25px'
+                      marginTop: "30px",
+                      marginBottom: "25px"
                     }
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
@@ -31276,10 +31276,10 @@ var Create = function Create(api) {
                       id: "imageFolio",
                       type: "file",
                       style: {
-                        display: 'none'
+                        display: "none"
                       },
                       onChange: function onChange() {
-                        return loadImage('imageFolio');
+                        return loadImage("imageFolio");
                       }
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                       htmlFor: "imageFolio",
@@ -31287,8 +31287,8 @@ var Create = function Create(api) {
                         id: "imageFolioContainer",
                         className: "maps-skelleton",
                         style: values.imageFolio.length > 0 ? {
-                          backgroundImage: 'url(' + URL.createObjectURL(values.imageFolio[0]) + ')',
-                          border: 'none'
+                          backgroundImage: "url(" + URL.createObjectURL(values.imageFolio[0]) + ")",
+                          border: "none"
                         } : {},
                         children: values.imageFolio.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -31321,7 +31321,7 @@ var Create = function Create(api) {
                       error: errors.name && transcription.name,
                       helperText: transcription.error === true && errors.name,
                       style: {
-                        marginTop: '15px'
+                        marginTop: "15px"
                       },
                       fullWidth: true
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -31333,8 +31333,8 @@ var Create = function Create(api) {
                       error: errors.text && transcription.text,
                       helperText: transcription.error === true && errors.text,
                       style: {
-                        marginTop: '40px',
-                        marginBottom: '25px'
+                        marginTop: "40px",
+                        marginBottom: "25px"
                       },
                       fullWidth: true,
                       rows: 4,
@@ -31349,7 +31349,7 @@ var Create = function Create(api) {
                       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                         container: true,
                         style: {
-                          marginTop: '17px'
+                          marginTop: "17px"
                         },
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                           container: true,
@@ -31358,11 +31358,11 @@ var Create = function Create(api) {
                           alignItems: "center",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                             className: "trans-title",
-                            children: [index + 1, ". ", preview.name]
+                            children: [index + 1, ".", " ", preview.name]
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_RemoveCircleOutline__WEBPACK_IMPORTED_MODULE_28__["default"], {
                             style: {
-                              color: '#304A71',
-                              cursor: 'pointer'
+                              color: "#304A71",
+                              cursor: "pointer"
                             },
                             onClick: function onClick() {
                               return removeTranscription(index);
@@ -31394,7 +31394,7 @@ var Create = function Create(api) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                   container: true,
                   style: {
-                    marginTop: '27px'
+                    marginTop: "27px"
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                     container: true,
@@ -31402,14 +31402,14 @@ var Create = function Create(api) {
                     justifyContent: "space-between",
                     alignItems: "center",
                     style: {
-                      marginBottom: '10px'
+                      marginBottom: "10px"
                     },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       children: ["Folio ", folio.no_folio]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_RemoveCircleOutline__WEBPACK_IMPORTED_MODULE_28__["default"], {
                       style: {
-                        color: '#304A71',
-                        cursor: 'pointer'
+                        color: "#304A71",
+                        cursor: "pointer"
                       },
                       onClick: function onClick() {
                         return removeFolio(index);
@@ -31435,7 +31435,7 @@ var Create = function Create(api) {
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         className: "trans-text",
                         style: {
-                          marginBottom: '15px'
+                          marginBottom: "15px"
                         },
                         children: folio.nombre
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -31443,7 +31443,7 @@ var Create = function Create(api) {
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         className: "trans-text",
                         style: {
-                          marginBottom: '15px'
+                          marginBottom: "15px"
                         },
                         children: folio.descripcion
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -31454,7 +31454,7 @@ var Create = function Create(api) {
                           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                             container: true,
                             style: {
-                              marginTop: '17px'
+                              marginTop: "17px"
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_24__["default"], {
                               container: true,
@@ -31463,7 +31463,7 @@ var Create = function Create(api) {
                               alignItems: "center",
                               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                                 className: "trans-title",
-                                children: [index + 1, ". ", preview.name]
+                                children: [index + 1, ".", " ", preview.name]
                               })
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                               className: "trans-text",
@@ -31489,7 +31489,7 @@ var Create = function Create(api) {
             }), activeStep != 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
               variant: "contained",
               onClick: handleNext,
-              children: completedSteps() === totalSteps() - 1 ? 'Finalizar' : 'Siguiente'
+              children: completedSteps() === totalSteps() - 1 ? "Finalizar" : "Siguiente"
             }), activeStep == 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
               variant: "outlined",
               disabled: activeStep !== 2,
@@ -31508,7 +31508,7 @@ var Create = function Create(api) {
         onClose: handleClose,
         severity: "error",
         sx: {
-          width: '100%'
+          width: "100%"
         },
         children: errorMessagge && errorMessagge
       })
@@ -31517,7 +31517,7 @@ var Create = function Create(api) {
 };
 
 Create.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Agregar Relaci\xF3n",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -31539,7 +31539,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var _layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/LayoutAdmin */ "./resources/js/layouts/LayoutAdmin/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
@@ -31555,7 +31555,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/icons-material/FileUpload */ "./node_modules/@mui/icons-material/FileUpload.js");
@@ -31616,56 +31616,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var ColorButton = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"])(function (_ref) {
   var theme = _ref.theme;
   return {
-    color: '#ffffff',
-    backgroundColor: '#4D7DB3',
-    '&:hover': {
-      backgroundColor: '#4D7DB3'
+    color: "#ffffff",
+    backgroundColor: "#4D7DB3",
+    "&:hover": {
+      backgroundColor: "#4D7DB3"
     },
     borderRadius: 0,
-    padding: '20px 40px',
-    fontFamily: 'Nunito'
+    padding: "20px 40px",
+    fontFamily: "Nunito"
   };
 });
 var CssTextField = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"])({
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#D9D9D9',
-      borderRadius: '10px'
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#D9D9D9",
+      borderRadius: "10px"
     },
-    '&.Mui-focused fieldset': {
-      borderColor: '#304A71'
+    "&.Mui-focused fieldset": {
+      borderColor: "#304A71"
     },
-    '&:hover fieldset': {
-      borderColor: '#D9D9D9'
+    "&:hover fieldset": {
+      borderColor: "#D9D9D9"
     }
   },
-  '& label.Mui-focused': {
-    color: '#304A71'
+  "& label.Mui-focused": {
+    color: "#304A71"
   },
-  '& label.Mui': {
-    color: '#D9D9D9',
-    fontSize: '14px'
+  "& label.Mui": {
+    color: "#D9D9D9",
+    fontSize: "14px"
   }
 });
 var style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '90%',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "90%",
   maxWidth: 600,
-  bgcolor: 'background.paper',
+  bgcolor: "background.paper",
   boxShadow: 24,
   p: 4
 };
 var style2 = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '80%',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "80%",
   maxWidth: 400,
-  bgcolor: 'background.paper',
+  bgcolor: "background.paper",
   boxShadow: 24,
   p: 4
 };
@@ -31729,7 +31729,7 @@ var Relations = function Relations(_ref2) {
 
   function loadImage(id) {
     var input = document.getElementById(id);
-    var container = document.getElementById(id + 'Container');
+    var container = document.getElementById(id + "Container");
 
     if (input.files) {
       var arr = [];
@@ -31775,7 +31775,7 @@ var Relations = function Relations(_ref2) {
       deletedPictos: deletedPictos
     });
 
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('admin.update', oldRelation.id), data, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route("admin.update", oldRelation.id), data, {
       onSuccess: function onSuccess() {
         setOpenSnack(true);
       },
@@ -31819,11 +31819,11 @@ var Relations = function Relations(_ref2) {
       setOpenTranscription = _useState14[1];
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    id: '',
-    no_folio: '',
-    nombre: '',
-    descripcion: '',
-    image: '',
+    id: "",
+    no_folio: "",
+    nombre: "",
+    descripcion: "",
+    image: "",
     transcriptions: [],
     error: false
   }),
@@ -31832,8 +31832,8 @@ var Relations = function Relations(_ref2) {
       setFolioValues = _useState16[1];
 
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    nombre: '',
-    texto: ''
+    nombre: "",
+    texto: ""
   }),
       _useState18 = _slicedToArray(_useState17, 2),
       transcriptionValues = _useState18[0],
@@ -31845,7 +31845,7 @@ var Relations = function Relations(_ref2) {
         id: folio.id,
         no_folio: folio.folio,
         nombre: folio.nombre,
-        descripcion: folio.descripcion || '',
+        descripcion: folio.descripcion || "",
         image: null,
         oldImage: folio.imagen,
         transcriptions: folio.transcriptions
@@ -31872,8 +31872,8 @@ var Relations = function Relations(_ref2) {
 
   function addTranscription() {
     setTranscriptionValues({
-      nombre: '',
-      texto: ''
+      nombre: "",
+      texto: ""
     });
     setTranscriptionIndex(null);
     setOpenTranscription(true);
@@ -31932,7 +31932,7 @@ var Relations = function Relations(_ref2) {
   }
 
   function changeFolioImage() {
-    var input = document.getElementById('folioImage');
+    var input = document.getElementById("folioImage");
 
     if (input.files) {
       var arr = [];
@@ -31948,7 +31948,7 @@ var Relations = function Relations(_ref2) {
   function handleSubmitFolio(e) {
     e.preventDefault();
     var data = folioValues;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route("folio.update", [oldRelation.id, data.id]), data, {
       onSuccess: function onSuccess() {
         setOpenSnack(true);
         setOpen(false);
@@ -31965,7 +31965,7 @@ var Relations = function Relations(_ref2) {
 
   function submitDelete(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('admin.delete', oldRelation.id), {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route("admin.delete", oldRelation.id), {
       onSuccess: function onSuccess() {
         setOpen(false);
         setOpenSnack(true);
@@ -31982,7 +31982,7 @@ var Relations = function Relations(_ref2) {
 
   function submitDeleteFolio(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route('folio.delete', [oldRelation.id, folioValues.id]), {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia["delete"](route("folio.delete", [oldRelation.id, folioValues.id]), {
       onSuccess: function onSuccess() {
         setOpenDeleteFolio(false);
         setOpen(false);
@@ -32001,9 +32001,9 @@ var Relations = function Relations(_ref2) {
   function addNewFolio() {
     setFolioValues({
       id: null,
-      no_folio: '',
-      nombre: '',
-      descripcion: '',
+      no_folio: "",
+      nombre: "",
+      descripcion: "",
       image: null,
       transcriptions: []
     });
@@ -32013,7 +32013,7 @@ var Relations = function Relations(_ref2) {
   function handleNewFolio(e) {
     e.preventDefault();
     var data = folioValues;
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route('folio.store', oldRelation.id), data, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__.Inertia.post(route("folio.store", oldRelation.id), data, {
       onSuccess: function onSuccess() {
         setOpenSnack(true);
         setOpen(false);
@@ -32046,20 +32046,20 @@ var Relations = function Relations(_ref2) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
       style: {
-        marginTop: '36px'
+        marginTop: "36px"
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
         container: true,
         mt: 2,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_15__["default"], {
           style: {
-            width: '100%',
+            width: "100%",
             marginBottom: 50
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"], {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
-              justifyContent: 'space-between',
+              justifyContent: "space-between",
               alignContent: "center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 variant: "h5",
@@ -32090,7 +32090,7 @@ var Relations = function Relations(_ref2) {
                     onSubmit: submitDelete,
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       container: true,
-                      justifyContent: 'space-between',
+                      justifyContent: "space-between",
                       style: {
                         marginTop: 10
                       },
@@ -32100,7 +32100,7 @@ var Relations = function Relations(_ref2) {
                           return setOpenDelete(false);
                         },
                         style: {
-                          color: '#A1A1A1'
+                          color: "#A1A1A1"
                         },
                         children: "Cancelar"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32118,8 +32118,8 @@ var Relations = function Relations(_ref2) {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
                 fullWidth: true,
                 style: {
-                  marginTop: '40px',
-                  marginBottom: '25px'
+                  marginTop: "40px",
+                  marginBottom: "25px"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
                   id: "relation-names",
@@ -32127,7 +32127,7 @@ var Relations = function Relations(_ref2) {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"], {
                   labelId: "relation-names",
                   id: "nombre",
-                  value: relation || '',
+                  value: relation || "",
                   label: "Nombre",
                   onChange: handleChangeSelect,
                   error: errors.nombre && values.error == true && true,
@@ -32138,7 +32138,7 @@ var Relations = function Relations(_ref2) {
                         idDS: rel.idDS,
                         cNombre: rel.cNombre
                       }),
-                      children: rel.idDS + ' ' + rel.cNombre
+                      children: rel.idDS + " " + rel.cNombre
                     }, index);
                   })
                 })]
@@ -32152,7 +32152,7 @@ var Relations = function Relations(_ref2) {
                 error: errors.alt_nombre && values.error == true && true,
                 helperText: values.error == true && errors.alt_nombre,
                 style: {
-                  marginBottom: '25px'
+                  marginBottom: "25px"
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                 className: "flex-container",
@@ -32161,21 +32161,21 @@ var Relations = function Relations(_ref2) {
                   id: "imageBanner",
                   type: "file",
                   style: {
-                    display: 'none'
+                    display: "none"
                   },
                   onChange: function onChange() {
-                    return loadImage('imageBanner');
+                    return loadImage("imageBanner");
                   }
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                   htmlFor: "imageBanner",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                     id: "imageBannerContainer",
-                    className: errors.imageBanner ? 'banner-skelleton error' : 'banner-skelleton',
+                    className: errors.imageBanner ? "banner-skelleton error" : "banner-skelleton",
                     style: values.imageBanner.length > 0 ? {
-                      backgroundImage: 'url(' + URL.createObjectURL(values.imageBanner[0]) + ')',
-                      border: 'none'
+                      backgroundImage: "url(" + URL.createObjectURL(values.imageBanner[0]) + ")",
+                      border: "none"
                     } : {
-                      backgroundImage: 'url(/storage/relaciones/' + oldRelation.banner + ')'
+                      backgroundImage: "url(/storage/relaciones/" + oldRelation.banner + ")"
                     },
                     children: values.imageBanner.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -32188,21 +32188,21 @@ var Relations = function Relations(_ref2) {
                   id: "imageMin",
                   type: "file",
                   style: {
-                    display: 'none'
+                    display: "none"
                   },
                   onChange: function onChange() {
-                    return loadImage('imageMin');
+                    return loadImage("imageMin");
                   }
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                   htmlFor: "imageMin",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                     id: "imageMinContainer",
-                    className: errors.imageMin ? 'imageMin-skelleton error' : 'imageMin-skelleton',
+                    className: errors.imageMin ? "imageMin-skelleton error" : "imageMin-skelleton",
                     style: values.imageMin.length > 0 ? {
-                      backgroundImage: 'url(' + URL.createObjectURL(values.imageMin[0]) + ')',
-                      border: 'none'
+                      backgroundImage: "url(" + URL.createObjectURL(values.imageMin[0]) + ")",
+                      border: "none"
                     } : {
-                      backgroundImage: 'url(/storage/relaciones/' + oldRelation.miniatura + ')'
+                      backgroundImage: "url(/storage/relaciones/" + oldRelation.miniatura + ")"
                     },
                     children: values.imageMin.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -32225,16 +32225,16 @@ var Relations = function Relations(_ref2) {
                     multiple: true,
                     type: "file",
                     style: {
-                      display: 'none'
+                      display: "none"
                     },
                     onChange: function onChange() {
-                      return addImages('mapImages');
+                      return addImages("mapImages");
                     }
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                     htmlFor: "mapImages",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       id: "mapImagesContainer",
-                      className: errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton',
+                      className: errors.mapImages ? "maps-skelleton error" : "maps-skelleton",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                         children: "Agregar mapas"
                       })]
@@ -32246,15 +32246,15 @@ var Relations = function Relations(_ref2) {
                         "aria-label": "delete",
                         size: "small",
                         style: {
-                          position: 'absolute',
-                          zIndex: '999',
-                          marginTop: '5px',
-                          marginLeft: '5px',
-                          backgroundColor: 'rgba(232,232,232,0.7)',
-                          color: '#F4F4F4'
+                          position: "absolute",
+                          zIndex: "999",
+                          marginTop: "5px",
+                          marginLeft: "5px",
+                          backgroundColor: "rgba(232,232,232,0.7)",
+                          color: "#F4F4F4"
                         },
                         onClick: function onClick() {
-                          return removeImg('mapImages', index);
+                          return removeImg("mapImages", index);
                         },
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_Close__WEBPACK_IMPORTED_MODULE_25__["default"], {
                           fontSize: "inherit"
@@ -32271,12 +32271,12 @@ var Relations = function Relations(_ref2) {
                         "aria-label": "delete",
                         size: "small",
                         style: {
-                          position: 'absolute',
-                          zIndex: '999',
-                          marginTop: '5px',
-                          marginLeft: '5px',
-                          backgroundColor: 'rgba(232,232,232,0.7)',
-                          color: '#F4F4F4'
+                          position: "absolute",
+                          zIndex: "999",
+                          marginTop: "5px",
+                          marginLeft: "5px",
+                          backgroundColor: "rgba(232,232,232,0.7)",
+                          color: "#F4F4F4"
                         },
                         onClick: function onClick() {
                           return toDelete(map.id, index);
@@ -32285,7 +32285,7 @@ var Relations = function Relations(_ref2) {
                           fontSize: "inherit"
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-                        src: '/storage/relaciones/' + map.imagen,
+                        src: "/storage/relaciones/" + map.imagen,
                         className: "maps-preview"
                       })]
                     }, index);
@@ -32307,23 +32307,23 @@ var Relations = function Relations(_ref2) {
               mt: 2,
               style: {
                 maxHeight: 350,
-                overflowY: 'scroll'
+                overflowY: "scroll"
               },
               children: oldRelation.invoices && oldRelation.invoices.length && oldRelation.invoices.map(function (invoice, index) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                   item: true,
                   xs: 1,
                   style: {
-                    cursor: 'pointer'
+                    cursor: "pointer"
                   },
                   onClick: function onClick() {
                     return selectedFolio(invoice);
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-                    src: '/storage/relaciones/' + invoice.imagen,
+                    src: "/storage/relaciones/" + invoice.imagen,
                     style: {
-                      width: '100%',
-                      objectFit: 'cover'
+                      width: "100%",
+                      objectFit: "cover"
                     }
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
@@ -32331,14 +32331,14 @@ var Relations = function Relations(_ref2) {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                       variant: "body2",
                       align: "center",
-                      children: ["Folio no. ", invoice.folio]
+                      children: ["Folio no.", " ", invoice.folio]
                     })
                   })]
                 }, index);
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
-              justifyContent: 'right',
+              justifyContent: "right",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                 variant: "outlined",
                 color: "primary",
@@ -32361,10 +32361,10 @@ var Relations = function Relations(_ref2) {
           }),
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
             container: true,
-            justifyContent: 'space-between',
+            justifyContent: "space-between",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
               variant: "h6",
-              children: folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'
+              children: folioValues.id === null ? "Agregar Folio" : "Editar Folio"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
               type: "button",
               color: "error",
@@ -32373,9 +32373,9 @@ var Relations = function Relations(_ref2) {
                 return setOpenDeleteFolio(true);
               },
               style: folioValues.id === null ? {
-                display: 'none'
+                display: "none"
               } : {
-                display: 'block'
+                display: "block"
               },
               children: "Eliminar"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -32395,7 +32395,7 @@ var Relations = function Relations(_ref2) {
                   onSubmit: submitDeleteFolio,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
-                    justifyContent: 'space-between',
+                    justifyContent: "space-between",
                     style: {
                       marginTop: 10
                     },
@@ -32405,7 +32405,7 @@ var Relations = function Relations(_ref2) {
                         return setOpenDeleteFolio(false);
                       },
                       style: {
-                        color: '#A1A1A1'
+                        color: "#A1A1A1"
                       },
                       children: "Cancelar"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32432,8 +32432,8 @@ var Relations = function Relations(_ref2) {
                 error: errors.errors && folioValues.no_folio,
                 helperText: folioValues.error === true && errors.no_folio,
                 style: {
-                  marginTop: '40px',
-                  marginBottom: '0px'
+                  marginTop: "40px",
+                  marginBottom: "0px"
                 },
                 type: "number",
                 InputLabelProps: {
@@ -32449,8 +32449,8 @@ var Relations = function Relations(_ref2) {
                 error: errors.nombre && folioValues.nombre,
                 helperText: folioValues.error === true && errors.nombre,
                 style: {
-                  marginTop: '40px',
-                  marginBottom: '0px'
+                  marginTop: "40px",
+                  marginBottom: "0px"
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
                 id: "descripcion",
@@ -32461,8 +32461,8 @@ var Relations = function Relations(_ref2) {
                 error: errors.descripcion && folioValues.descripcion,
                 helperText: folioValues.error === true && errors.descripcion,
                 style: {
-                  marginTop: '30px',
-                  marginBottom: '25px'
+                  marginTop: "30px",
+                  marginBottom: "25px"
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                 container: true,
@@ -32471,7 +32471,7 @@ var Relations = function Relations(_ref2) {
                   id: "folioImage",
                   type: "file",
                   style: {
-                    display: 'none'
+                    display: "none"
                   },
                   onChange: function onChange() {
                     return changeFolioImage();
@@ -32480,12 +32480,12 @@ var Relations = function Relations(_ref2) {
                   htmlFor: "folioImage",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     id: "folioImageContainer",
-                    className: !errors.image ? 'maps-skelleton' : 'maps-skelleton-error',
+                    className: !errors.image ? "maps-skelleton" : "maps-skelleton-error",
                     style: folioValues.image !== null && folioValues.image.length > 0 ? {
-                      backgroundImage: 'url(' + URL.createObjectURL(folioValues.image[0]) + ')',
-                      border: 'none'
+                      backgroundImage: "url(" + URL.createObjectURL(folioValues.image[0]) + ")",
+                      border: "none"
                     } : {
-                      backgroundImage: 'url(/storage/relaciones/' + folioValues.oldImage + ')'
+                      backgroundImage: "url(/storage/relaciones/" + folioValues.oldImage + ")"
                     },
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_icons_material_FileUpload__WEBPACK_IMPORTED_MODULE_23__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                       children: "Cambiar imagen"
@@ -32496,7 +32496,7 @@ var Relations = function Relations(_ref2) {
                 type: "button",
                 variant: "contained",
                 style: {
-                  marginBottom: '15px',
+                  marginBottom: "15px",
                   marginTop: 15
                 },
                 onClick: addTranscription,
@@ -32506,7 +32506,7 @@ var Relations = function Relations(_ref2) {
                   container: true,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
                     container: true,
-                    justifyContent: 'space-between',
+                    justifyContent: "space-between",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                       variant: "body",
                       color: "primary",
@@ -32520,9 +32520,9 @@ var Relations = function Relations(_ref2) {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
                     variant: "body2",
                     style: {
-                      whiteSpace: 'pre-line',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis'
+                      whiteSpace: "pre-line",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis"
                     },
                     children: transcription.texto
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -32532,7 +32532,7 @@ var Relations = function Relations(_ref2) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
               container: true,
-              justifyContent: 'space-between',
+              justifyContent: "space-between",
               style: {
                 marginTop: 10
               },
@@ -32542,7 +32542,7 @@ var Relations = function Relations(_ref2) {
                   return setOpen(false);
                 },
                 style: {
-                  color: '#A1A1A1'
+                  color: "#A1A1A1"
                 },
                 children: "Cancelar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32587,8 +32587,8 @@ var Relations = function Relations(_ref2) {
             error: errors.nombre && transcriptionValues.error,
             helperText: transcriptionValues.error === true && errors.nombre,
             style: {
-              marginTop: '40px',
-              marginBottom: '0px'
+              marginTop: "40px",
+              marginBottom: "0px"
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
             id: "texto",
@@ -32600,8 +32600,8 @@ var Relations = function Relations(_ref2) {
             error: errors.texto && transcriptionValues.error,
             helperText: transcriptionValues.error === true && errors.texto,
             style: {
-              marginTop: '40px',
-              marginBottom: '0px'
+              marginTop: "40px",
+              marginBottom: "0px"
             },
             rows: 8,
             multiline: true
@@ -32618,7 +32618,7 @@ var Relations = function Relations(_ref2) {
                 return setOpenTranscription(false);
               },
               style: {
-                color: '#A1A1A1'
+                color: "#A1A1A1"
               },
               children: "Cancelar"
             }), transcriptionIndex === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32646,7 +32646,7 @@ var Relations = function Relations(_ref2) {
 };
 
 Relations.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Agregar Relaci\xF3n",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -32668,14 +32668,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/Layout */ "./resources/js/layouts/Layout/index.jsx");
+/* harmony import */ var _layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/LayoutAdmin */ "./resources/js/layouts/LayoutAdmin/index.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _css_admin_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/admin.css */ "./resources/css/admin.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material_Dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Dialog */ "./node_modules/@mui/material/Dialog/Dialog.js");
@@ -32747,7 +32747,7 @@ var Relations = function Relations(_ref) {
       status = _usePage$props.status;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    url: (api === null || api === void 0 ? void 0 : api.url) || '',
+    url: (api === null || api === void 0 ? void 0 : api.url) || "",
     error: false
   }),
       _useState2 = _slicedToArray(_useState, 2),
@@ -32764,7 +32764,7 @@ var Relations = function Relations(_ref) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia.post(route('api.update'), values, {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia.post(route("api.update"), values, {
       onSuccess: function onSuccess() {
         setOpen(false);
       },
@@ -32781,7 +32781,7 @@ var Relations = function Relations(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
       style: {
-        marginTop: '36px'
+        marginTop: "36px"
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
         variant: "h5",
@@ -32793,7 +32793,7 @@ var Relations = function Relations(_ref) {
         mt: 5,
         style: {
           maxHeight: 600,
-          overflowY: 'scroll'
+          overflowY: "scroll"
         },
         children: relations && relations.length > 0 && relations.map(function (relation, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32802,27 +32802,27 @@ var Relations = function Relations(_ref) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
               href: "/admin/relations/" + relation.id,
               style: {
-                textDecoration: 'none',
-                color: 'black'
+                textDecoration: "none",
+                color: "black"
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
                 container: true,
                 justifyContent: "center",
                 style: {
-                  cursor: 'pointer'
+                  cursor: "pointer"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
                   style: {
                     width: 80,
                     height: 80,
-                    objectFit: 'cover',
-                    borderRadius: '50%'
+                    objectFit: "cover",
+                    borderRadius: "50%"
                   },
-                  src: '/storage/relaciones/' + relation.miniatura
+                  src: "/storage/relaciones/" + relation.miniatura
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
                   align: "center",
                   style: {
-                    width: '100%'
+                    width: "100%"
                   },
                   children: relation.alt_nombre
                 })]
@@ -32832,7 +32832,7 @@ var Relations = function Relations(_ref) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
         container: true,
-        justifyContent: 'space-between',
+        justifyContent: "space-between",
         mt: 5,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
           variant: "outlined",
@@ -32841,7 +32841,7 @@ var Relations = function Relations(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.InertiaLink, {
           href: route("admin.create"),
           style: {
-            textDecoration: 'none'
+            textDecoration: "none"
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
             color: "primary",
@@ -32855,7 +32855,7 @@ var Relations = function Relations(_ref) {
         keepMounted: true,
         onClose: handleClose,
         "aria-describedby": "alert-dialog-slide-description",
-        maxWidth: 'md',
+        maxWidth: "md",
         fullWidth: true,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
           onSubmit: handleSubmit,
@@ -32871,12 +32871,12 @@ var Relations = function Relations(_ref) {
               error: errors.url && values.error == true && true,
               helperText: values.error == true && errors.url,
               style: {
-                margin: '25px 0px'
+                margin: "25px 0px"
               }
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
             container: true,
-            justifyContent: 'space-around',
+            justifyContent: "space-around",
             style: {
               marginBottom: 25
             },
@@ -32898,7 +32898,7 @@ var Relations = function Relations(_ref) {
 };
 
 Relations.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_layouts_Layout__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_layouts_LayoutAdmin__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page,
     title: "Agregar Relaci\xF3n",
     pageTitle: "Relaciones Geogr\xE1ficas"
@@ -32924,8 +32924,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
@@ -33033,8 +33033,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/creditos.css */ "./public/css/creditos.css");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_creditos_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/creditos.css */ "./public/css/creditos.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
@@ -33157,8 +33157,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Paper__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Paper */ "./node_modules/@mui/material/Paper/Paper.js");
 /* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
-/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/carousel.css */ "./public/css/carousel.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_carousel_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../css/carousel.css */ "./public/css/carousel.css");
 /* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/react/swiper-react.js");
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
@@ -33654,7 +33654,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _mui_icons_material_ArrowBackIos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/icons-material/ArrowBackIos */ "./node_modules/@mui/icons-material/ArrowBackIos.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _css_relation_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../css/relation.css */ "./resources/css/relation.css");
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
@@ -34452,6 +34452,453 @@ _inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__.InertiaProgress.init({
 
 /***/ }),
 
+/***/ "./resources/js/layouts/LayoutAdmin/index.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/layouts/LayoutAdmin/index.jsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LayoutAdmin)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/LayoutAdmin/parts/Header.jsx");
+/* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/LayoutAdmin/parts/Footer.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Snackbar/Snackbar.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["title", "pageTitle", "children"];
+
+var _templateObject, _templateObject2, _templateObject3;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+
+
+
+
+var Grid = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin: 0px;\n    grid:\n        \"header header\" min-content\n        \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
+var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n"])));
+var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n"])));
+function LayoutAdmin(_ref) {
+  var title = _ref.title,
+      pageTitle = _ref.pageTitle,
+      children = _ref.children,
+      rest = _objectWithoutProperties(_ref, _excluded);
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    document.title = title;
+  }, [title]);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      openSnack = _useState2[0],
+      setOpenSnack = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      message = _useState4[0],
+      setMessage = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("info"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      type = _useState6[0],
+      setType = _useState6[1];
+
+  var flash = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.usePage)().props.flash;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (flash.success) {
+      setMessage(flash.success);
+      setType("success");
+      setOpenSnack(true);
+    }
+
+    if (flash.error) {
+      setMessage(flash.error);
+      setType("error");
+      setOpenSnack(true);
+    }
+  }, [flash]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Grid, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        open: openSnack,
+        autoHideDuration: 3000,
+        onClose: function onClose() {
+          return setOpenSnack(false);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          onClose: function onClose() {
+            return setOpenSnack(false);
+          },
+          severity: type,
+          sx: {
+            width: "100%"
+          },
+          children: message
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(GridHeader, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_parts_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(GridMain, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          style: {
+            minHeight: "calc(100vh - 349px)",
+            paddingTop: "0px"
+          },
+          children: children
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_parts_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/layouts/LayoutAdmin/parts/Footer.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/layouts/LayoutAdmin/parts/Footer.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Footer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _logos_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logos.png */ "./resources/js/layouts/LayoutAdmin/parts/logos.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    style: {
+      backgroundColor: "#304a71"
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      maxWidth: "xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        container: true,
+        alignItems: "center",
+        justifyContent: "center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          sm: 12,
+          md: 7,
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            src: _logos_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+            style: {
+              marginTop: 18,
+              width: '100%'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          sx: {
+            mt: 1,
+            mb: 1
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+            href: "/creditos",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              size: "large",
+              sx: {
+                color: "white",
+                textDecoration: "underline",
+                ":hover": {
+                  textDecoration: "underline"
+                }
+              },
+              children: "Cr\xE9ditos"
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 12,
+          container: true,
+          direction: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          sx: {
+            mb: 2
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+            href: "https://dragonware.com.mx",
+            target: "_blank",
+            style: {
+              textDecoration: "none",
+              color: "#919EAB",
+              fontSize: "13px"
+            },
+            children: ["Desarrollado por DragonWare", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              src: "/img/assets/dragonBlanco1.png",
+              style: {
+                width: "19px",
+                height: "13px",
+                marginLeft: "10px"
+              }
+            })]
+          })
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/layouts/LayoutAdmin/parts/Header.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/layouts/LayoutAdmin/parts/Header.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/node_modules/@mui/system/esm/colorManipulator.js");
+/* harmony import */ var _mui_material_AppBar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/AppBar */ "./node_modules/@mui/material/AppBar/AppBar.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/Toolbar */ "./node_modules/@mui/material/Toolbar/Toolbar.js");
+/* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material_InputBase__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/InputBase */ "./node_modules/@mui/material/InputBase/InputBase.js");
+/* harmony import */ var _mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Avatar */ "./node_modules/@mui/material/Avatar/Avatar.js");
+/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var laravel_mix_src_Log__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! laravel-mix/src/Log */ "./node_modules/laravel-mix/src/Log.js");
+/* harmony import */ var laravel_mix_src_Log__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(laravel_mix_src_Log__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Search = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_5__["default"])("div")(function (_ref) {
+  var theme = _ref.theme;
+  return _defineProperty({
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_6__.alpha)(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_6__.alpha)(theme.palette.common.white, 0.25)
+    },
+    marginLeft: 0,
+    width: "100%"
+  }, theme.breakpoints.up("sm"), {
+    marginLeft: theme.spacing(1),
+    width: "auto"
+  });
+});
+var SearchIconWrapper = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_5__["default"])("div")(function (_ref3) {
+  var theme = _ref3.theme;
+  return {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  };
+});
+var StyledInputBase = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_5__["default"])(_mui_material_InputBase__WEBPACK_IMPORTED_MODULE_7__["default"])(function (_ref4) {
+  var theme = _ref4.theme;
+  return {
+    color: "inherit",
+    "& .MuiInputBase-input": _defineProperty({
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: "calc(1em + ".concat(theme.spacing(4), ")"),
+      transition: theme.transitions.create("width"),
+      width: "100%"
+    }, theme.breakpoints.up("sm"), {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch"
+      }
+    })
+  };
+});
+function Header() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    search: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.get("/#alfabetico2", values);
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    sx: {
+      flexGrow: 1
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_AppBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      position: "static",
+      style: {
+        boxShadow: "none"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Toolbar__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        style: {
+          backgroundColor: "#383a3a"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          maxWidth: "xl",
+          style: {
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "10px 0px 10px 0px",
+            justifyContent: "space-between"
+          },
+          alignItems: "center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+            href: "/admin/index",
+            style: {
+              textDecoration: "none",
+              display: "flex",
+              flexWrap: "wrap",
+              color: "white"
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              style: {
+                display: "flex",
+                alignItems: "center"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Avatar__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                alt: "RG",
+                src: "/img/assets/img.png",
+                id: "no-mg-1540-l",
+                style: {
+                  marginRight: "8px",
+                  marginLeft: "24px"
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                component: "div",
+                sx: {
+                  flexGrow: 1,
+                  display: {
+                    sm: "block"
+                  }
+                },
+                style: {
+                  fontFamily: "Noto Sans"
+                },
+                children: "Relaciones Geogr\xE1ficas de la Nueva Espa\xF1a (1577 - 1585)"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            href: "/logout",
+            method: "post",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+              variant: "contained",
+              children: "Cerrar Sesi\xF3n"
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/layouts/Layout/index.jsx":
 /*!***********************************************!*\
   !*** ./resources/js/layouts/Layout/index.jsx ***!
@@ -34467,7 +34914,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Header */ "./resources/js/layouts/Layout/parts/Header.jsx");
 /* harmony import */ var _parts_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Footer */ "./resources/js/layouts/Layout/parts/Footer.jsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/common.css */ "./public/css/common.css");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/common.css */ "./public/css/common.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Snackbar/Snackbar.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Alert/Alert.js");
@@ -35535,6 +35982,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/vendor/leaflet/dist/marker-shadow.png?a0c6cc1401c107b501efee6477816891");
+
+/***/ }),
+
+/***/ "./resources/js/layouts/LayoutAdmin/parts/logos.png":
+/*!**********************************************************!*\
+  !*** ./resources/js/layouts/LayoutAdmin/parts/logos.png ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logos.png?79359c2532ec23165afaabe8921a86ef");
 
 /***/ }),
 
@@ -106990,7 +107452,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\oscar\\\\Documents\\\\GitHub\\\\relacionesGeograficas","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

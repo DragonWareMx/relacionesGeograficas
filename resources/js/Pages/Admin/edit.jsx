@@ -1,101 +1,107 @@
-import Layout from '../../layouts/Layout'
-import React, { useState, useEffect } from 'react';
-import {Container,Typography, Grid, Card, 
-    CardContent, FormControl, InputLabel, 
-    Select, Button, TextField, MenuItem,
+import LayoutAdmin from "../../layouts/LayoutAdmin";
+import React, { useState, useEffect } from "react";
+import {
+    Container,
+    Typography,
+    Grid,
+    Card,
+    CardContent,
+    FormControl,
+    InputLabel,
+    Select,
+    Button,
+    TextField,
+    MenuItem,
     IconButton,
     Modal,
     Box,
     Paper,
     Snackbar,
-} from '@mui/material';
-import '/css/common.css'
-import '../../../css/admin.css'
-import { usePage } from '@inertiajs/inertia-react';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import { styled } from '@mui/material/styles';
+} from "@mui/material";
+import "/css/common.css";
+import "../../../css/admin.css";
+import { usePage } from "@inertiajs/inertia-react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import { styled } from "@mui/material/styles";
 import axios from "axios";
-import CloseIcon from '@mui/icons-material/Close';
-import '../../../css/relation.css'
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { Edit } from '@mui/icons-material';
-import { Inertia } from '@inertiajs/inertia';
-import MuiAlert from '@mui/material/Alert';
+import CloseIcon from "@mui/icons-material/Close";
+import "../../../css/relation.css";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import { Edit } from "@mui/icons-material";
+import { Inertia } from "@inertiajs/inertia";
+import MuiAlert from "@mui/material/Alert";
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: '#ffffff',
-    backgroundColor: '#4D7DB3',
-    '&:hover': {
-        backgroundColor: '#4D7DB3',
+    color: "#ffffff",
+    backgroundColor: "#4D7DB3",
+    "&:hover": {
+        backgroundColor: "#4D7DB3",
     },
     borderRadius: 0,
-    padding: '20px 40px',
-    fontFamily: 'Nunito'
+    padding: "20px 40px",
+    fontFamily: "Nunito",
 }));
 
 const CssTextField = styled(TextField)({
-    '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: '#D9D9D9',
-            borderRadius: '10px'
+    "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+            borderColor: "#D9D9D9",
+            borderRadius: "10px",
         },
-        '&.Mui-focused fieldset': {
-            borderColor: '#304A71',
+        "&.Mui-focused fieldset": {
+            borderColor: "#304A71",
         },
-        '&:hover fieldset': {
-            borderColor: '#D9D9D9',
+        "&:hover fieldset": {
+            borderColor: "#D9D9D9",
         },
     },
-    '& label.Mui-focused': {
-        color: '#304A71',
+    "& label.Mui-focused": {
+        color: "#304A71",
     },
-    '& label.Mui': {
-        color: '#D9D9D9',
-        fontSize:'14px'
+    "& label.Mui": {
+        color: "#D9D9D9",
+        fontSize: "14px",
     },
 });
 
 const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '90%',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "90%",
     maxWidth: 600,
-    bgcolor: 'background.paper',
+    bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
 };
 
 const style2 = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '80%',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "80%",
     maxWidth: 400,
-    bgcolor: 'background.paper',
+    bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
 };
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
+});
 
-
-const Relations = ({oldRelation, api}) => {
-
+const Relations = ({ oldRelation, api }) => {
     useEffect(() => {
         axios
-            .get(api.url+`relaciones`)
+            .get(api.url + `relaciones`)
             .then((response) => {
                 setData(response.data);
             })
             .catch((error) => {});
     }, []);
-
 
     //form data
     const { errors, status } = usePage().props;
@@ -103,33 +109,35 @@ const Relations = ({oldRelation, api}) => {
     const [values, setValues] = useState({
         imageBanner: [],
         alt_nombre: oldRelation.alt_nombre,
-        imageMin:[],
+        imageMin: [],
         // fuentes:oldRelation.fuentes || '',
         mapImages: [],
 
-        error: false
+        error: false,
     });
-    const [relation, setRelation] = useState(JSON.stringify({idDS: oldRelation.idDS,cNombre: oldRelation.nombre}));
+    const [relation, setRelation] = useState(
+        JSON.stringify({ idDS: oldRelation.idDS, cNombre: oldRelation.nombre })
+    );
     const [data, setData] = useState([]);
 
     function handleChange(e) {
         const key = e.target.id;
-        const value = e.target.value
-        setValues(values => ({
+        const value = e.target.value;
+        setValues((values) => ({
             ...values,
             [key]: value,
-        }))
+        }));
     }
 
     const handleChangeSelect = (event) => {
         setRelation(event.target.value);
     };
 
-    function loadImage(id){
+    function loadImage(id) {
         var input = document.getElementById(id);
-        var container=document.getElementById(id+'Container');
+        var container = document.getElementById(id + "Container");
         if (input.files) {
-            let arr=[];
+            let arr = [];
             arr.push(input.files[0]);
             setValues((values) => ({
                 ...values,
@@ -138,15 +146,13 @@ const Relations = ({oldRelation, api}) => {
         }
     }
 
-    function addImages(id){
+    function addImages(id) {
         var input = document.getElementById(id);
         if (input.files) {
             var arr = values[id].slice();
 
-            for(var i=0;i<input.files.length;i++){
-                arr.push(
-                    input.files[i]
-                );
+            for (var i = 0; i < input.files.length; i++) {
+                arr.push(input.files[i]);
             }
             setValues((values) => ({
                 ...values,
@@ -155,21 +161,25 @@ const Relations = ({oldRelation, api}) => {
         }
     }
 
-    function removeImg(id,index){
-        var arr=values[id].slice();
+    function removeImg(id, index) {
+        var arr = values[id].slice();
         setValues((values) => ({
             ...values,
-            [id]:arr.filter((o, i) => i !== index)
+            [id]: arr.filter((o, i) => i !== index),
         }));
     }
 
-
     function handleSubmit(e) {
         e.preventDefault();
-        let finalRelation=JSON.parse(relation);
-        let data={...values,nombre:finalRelation.cNombre, idDS:finalRelation.idDS, deletedPictos}
+        let finalRelation = JSON.parse(relation);
+        let data = {
+            ...values,
+            nombre: finalRelation.cNombre,
+            idDS: finalRelation.idDS,
+            deletedPictos,
+        };
 
-        Inertia.post(route('admin.update', oldRelation.id), data, {
+        Inertia.post(route("admin.update", oldRelation.id), data, {
             onSuccess: () => {
                 setOpenSnack(true);
             },
@@ -185,80 +195,75 @@ const Relations = ({oldRelation, api}) => {
 
     const [deletedPictos, setDeletedPictos] = useState([]);
     const [oldPictos, setOldPictos] = useState(oldRelation.maps);
-    
-    function toDelete(id, index){
-        let array = deletedPictos;
-        setDeletedPictos([...array,id])
-        let anotherArray = oldPictos;
-        setOldPictos(
-            anotherArray.filter((o, i) => i !== index)
-        )   
-    }
 
+    function toDelete(id, index) {
+        let array = deletedPictos;
+        setDeletedPictos([...array, id]);
+        let anotherArray = oldPictos;
+        setOldPictos(anotherArray.filter((o, i) => i !== index));
+    }
 
     const [open, setOpen] = useState(false);
     const [openTranscription, setOpenTranscription] = useState(false);
     const [folioValues, setFolioValues] = useState({
-        id:'',
-        no_folio: '',
-        nombre:'',
-        descripcion:'',
-        image: '',
+        id: "",
+        no_folio: "",
+        nombre: "",
+        descripcion: "",
+        image: "",
         transcriptions: [],
 
-        error: false
+        error: false,
     });
     const [transcriptionValues, setTranscriptionValues] = useState({
-        nombre: '',
-        texto:'',
+        nombre: "",
+        texto: "",
     });
 
-    function selectedFolio(folio){
+    function selectedFolio(folio) {
         setFolioValues(() => ({
-            id:folio.id,
+            id: folio.id,
             no_folio: folio.folio,
             nombre: folio.nombre,
-            descripcion: folio.descripcion || '',
+            descripcion: folio.descripcion || "",
             image: null,
-            oldImage:folio.imagen,
-            transcriptions: folio.transcriptions
+            oldImage: folio.imagen,
+            transcriptions: folio.transcriptions,
         }));
         setOpen(true);
     }
 
     function handleChangeFolio(e) {
         const key = e.target.id;
-        const value = e.target.value
-        setFolioValues(values => ({
+        const value = e.target.value;
+        setFolioValues((values) => ({
             ...values,
             [key]: value,
-        }))
+        }));
     }
 
     function handleChangeTranscription(e) {
         const key = e.target.id;
-        const value = e.target.value
-        setTranscriptionValues(values => ({
+        const value = e.target.value;
+        setTranscriptionValues((values) => ({
             ...values,
             [key]: value,
-        }))
+        }));
     }
 
-    function addTranscription(){
+    function addTranscription() {
         setTranscriptionValues({
-            nombre:'',
-            texto:''
+            nombre: "",
+            texto: "",
         });
         setTranscriptionIndex(null);
         setOpenTranscription(true);
     }
 
-    function pushTranscription(){
+    function pushTranscription() {
         let transcriptions = folioValues.transcriptions;
-        transcriptions=[...transcriptions,
-            transcriptionValues
-        ];
-        setFolioValues(values => ({
+        transcriptions = [...transcriptions, transcriptionValues];
+        setFolioValues((values) => ({
             ...values,
             transcriptions,
         }));
@@ -267,39 +272,44 @@ const Relations = ({oldRelation, api}) => {
 
     const [transcriptionIndex, setTranscriptionIndex] = useState(null);
 
-    function editTranscription(transcription, index){
+    function editTranscription(transcription, index) {
         setTranscriptionValues({
-            nombre:transcription.nombre,
-            texto:transcription.texto
+            nombre: transcription.nombre,
+            texto: transcription.texto,
         });
         setTranscriptionIndex(index);
         setOpenTranscription(true);
     }
 
-    function patchTranscription(){
+    function patchTranscription() {
         let transcriptions = folioValues.transcriptions;
-        transcriptions[transcriptionIndex] = {nombre:transcriptionValues.nombre,texto:transcriptionValues.texto};        
-        setFolioValues(values => ({
+        transcriptions[transcriptionIndex] = {
+            nombre: transcriptionValues.nombre,
+            texto: transcriptionValues.texto,
+        };
+        setFolioValues((values) => ({
             ...values,
             transcriptions,
         }));
         setOpenTranscription(false);
     }
 
-    function removeTranscription(){
+    function removeTranscription() {
         let transcriptions = folioValues.transcriptions;
-        transcriptions = transcriptions.filter((o, i) => i !== transcriptionIndex);
-        setFolioValues(values => ({
+        transcriptions = transcriptions.filter(
+            (o, i) => i !== transcriptionIndex
+        );
+        setFolioValues((values) => ({
             ...values,
-            transcriptions
+            transcriptions,
         }));
         setOpenTranscription(false);
     }
 
-    function changeFolioImage(){
-        var input = document.getElementById('folioImage');
+    function changeFolioImage() {
+        var input = document.getElementById("folioImage");
         if (input.files) {
-            let arr=[];
+            let arr = [];
             arr.push(input.files[0]);
             setFolioValues((values) => ({
                 ...values,
@@ -308,10 +318,10 @@ const Relations = ({oldRelation, api}) => {
         }
     }
 
-    function handleSubmitFolio(e){
+    function handleSubmitFolio(e) {
         e.preventDefault();
-        const data=folioValues;
-        Inertia.post(route('folio.update', [oldRelation.id, data.id]), data, {
+        const data = folioValues;
+        Inertia.post(route("folio.update", [oldRelation.id, data.id]), data, {
             onSuccess: () => {
                 setOpenSnack(true);
                 setOpen(false);
@@ -325,9 +335,9 @@ const Relations = ({oldRelation, api}) => {
         });
     }
 
-    function submitDelete(e){
+    function submitDelete(e) {
         e.preventDefault();
-        Inertia.delete(route('admin.delete', oldRelation.id), {
+        Inertia.delete(route("admin.delete", oldRelation.id), {
             onSuccess: () => {
                 setOpen(false);
                 setOpenSnack(true);
@@ -341,40 +351,43 @@ const Relations = ({oldRelation, api}) => {
         });
     }
 
-    function submitDeleteFolio(e){
+    function submitDeleteFolio(e) {
         e.preventDefault();
-        Inertia.delete(route('folio.delete', [oldRelation.id, folioValues.id]), {
-            onSuccess: () => {
-                setOpenDeleteFolio(false);
-                setOpen(false);
-                setOpenSnack(true);
-            },
-            onError: () => {
-                setValues((values) => ({
-                    ...values,
-                    error: true,
-                }));
-            },
-        });
+        Inertia.delete(
+            route("folio.delete", [oldRelation.id, folioValues.id]),
+            {
+                onSuccess: () => {
+                    setOpenDeleteFolio(false);
+                    setOpen(false);
+                    setOpenSnack(true);
+                },
+                onError: () => {
+                    setValues((values) => ({
+                        ...values,
+                        error: true,
+                    }));
+                },
+            }
+        );
     }
 
-    function addNewFolio(){
+    function addNewFolio() {
         setFolioValues({
-            id:null,
-            no_folio: '',
-            nombre:'',
-            descripcion:'',
+            id: null,
+            no_folio: "",
+            nombre: "",
+            descripcion: "",
             image: null,
             transcriptions: [],
         });
         setOpen(true);
     }
 
-    function handleNewFolio(e){
+    function handleNewFolio(e) {
         e.preventDefault();
-        const data=folioValues;
+        const data = folioValues;
 
-        Inertia.post(route('folio.store', oldRelation.id), data, {
+        Inertia.post(route("folio.store", oldRelation.id), data, {
             onSuccess: () => {
                 setOpenSnack(true);
                 setOpen(false);
@@ -394,39 +407,59 @@ const Relations = ({oldRelation, api}) => {
 
     return (
         <>
-            <Container style={{marginTop:'36px'}}>
+            <Container style={{ marginTop: "36px" }}>
                 <Grid container mt={2}>
-                    <Card style={{width:'100%', marginBottom:50}}>
+                    <Card style={{ width: "100%", marginBottom: 50 }}>
                         <CardContent>
-                            <Grid container justifyContent={'space-between'} alignContent='center'>
-                                <Typography variant='h5' color='primary'>{oldRelation?.nombre}</Typography>
-                                <Button 
-                                    type='button'
-                                    variant='outlined'
-                                    color='error'
-                                    onClick={()=> setOpenDelete(true)}
+                            <Grid
+                                container
+                                justifyContent={"space-between"}
+                                alignContent="center"
+                            >
+                                <Typography variant="h5" color="primary">
+                                    {oldRelation?.nombre}
+                                </Typography>
+                                <Button
+                                    type="button"
+                                    variant="outlined"
+                                    color="error"
+                                    onClick={() => setOpenDelete(true)}
                                 >
                                     Eliminar
                                 </Button>
                                 <Modal
                                     open={openDelete}
-                                    onClose={()=>setOpenDelete(false)}
+                                    onClose={() => setOpenDelete(false)}
                                 >
                                     <Card sx={style2}>
-                                        <Typography color='error' variant='h6'>
-                                            ¿Seguro que deseas eliminar esta relación?
+                                        <Typography color="error" variant="h6">
+                                            ¿Seguro que deseas eliminar esta
+                                            relación?
                                         </Typography>
-                                        <Typography>Esta acción es irreversible, 
-                                            se perderán todos los folios y transcripciones 
-                                            de esta relación
+                                        <Typography>
+                                            Esta acción es irreversible, se
+                                            perderán todos los folios y
+                                            transcripciones de esta relación
                                         </Typography>
                                         <form onSubmit={submitDelete}>
-                                            <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
-                                                <Button type='button' onClick={()=>setOpenDelete(false)} style={{color:'#A1A1A1'}}>Cancelar</Button>
-                                                <Button 
-                                                    type='submit'
-                                                    color='error'
-                                                    variant='outlined'
+                                            <Grid
+                                                container
+                                                justifyContent={"space-between"}
+                                                style={{ marginTop: 10 }}
+                                            >
+                                                <Button
+                                                    type="button"
+                                                    onClick={() =>
+                                                        setOpenDelete(false)
+                                                    }
+                                                    style={{ color: "#A1A1A1" }}
+                                                >
+                                                    Cancelar
+                                                </Button>
+                                                <Button
+                                                    type="submit"
+                                                    color="error"
+                                                    variant="outlined"
                                                 >
                                                     Eliminar
                                                 </Button>
@@ -436,60 +469,112 @@ const Relations = ({oldRelation, api}) => {
                                 </Modal>
                             </Grid>
                             <form onSubmit={handleSubmit}>
-                                <FormControl fullWidth style={{marginTop:'40px',marginBottom:'25px'}}>
-                                    <InputLabel id="relation-names">Nombre</InputLabel>
+                                <FormControl
+                                    fullWidth
+                                    style={{
+                                        marginTop: "40px",
+                                        marginBottom: "25px",
+                                    }}
+                                >
+                                    <InputLabel id="relation-names">
+                                        Nombre
+                                    </InputLabel>
                                     <Select
                                         labelId="relation-names"
                                         id="nombre"
-                                        value={relation || ''}
+                                        value={relation || ""}
                                         label="Nombre"
                                         onChange={handleChangeSelect}
-                                        error={errors.nombre && values.error == true && true}
-                                        helperText={values.error == true && errors.nombre}
+                                        error={
+                                            errors.nombre &&
+                                            values.error == true &&
+                                            true
+                                        }
+                                        helperText={
+                                            values.error == true &&
+                                            errors.nombre
+                                        }
                                     >
-                                        {data && data.length > 0 && data.map((rel, index) => (
-                                            <MenuItem 
-                                                key={index} 
-                                                value={JSON.stringify({idDS: rel.idDS,cNombre: rel.cNombre})}
-                                            >
-                                                {rel.idDS+' '+rel.cNombre}
-                                            </MenuItem>
-                                        ))}
+                                        {data &&
+                                            data.length > 0 &&
+                                            data.map((rel, index) => (
+                                                <MenuItem
+                                                    key={index}
+                                                    value={JSON.stringify({
+                                                        idDS: rel.idDS,
+                                                        cNombre: rel.cNombre,
+                                                    })}
+                                                >
+                                                    {rel.idDS +
+                                                        " " +
+                                                        rel.cNombre}
+                                                </MenuItem>
+                                            ))}
                                     </Select>
                                 </FormControl>
                                 <TextField
-                                    id='alt_nombre'
-                                    label='Cambiar nombre'
+                                    id="alt_nombre"
+                                    label="Cambiar nombre"
                                     required
                                     fullWidth
                                     value={values.alt_nombre}
-                                    onChange={handleChange} 
-                                    error={errors.alt_nombre && values.error == true && true}
-                                    helperText={values.error == true && errors.alt_nombre}
-                                    style={{marginBottom:'25px'}}
+                                    onChange={handleChange}
+                                    error={
+                                        errors.alt_nombre &&
+                                        values.error == true &&
+                                        true
+                                    }
+                                    helperText={
+                                        values.error == true &&
+                                        errors.alt_nombre
+                                    }
+                                    style={{ marginBottom: "25px" }}
                                 />
-                                <div className='flex-container'>
+                                <div className="flex-container">
                                     {/* BANNER IMAGE */}
                                     <input
                                         accept="image/*"
                                         id="imageBanner"
                                         type="file"
-                                        style={{ display: 'none' }}
-                                        onChange={()=>loadImage('imageBanner')}
+                                        style={{ display: "none" }}
+                                        onChange={() =>
+                                            loadImage("imageBanner")
+                                        }
                                     />
                                     <label htmlFor="imageBanner">
-                                        <div id='imageBannerContainer' 
-                                            className={errors.imageBanner ? 'banner-skelleton error' : 'banner-skelleton'} 
-                                            style={values.imageBanner.length>0 ? 
-                                                {backgroundImage:'url('+URL.createObjectURL(values.imageBanner[0])+')',border:'none'} 
-                                                : {backgroundImage: 'url(/storage/relaciones/'+oldRelation.banner+')'}}
+                                        <div
+                                            id="imageBannerContainer"
+                                            className={
+                                                errors.imageBanner
+                                                    ? "banner-skelleton error"
+                                                    : "banner-skelleton"
+                                            }
+                                            style={
+                                                values.imageBanner.length > 0
+                                                    ? {
+                                                          backgroundImage:
+                                                              "url(" +
+                                                              URL.createObjectURL(
+                                                                  values
+                                                                      .imageBanner[0]
+                                                              ) +
+                                                              ")",
+                                                          border: "none",
+                                                      }
+                                                    : {
+                                                          backgroundImage:
+                                                              "url(/storage/relaciones/" +
+                                                              oldRelation.banner +
+                                                              ")",
+                                                      }
+                                            }
                                         >
-                                            {values.imageBanner.length==0 && 
+                                            {values.imageBanner.length == 0 && (
                                                 <>
                                                     <FileUploadIcon />
                                                     <div>Imagen Banner</div>
                                                 </>
-                                            }
+                                            )}
                                         </div>
                                     </label>
                                     {/* MIN IMAGE */}
@@ -497,21 +582,43 @@ const Relations = ({oldRelation, api}) => {
                                         accept="image/*"
                                         id="imageMin"
                                         type="file"
-                                        style={{ display: 'none' }}
-                                        onChange={()=>loadImage('imageMin')}
+                                        style={{ display: "none" }}
+                                        onChange={() => loadImage("imageMin")}
                                     />
                                     <label htmlFor="imageMin">
-                                        <div id='imageMinContainer' 
-                                            className={errors.imageMin ? 'imageMin-skelleton error' : 'imageMin-skelleton'} 
-                                            style={values.imageMin.length>0 ? {backgroundImage:'url('+URL.createObjectURL(values.imageMin[0])+')',border:'none'} 
-                                                : {backgroundImage: 'url(/storage/relaciones/'+oldRelation.miniatura+')'}}
+                                        <div
+                                            id="imageMinContainer"
+                                            className={
+                                                errors.imageMin
+                                                    ? "imageMin-skelleton error"
+                                                    : "imageMin-skelleton"
+                                            }
+                                            style={
+                                                values.imageMin.length > 0
+                                                    ? {
+                                                          backgroundImage:
+                                                              "url(" +
+                                                              URL.createObjectURL(
+                                                                  values
+                                                                      .imageMin[0]
+                                                              ) +
+                                                              ")",
+                                                          border: "none",
+                                                      }
+                                                    : {
+                                                          backgroundImage:
+                                                              "url(/storage/relaciones/" +
+                                                              oldRelation.miniatura +
+                                                              ")",
+                                                      }
+                                            }
                                         >
-                                            {values.imageMin.length == 0 &&
+                                            {values.imageMin.length == 0 && (
                                                 <>
                                                     <FileUploadIcon />
                                                     <div>Miniatura</div>
                                                 </>
-                                            }
+                                            )}
                                         </div>
                                     </label>
                                 </div>
@@ -528,8 +635,8 @@ const Relations = ({oldRelation, api}) => {
                                     helperText={values.error == true && errors.fuentes}
                                     style={{marginTop:'25px'}}
                                 /> */}
-                                <div className='title'>Mapas pictográficos</div>
-                                <div className='flex-container'>
+                                <div className="title">Mapas pictográficos</div>
+                                <div className="flex-container">
                                     {/* IMAGENES */}
                                     <Grid container spacing={1}>
                                         {/* MAP IMAGES */}
@@ -538,132 +645,219 @@ const Relations = ({oldRelation, api}) => {
                                             id="mapImages"
                                             multiple
                                             type="file"
-                                            style={{ display: 'none' }}
-                                            onChange={()=>addImages('mapImages')}
+                                            style={{ display: "none" }}
+                                            onChange={() =>
+                                                addImages("mapImages")
+                                            }
                                         />
                                         <label htmlFor="mapImages">
-                                            <div 
-                                                id='mapImagesContainer' 
-                                                className={errors.mapImages ? 'maps-skelleton error' : 'maps-skelleton'}>
-                                                <FileUploadIcon 
-                                            />
+                                            <div
+                                                id="mapImagesContainer"
+                                                className={
+                                                    errors.mapImages
+                                                        ? "maps-skelleton error"
+                                                        : "maps-skelleton"
+                                                }
+                                            >
+                                                <FileUploadIcon />
                                                 <div>Agregar mapas</div>
                                             </div>
                                         </label>
-                                        {values.mapImages && values.mapImages.length > 0 && values.mapImages.map((preview, index) => (
-                                            <Grid key={index} item>
-                                                <IconButton aria-label="delete" 
-                                                    size="small"
-                                                    style={{ position: 'absolute', zIndex: '999', 
-                                                    marginTop:'5px',
-                                                    marginLeft:'5px',
-                                                    backgroundColor:'rgba(232,232,232,0.7)',
-                                                    color: '#F4F4F4'}}
-                                                    onClick={()=>removeImg('mapImages',index)}
-                                                >
-                                                    <CloseIcon fontSize="inherit"/>
-                                                </IconButton>
-                                                <img src={URL.createObjectURL(preview)} className="maps-preview" />
-                                            </Grid>
-                                        ))}
-                                        {oldPictos && oldPictos.length > 0 && oldPictos.map((map, index) =>(
-                                            <Grid key={index} item>
-                                                <IconButton aria-label="delete" 
-                                                    size="small"
-                                                    style={{ position: 'absolute', zIndex: '999', 
-                                                    marginTop:'5px',
-                                                    marginLeft:'5px',
-                                                    backgroundColor:'rgba(232,232,232,0.7)',
-                                                    color: '#F4F4F4'}}
-                                                    onClick={()=>toDelete(map.id, index)}
-                                                >
-                                                    <CloseIcon fontSize="inherit"/>
-                                                </IconButton>
-                                                <img src={'/storage/relaciones/'+map.imagen} className="maps-preview" />
-                                            </Grid>
-                                        ))}
+                                        {values.mapImages &&
+                                            values.mapImages.length > 0 &&
+                                            values.mapImages.map(
+                                                (preview, index) => (
+                                                    <Grid key={index} item>
+                                                        <IconButton
+                                                            aria-label="delete"
+                                                            size="small"
+                                                            style={{
+                                                                position:
+                                                                    "absolute",
+                                                                zIndex: "999",
+                                                                marginTop:
+                                                                    "5px",
+                                                                marginLeft:
+                                                                    "5px",
+                                                                backgroundColor:
+                                                                    "rgba(232,232,232,0.7)",
+                                                                color: "#F4F4F4",
+                                                            }}
+                                                            onClick={() =>
+                                                                removeImg(
+                                                                    "mapImages",
+                                                                    index
+                                                                )
+                                                            }
+                                                        >
+                                                            <CloseIcon fontSize="inherit" />
+                                                        </IconButton>
+                                                        <img
+                                                            src={URL.createObjectURL(
+                                                                preview
+                                                            )}
+                                                            className="maps-preview"
+                                                        />
+                                                    </Grid>
+                                                )
+                                            )}
+                                        {oldPictos &&
+                                            oldPictos.length > 0 &&
+                                            oldPictos.map((map, index) => (
+                                                <Grid key={index} item>
+                                                    <IconButton
+                                                        aria-label="delete"
+                                                        size="small"
+                                                        style={{
+                                                            position:
+                                                                "absolute",
+                                                            zIndex: "999",
+                                                            marginTop: "5px",
+                                                            marginLeft: "5px",
+                                                            backgroundColor:
+                                                                "rgba(232,232,232,0.7)",
+                                                            color: "#F4F4F4",
+                                                        }}
+                                                        onClick={() =>
+                                                            toDelete(
+                                                                map.id,
+                                                                index
+                                                            )
+                                                        }
+                                                    >
+                                                        <CloseIcon fontSize="inherit" />
+                                                    </IconButton>
+                                                    <img
+                                                        src={
+                                                            "/storage/relaciones/" +
+                                                            map.imagen
+                                                        }
+                                                        className="maps-preview"
+                                                    />
+                                                </Grid>
+                                            ))}
                                     </Grid>
                                 </div>
-                                <Grid container justifyContent='right'>
-                                    <Button type='submit' color='primary' variant='contained'>Guardar</Button>            
+                                <Grid container justifyContent="right">
+                                    <Button
+                                        type="submit"
+                                        color="primary"
+                                        variant="contained"
+                                    >
+                                        Guardar
+                                    </Button>
                                 </Grid>
                             </form>
-                            <Grid container spacing={3} mt={2} style={{maxHeight:350,overflowY:'scroll'}}>
-                                {oldRelation.invoices && oldRelation.invoices.length && oldRelation.invoices.map((invoice, index)=>(
-                                    <Grid item 
-                                        xs={1} 
-                                        style={{cursor:'pointer'}}
-                                        key={index}
-                                        onClick={()=>selectedFolio(invoice)}
-                                    >
-                                        <img 
-                                            src={'/storage/relaciones/'+invoice.imagen}
-                                            style={{width:'100%', objectFit:'cover'}}
-                                        />
-                                        <Grid container justifyContent='center'>
-                                            <Typography variant='body2' align='center'>
-                                                Folio no. {invoice.folio}
-                                            </Typography>
-                                        </Grid>
-                                    </Grid>
-                                ))}
+                            <Grid
+                                container
+                                spacing={3}
+                                mt={2}
+                                style={{ maxHeight: 350, overflowY: "scroll" }}
+                            >
+                                {oldRelation.invoices &&
+                                    oldRelation.invoices.length &&
+                                    oldRelation.invoices.map(
+                                        (invoice, index) => (
+                                            <Grid
+                                                item
+                                                xs={1}
+                                                style={{ cursor: "pointer" }}
+                                                key={index}
+                                                onClick={() =>
+                                                    selectedFolio(invoice)
+                                                }
+                                            >
+                                                <img
+                                                    src={
+                                                        "/storage/relaciones/" +
+                                                        invoice.imagen
+                                                    }
+                                                    style={{
+                                                        width: "100%",
+                                                        objectFit: "cover",
+                                                    }}
+                                                />
+                                                <Grid
+                                                    container
+                                                    justifyContent="center"
+                                                >
+                                                    <Typography
+                                                        variant="body2"
+                                                        align="center"
+                                                    >
+                                                        Folio no.{" "}
+                                                        {invoice.folio}
+                                                    </Typography>
+                                                </Grid>
+                                            </Grid>
+                                        )
+                                    )}
                             </Grid>
-                            <Grid container justifyContent={'right'}>
-                                    <Button 
-                                        variant='outlined'
-                                        color='primary'
-                                        type='button'
-                                        onClick={addNewFolio}
-                                    >
-                                        Agregar folio
-                                    </Button>
+                            <Grid container justifyContent={"right"}>
+                                <Button
+                                    variant="outlined"
+                                    color="primary"
+                                    type="button"
+                                    onClick={addNewFolio}
+                                >
+                                    Agregar folio
+                                </Button>
                             </Grid>
                         </CardContent>
                     </Card>
                 </Grid>
-                <Modal
-                    open={open}
-                    onClose={()=>setOpen(false)}
-                >
-                    <Paper sx={{...style, overflowY: "scroll",height: 500}}>
-                        <Grid container justifyContent={'space-between'}>
+                <Modal open={open} onClose={() => setOpen(false)}>
+                    <Paper sx={{ ...style, overflowY: "scroll", height: 500 }}>
+                        <Grid container justifyContent={"space-between"}>
                             <Typography variant="h6">
-                                {folioValues.id === null ? 'Agregar Folio' : 'Editar Folio'}
+                                {folioValues.id === null
+                                    ? "Agregar Folio"
+                                    : "Editar Folio"}
                             </Typography>
                             <Button
-                                type='button'
-                                color='error'
-                                variant='outlined'
-                                onClick={()=>setOpenDeleteFolio(true)}
-                                style={folioValues.id === null ? {display:'none'} : {display:'block'}}
+                                type="button"
+                                color="error"
+                                variant="outlined"
+                                onClick={() => setOpenDeleteFolio(true)}
+                                style={
+                                    folioValues.id === null
+                                        ? { display: "none" }
+                                        : { display: "block" }
+                                }
                             >
                                 Eliminar
                             </Button>
                             <Modal
                                 open={openDeleteFolio}
-                                onClose={()=>setOpenDeleteFolio(false)}
+                                onClose={() => setOpenDeleteFolio(false)}
                             >
                                 <Card sx={style2}>
-                                    <Typography color='error' variant='h6'>
+                                    <Typography color="error" variant="h6">
                                         ¿Seguro que deseas eliminar este folio?
                                     </Typography>
-                                    <Typography>Esta acción es irreversible, 
-                                        se perderán todas las transcripciones 
-                                        de este folio
+                                    <Typography>
+                                        Esta acción es irreversible, se perderán
+                                        todas las transcripciones de este folio
                                     </Typography>
                                     <form onSubmit={submitDeleteFolio}>
-                                        <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
-                                            <Button 
-                                                type='button' 
-                                                onClick={()=>setOpenDeleteFolio(false)} 
-                                                style={{color:'#A1A1A1'}}
+                                        <Grid
+                                            container
+                                            justifyContent={"space-between"}
+                                            style={{ marginTop: 10 }}
+                                        >
+                                            <Button
+                                                type="button"
+                                                onClick={() =>
+                                                    setOpenDeleteFolio(false)
+                                                }
+                                                style={{ color: "#A1A1A1" }}
                                             >
                                                 Cancelar
                                             </Button>
-                                            <Button 
-                                                type='submit'
-                                                color='error'
-                                                variant='outlined'
+                                            <Button
+                                                type="submit"
+                                                color="error"
+                                                variant="outlined"
                                             >
                                                 Eliminar
                                             </Button>
@@ -672,99 +866,186 @@ const Relations = ({oldRelation, api}) => {
                                 </Card>
                             </Modal>
                         </Grid>
-                        <form onSubmit={folioValues.id === null ? handleNewFolio : handleSubmitFolio}>
+                        <form
+                            onSubmit={
+                                folioValues.id === null
+                                    ? handleNewFolio
+                                    : handleSubmitFolio
+                            }
+                        >
                             <Grid container>
-                                <TextField 
-                                    id='no_folio'
-                                    label='Número de folio'
+                                <TextField
+                                    id="no_folio"
+                                    label="Número de folio"
                                     required
                                     fullWidth
                                     value={folioValues.no_folio}
                                     onChange={handleChangeFolio}
-                                    error={errors.errors && folioValues.no_folio}
-                                    helperText={folioValues.error === true && errors.no_folio}
-                                    style={{marginTop:'40px',marginBottom:'0px'}}
+                                    error={
+                                        errors.errors && folioValues.no_folio
+                                    }
+                                    helperText={
+                                        folioValues.error === true &&
+                                        errors.no_folio
+                                    }
+                                    style={{
+                                        marginTop: "40px",
+                                        marginBottom: "0px",
+                                    }}
                                     type="number"
                                     InputLabelProps={{
                                         shrink: true,
                                     }}
                                 />
                                 <TextField
-                                    id='nombre' 
-                                    label='Nombre' 
+                                    id="nombre"
+                                    label="Nombre"
                                     required
                                     fullWidth
                                     value={folioValues.nombre}
-                                    onChange={handleChangeFolio} 
+                                    onChange={handleChangeFolio}
                                     error={errors.nombre && folioValues.nombre}
-                                    helperText={folioValues.error === true && errors.nombre}
-                                    style={{marginTop:'40px',marginBottom:'0px'}}
+                                    helperText={
+                                        folioValues.error === true &&
+                                        errors.nombre
+                                    }
+                                    style={{
+                                        marginTop: "40px",
+                                        marginBottom: "0px",
+                                    }}
                                 />
                                 <TextField
-                                    id='descripcion' 
-                                    label='Descripción'
+                                    id="descripcion"
+                                    label="Descripción"
                                     fullWidth
                                     value={folioValues.descripcion}
-                                    onChange={handleChangeFolio} 
-                                    error={errors.descripcion && folioValues.descripcion}
-                                    helperText={folioValues.error === true && errors.descripcion}
-                                    style={{marginTop:'30px',marginBottom:'25px'}}
+                                    onChange={handleChangeFolio}
+                                    error={
+                                        errors.descripcion &&
+                                        folioValues.descripcion
+                                    }
+                                    helperText={
+                                        folioValues.error === true &&
+                                        errors.descripcion
+                                    }
+                                    style={{
+                                        marginTop: "30px",
+                                        marginBottom: "25px",
+                                    }}
                                 />
                                 <Grid container>
                                     <input
                                         accept="image/*"
                                         id="folioImage"
                                         type="file"
-                                        style={{ display: 'none' }}
-                                        onChange={()=>changeFolioImage()}
+                                        style={{ display: "none" }}
+                                        onChange={() => changeFolioImage()}
                                     />
                                     <label htmlFor="folioImage">
-                                        <div 
-                                            id='folioImageContainer' 
-                                            className={!errors.image ? 'maps-skelleton' : 'maps-skelleton-error'}
-                                            style={ folioValues.image !== null && folioValues.image.length>0 
-                                                ? {backgroundImage:'url('+URL.createObjectURL(folioValues.image[0])+')',border:'none'} 
-                                                : {backgroundImage: 'url(/storage/relaciones/'+folioValues.oldImage+')'}}
+                                        <div
+                                            id="folioImageContainer"
+                                            className={
+                                                !errors.image
+                                                    ? "maps-skelleton"
+                                                    : "maps-skelleton-error"
+                                            }
+                                            style={
+                                                folioValues.image !== null &&
+                                                folioValues.image.length > 0
+                                                    ? {
+                                                          backgroundImage:
+                                                              "url(" +
+                                                              URL.createObjectURL(
+                                                                  folioValues
+                                                                      .image[0]
+                                                              ) +
+                                                              ")",
+                                                          border: "none",
+                                                      }
+                                                    : {
+                                                          backgroundImage:
+                                                              "url(/storage/relaciones/" +
+                                                              folioValues.oldImage +
+                                                              ")",
+                                                      }
+                                            }
                                         >
-                                            <FileUploadIcon 
-                                        />
+                                            <FileUploadIcon />
                                             <div>Cambiar imagen</div>
                                         </div>
                                     </label>
                                 </Grid>
-                                <Button 
-                                    type='button' 
-                                    variant='contained' 
-                                    style={{marginBottom:'15px', marginTop:15}}
+                                <Button
+                                    type="button"
+                                    variant="contained"
+                                    style={{
+                                        marginBottom: "15px",
+                                        marginTop: 15,
+                                    }}
                                     onClick={addTranscription}
                                 >
                                     Agregar transcripción
                                 </Button>
-                                {folioValues.transcriptions && folioValues.transcriptions.length > 0 
-                                    && folioValues.transcriptions.map((transcription, index)=>(
-                                    <Grid container key={index}>
-                                        <Grid container justifyContent={'space-between'}>
-                                            <Typography variant='body' color='primary'>{transcription.nombre}</Typography>
-                                            <Edit color='primary' onClick={()=>editTranscription(transcription, index)}/>
-                                        </Grid>
-                                        <Typography variant='body2' 
-                                            style={{whiteSpace:'pre-line',overflow:'hidden',textOverflow:'ellipsis'}}
-                                        >
-                                            {transcription.texto}
-                                        </Typography>
-                                        <div className='separator'></div>
-                                    </Grid>
-                                ))}
+                                {folioValues.transcriptions &&
+                                    folioValues.transcriptions.length > 0 &&
+                                    folioValues.transcriptions.map(
+                                        (transcription, index) => (
+                                            <Grid container key={index}>
+                                                <Grid
+                                                    container
+                                                    justifyContent={
+                                                        "space-between"
+                                                    }
+                                                >
+                                                    <Typography
+                                                        variant="body"
+                                                        color="primary"
+                                                    >
+                                                        {transcription.nombre}
+                                                    </Typography>
+                                                    <Edit
+                                                        color="primary"
+                                                        onClick={() =>
+                                                            editTranscription(
+                                                                transcription,
+                                                                index
+                                                            )
+                                                        }
+                                                    />
+                                                </Grid>
+                                                <Typography
+                                                    variant="body2"
+                                                    style={{
+                                                        whiteSpace: "pre-line",
+                                                        overflow: "hidden",
+                                                        textOverflow:
+                                                            "ellipsis",
+                                                    }}
+                                                >
+                                                    {transcription.texto}
+                                                </Typography>
+                                                <div className="separator"></div>
+                                            </Grid>
+                                        )
+                                    )}
                             </Grid>
-                            <Grid container justifyContent={'space-between'} style={{marginTop:10}}>
-                                <Button 
-                                    type='button' 
-                                    onClick={()=>setOpen(false)} 
-                                    style={{color:'#A1A1A1'}}
+                            <Grid
+                                container
+                                justifyContent={"space-between"}
+                                style={{ marginTop: 10 }}
+                            >
+                                <Button
+                                    type="button"
+                                    onClick={() => setOpen(false)}
+                                    style={{ color: "#A1A1A1" }}
                                 >
                                     Cancelar
                                 </Button>
-                                <Button type='submit' variant='contained' mt={2}>
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    mt={2}
+                                >
                                     Guardar
                                 </Button>
                             </Grid>
@@ -774,85 +1055,99 @@ const Relations = ({oldRelation, api}) => {
                 {/* TRANSCRIPTIONS MODAL */}
                 <Modal
                     open={openTranscription}
-                    onClose={()=>setOpenTranscription(false)}
-                    sx={{overflowY: "scroll"}}
+                    onClose={() => setOpenTranscription(false)}
+                    sx={{ overflowY: "scroll" }}
                 >
                     <Paper sx={style}>
-                        <Grid container justifyContent='space-between'>
-                            <Typography variant="h6">
-                                Transcripción
-                            </Typography>
-                            {transcriptionIndex !== null &&
-                                <Button 
-                                    type='button' 
+                        <Grid container justifyContent="space-between">
+                            <Typography variant="h6">Transcripción</Typography>
+                            {transcriptionIndex !== null && (
+                                <Button
+                                    type="button"
                                     onClick={removeTranscription}
-                                    variant='outlined'
-                                    color='error'
+                                    variant="outlined"
+                                    color="error"
                                 >
                                     Eliminar
                                 </Button>
-                            }
+                            )}
                         </Grid>
                         <TextField
-                            id='nombre' 
-                            label='Autor' 
+                            id="nombre"
+                            label="Autor"
                             required
                             fullWidth
                             value={transcriptionValues.nombre}
-                            onChange={handleChangeTranscription} 
+                            onChange={handleChangeTranscription}
                             error={errors.nombre && transcriptionValues.error}
-                            helperText={transcriptionValues.error === true && errors.nombre}
-                            style={{marginTop:'40px',marginBottom:'0px'}}
+                            helperText={
+                                transcriptionValues.error === true &&
+                                errors.nombre
+                            }
+                            style={{ marginTop: "40px", marginBottom: "0px" }}
                         />
                         <TextField
-                            id='texto' 
-                            label='Texto' 
+                            id="texto"
+                            label="Texto"
                             required
                             fullWidth
                             value={transcriptionValues.texto}
-                            onChange={handleChangeTranscription} 
+                            onChange={handleChangeTranscription}
                             error={errors.texto && transcriptionValues.error}
-                            helperText={transcriptionValues.error === true && errors.texto}
-                            style={{marginTop:'40px',marginBottom:'0px'}}
+                            helperText={
+                                transcriptionValues.error === true &&
+                                errors.texto
+                            }
+                            style={{ marginTop: "40px", marginBottom: "0px" }}
                             rows={8}
                             multiline
                         />
-                        <Grid container justifyContent='space-between' style={{marginTop:10}} alignItems='center'>
-                            <Button 
-                                type='button' 
-                                onClick={()=>setOpenTranscription(false)} 
-                                style={{color:'#A1A1A1'}}
+                        <Grid
+                            container
+                            justifyContent="space-between"
+                            style={{ marginTop: 10 }}
+                            alignItems="center"
+                        >
+                            <Button
+                                type="button"
+                                onClick={() => setOpenTranscription(false)}
+                                style={{ color: "#A1A1A1" }}
                             >
                                 Cancelar
                             </Button>
-                            {transcriptionIndex === null ?
-                                <Button 
-                                    variant='contained' 
-                                    type='button' 
-                                    onClick={pushTranscription} 
-                                    style={{marginTop:15}}
+                            {transcriptionIndex === null ? (
+                                <Button
+                                    variant="contained"
+                                    type="button"
+                                    onClick={pushTranscription}
+                                    style={{ marginTop: 15 }}
                                 >
                                     Agregar transcripción
                                 </Button>
-                                :
-                                <Button 
-                                    variant='contained' 
-                                    type='button' 
-                                    onClick={patchTranscription} 
-                                    style={{marginTop:15}}
+                            ) : (
+                                <Button
+                                    variant="contained"
+                                    type="button"
+                                    onClick={patchTranscription}
+                                    style={{ marginTop: 15 }}
                                 >
                                     Guardar
                                 </Button>
-                            }
+                            )}
                         </Grid>
                     </Paper>
                 </Modal>
             </Container>
         </>
-    )
-}
+    );
+};
 
+Relations.layout = (page) => (
+    <LayoutAdmin
+        children={page}
+        title="Agregar Relación"
+        pageTitle="Relaciones Geográficas"
+    />
+);
 
-Relations.layout = page => <Layout children={page} title="Agregar Relación" pageTitle="Relaciones Geográficas" />
-
-export default Relations
+export default Relations;
