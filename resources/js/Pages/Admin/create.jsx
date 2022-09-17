@@ -14,6 +14,7 @@ import {
     InputLabel,
     Select,
     MenuItem,
+    Autocomplete,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -251,11 +252,6 @@ const Create = (api) => {
 
     const [relation, setRelation] = React.useState("");
 
-    const handleChangeSelect = (event) => {
-        console.log(event.target.value);
-        setRelation(event.target.value);
-    };
-
     function handleTranscription(e) {
         const key = e.target.id;
         const value = e.target.value;
@@ -379,12 +375,10 @@ const Create = (api) => {
         //Validando que todo esté llenito
         if (!checkInputs()) return false;
         e.preventDefault();
-        let finalRelation = JSON.parse(relation);
-        console.log(values.alt_nombre);
         let data = {
             ...values,
-            nombre: finalRelation.cNombre,
-            idDS: finalRelation.idDS,
+            nombre: relation.cNombre,
+            idDS: relation.idDS,
         };
         if (!values.alt_nombre || values.alt_nombre === "")
             data.alt_nombre = finalRelation.cNombre;
@@ -397,7 +391,7 @@ const Create = (api) => {
             },
         });
     }
-
+    
     return (
         <>
             <InertiaLink
@@ -442,42 +436,34 @@ const Create = (api) => {
                                         marginBottom: "25px",
                                     }}
                                 >
-                                    <InputLabel id="relation-names">
-                                        Nombre
-                                    </InputLabel>
-                                    <Select
+                                    <Autocomplete
                                         labelId="relation-names"
                                         id="nombre"
-                                        value={relation || ""}
-                                        defaultValue=""
-                                        label="Nombre"
-                                        onChange={handleChangeSelect}
-                                        error={
-                                            errors.nombre &&
-                                            values.error == true &&
-                                            true
+                                        value={relation}
+                                        onChange={(event, newValue) => {
+                                            setRelation(newValue);
+                                        }}
+                                        options={
+                                            (data && data.length) ? data.map(relation => {
+                                                return {
+                                                    label: (relation.idDS + " " + relation.cNombre),
+                                                    idDS: relation.idDS,
+                                                    cNombre: relation.cNombre,
+                                                }
+                                            })
+                                            : []
                                         }
-                                        helperText={
-                                            values.error == true &&
-                                            errors.nombre
-                                        }
-                                    >
-                                        {data &&
-                                            data.length > 0 &&
-                                            data.map((rel, index) => (
-                                                <MenuItem
-                                                    key={index}
-                                                    value={JSON.stringify({
-                                                        idDS: rel.idDS,
-                                                        cNombre: rel.cNombre,
-                                                    })}
-                                                >
-                                                    {rel.idDS +
-                                                        " " +
-                                                        rel.cNombre}
-                                                </MenuItem>
-                                            ))}
-                                    </Select>
+                                        renderInput={(params) => (
+                                            <TextField
+                                              {...params}
+                                              label="Nombre"
+                                              inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'new-password', // disable autocomplete and autofill
+                                              }}
+                                            />
+                                        )}
+                                    />
                                 </FormControl>
                                 <TextField
                                     id="alt_nombre"

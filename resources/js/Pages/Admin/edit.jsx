@@ -17,6 +17,7 @@ import {
     Box,
     Paper,
     Snackbar,
+    Autocomplete,
 } from "@mui/material";
 import "/css/common.css";
 import "../../../css/admin.css";
@@ -115,9 +116,11 @@ const Relations = ({ oldRelation, api }) => {
 
         error: false,
     });
-    const [relation, setRelation] = useState(
-        JSON.stringify({ idDS: oldRelation.idDS, cNombre: oldRelation.nombre })
-    );
+    const [relation, setRelation] = useState({
+        label: (oldRelation.idDS + " " + oldRelation.nombre),
+        idDS: oldRelation.idDS,
+        cNombre: oldRelation.nombre,
+    });
     const [data, setData] = useState([]);
 
     function handleChange(e) {
@@ -128,10 +131,6 @@ const Relations = ({ oldRelation, api }) => {
             [key]: value,
         }));
     }
-
-    const handleChangeSelect = (event) => {
-        setRelation(event.target.value);
-    };
 
     function loadImage(id) {
         var input = document.getElementById(id);
@@ -171,11 +170,10 @@ const Relations = ({ oldRelation, api }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        let finalRelation = JSON.parse(relation);
         let data = {
             ...values,
-            nombre: finalRelation.cNombre,
-            idDS: finalRelation.idDS,
+            nombre: relation.cNombre,
+            idDS: relation.idDS,
             deletedPictos,
         };
 
@@ -476,41 +474,34 @@ const Relations = ({ oldRelation, api }) => {
                                         marginBottom: "25px",
                                     }}
                                 >
-                                    <InputLabel id="relation-names">
-                                        Nombre
-                                    </InputLabel>
-                                    <Select
+                                    <Autocomplete
                                         labelId="relation-names"
                                         id="nombre"
-                                        value={relation || ""}
-                                        label="Nombre"
-                                        onChange={handleChangeSelect}
-                                        error={
-                                            errors.nombre &&
-                                            values.error == true &&
-                                            true
+                                        value={relation}
+                                        onChange={(event, newValue) => {
+                                            setRelation(newValue);
+                                        }}
+                                        options={
+                                            (data && data.length) ? data.map(relation => {
+                                                return {
+                                                    label: (relation.idDS + " " + relation.cNombre),
+                                                    idDS: relation.idDS,
+                                                    cNombre: relation.cNombre,
+                                                }
+                                            })
+                                            : []
                                         }
-                                        helperText={
-                                            values.error == true &&
-                                            errors.nombre
-                                        }
-                                    >
-                                        {data &&
-                                            data.length > 0 &&
-                                            data.map((rel, index) => (
-                                                <MenuItem
-                                                    key={index}
-                                                    value={JSON.stringify({
-                                                        idDS: rel.idDS,
-                                                        cNombre: rel.cNombre,
-                                                    })}
-                                                >
-                                                    {rel.idDS +
-                                                        " " +
-                                                        rel.cNombre}
-                                                </MenuItem>
-                                            ))}
-                                    </Select>
+                                        renderInput={(params) => (
+                                            <TextField
+                                              {...params}
+                                              label="Nombre"
+                                              inputProps={{
+                                                ...params.inputProps,
+                                                autoComplete: 'new-password', // disable autocomplete and autofill
+                                              }}
+                                            />
+                                        )}
+                                    />
                                 </FormControl>
                                 <TextField
                                     id="alt_nombre"
