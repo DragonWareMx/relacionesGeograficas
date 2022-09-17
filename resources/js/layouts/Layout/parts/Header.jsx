@@ -55,6 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+    const [didMount, setDidMount] = useState(false)
     const [values, setValues] = useState({
         search: "",
     })
@@ -72,6 +73,31 @@ export default function Header() {
         e.preventDefault()
         Inertia.get('/#alfabetico2', values)
     }
+
+    useEffect(() => {
+        if (!didMount) {
+            return;
+        }
+    
+        const delayDebounceFn = setTimeout(() => {
+            Inertia.get(
+                '/#alfabetico2',
+                {
+                    search: values?.search?.length ? values.search : undefined
+                },
+                {
+                    only: ["relaciones"],
+                    replace: true
+                }
+            )
+        }, 500);
+      
+        return () => clearTimeout(delayDebounceFn);
+    }, [values.search])
+
+    useEffect(() => {
+        setDidMount(true)
+    }, [])
 
     return (
 
