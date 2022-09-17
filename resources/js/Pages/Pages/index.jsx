@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { Head } from "@inertiajs/inertia-react";
 
 /** Leaflet Imports **/
 import L from "leaflet";
@@ -65,14 +66,13 @@ function limitChar(nombre) {
 const Home = ({ relaciones, banners, api }) => {
     let locationSearch = window.location.search;
     let params = new URLSearchParams(locationSearch);
-    let search = params.get('search');
-    
+    let search = params.get("search");
+
     useEffect(() => {
-        if(search){
-            showAlfa()
+        if (search) {
+            showAlfa();
         }
-    }, [])
-    
+    }, []);
 
     const [data, setData] = useState({
         infoMapa: {
@@ -127,13 +127,13 @@ const Home = ({ relaciones, banners, api }) => {
 
     useEffect(() => {
         axios
-            .get(api.url+`mgeneral`)
+            .get(api.url + `mgeneral`)
             .then((response) => {
                 let new_data = data;
                 // console.log(data.infoMapa.zoom)
                 new_data.capas = response.data;
                 setData({ ...data, new_data });
-                console.log(response)
+                console.log(response);
             })
             .catch((error) => {});
     }, []);
@@ -156,6 +156,39 @@ const Home = ({ relaciones, banners, api }) => {
 
     return (
         <>
+            <Head>
+                <meta name="twitter:card" content="summary" />
+                <meta
+                    name="twitter:title"
+                    content="Relaciones Geográficas de la Nueva España"
+                />
+                <meta
+                    name="twitter:description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+
+                <meta name="og:type" content="article" />
+                <meta
+                    name="og:url"
+                    content="https://relacionesgeograficas.inah.gob.mx"
+                />
+                <meta
+                    name="og:title"
+                    content="Relaciones Geográficas de la Nueva España"
+                />
+                <meta
+                    name="og:description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+                <meta
+                    name="description"
+                    content="Este proyecto describe la metodología y los primeros resultados del proyecto Explorando el México Colonial Temprano: Un análisis computacional a gran escala de fuentes históricas del siglo XVI."
+                />
+                <meta
+                    name="og:image"
+                    content="https://relacionesgeograficas.inah.gob.mx/img/assets/asset1.png"
+                />
+            </Head>
             {/* CAROUSEL */}
             <Box component={"section"} sx={{ backgroundColor: "#193661" }}>
                 <Container maxWidth="xl">
@@ -328,27 +361,43 @@ const Home = ({ relaciones, banners, api }) => {
                 style={{ backgroundColor: "#475e80", padding: "10px" }}
             >
                 <Grid xs={12}>
-                    <Typography align="center" style={{color:'white'}}>
-                        Puedes consultar las relaciones geográficas por medio de las dos opciones siguientes:
+                    <Typography align="center" style={{ color: "white" }}>
+                        Puedes consultar las relaciones geográficas por medio de
+                        las dos opciones siguientes:
                     </Typography>
                 </Grid>
                 <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }}>
                     {/* <Button variant="outlined" sx={{}}>
                     MAPA
                 </Button> */}
-                    <Paper id='btn-mapa' className="btn-op" onClick={showMapa} style={{border:'5px solid #f37946'}}>
+                    <Paper
+                        id="btn-mapa"
+                        className="btn-op"
+                        onClick={showMapa}
+                        style={{ border: "5px solid #f37946" }}
+                    >
                         MAPA
                     </Paper>
                 </Grid>
-                <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }} id="alfabetico2">
-                    <Paper id='btn-alfa' className="btn-op" onClick={showAlfa}>
+                <Grid
+                    item
+                    xs={6}
+                    sm={4}
+                    md={2}
+                    style={{ paddingTop: "0px" }}
+                    id="alfabetico2"
+                >
+                    <Paper id="btn-alfa" className="btn-op" onClick={showAlfa}>
                         LISTA
                     </Paper>
                 </Grid>
             </Grid>
 
             {/* APARTADO DE MAPA LEAFLET */}
-            <Container maxWidth="false" sx={{ maxWidth: "90%", border:'10px solid white' }}>
+            <Container
+                maxWidth="false"
+                sx={{ maxWidth: "90%", border: "10px solid white" }}
+            >
                 <MapContainer
                     id="mapa"
                     style={styleMap}
@@ -361,31 +410,37 @@ const Home = ({ relaciones, banners, api }) => {
                     maxZoom={10}
                 >
                     <LayersControl position="topleft" collapsed={false}>
-                        {data && Object.values(data.infoMapa.mapasBase) ?
-                        Object.values(data.infoMapa.mapasBase).map((mapa, index) => (
-                            <BaseLayer checked={index === 0} name={mapa.nombre} key={index + "baselayer"}>
+                        {data && Object.values(data.infoMapa.mapasBase) ? (
+                            Object.values(data.infoMapa.mapasBase).map(
+                                (mapa, index) => (
+                                    <BaseLayer
+                                        checked={index === 0}
+                                        name={mapa.nombre}
+                                        key={index + "baselayer"}
+                                    >
+                                        <TileLayer
+                                            attribution={
+                                                '&copy; <a href="http://osm.org/copyright">' +
+                                                mapa.nombre +
+                                                "</a> contributors"
+                                            }
+                                            url={mapa.link}
+                                        />
+                                    </BaseLayer>
+                                )
+                            )
+                        ) : (
+                            <BaseLayer checked name="ESRI Satellite">
                                 <TileLayer
                                     attribution={
-                                        '&copy; <a href="http://osm.org/copyright">' + mapa.nombre + '</a> contributors'
+                                        '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
                                     }
                                     url={
-                                        mapa.link
+                                        "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
                                     }
                                 />
                             </BaseLayer>
-                        ))
-                    :
-                    <BaseLayer checked name="ESRI Satellite">
-                        <TileLayer
-                            attribution={
-                                '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
-                            }
-                            url={
-                                "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                            }
-                        />
-                    </BaseLayer>
-                    }
+                        )}
                         <LayerGroup>
                             {data.capas !== null
                                 ? data.capas.map((item, i) => {
@@ -395,16 +450,21 @@ const Home = ({ relaciones, banners, api }) => {
                                               center={L.latLng(item.Y, item.X)}
                                               radius={5}
                                               color={"white"}
-                                              onClick={e => {
-                                                console.log("click");
+                                              onClick={(e) => {
+                                                  console.log("click");
                                               }}
                                               eventHandlers={{
-                                                click: e => {
-                                                    Inertia.get(route('fromapi',item.idDS));
-                                                }
+                                                  click: (e) => {
+                                                      Inertia.get(
+                                                          route(
+                                                              "fromapi",
+                                                              item.idDS
+                                                          )
+                                                      );
+                                                  },
                                               }}
                                           >
-                                            <Tooltip>{item.cNombre}</Tooltip>
+                                              <Tooltip>{item.cNombre}</Tooltip>
                                           </CircleMarker>
                                       );
                                   })
