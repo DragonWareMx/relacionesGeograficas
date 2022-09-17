@@ -34952,9 +34952,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Grid = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin:0px;\n    grid: \"header header\" min-content\n                          \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
-var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n"])));
-var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n"])));
+var Grid = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: grid;\n    margin: 0px;\n    grid:\n        \"header header\" min-content\n        \"nav main\" 1fr / min-content 1fr;\n    min-height: 100vh;\n"])));
+var GridHeader = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    grid-area: header;\n    position: fixed;\n    width: 100%;\n    z-index: 1001;\n"])));
+var GridMain = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    grid-area: main;\n    position: relative;\n    padding-top: 64px;\n"])));
 function Layout(_ref) {
   var title = _ref.title,
       pageTitle = _ref.pageTitle,
@@ -34970,12 +34970,12 @@ function Layout(_ref) {
       openSnack = _useState2[0],
       setOpenSnack = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
       message = _useState4[0],
       setMessage = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('info'),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("info"),
       _useState6 = _slicedToArray(_useState5, 2),
       type = _useState6[0],
       setType = _useState6[1];
@@ -34984,13 +34984,13 @@ function Layout(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (flash.success) {
       setMessage(flash.success);
-      setType('success');
+      setType("success");
       setOpenSnack(true);
     }
 
     if (flash.error) {
       setMessage(flash.error);
-      setType('error');
+      setType("error");
       setOpenSnack(true);
     }
   }, [flash]);
@@ -35008,7 +35008,7 @@ function Layout(_ref) {
           },
           severity: type,
           sx: {
-            width: '100%'
+            width: "100%"
           },
           children: message
         })
@@ -35017,8 +35017,8 @@ function Layout(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(GridMain, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           style: {
-            minHeight: 'calc(100vh - 349px)',
-            paddingTop: '0px'
+            minHeight: "calc(100vh - 349px)",
+            paddingTop: "0px"
           },
           children: children
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_parts_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
