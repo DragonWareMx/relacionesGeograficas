@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Image;
 
 class RelationController extends Controller
 {
@@ -121,6 +122,7 @@ class RelationController extends Controller
 
             if ($request->folios) {
                 $mapasFolios = [];
+                $mapasFoliosMin = [];
                 foreach ($request->folios as $key => $folio) {
                     $folioM = new Invoice;
                     $folioM->uuid = Str::uuid();
@@ -131,6 +133,22 @@ class RelationController extends Controller
                     $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
                     $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
                     $folioM->imagen = $fileName;
+
+                    $image = $request->file('folios')[$key]["imageFolio"][0];
+                    $fileNameMin = 'mini-'.$request->file('folios')[$key]["imageFolio"][0]->hashName();
+    
+                    $destinationPath = public_path('storage') . '/relaciones';
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(400, 400, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })->save($destinationPath . '/' . $fileNameMin);
+    
+                    $folioM->min = $fileNameMin;
+    
+                    $archivo = $destinationPath . '/' . $fileNameMin;
+
+                    $mapasFoliosMin[$key] =$archivo;
 
                     $folioM->save();
 
@@ -182,6 +200,16 @@ class RelationController extends Controller
             if ($mapasFolios && count($mapasFolios) > 0) {
                 foreach ($mapasFolios as $key => $mapa) {
                     Storage::delete($mapa);
+                }
+            }
+
+            if ($mapasFoliosMin && count($mapasFoliosMin) > 0) {
+                foreach ($mapasFoliosMin as $key => $mapa) {
+                    if($mapa){
+                        if (file_exists($mapa)) {
+                            unlink($mapa);
+                        }
+                    }
                 }
             }
 

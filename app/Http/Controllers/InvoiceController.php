@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 class InvoiceController extends Controller
 {
@@ -54,6 +55,7 @@ class InvoiceController extends Controller
         ]);
 
         $image = null;
+        $archivo = null;
         DB::beginTransaction();
 
         try {
@@ -77,6 +79,20 @@ class InvoiceController extends Controller
 
                 // Storage::put($foto, (string) $image->encode('jpg', 30));
                 $folio->imagen = $fileName;
+
+                $image = $request->file('image')[0];
+                $fileNameMin = 'mini-'.$request->file('image')[0]->hashName();
+
+                $destinationPath = public_path('storage') . '/relaciones';
+                $img = Image::make($image->getRealPath());
+                $img->resize(400, 400, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($destinationPath . '/' . $fileNameMin);
+
+                $folio->min = $fileNameMin;
+
+                $archivo = $destinationPath . '/' . $fileNameMin;
             }
 
             
@@ -105,8 +121,15 @@ class InvoiceController extends Controller
             DB::rollBack();
 
             if ($image) {
-                Storage::delete($image);
+                \Storage::delete($image);
             }
+
+            if ($archivo) {
+                if (file_exists($archivo)) {
+                    unlink($archivo);
+                }
+            }
+
             return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
@@ -154,6 +177,7 @@ class InvoiceController extends Controller
         ]);
 
         $image = null;
+        $archivo=null;
         DB::beginTransaction();
 
         try {
@@ -165,6 +189,9 @@ class InvoiceController extends Controller
             if ($request->image && $request->image[0]) {
                 if($invoice->imagen){
                     \Storage::delete('public/relaciones/'.$invoice->imagen);
+                }
+                if($invoice->min){
+                    \Storage::delete('public/relaciones/'.$invoice->min);
                 }
                 //Se sube foto
                 $image = $request->file('image')[0]->store('public/relaciones');
@@ -178,6 +205,21 @@ class InvoiceController extends Controller
 
                 // Storage::put($foto, (string) $image->encode('jpg', 30));
                 $invoice->imagen = $fileName;
+
+                $image = $request->file('image')[0];
+                $fileNameMin = 'mini-'.$request->file('image')[0]->hashName();
+
+                $destinationPath = public_path('storage') . '/relaciones';
+                $img = Image::make($image->getRealPath());
+                $img->resize(400, 400, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($destinationPath . '/' . $fileNameMin);
+
+                $invoice->min = $fileNameMin;
+
+                $archivo = $destinationPath . '/' . $fileNameMin;
+
             }
             
             $invoice->save();
@@ -208,6 +250,12 @@ class InvoiceController extends Controller
             if ($image) {
                 Storage::delete($image);
             }
+
+            if ($archivo) {
+                if (file_exists($archivo)) {
+                    unlink($archivo);
+                }
+            }
             return Redirect::back()->with('error', 'Error: '.$th->getMessage());
         }
     }
@@ -225,6 +273,9 @@ class InvoiceController extends Controller
         try {
             if($invoice->imagen){
                 \Storage::delete('public/relaciones/'.$invoice->imagen);
+            }
+            if($invoice->min){
+                \Storage::delete('public/relaciones/'.$invoice->min);
             }
             $invoice->transcriptions()->delete();
             $invoice->delete();

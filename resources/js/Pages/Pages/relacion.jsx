@@ -515,7 +515,7 @@ const Relacion = ({ relation, api }) => {
                                                                 }
                                                                 src={
                                                                     "/storage/relaciones/" +
-                                                                    invoice.imagen
+                                                                    (invoice.min ?? invoice.imagen)
                                                                 }
                                                                 style={{
                                                                     width: "66px",
