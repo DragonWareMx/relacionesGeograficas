@@ -174,6 +174,16 @@ const Relacion = ({ relation, api }) => {
         };
     };
 
+    const folioRef = useRef();
+
+    function scrollToComponent() {
+        if (window.location.hash === '#folio-id') {
+            folioRef.current.scrollIntoView();
+            folioRef.current.focus();
+        }
+        window.scrollTo(0, 0)
+    }
+
     return (
         <>
             <Grid container>
@@ -404,6 +414,8 @@ const Relacion = ({ relation, api }) => {
                                     <div
                                         className={"lienzo-text"}
                                         style={{ width: "100%" }}
+                                        id="folio-id"
+                                        ref={folioRef}
                                     >
                                         <Typography
                                             style={{whiteSpace: 'pre-line'}}
@@ -484,12 +496,13 @@ const Relacion = ({ relation, api }) => {
                                                         <SwiperSlide
                                                             key={index}
                                                             className="mini-photo-container"
-                                                            onClick={() =>
+                                                            onClick={() =>{
                                                                 changeFolio(
                                                                     invoice,
                                                                     index
                                                                 )
-                                                            }
+                                                                scrollToComponent()
+                                                            } }
                                                         >
                                                             <img
                                                                 className={

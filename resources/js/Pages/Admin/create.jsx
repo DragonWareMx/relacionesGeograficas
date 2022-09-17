@@ -381,7 +381,7 @@ const Create = (api) => {
             idDS: relation.idDS,
         };
         if (!values.alt_nombre || values.alt_nombre === "")
-            data.alt_nombre = finalRelation.cNombre;
+            data.alt_nombre = relation.cNombre;
         Inertia.post(route("admin.store"), data, {
             onError: () => {
                 setValues((values) => ({
