@@ -442,7 +442,7 @@ const Home = ({ relaciones, banners, api }) => {
                             </BaseLayer>
                         )}
                         <LayerGroup>
-                            {data.capas !== null
+                            {data.capas !== null && data.capas.length > 0
                                 ? data.capas.map((item, i) => {
                                       return (
                                           <CircleMarker
