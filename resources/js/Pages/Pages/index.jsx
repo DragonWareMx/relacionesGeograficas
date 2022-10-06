@@ -126,14 +126,14 @@ const Home = ({ relaciones, banners, api }) => {
     });
 
     useEffect(() => {
+        console.log("EL AXIOS");
         axios
-            .get(api.url + `mgeneral`)
+            .get(api.url + `relaciones`)
             .then((response) => {
                 let new_data = data;
-                // console.log(data.infoMapa.zoom)
                 new_data.capas = response.data;
                 setData({ ...data, new_data });
-                console.log(response);
+                console.log(response.data, new_data);
             })
             .catch((error) => {});
     }, []);

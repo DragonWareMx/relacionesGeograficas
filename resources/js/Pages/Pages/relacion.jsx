@@ -99,6 +99,15 @@ const Relacion = ({ relation, api }) => {
                 setData(response.data);
             })
             .catch((error) => {});
+
+        console.log(api.url + "mgeneral/" + relation.idDS);
+
+        // axios
+        //     .get(api.url + "mapa/" + relation.idDS + "/info")
+        //     .then((response) => {
+        //         console.log("LA NUEVA: ", response);
+        //     })
+        //     .catch((error) => {});
     }, []);
 
     function toggleDrawer() {
