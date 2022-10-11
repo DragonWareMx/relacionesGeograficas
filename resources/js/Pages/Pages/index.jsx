@@ -207,15 +207,26 @@ const Home = ({ relaciones, banners, api }) => {
                             banners.length > 0 &&
                             banners.map((banner, index) => (
                                 <SwiperSlide key={index + "swiper"}>
-                                    <div className="oski-carousel-element">
-                                        <img
-                                            src={
-                                                "/storage/relaciones/" +
-                                                banner.banner
-                                            }
-                                            className="oski-carousel-img"
-                                        />
-                                    </div>
+                                    <InertiaLink
+                                        href={route(
+                                            "relations.index",
+                                            banner.uuid
+                                        )}
+                                    >
+                                        <div className="oski-carousel-element">
+                                            <img
+                                                src={
+                                                    "/storage/relaciones/" +
+                                                    banner.banner
+                                                }
+                                                // src="https://www.unionpuebla.mx/sites/default/files/styles/galeria/public/field/image/cultura-olmeca-ii-secundaria_1.jpg?itok=x3nQKuiN"
+                                                className="oski-carousel-img"
+                                            />
+                                        </div>
+                                        <div className="oski-carousel-title">
+                                            {banner.alt_nombre ?? banner.nombre}
+                                        </div>
+                                    </InertiaLink>
                                 </SwiperSlide>
                             ))}
                     </Swiper>
@@ -407,7 +418,7 @@ const Home = ({ relaciones, banners, api }) => {
                     )}
                     zoom={5}
                     minZoom={5}
-                    maxZoom={10}
+                    maxZoom={17}
                 >
                     <LayersControl position="topleft" collapsed={false}>
                         {data && Object.values(data.infoMapa.mapasBase) ? (

@@ -275,178 +275,14 @@ const Relacion = ({ relation, api }) => {
                     }
                 >
                     {contMap === "geo" && data !== null && (
-                        <div>
-                            <MapContainer
-                                style={styleMap}
-                                center={L.latLng(
-                                    data.infoMapa.centro.lat,
-                                    data.infoMapa.centro.long
-                                )}
-                                // zoom={data.infoMapa.zoom.inicial}
-                                // minZoom={data.infoMapa.zoom.min}
-                                // maxZoom={data.infoMapa.zoom.max}
-                                zoom={
-                                    data &&
-                                    data.infoMapa &&
-                                    data.infoMapa.zoom &&
-                                    data.infoMapa.zoom.inicial &&
-                                    data.infoMapa.zoom.inicial <
-                                        data.infoMapa.zoom.max &&
-                                    data.infoMapa.zoom.inicial >
-                                        data.infoMapa.zoom.min
-                                        ? data.infoMapa.zoom.inicial
-                                        : 5
-                                }
-                                minZoom={
-                                    data &&
-                                    data.infoMapa &&
-                                    data.infoMapa.zoom &&
-                                    data.infoMapa.zoom.max &&
-                                    data.infoMapa.zoom.min &&
-                                    data.infoMapa.zoom.min <
-                                        data.infoMapa.zoom.max
-                                        ? data.infoMapa.zoom.min
-                                        : data?.infoMapa?.zoom?.inicial ?? 5
-                                }
-                                maxZoom={
-                                    data &&
-                                    data.infoMapa &&
-                                    data.infoMapa.zoom &&
-                                    data.infoMapa.zoom.max &&
-                                    data.infoMapa.zoom.min &&
-                                    data.infoMapa.zoom.max >
-                                        data.infoMapa.zoom.min
-                                        ? data.infoMapa.zoom.max
-                                        : 12
-                                }
-                            >
-                                <LayersControl
-                                    position="topleft"
-                                    collapsed={false}
-                                >
-                                    {data?.infoMapa?.mapasBase &&
-                                    Object.values(data.infoMapa.mapasBase)
-                                        .length ? (
-                                        Object.values(
-                                            data.infoMapa.mapasBase
-                                        ).map((item, i) => {
-                                            return (
-                                                <BaseLayer
-                                                    key={i + "baseLayerrEL"}
-                                                    name={item.nombre}
-                                                    checked={i === 0}
-                                                >
-                                                    <TileLayer
-                                                        attribution={
-                                                            item.atribution
-                                                        }
-                                                        url={item.link}
-                                                    />
-                                                </BaseLayer>
-                                            );
-                                        })
-                                    ) : (
-                                        <BaseLayer
-                                            checked
-                                            name="ESRI Satellite"
-                                        >
-                                            <TileLayer
-                                                attribution={
-                                                    '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
-                                                }
-                                                url={
-                                                    "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                                                }
-                                            />
-                                        </BaseLayer>
-                                    )}
-
-                                    {Object.values(data.capas).map(
-                                        (item, i) => {
-                                            return (
-                                                <Overlay
-                                                    checked
-                                                    name={item.nombre}
-                                                    key={i + "overlayRel"}
-                                                >
-                                                    <LayerGroup
-                                                        key={item.nombre}
-                                                    >
-                                                        {Object.values(
-                                                            item.elementos
-                                                        ).map((el, ind) => {
-                                                            if (
-                                                                el.tipo ===
-                                                                "punto"
-                                                            ) {
-                                                                return (
-                                                                    <CircleMarker
-                                                                        key={
-                                                                            (ind =
-                                                                                "circleMakerRel")
-                                                                        }
-                                                                        center={getCoords(
-                                                                            el.coordenadas
-                                                                        )}
-                                                                        radius={
-                                                                            4
-                                                                        }
-                                                                        color={
-                                                                            el
-                                                                                .simbolo
-                                                                                .color
-                                                                        }
-                                                                    >
-                                                                        <Popup>
-                                                                            {
-                                                                                el.popup
-                                                                            }
-                                                                        </Popup>
-                                                                        <Tooltip>
-                                                                            {
-                                                                                el.nombre
-                                                                            }
-                                                                        </Tooltip>
-                                                                    </CircleMarker>
-                                                                );
-                                                            }
-
-                                                            if (
-                                                                el.tipo ===
-                                                                    "geojson" &&
-                                                                ind !== 4
-                                                            ) {
-                                                                try {
-                                                                    return (
-                                                                        <GeoJSON
-                                                                            key={
-                                                                                ind
-                                                                            }
-                                                                            data={
-                                                                                el.coordenadas
-                                                                            }
-                                                                        />
-                                                                    );
-                                                                } catch (error) {
-                                                                    // console.log(
-                                                                    //     "Tronó el GeoJSON"
-                                                                    // );
-                                                                }
-                                                            }
-                                                        })}
-                                                    </LayerGroup>
-                                                </Overlay>
-                                            );
-                                        }
-                                    )}
-                                    <ScaleControl
-                                        position="bottomright"
-                                        metric={true}
-                                        imperial={true}
-                                    />
-                                </LayersControl>
-                            </MapContainer>
-                        </div>
+                        <iframe
+                            src={
+                                "https://www.adminrgs.dh.inah.gob.mx/mapa?r=" +
+                                relation.idDS
+                            }
+                            className="map-container"
+                            style={{ width: "100%" }}
+                        />
                     )}
                     {contMap === "picto" && (
                         <div className="mapaPicto" ref={refContainer}>
@@ -634,10 +470,15 @@ const Relacion = ({ relation, api }) => {
                                                                     height: "100px",
                                                                 }}
                                                             />
-                                                            <Typography align="center">
+                                                            <div
+                                                                className="round-button-text"
+                                                                style={{
+                                                                    marginTop: 3,
+                                                                }}
+                                                            >
                                                                 Folio{" "}
                                                                 {invoice.folio}
-                                                            </Typography>
+                                                            </div>
                                                         </SwiperSlide>
                                                     )
                                                 )}
