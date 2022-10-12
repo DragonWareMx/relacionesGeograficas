@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Relation;
 use App\Models\Invoice;
-use App\Models\api;
+use App\Models\Api;
 use App\Models\Transcription;
 use App\Models\Map;
 use Illuminate\Http\Request;
@@ -135,20 +135,20 @@ class RelationController extends Controller
                     $folioM->imagen = $fileName;
 
                     $image = $request->file('folios')[$key]["imageFolio"][0];
-                    $fileNameMin = 'mini-'.$request->file('folios')[$key]["imageFolio"][0]->hashName();
-    
+                    $fileNameMin = 'mini-' . $request->file('folios')[$key]["imageFolio"][0]->hashName();
+
                     $destinationPath = public_path('storage') . '/relaciones';
                     $img = Image::make($image->getRealPath());
                     $img->resize(400, 400, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($destinationPath . '/' . $fileNameMin);
-    
+
                     $folioM->min = $fileNameMin;
-    
+
                     $archivo = $destinationPath . '/' . $fileNameMin;
 
-                    $mapasFoliosMin[$key] =$archivo;
+                    $mapasFoliosMin[$key] = $archivo;
 
                     $folioM->save();
 
@@ -205,7 +205,7 @@ class RelationController extends Controller
 
             if ($mapasFoliosMin && count($mapasFoliosMin) > 0) {
                 foreach ($mapasFoliosMin as $key => $mapa) {
-                    if($mapa){
+                    if ($mapa) {
                         if (file_exists($mapa)) {
                             unlink($mapa);
                         }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Relation;
-use App\Models\api;
+use App\Models\Api;
 use Inertia\Inertia;
 
 class AdminController extends Controller

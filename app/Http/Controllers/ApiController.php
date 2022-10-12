@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\api;
+use App\Models\Api;
 use App\Models\Relation;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;

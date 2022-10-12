@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Relation;
-use App\Models\api;
+use App\Models\Api;
 
 class HomeController extends Controller
 {
