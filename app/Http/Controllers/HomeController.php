@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Relation;
 use App\Models\Api;
+use App\Models\MainText;
+use App\Models\Pdf;
 
 class HomeController extends Controller
 {
@@ -35,11 +37,15 @@ class HomeController extends Controller
             ->get();
         $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
         $api = Api::firstOrFail();
+        $mainText = MainText::first();
+        $pdf = Pdf::first();
 
         return Inertia::render('Pages/index', [
             'relaciones' => $relaciones,
             'banners' => $banners,
-            'api' => $api
+            'api' => $api,
+            'mainText' => $mainText,
+            'pdf' => $pdf,
         ]);
     }
 }

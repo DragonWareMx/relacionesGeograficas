@@ -48,6 +48,18 @@ Route::name('api.')->middleware('auth')->group(function () {
     Route::post('/updateApi', [App\Http\Controllers\ApiController::class, 'update'])->name('update');
 });
 
+Route::name('mainText.')->middleware('auth')->group(function () {
+    Route::post('/updateMainText', [App\Http\Controllers\MainTextController::class, 'update'])->name('update');
+});
+
+Route::name('pdf.')->middleware('auth')->group(function () {
+    Route::post('/updatePdf', [App\Http\Controllers\PdfController::class, 'update'])->name('update');
+});
+
+Route::name('credits.')->middleware('auth')->group(function () {
+    Route::post('/updateCredits', [App\Http\Controllers\CreditController::class, 'update'])->name('update');
+});
+
 Route::get('/fromapi/{idDS}', [App\Http\Controllers\ApiController::class, 'fromapi'])->name('fromapi');
 
 Auth::routes(['register' => false]);

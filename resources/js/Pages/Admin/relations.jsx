@@ -16,7 +16,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const Relations = ({ relations, api }) => {
+const Relations = ({ relations, api, mainText, pdf, credits }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -48,6 +48,95 @@ const Relations = ({ relations, api }) => {
         Inertia.post(route("api.update"), values, {
             onSuccess: () => {
                 setOpen(false);
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
+    }
+
+    const [openMainText, setOpenMainText] = useState(false);
+
+    const [mainTextValues, setMainTextValues] = useState({
+        izq: mainText?.izq ?? "",
+        der: mainText?.der ?? "",
+        error: false,
+    });
+
+    function handleChangeMainText(e) {
+        const key = e.target.id;
+        const value = e.target.value;
+        setMainTextValues((values) => ({
+            ...values,
+            [key]: value,
+        }));
+    }
+
+    function handleSubmitMainText(e) {
+        e.preventDefault();
+        Inertia.post(route("mainText.update"), mainTextValues, {
+            onSuccess: () => {
+                setOpenMainText(false);
+            },
+            onError: () => {
+                setValues((values) => ({
+                    ...values,
+                    error: true,
+                }));
+            },
+        });
+    }
+
+    function loadFile(id) {
+        var input = document.getElementById(id);
+        if (input.files) {
+            setFile(input.files[0]);
+        }
+    }
+
+    const [openPdf, setOpenPdf] = useState(false);
+    const [file, setFile] = useState(null);
+
+    function handleSubmitPdf(e) {
+        e.preventDefault();
+        Inertia.post(
+            route("pdf.update"),
+            { file },
+            {
+                onSuccess: () => {
+                    setOpenPdf(false);
+                },
+                onError: () => {},
+            }
+        );
+    }
+
+    const [openCredits, setOpenCredits] = useState(false);
+
+    const [creditsValues, setCreditsValues] = useState({
+        credits_izq: credits?.izq ?? "",
+        credits_der: credits?.der ?? "",
+        error: false,
+    });
+
+    console.log("credits", credits);
+    function handleChangeCredits(e) {
+        const key = e.target.id;
+        const value = e.target.value;
+        setCreditsValues((values) => ({
+            ...values,
+            [key]: value,
+        }));
+    }
+
+    function handleSubmitCredits(e) {
+        e.preventDefault();
+        Inertia.post(route("credits.update"), creditsValues, {
+            onSuccess: () => {
+                setOpenCredits(false);
             },
             onError: () => {
                 setValues((values) => ({
@@ -110,6 +199,24 @@ const Relations = ({ relations, api }) => {
                         ))}
                 </Grid>
                 <Grid container justifyContent={"space-between"} mt={5}>
+                    <Button
+                        variant="outlined"
+                        onClick={() => setOpenMainText(true)}
+                    >
+                        Texto página principal
+                    </Button>
+
+                    <Button variant="outlined" onClick={() => setOpenPdf(true)}>
+                        PDF página principal
+                    </Button>
+
+                    <Button
+                        variant="outlined"
+                        onClick={() => setOpenCredits(true)}
+                    >
+                        Créditos
+                    </Button>
+
                     <Button variant="outlined" onClick={handleClickOpen}>
                         Cambiar API
                     </Button>
@@ -156,6 +263,197 @@ const Relations = ({ relations, api }) => {
                         >
                             <Button
                                 onClick={handleClose}
+                                type="button"
+                                variant="text"
+                            >
+                                Cancelar
+                            </Button>
+                            <Button type="submit" variant="contained">
+                                Cambiar
+                            </Button>
+                        </Grid>
+                    </form>
+                </Dialog>
+                {/* // DIALOG PÄGINA PRINCIPAL */}
+                <Dialog
+                    open={openMainText}
+                    TransitionComponent={Transition}
+                    keepMounted
+                    onClose={() => setOpenMainText(false)}
+                    aria-describedby="alert-dialog-slide-description"
+                    maxWidth={"md"}
+                    fullWidth
+                >
+                    <form onSubmit={handleSubmitMainText}>
+                        <DialogTitle>
+                            Cambiar texto de página principal
+                        </DialogTitle>
+                        <DialogContent>
+                            <TextField
+                                id="izq"
+                                label="Parte izquierda"
+                                fullWidth
+                                value={mainTextValues.izq}
+                                onChange={handleChangeMainText}
+                                error={
+                                    errors.izq &&
+                                    mainTextValues.error == true &&
+                                    true
+                                }
+                                helperText={
+                                    mainTextValues.error == true && errors.izq
+                                }
+                                style={{ margin: "25px 0px" }}
+                                multiline
+                                rows={4}
+                            />
+                            <TextField
+                                id="der"
+                                label="Parte derecha"
+                                fullWidth
+                                value={mainTextValues.der}
+                                onChange={handleChangeMainText}
+                                error={
+                                    errors.der &&
+                                    mainTextValues.error == true &&
+                                    true
+                                }
+                                helperText={
+                                    mainTextValues.error == true && errors.der
+                                }
+                                style={{ margin: "25px 0px" }}
+                                multiline
+                                rows={4}
+                            />
+                        </DialogContent>
+                        <Grid
+                            container
+                            justifyContent={"space-around"}
+                            style={{ marginBottom: 25 }}
+                        >
+                            <Button
+                                onClick={() => setOpenMainText(false)}
+                                type="button"
+                                variant="text"
+                            >
+                                Cancelar
+                            </Button>
+                            <Button type="submit" variant="contained">
+                                Cambiar
+                            </Button>
+                        </Grid>
+                    </form>
+                </Dialog>
+                {/* // DIALOG PDF */}
+                <Dialog
+                    open={openPdf}
+                    TransitionComponent={Transition}
+                    keepMounted
+                    onClose={() => setOpenPdf(false)}
+                    aria-describedby="alert-dialog-slide-description"
+                    maxWidth={"md"}
+                    fullWidth
+                >
+                    <form onSubmit={handleSubmitPdf}>
+                        <DialogTitle>
+                            Cambiar archivo PDF de página principal
+                        </DialogTitle>
+                        <DialogContent>
+                            {pdf ? (
+                                <Typography>
+                                    Archivo actual: {pdf?.pdf}
+                                </Typography>
+                            ) : (
+                                <Typography>Sin archivo</Typography>
+                            )}
+                            <Grid container>
+                                <input
+                                    accept="application/pdf"
+                                    id="pdfFile"
+                                    type="file"
+                                    // style={{ display: "none" }}
+                                    onChange={() => loadFile("pdfFile")}
+                                    required
+                                />
+                            </Grid>
+                        </DialogContent>
+                        <Grid
+                            container
+                            justifyContent={"space-around"}
+                            style={{ marginBottom: 25 }}
+                        >
+                            <Button
+                                onClick={() => setOpenPdf(false)}
+                                type="button"
+                                variant="text"
+                            >
+                                Cancelar
+                            </Button>
+                            <Button type="submit" variant="contained">
+                                Cambiar
+                            </Button>
+                        </Grid>
+                    </form>
+                </Dialog>
+                {/* // DIALOG CRÉDITOS PRINCIPAL */}
+                <Dialog
+                    open={openCredits}
+                    TransitionComponent={Transition}
+                    keepMounted
+                    onClose={() => setOpenCredits(false)}
+                    aria-describedby="alert-dialog-slide-description"
+                    maxWidth={"md"}
+                    fullWidth
+                >
+                    <form onSubmit={handleSubmitCredits}>
+                        <DialogTitle>Cambiar créditos</DialogTitle>
+                        <DialogContent>
+                            <TextField
+                                id="credits_izq"
+                                label="Créditos izquierda"
+                                fullWidth
+                                value={creditsValues.credits_izq}
+                                onChange={handleChangeCredits}
+                                error={
+                                    errors.credits_izq &&
+                                    creditsValues.error == true &&
+                                    true
+                                }
+                                helperText={
+                                    creditsValues.error == true &&
+                                    errors.credits_izq
+                                }
+                                style={{ margin: "25px 0px" }}
+                                multiline
+                                rows={4}
+                            />
+                            <TextField
+                                id="credits_der"
+                                label="Créditos derecha"
+                                fullWidth
+                                value={creditsValues.credits_der}
+                                onChange={handleChangeCredits}
+                                error={
+                                    errors.credits_der &&
+                                    creditsValues.error == true &&
+                                    true
+                                }
+                                helperText={
+                                    creditsValues.error == true &&
+                                    errors.credits_der
+                                }
+                                style={{ margin: "25px 0px" }}
+                                multiline
+                                rows={4}
+                            />
+                        </DialogContent>
+                        <Grid
+                            container
+                            justifyContent={"space-around"}
+                            style={{ marginBottom: 25 }}
+                        >
+                            <Button
+                                onClick={() => setOpenCredits(false)}
                                 type="button"
                                 variant="text"
                             >

@@ -63,7 +63,7 @@ function limitChar(nombre) {
     return nombre.substring(0, 61);
 }
 
-const Home = ({ relaciones, banners, api }) => {
+const Home = ({ relaciones, banners, api, mainText, pdf }) => {
     let locationSearch = window.location.search;
     let params = new URLSearchParams(locationSearch);
     let search = params.get("search");
@@ -250,8 +250,12 @@ const Home = ({ relaciones, banners, api }) => {
                             },
                         }}
                     >
-                        <Typography align="justify">
-                            Este proyecto describe la metodología y los primeros
+                        <Typography
+                            align="justify"
+                            style={{ whiteSpace: "pre-line" }}
+                        >
+                            {mainText?.izq}
+                            {/* Este proyecto describe la metodología y los primeros
                             resultados del proyecto Explorando el México
                             Colonial Temprano: Un análisis computacional a gran
                             escala de fuentes históricas del siglo XVI. Como el
@@ -270,7 +274,7 @@ const Home = ({ relaciones, banners, api }) => {
                             Felipe II. Estos informes describen cómo eran la
                             organización territorial y el modo de vida de los
                             habitantes de Nueva España seis décadas después de
-                            consumada la conquista de México-Tenochtitlan.
+                            consumada la conquista de México-Tenochtitlan. */}
                         </Typography>
                     </Grid>
 
@@ -303,8 +307,12 @@ const Home = ({ relaciones, banners, api }) => {
                             },
                         }}
                     >
-                        <Typography align="justify">
-                            Las Relaciones se componen de textos y mapas en cuya
+                        <Typography
+                            align="justify"
+                            style={{ whiteSpace: "pre-line" }}
+                        >
+                            {mainText?.der}
+                            {/* Las Relaciones se componen de textos y mapas en cuya
                             elaboración participaron informantes indígenas y
                             oficiales españoles. Debido a la riqueza y variedad
                             del contenido, el corpus constituye una de las
@@ -328,7 +336,7 @@ const Home = ({ relaciones, banners, api }) => {
                             digital estará disponible en distintas plataformas
                             gracias a la tecnología de datos vinculados (i.e.
                             linked data) para que pueda ser reutilizada por
-                            otros equipos de investigación.
+                            otros equipos de investigación. */}
                         </Typography>
                     </Grid>
 
@@ -354,12 +362,12 @@ const Home = ({ relaciones, banners, api }) => {
                     justifyContent="space-between"
                     direction="row-reverse"
                 >
-                    <InertiaLink href="#!">
+                    <a href={"/storage/pdf/" + pdf.pdf} target="__blank">
                         <img
                             style={{ width: "250px" }}
                             src="/img/assets/btn1.PNG"
                         />
-                    </InertiaLink>
+                    </a>
                 </Grid>
             </Container>
 
