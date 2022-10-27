@@ -6,9 +6,18 @@ use App\Models\Credit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class CreditController extends Controller
 {
+    public function index()
+    {
+        $credits = Credit::first();
+        return Inertia::render('Pages/creditos', [
+            'credits' => $credits
+        ]);
+    }
+
     public function update(Request $request)
     {
         DB::beginTransaction();

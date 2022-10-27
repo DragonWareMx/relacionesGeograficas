@@ -16,10 +16,6 @@ use Inertia\Inertia;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('inicio');
 
-Route::get('/creditos', function () {
-    return Inertia::render('Pages/creditos');
-});
-
 Route::name('sources.')->group(function () {
     Route::get('/fuentes/{id}', [App\Http\Controllers\SourceController::class, 'index'])->name('index');
 });
@@ -57,6 +53,8 @@ Route::name('pdf.')->middleware('auth')->group(function () {
 });
 
 Route::name('credits.')->middleware('auth')->group(function () {
+
+    Route::get('/creditos', [App\Http\Controllers\CreditController::class, 'index'])->name('index');
     Route::post('/updateCredits', [App\Http\Controllers\CreditController::class, 'update'])->name('update');
 });
 
