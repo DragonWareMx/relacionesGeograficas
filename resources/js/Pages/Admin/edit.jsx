@@ -435,6 +435,30 @@ const Relations = ({ oldRelation, api, next, autors }) => {
     const [openSnack, setOpenSnack] = useState(false);
     const [radioValue, setRadioValue] = useState("V");
     const [autor, setAutor] = useState("");
+    const [notAvailable, setNotAvailable] = React.useState("");
+    const [disabledRel, setDisabledRel] = useState(true);
+
+    function verify(newValue) {
+        setRelation(newValue);
+        axios
+            .get(route("verify", [newValue.idDS]))
+            .then((response) => {
+                if (!response.data) {
+                    setDisabledRel(false);
+                    setNotAvailable(false);
+                    // getInfo(newValue.idDS);
+                } else {
+                    if (oldRelation.idDS != newValue.idDS) {
+                        setDisabledRel(true);
+                        setNotAvailable(true);
+                    } else {
+                        setDisabledRel(false);
+                        setNotAvailable(false);
+                    }
+                }
+            })
+            .catch((error) => {});
+    }
 
     return (
         <>
@@ -512,7 +536,7 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                         id="nombre"
                                         value={relation}
                                         onChange={(event, newValue) => {
-                                            setRelation(newValue);
+                                            verify(newValue);
                                         }}
                                         options={
                                             data && data.length
@@ -541,6 +565,20 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                             />
                                         )}
                                     />
+                                    {notAvailable && (
+                                        <Grid
+                                            container
+                                            justifyContent={"right"}
+                                        >
+                                            <Typography
+                                                variant="subtitle2"
+                                                color="primary"
+                                            >
+                                                No disponible, elija otra
+                                                relación
+                                            </Typography>
+                                        </Grid>
+                                    )}
                                 </FormControl>
                                 <TextField
                                     id="alt_nombre"
@@ -773,6 +811,7 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                         type="submit"
                                         color="primary"
                                         variant="contained"
+                                        disabled={disabledRel}
                                     >
                                         Guardar
                                     </Button>
