@@ -168,13 +168,13 @@ class InvoiceController extends Controller
     {
         $validated = $request->validate([
             'no_folio' => 'required|numeric',
-            'nombre' => 'required|max:255|string',
             'descripcion' => 'nullable',
             'image.*' => 'nullable|array',
             'image.*' => 'required|image',
             'transcriptions' => 'nullable|array',
             'transcriptions.*.nombre' => 'nullable|string|max:255',
             'transcriptions.*.texto' => 'nullable|string',
+            'type' => 'required|string|max:1'
         ]);
 
         $image = null;
@@ -184,7 +184,8 @@ class InvoiceController extends Controller
         try {
             $invoice->uuid = Str::uuid();
             $invoice->folio = $request->no_folio;
-            $invoice->nombre = $request->nombre;
+            $invoice->type = $request->type;
+            $invoice->nombre = 'F' . $request->no_folio . '.' . $request->type;
             $invoice->descripcion = $request->descripcion;
 
             if ($request->image && $request->image[0]) {

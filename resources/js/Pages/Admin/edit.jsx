@@ -231,6 +231,7 @@ const Relations = ({ oldRelation, api, next, autors }) => {
             oldImage: folio.min ?? folio.imagen,
             transcriptions: folio.transcriptions,
         }));
+        setRadioValue(folio.type);
         setOpen(true);
     }
 
@@ -349,7 +350,7 @@ const Relations = ({ oldRelation, api, next, autors }) => {
 
     function handleSubmitFolio(e) {
         e.preventDefault();
-        const data = folioValues;
+        const data = { ...folioValues, type: radioValue };
         Inertia.post(route("folio.update", [oldRelation.id, data.id]), data, {
             onSuccess: () => {
                 setOpenSnack(true);
