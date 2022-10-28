@@ -32,4 +32,10 @@ class ApiController extends Controller
         $relation = Relation::where('idDS', $idDS)->firstOrFail();
         return Redirect::route('relations.index', $relation->uuid);
     }
+
+    public function verify($idDS)
+    {
+        $relation = Relation::where('idDS', $idDS)->first();
+        return $relation;
+    }
 }

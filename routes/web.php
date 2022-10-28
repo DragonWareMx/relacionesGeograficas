@@ -60,6 +60,9 @@ Route::name('credits.')->middleware('auth')->group(function () {
 
 Route::get('/fromapi/{idDS}', [App\Http\Controllers\ApiController::class, 'fromapi'])->name('fromapi');
 
+Route::get('/verify/{idDS}', [App\Http\Controllers\ApiController::class, 'verify'])->name('verify');
+
+
 Auth::routes(['register' => false]);
 
 // Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

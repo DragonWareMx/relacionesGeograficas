@@ -59,26 +59,18 @@ class RelationController extends Controller
      */
     public function store(Request $request)
     {
-
         $validated = $request->validate([
             'nombre' => 'required|max:255|string',
-            'fuentes' => 'nullable|string',
             'idDS' => 'required|numeric',
             'alt_nombre' => 'nullable|string|max:255',
 
             'imageBanner' => 'required',
             'imageMin' => 'required',
-            'mapImages' => 'required',
-            'folios' => 'required',
-
-            'folios' => 'nullable',
-            'descripcion' => 'nullable',
-            'imageFolio' => 'nullable',
+            'mapImages' => 'nullable',
         ]);
 
         $foto = null;
         $fotoMin = null;
-        $mapasFolios = null;
         $mapas = null;
         DB::beginTransaction();
 
@@ -88,84 +80,20 @@ class RelationController extends Controller
             $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
             $relation->alt_nombre = $request->alt_nombre;
-            $relation->fuentes = $request->fuentes;
             if ($request->imageBanner) {
                 //Se sube foto
                 $foto = $request->file('imageBanner')[0]->store('public/relaciones');
                 $fileName = $request->file('imageBanner')[0]->hashName();
-                // $image = Image::make(Storage::get($foto));
-
-                // $image->resize(1280, null, function ($constraint) {
-                //     $constraint->aspectRatio();
-                //     $constraint->upsize();
-                // });
-
-                // Storage::put($foto, (string) $image->encode('jpg', 30));
                 $relation->banner = $fileName;
             }
             if ($request->imageMin) {
                 //Se sube foto
                 $fotoMin = $request->file('imageMin')[0]->store('public/relaciones');
                 $fileName = $request->file('imageMin')[0]->hashName();
-                // $image = Image::make(Storage::get($foto));
-
-                // $image->resize(1280, null, function ($constraint) {
-                //     $constraint->aspectRatio();
-                //     $constraint->upsize();
-                // });
-
-                // Storage::put($foto, (string) $image->encode('jpg', 30));
                 $relation->miniatura = $fileName;
             }
 
             $relation->save();
-
-            if ($request->folios) {
-                $mapasFolios = [];
-                $mapasFoliosMin = [];
-                foreach ($request->folios as $key => $folio) {
-                    $folioM = new Invoice;
-                    $folioM->uuid = Str::uuid();
-                    $folioM->nombre = $folio["nombre"];
-                    $folioM->folio = $folio["no_folio"];
-                    $folioM->descripcion = $folio["descripcion"] ?? null;
-
-                    $mapasFolios[$key] = $request->file('folios')[$key]["imageFolio"][0]->store('public/relaciones');
-                    $fileName = $request->file('folios')[$key]["imageFolio"][0]->hashName();
-                    $folioM->imagen = $fileName;
-
-                    $image = $request->file('folios')[$key]["imageFolio"][0];
-                    $fileNameMin = 'mini-' . $request->file('folios')[$key]["imageFolio"][0]->hashName();
-
-                    $destinationPath = public_path('storage') . '/relaciones';
-                    $img = Image::make($image->getRealPath());
-                    $img->resize(400, 400, function ($constraint) {
-                        $constraint->aspectRatio();
-                        $constraint->upsize();
-                    })->save($destinationPath . '/' . $fileNameMin);
-
-                    $folioM->min = $fileNameMin;
-
-                    $archivo = $destinationPath . '/' . $fileNameMin;
-
-                    $mapasFoliosMin[$key] = $archivo;
-
-                    $folioM->save();
-
-                    $relation->invoices()->save($folioM);
-
-                    if (isset($folio["transcriptions"]) && count($folio["transcriptions"]) > 0) {
-                        foreach ($folio["transcriptions"] as $key2 => $transcripcion) {
-                            $transcription = new Transcription;
-                            $transcription->uuid = Str::uuid();
-                            $transcription->nombre = $transcripcion["name"];
-                            $transcription->texto = $transcripcion["text"];
-                            $transcription->invoice_id = $folioM->id;
-                            $transcription->save();
-                        }
-                    }
-                }
-            }
 
             if ($request->mapImages) {
                 $mapas = [];
@@ -179,13 +107,11 @@ class RelationController extends Controller
                     $map->imagen = $fileName;
                     $map->relation_id = $relation->id;
                     $map->save();
-
-                    // $map->relation()->associate($relation);
                 }
             }
 
             DB::commit();
-            return Redirect::route('admin.index')->with('success', '¡Relación creada con éxito!');
+            return Redirect::route('admin.show', [$relation->id])->with('success', '¡Relación creada con éxito!');
         } catch (\Throwable $th) {
             DB::rollBack();
 
@@ -195,22 +121,6 @@ class RelationController extends Controller
             }
             if ($fotoMin) {
                 Storage::delete($fotoMin);
-            }
-
-            if ($mapasFolios && count($mapasFolios) > 0) {
-                foreach ($mapasFolios as $key => $mapa) {
-                    Storage::delete($mapa);
-                }
-            }
-
-            if ($mapasFoliosMin && count($mapasFoliosMin) > 0) {
-                foreach ($mapasFoliosMin as $key => $mapa) {
-                    if ($mapa) {
-                        if (file_exists($mapa)) {
-                            unlink($mapa);
-                        }
-                    }
-                }
             }
 
             if ($mapas && count($mapas) > 0) {

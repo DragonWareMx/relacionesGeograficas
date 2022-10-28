@@ -48,7 +48,7 @@ class InvoiceController extends Controller
             'descripcion' => 'nullable',
             'image.*' => 'required|array',
             'image.*' => 'required|image',
-            'image'=>'required',
+            'image' => 'required',
             'transcriptions' => 'nullable|array',
             'transcriptions.*.nombre' => 'nullable|string|max:255',
             'transcriptions.*.texto' => 'nullable|string',
@@ -81,7 +81,7 @@ class InvoiceController extends Controller
                 $folio->imagen = $fileName;
 
                 $image = $request->file('image')[0];
-                $fileNameMin = 'mini-'.$request->file('image')[0]->hashName();
+                $fileNameMin = 'mini-' . $request->file('image')[0]->hashName();
 
                 $destinationPath = public_path('storage') . '/relaciones';
                 $img = Image::make($image->getRealPath());
@@ -95,12 +95,12 @@ class InvoiceController extends Controller
                 $archivo = $destinationPath . '/' . $fileNameMin;
             }
 
-            
+
             $folio->save();
-            
-            if($request->transcriptions){
+
+            if ($request->transcriptions) {
                 foreach ($request->transcriptions as $key => $transcription) {
-                    if($transcription["nombre"] && $transcription["texto"]){
+                    if ($transcription["nombre"] && $transcription["texto"]) {
                         $newTranscription = new Transcription;
                         $newTranscription->uuid = Str::uuid();
                         $newTranscription->nombre = $transcription["nombre"];
@@ -130,7 +130,7 @@ class InvoiceController extends Controller
                 }
             }
 
-            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
+            return Redirect::back()->with('error', 'Error: ' . $th->getMessage());
         }
     }
 
@@ -177,7 +177,7 @@ class InvoiceController extends Controller
         ]);
 
         $image = null;
-        $archivo=null;
+        $archivo = null;
         DB::beginTransaction();
 
         try {
@@ -187,11 +187,11 @@ class InvoiceController extends Controller
             $invoice->descripcion = $request->descripcion;
 
             if ($request->image && $request->image[0]) {
-                if($invoice->imagen){
-                    \Storage::delete('public/relaciones/'.$invoice->imagen);
+                if ($invoice->imagen) {
+                    \Storage::delete('public/relaciones/' . $invoice->imagen);
                 }
-                if($invoice->min){
-                    \Storage::delete('public/relaciones/'.$invoice->min);
+                if ($invoice->min) {
+                    \Storage::delete('public/relaciones/' . $invoice->min);
                 }
                 //Se sube foto
                 $image = $request->file('image')[0]->store('public/relaciones');
@@ -207,7 +207,7 @@ class InvoiceController extends Controller
                 $invoice->imagen = $fileName;
 
                 $image = $request->file('image')[0];
-                $fileNameMin = 'mini-'.$request->file('image')[0]->hashName();
+                $fileNameMin = 'mini-' . $request->file('image')[0]->hashName();
 
                 $destinationPath = public_path('storage') . '/relaciones';
                 $img = Image::make($image->getRealPath());
@@ -219,15 +219,14 @@ class InvoiceController extends Controller
                 $invoice->min = $fileNameMin;
 
                 $archivo = $destinationPath . '/' . $fileNameMin;
-
             }
-            
+
             $invoice->save();
-            
-            if($request->transcriptions){
+
+            if ($request->transcriptions) {
                 $invoice->transcriptions()->delete();
                 foreach ($request->transcriptions as $key => $transcription) {
-                    if($transcription["nombre"] && $transcription["texto"]){
+                    if ($transcription["nombre"] && $transcription["texto"]) {
                         $newTranscription = new Transcription;
                         $newTranscription->uuid = Str::uuid();
                         $newTranscription->nombre = $transcription["nombre"];
@@ -256,7 +255,7 @@ class InvoiceController extends Controller
                     unlink($archivo);
                 }
             }
-            return Redirect::back()->with('error', 'Error: '.$th->getMessage());
+            return Redirect::back()->with('error', 'Error: ' . $th->getMessage());
         }
     }
 
@@ -271,11 +270,11 @@ class InvoiceController extends Controller
         DB::beginTransaction();
 
         try {
-            if($invoice->imagen){
-                \Storage::delete('public/relaciones/'.$invoice->imagen);
+            if ($invoice->imagen) {
+                \Storage::delete('public/relaciones/' . $invoice->imagen);
             }
-            if($invoice->min){
-                \Storage::delete('public/relaciones/'.$invoice->min);
+            if ($invoice->min) {
+                \Storage::delete('public/relaciones/' . $invoice->min);
             }
             $invoice->transcriptions()->delete();
             $invoice->delete();
