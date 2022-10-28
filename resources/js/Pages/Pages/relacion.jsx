@@ -464,6 +464,10 @@ const Relacion = ({ relation, api }) => {
                                                 setContMap("geo");
                                                 setIdActive(0);
                                             }}
+                                            style={{
+                                                backgroundImage:
+                                                    "url(/img/assets/mapa_geogr.png)",
+                                            }}
                                         ></div>
                                         <div className="round-button-text">
                                             Mapa geográfico
