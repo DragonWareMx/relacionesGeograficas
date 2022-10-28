@@ -13,7 +13,8 @@ const Grid = styled.div`
     margin: 0px;
     grid:
         "header header" min-content
-        "nav main" 1fr / min-content 1fr;
+        "nav main" 1fr
+        "footer footer" min-content / min-content 1fr;
     min-height: 100vh;
 `;
 
@@ -24,6 +25,10 @@ const GridHeader = styled.div`
 const GridMain = styled.div`
     grid-area: main;
     position: relative;
+`;
+
+const GridFooter = styled.div`
+    grid-area: footer;
 `;
 
 export default function LayoutAdmin({ title, pageTitle, children, ...rest }) {
@@ -71,7 +76,6 @@ export default function LayoutAdmin({ title, pageTitle, children, ...rest }) {
                     {/* Container en cada página, ya que algunas necesitan el 100% de lo ancho */}
                     <div
                         style={{
-                            minHeight: "calc(100vh - 349px)",
                             paddingTop: "0px",
                         }}
                     >
@@ -80,8 +84,10 @@ export default function LayoutAdmin({ title, pageTitle, children, ...rest }) {
                     {/* <Container maxWidth={'xl'} style={{minHeight: 'calc(100vh - 349px)', paddingTop:'0px'}}>
                         {children}
                     </Container> */}
-                    <Footer />
                 </GridMain>
+                <GridFooter>
+                    <Footer />
+                </GridFooter>
             </Grid>
         </React.Fragment>
     );
