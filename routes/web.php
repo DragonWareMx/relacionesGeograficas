@@ -30,6 +30,17 @@ Route::name('folio.')->middleware('auth')->group(function () {
     Route::delete('/admin/{relation}/folio/{invoice}', [App\Http\Controllers\InvoiceController::class, 'delete'])->scopeBindings()->name('delete');
 });
 
+Route::name('users.')->middleware('auth')->group(function () {
+    Route::get('/admin/users', [App\Http\Controllers\UserController::class, 'index'])->name('index');
+    Route::get('/admin/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('create');
+    Route::get('/admin/user/me', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
+    Route::get('/admin/user/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
+    Route::post('/admin/user', [App\Http\Controllers\UserController::class, 'store'])->name('store');
+    Route::post('/admin/user/me', [App\Http\Controllers\UserController::class, 'profileUpdate'])->name('profile.update');
+    Route::post('/admin/user/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('update');
+    Route::delete('/admin/user/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('delete');
+});
+
 Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/admin/create', [App\Http\Controllers\RelationController::class, 'create'])->name('create');
     Route::get('/admin/index', [App\Http\Controllers\AdminController::class, 'relations'])->name('index');
@@ -52,10 +63,10 @@ Route::name('pdf.')->middleware('auth')->group(function () {
     Route::post('/updatePdf', [App\Http\Controllers\PdfController::class, 'update'])->name('update');
 });
 
-Route::name('credits.')->middleware('auth')->group(function () {
+Route::name('credits.')->group(function () {
 
     Route::get('/creditos', [App\Http\Controllers\CreditController::class, 'index'])->name('index');
-    Route::post('/updateCredits', [App\Http\Controllers\CreditController::class, 'update'])->name('update');
+    Route::post('/updateCredits', [App\Http\Controllers\CreditController::class, 'update'])->name('update')->middleware('auth');
 });
 
 Route::get('/fromapi/{idDS}', [App\Http\Controllers\ApiController::class, 'fromapi'])->name('fromapi');

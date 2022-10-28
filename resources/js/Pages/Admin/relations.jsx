@@ -18,6 +18,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const Relations = ({ relations, api, mainText, pdf, credits }) => {
     const [open, setOpen] = React.useState(false);
+    const { auth } = usePage().props;
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -198,37 +199,74 @@ const Relations = ({ relations, api, mainText, pdf, credits }) => {
                             </Grid>
                         ))}
                 </Grid>
-                <Grid container justifyContent={"space-between"} mt={5}>
-                    <Button
-                        variant="outlined"
-                        onClick={() => setOpenMainText(true)}
-                    >
-                        Texto página principal
-                    </Button>
-
-                    <Button variant="outlined" onClick={() => setOpenPdf(true)}>
-                        PDF página principal
-                    </Button>
-
-                    <Button
-                        variant="outlined"
-                        onClick={() => setOpenCredits(true)}
-                    >
-                        Créditos
-                    </Button>
-
-                    <Button variant="outlined" onClick={handleClickOpen}>
-                        Cambiar API
-                    </Button>
-
-                    <InertiaLink
-                        href={route("admin.create")}
-                        style={{ textDecoration: "none" }}
-                    >
-                        <Button color="primary" variant="contained">
-                            Agregar relación
+                <Grid container justifyContent={"left"} mt={5} spacing={5}>
+                    <Grid item>
+                        <Button
+                            variant="outlined"
+                            onClick={() => setOpenMainText(true)}
+                        >
+                            Texto página principal
                         </Button>
-                    </InertiaLink>
+                    </Grid>
+
+                    <Grid item>
+                        <Button
+                            variant="outlined"
+                            onClick={() => setOpenPdf(true)}
+                        >
+                            PDF página principal
+                        </Button>
+                    </Grid>
+
+                    <Grid item>
+                        <Button
+                            variant="outlined"
+                            onClick={() => setOpenCredits(true)}
+                        >
+                            Créditos
+                        </Button>
+                    </Grid>
+
+                    <Grid item>
+                        <Button variant="outlined" onClick={handleClickOpen}>
+                            Cambiar API
+                        </Button>
+                    </Grid>
+
+                    <Grid item>
+                        <InertiaLink
+                            href={route("admin.create")}
+                            style={{ textDecoration: "none" }}
+                        >
+                            <Button color="primary" variant="contained">
+                                Agregar relación
+                            </Button>
+                        </InertiaLink>
+                    </Grid>
+
+                    {auth.user && auth.user.is_admin === 1 && (
+                        <Grid item>
+                            <InertiaLink
+                                href={route("users.index")}
+                                style={{ textDecoration: "none" }}
+                            >
+                                <Button color="primary" variant="outlined">
+                                    Administrar usuarios
+                                </Button>
+                            </InertiaLink>
+                        </Grid>
+                    )}
+
+                    <Grid item>
+                        <InertiaLink
+                            href={route("users.profile")}
+                            style={{ textDecoration: "none" }}
+                        >
+                            <Button color="primary" variant="outlined">
+                                Editar mi usuario
+                            </Button>
+                        </InertiaLink>
+                    </Grid>
                 </Grid>
                 {/* // DIALOG */}
                 <Dialog

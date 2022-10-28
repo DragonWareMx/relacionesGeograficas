@@ -4,7 +4,7 @@ import { InertiaLink } from "@inertiajs/inertia-react";
 import Grid from "@mui/material/Grid";
 import { Inertia } from "@inertiajs/inertia";
 import { Button } from "@mui/material";
-import logos from "./logos.png"
+import logos from "./logos.png";
 
 export default function Footer() {
     return (
@@ -23,7 +23,7 @@ export default function Footer() {
                     >
                         <img
                             src={logos}
-                            style={{ marginTop:18, width:'100%' }}
+                            style={{ marginTop: 18, width: "100%" }}
                         />
                     </Grid>
 
@@ -41,7 +41,7 @@ export default function Footer() {
                                 size="large"
                                 sx={{
                                     color: "white",
-                                    textDecoration: "underline",
+                                    textDecoration: "none",
                                     ":hover": { textDecoration: "underline" },
                                 }}
                             >

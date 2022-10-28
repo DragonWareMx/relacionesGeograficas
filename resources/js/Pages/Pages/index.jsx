@@ -362,7 +362,7 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                     justifyContent="space-between"
                     direction="row-reverse"
                 >
-                    <a href={"/storage/pdf/" + pdf.pdf} target="__blank">
+                    <a href={"/storage/pdf/" + pdf?.pdf} target="__blank">
                         <img
                             style={{ width: "250px" }}
                             src="/img/assets/btn1.PNG"
