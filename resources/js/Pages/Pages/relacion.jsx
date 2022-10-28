@@ -466,7 +466,7 @@ const Relacion = ({ relation, api }) => {
                                             }}
                                             style={{
                                                 backgroundImage:
-                                                    "url(/img/assets/mapa_geogr.png)",
+                                                    "url(/img/assets/map_geogr.png)",
                                             }}
                                         ></div>
                                         <div className="round-button-text">
