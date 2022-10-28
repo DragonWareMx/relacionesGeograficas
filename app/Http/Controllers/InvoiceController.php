@@ -44,7 +44,6 @@ class InvoiceController extends Controller
     {
         $validated = $request->validate([
             'no_folio' => 'required|numeric',
-            'nombre' => 'required|max:255|string',
             'descripcion' => 'nullable',
             'image.*' => 'required|array',
             'image.*' => 'required|image',
@@ -52,6 +51,7 @@ class InvoiceController extends Controller
             'transcriptions' => 'nullable|array',
             'transcriptions.*.nombre' => 'nullable|string|max:255',
             'transcriptions.*.texto' => 'nullable|string',
+            'type' => 'required|string|max:1'
         ]);
 
         $image = null;
@@ -63,8 +63,9 @@ class InvoiceController extends Controller
             $folio = new Invoice;
             $folio->uuid = Str::uuid();
             $folio->folio = $request->no_folio;
-            $folio->nombre = $request->nombre;
             $folio->descripcion = $request->descripcion;
+            $folio->type = $request->type;
+            $folio->nombre = 'F' . $request->no_folio . '.' . $request->type;
 
             if ($request->image) {
                 //Se sube foto

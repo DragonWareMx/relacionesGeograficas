@@ -18,6 +18,9 @@ import {
     Paper,
     Snackbar,
     Autocomplete,
+    RadioGroup,
+    FormControlLabel,
+    Radio,
 } from "@mui/material";
 import "/css/common.css";
 import "../../../css/admin.css";
@@ -94,7 +97,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const Relations = ({ oldRelation, api }) => {
+const Relations = ({ oldRelation, api, next, autors }) => {
     useEffect(() => {
         axios
             .get(api.url + `relaciones`)
@@ -117,7 +120,7 @@ const Relations = ({ oldRelation, api }) => {
         error: false,
     });
     const [relation, setRelation] = useState({
-        label: (oldRelation.idDS + " " + oldRelation.nombre),
+        label: oldRelation.idDS + " " + oldRelation.nombre,
         idDS: oldRelation.idDS,
         cNombre: oldRelation.nombre,
     });
@@ -258,9 +261,25 @@ const Relations = ({ oldRelation, api }) => {
         setOpenTranscription(true);
     }
 
+    const [openAlert, setOpenAlert] = useState(false);
+    const [errorMessagge, setErrorMessagge] = useState(false);
+
     function pushTranscription() {
+        if (!autor) {
+            setErrorMessagge("Selecciona o agrega un nuevo autor.");
+            setOpenAlert(true);
+            return false;
+        }
+        if (!transcriptionValues?.texto) {
+            setErrorMessagge("El campo texto no puede quedar vacío");
+            setOpenAlert(true);
+            return false;
+        }
         let transcriptions = folioValues.transcriptions;
-        transcriptions = [...transcriptions, transcriptionValues];
+        transcriptions = [
+            ...transcriptions,
+            { ...transcriptionValues, nombre: autor },
+        ];
         setFolioValues((values) => ({
             ...values,
             transcriptions,
@@ -275,14 +294,26 @@ const Relations = ({ oldRelation, api }) => {
             nombre: transcription.nombre,
             texto: transcription.texto,
         });
+        setAutor(transcription.nombre);
         setTranscriptionIndex(index);
         setOpenTranscription(true);
     }
 
     function patchTranscription() {
+        if (!autor) {
+            setErrorMessagge("Selecciona o agrega un nuevo autor.");
+            setOpenAlert(true);
+            return false;
+        }
+        if (!transcriptionValues?.texto) {
+            setErrorMessagge("El campo texto no puede quedar vacío");
+            setOpenAlert(true);
+            return false;
+        }
         let transcriptions = folioValues.transcriptions;
+        console.log(transcriptions, autor);
         transcriptions[transcriptionIndex] = {
-            nombre: transcriptionValues.nombre,
+            nombre: autor,
             texto: transcriptionValues.texto,
         };
         setFolioValues((values) => ({
@@ -372,7 +403,7 @@ const Relations = ({ oldRelation, api }) => {
     function addNewFolio() {
         setFolioValues({
             id: null,
-            no_folio: "",
+            no_folio: next ?? "",
             nombre: "",
             descripcion: "",
             image: null,
@@ -383,8 +414,7 @@ const Relations = ({ oldRelation, api }) => {
 
     function handleNewFolio(e) {
         e.preventDefault();
-        const data = folioValues;
-
+        const data = { ...folioValues, type: radioValue };
         Inertia.post(route("folio.store", oldRelation.id), data, {
             onSuccess: () => {
                 setOpenSnack(true);
@@ -402,6 +432,8 @@ const Relations = ({ oldRelation, api }) => {
     const [openDelete, setOpenDelete] = useState(false);
     const [openDeleteFolio, setOpenDeleteFolio] = useState(false);
     const [openSnack, setOpenSnack] = useState(false);
+    const [radioValue, setRadioValue] = useState("V");
+    const [autor, setAutor] = useState("");
 
     return (
         <>
@@ -482,23 +514,29 @@ const Relations = ({ oldRelation, api }) => {
                                             setRelation(newValue);
                                         }}
                                         options={
-                                            (data && data.length) ? data.map(relation => {
-                                                return {
-                                                    label: (relation.idDS + " " + relation.cNombre),
-                                                    idDS: relation.idDS,
-                                                    cNombre: relation.cNombre,
-                                                }
-                                            })
-                                            : []
+                                            data && data.length
+                                                ? data.map((relation) => {
+                                                      return {
+                                                          label:
+                                                              relation.idDS +
+                                                              " " +
+                                                              relation.cNombre,
+                                                          idDS: relation.idDS,
+                                                          cNombre:
+                                                              relation.cNombre,
+                                                      };
+                                                  })
+                                                : []
                                         }
                                         renderInput={(params) => (
                                             <TextField
-                                              {...params}
-                                              label="Nombre"
-                                              inputProps={{
-                                                ...params.inputProps,
-                                                autoComplete: 'new-password', // disable autocomplete and autofill
-                                              }}
+                                                {...params}
+                                                label="Nombre"
+                                                inputProps={{
+                                                    ...params.inputProps,
+                                                    autoComplete:
+                                                        "new-password", // disable autocomplete and autofill
+                                                }}
                                             />
                                         )}
                                     />
@@ -761,7 +799,8 @@ const Relations = ({ oldRelation, api }) => {
                                                 <img
                                                     src={
                                                         "/storage/relaciones/" +
-                                                        (invoice.min ?? invoice.imagen)
+                                                        (invoice.min ??
+                                                            invoice.imagen)
                                                     }
                                                     style={{
                                                         width: "100%",
@@ -888,23 +927,28 @@ const Relations = ({ oldRelation, api }) => {
                                         shrink: true,
                                     }}
                                 />
-                                <TextField
-                                    id="nombre"
-                                    label="Nombre"
-                                    required
-                                    fullWidth
-                                    value={folioValues.nombre}
-                                    onChange={handleChangeFolio}
-                                    error={errors.nombre && folioValues.nombre}
-                                    helperText={
-                                        folioValues.error === true &&
-                                        errors.nombre
-                                    }
-                                    style={{
-                                        marginTop: "40px",
-                                        marginBottom: "0px",
-                                    }}
-                                />
+                                {/* LOS RADIO */}
+                                <FormControl>
+                                    <RadioGroup
+                                        aria-labelledby="demo-radio-buttons-group-label"
+                                        defaultValue={radioValue}
+                                        name="type"
+                                        row
+                                    >
+                                        <FormControlLabel
+                                            value="V"
+                                            control={<Radio />}
+                                            label="Anverso"
+                                            onClick={() => setRadioValue("V")}
+                                        />
+                                        <FormControlLabel
+                                            value="R"
+                                            control={<Radio />}
+                                            label="Reverso"
+                                            onClick={() => setRadioValue("R")}
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
                                 <TextField
                                     id="descripcion"
                                     label="Descripción"
@@ -920,7 +964,7 @@ const Relations = ({ oldRelation, api }) => {
                                         errors.descripcion
                                     }
                                     style={{
-                                        marginTop: "30px",
+                                        marginTop: "15px",
                                         marginBottom: "25px",
                                     }}
                                 />
@@ -1063,19 +1107,30 @@ const Relations = ({ oldRelation, api }) => {
                                 </Button>
                             )}
                         </Grid>
-                        <TextField
+                        <Grid container justifyContent={"right"} mt={0.5}>
+                            {autor ? (
+                                <Typography variant="body2" color="primary">
+                                    Autor: {autor}
+                                </Typography>
+                            ) : (
+                                <Typography variant="body2" color="primary">
+                                    Da enter si estás agregando un nuevo autor
+                                </Typography>
+                            )}
+                        </Grid>
+                        <Autocomplete
                             id="nombre"
-                            label="Autor"
+                            freeSolo
+                            // options={top100Films.map((option) => option.title)}
+                            options={autors.map((row, index) => row.nombre)}
+                            value={autor}
+                            onChange={(event, newValue) => {
+                                setAutor(newValue);
+                            }}
                             required
-                            fullWidth
-                            value={transcriptionValues.nombre}
-                            onChange={handleChangeTranscription}
-                            error={errors.nombre && transcriptionValues.error}
-                            helperText={
-                                transcriptionValues.error === true &&
-                                errors.nombre
-                            }
-                            style={{ marginTop: "40px", marginBottom: "0px" }}
+                            renderInput={(params) => (
+                                <TextField {...params} label="Autor" />
+                            )}
                         />
                         <TextField
                             id="texto"
@@ -1129,6 +1184,19 @@ const Relations = ({ oldRelation, api }) => {
                     </Paper>
                 </Modal>
             </Container>
+            <Snackbar
+                open={openAlert}
+                autoHideDuration={6000}
+                onClose={() => setOpenAlert(false)}
+            >
+                <Alert
+                    onClose={() => setOpenAlert(false)}
+                    severity="error"
+                    sx={{ width: "100%" }}
+                >
+                    {errorMessagge && errorMessagge}
+                </Alert>
+            </Snackbar>
         </>
     );
 };
