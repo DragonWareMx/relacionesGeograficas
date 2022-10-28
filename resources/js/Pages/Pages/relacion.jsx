@@ -46,10 +46,12 @@ import {
 import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import ZoomInMapIcon from "@mui/icons-material/ZoomInMap";
+import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 
 /** Axios Imports **/
 import axios from "axios";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 // install Virtual module
 SwiperCore.use([Virtual, Navigation]);
@@ -321,7 +323,53 @@ const Relacion = ({ relation, api }) => {
                     {contMap === "lienzo" && (
                         <div>
                             <Grid container spacing={5}>
-                                <Grid item xs={12} md={7}>
+                                <Grid
+                                    item
+                                    xs={12}
+                                    md={7}
+                                    sx={{ position: "relative" }}
+                                >
+                                    <Box
+                                        sx={{
+                                            position: "absolute",
+                                            zIndex: 100,
+                                            // bgcolor: "black",
+
+                                            color: "white",
+                                            top: "50%",
+                                            left: "50%",
+                                            fontSize: 100,
+                                            // transition:
+                                            //     "all .2s ease-in-out",
+                                            animation: "crescendo 2s forwards",
+                                            "@keyframes crescendo": {
+                                                "0%": {
+                                                    transform: "scale(.8)",
+                                                    opacity: "100%",
+                                                },
+                                                "25%": {
+                                                    transform: "scale(1.5)",
+                                                },
+                                                "50%": {
+                                                    transform: "scale(.8)",
+                                                    opacity: "100%",
+                                                },
+                                                "100%": {
+                                                    transform: "scale(1.5)",
+                                                    opacity: "0%",
+                                                },
+                                            },
+                                        }}
+                                    >
+                                        <ZoomOutMapIcon
+                                            sx={{
+                                                color: "white",
+                                                top: "50%",
+                                                left: "50%",
+                                                fontSize: 100,
+                                            }}
+                                        />
+                                    </Box>
                                     <TransformWrapper>
                                         <TransformComponent
                                             wrapperStyle={{ width: "100%" }}
@@ -352,9 +400,14 @@ const Relacion = ({ relation, api }) => {
                                         <br />
                                         {folioActive.descripcion}
                                     </div>
-                                    <div
+                                    <Box
                                         className={"lienzo-text"}
-                                        style={{ width: "100%" }}
+                                        sx={{
+                                            "&::-webkit-scrollbar-thumb": {
+                                                background: "#74acff",
+                                            },
+                                            width: "100%",
+                                        }}
                                         id="folio-id"
                                         ref={folioRef}
                                     >
@@ -365,7 +418,7 @@ const Relacion = ({ relation, api }) => {
                                                 ? textActive
                                                 : "Sin Transcripción"}
                                         </Typography>
-                                    </div>
+                                    </Box>
                                 </Grid>
                             </Grid>
                         </div>
@@ -474,10 +527,14 @@ const Relacion = ({ relation, api }) => {
                                                                 className="round-button-text"
                                                                 style={{
                                                                     marginTop: 3,
+                                                                    maxWidth: 100,
                                                                 }}
                                                             >
-                                                                Folio{" "}
-                                                                {invoice.folio}
+                                                                F{invoice.folio}
+                                                                {invoice.type
+                                                                    ? "." +
+                                                                      invoice.type
+                                                                    : ""}
                                                             </div>
                                                         </SwiperSlide>
                                                     )
