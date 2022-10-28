@@ -3,6 +3,10 @@ body {
     font-family: "Noto Sans";
     background-color: white;
 }
+
+html {
+    scroll-behavior: smooth;
+}
 /* LAYOUT */
 #search-bar {
     margin-right: 24px;

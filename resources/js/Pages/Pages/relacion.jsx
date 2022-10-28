@@ -136,6 +136,14 @@ const Relacion = ({ relation, api }) => {
         setIdActive(index);
     }
 
+    useEffect(() => {
+        if (textActive) {
+            var div = document.getElementById("folio-id");
+            div.scroll({ top: 0, behavior: "smooth" });
+            window.scroll({ top: 0, behavior: "smooth" });
+        }
+    }, [textActive]);
+
     async function changeText(text, index) {
         setTextActive(text);
         setActiveTranslate(index);
@@ -195,7 +203,15 @@ const Relacion = ({ relation, api }) => {
         window.scrollTo(0, 0);
     }
 
-    console.log(relation);
+    const [disabledZoom, setDisabledZoom] = useState(false);
+
+    useEffect(() => {
+        if (folioActive !== null) {
+            setTimeout(function () {
+                setDisabledZoom(true);
+            }, 2500);
+        }
+    }, [folioActive]);
 
     return (
         <>
@@ -329,47 +345,50 @@ const Relacion = ({ relation, api }) => {
                                     md={7}
                                     sx={{ position: "relative" }}
                                 >
-                                    <Box
-                                        sx={{
-                                            position: "absolute",
-                                            zIndex: 100,
-                                            // bgcolor: "black",
-
-                                            color: "white",
-                                            top: "50%",
-                                            left: "50%",
-                                            fontSize: 100,
-                                            // transition:
-                                            //     "all .2s ease-in-out",
-                                            animation: "crescendo 2s forwards",
-                                            "@keyframes crescendo": {
-                                                "0%": {
-                                                    transform: "scale(.8)",
-                                                    opacity: "100%",
-                                                },
-                                                "25%": {
-                                                    transform: "scale(1.5)",
-                                                },
-                                                "50%": {
-                                                    transform: "scale(.8)",
-                                                    opacity: "100%",
-                                                },
-                                                "100%": {
-                                                    transform: "scale(1.5)",
-                                                    opacity: "0%",
-                                                },
-                                            },
-                                        }}
-                                    >
-                                        <ZoomOutMapIcon
+                                    {!disabledZoom && (
+                                        <Box
                                             sx={{
+                                                position: "absolute",
+                                                zIndex: 100,
+                                                // bgcolor: "black",
+
                                                 color: "white",
                                                 top: "50%",
                                                 left: "50%",
                                                 fontSize: 100,
+                                                // transition:
+                                                //     "all .2s ease-in-out",
+                                                animation:
+                                                    "crescendo 2s forwards",
+                                                "@keyframes crescendo": {
+                                                    "0%": {
+                                                        transform: "scale(.8)",
+                                                        opacity: "100%",
+                                                    },
+                                                    "25%": {
+                                                        transform: "scale(1.5)",
+                                                    },
+                                                    "50%": {
+                                                        transform: "scale(.8)",
+                                                        opacity: "100%",
+                                                    },
+                                                    "100%": {
+                                                        transform: "scale(1.5)",
+                                                        display: "0%",
+                                                    },
+                                                },
                                             }}
-                                        />
-                                    </Box>
+                                        >
+                                            <ZoomOutMapIcon
+                                                sx={{
+                                                    color: "white",
+                                                    top: "50%",
+                                                    left: "50%",
+                                                    fontSize: 100,
+                                                }}
+                                            />
+                                        </Box>
+                                    )}
                                     <TransformWrapper>
                                         <TransformComponent
                                             wrapperStyle={{ width: "100%" }}
