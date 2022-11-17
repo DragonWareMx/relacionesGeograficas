@@ -838,10 +838,20 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                             >
                                                 <img
                                                     src={
-                                                        "/storage/relaciones/" +
-                                                        (invoice.min ??
-                                                            invoice.imagen)
+                                                        "/storage/relacionesmini/" +
+                                                        invoice.imagen.slice(
+                                                            0,
+                                                            -3
+                                                        ) +
+                                                        "webp"
                                                     }
+                                                    onError={(e) => {
+                                                        e.target.onerror = null;
+                                                        e.target.src =
+                                                            "/storage/relaciones/" +
+                                                                invoice.min ??
+                                                            invoice.imagen;
+                                                    }}
                                                     style={{
                                                         width: "100%",
                                                         objectFit: "cover",
