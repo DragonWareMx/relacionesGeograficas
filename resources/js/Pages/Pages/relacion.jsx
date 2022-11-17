@@ -715,6 +715,21 @@ const Relacion = ({ relation, api }) => {
                         </Grid>
                     </div>
                 </div>
+
+                <div style={{ width: "100%", marginBottom: "20px" }}>
+                    <iframe
+                        src={
+                            "https://www.adminrgs.dh.inah.gob.mx/entidad/" +
+                            relation.idDS
+                        }
+                        width="100%"
+                        height="700"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        scrolling="no"
+                    ></iframe>
+                </div>
             </Container>
             {/* Boton estilo footer */}
             <div className="footer-all-folios" style={{ position: "static" }}>
