@@ -6,6 +6,7 @@ use App\Models\Invoice;
 use App\Models\Relation;
 use App\Models\Transcription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
@@ -62,6 +63,7 @@ class InvoiceController extends Controller
 
             $folio = new Invoice;
             $folio->uuid = Str::uuid();
+            $folio->user_id = Auth::id();
             $folio->folio = $request->no_folio;
             $folio->descripcion = $request->descripcion;
             $folio->type = $request->type;
@@ -108,6 +110,7 @@ class InvoiceController extends Controller
                     if ($transcription["nombre"] && $transcription["texto"]) {
                         $newTranscription = new Transcription;
                         $newTranscription->uuid = Str::uuid();
+                        $newTranscription->user_id = Auth::id();
                         $newTranscription->nombre = $transcription["nombre"];
                         $newTranscription->texto = $transcription["texto"];
                         $newTranscription->save();
@@ -235,6 +238,7 @@ class InvoiceController extends Controller
                     if ($transcription["nombre"] && $transcription["texto"]) {
                         $newTranscription = new Transcription;
                         $newTranscription->uuid = Str::uuid();
+                        $newTranscription->user_id = Auth::id();
                         $newTranscription->nombre = $transcription["nombre"];
                         $newTranscription->texto = $transcription["texto"];
                         $newTranscription->save();
