@@ -838,10 +838,20 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                             >
                                                 <img
                                                     src={
-                                                        "/storage/relaciones/" +
-                                                        (invoice.min ??
-                                                            invoice.imagen)
+                                                        "/storage/relacionesmini/" +
+                                                        invoice.imagen.slice(
+                                                            0,
+                                                            -3
+                                                        ) +
+                                                        "webp"
                                                     }
+                                                    onError={(e) => {
+                                                        e.target.onerror = null;
+                                                        e.target.src =
+                                                            "/storage/relaciones/" +
+                                                                invoice.min ??
+                                                            invoice.imagen;
+                                                    }}
                                                     style={{
                                                         width: "100%",
                                                         objectFit: "cover",
@@ -855,8 +865,15 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                                         variant="body2"
                                                         align="center"
                                                     >
-                                                        Folio no.{" "}
-                                                        {invoice.folio}
+                                                        {invoice?.type
+                                                            ? "f. " +
+                                                              invoice?.folio +
+                                                              (invoice.type ==
+                                                              "V"
+                                                                  ? "r"
+                                                                  : "v")
+                                                            : "f. " +
+                                                              invoice?.folio}
                                                     </Typography>
                                                 </Grid>
                                             </Grid>
@@ -978,13 +995,13 @@ const Relations = ({ oldRelation, api, next, autors }) => {
                                         <FormControlLabel
                                             value="V"
                                             control={<Radio />}
-                                            label="Anverso"
+                                            label="Recto"
                                             onClick={() => setRadioValue("V")}
                                         />
                                         <FormControlLabel
                                             value="R"
                                             control={<Radio />}
-                                            label="Reverso"
+                                            label="Verso"
                                             onClick={() => setRadioValue("R")}
                                         />
                                     </RadioGroup>

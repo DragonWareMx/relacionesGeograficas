@@ -537,11 +537,25 @@ const Relacion = ({ relation, api }) => {
                                                                         ? "oski-customGallery-miniPhoto active"
                                                                         : "oski-customGallery-miniPhoto"
                                                                 }
+                                                                //src with last 3 characters removed
                                                                 src={
-                                                                    "/storage/relaciones/" +
-                                                                    (invoice.min ??
-                                                                        invoice.imagen)
+                                                                    "/storage/relacionesmini/" +
+                                                                    invoice.imagen.slice(
+                                                                        0,
+                                                                        -3
+                                                                    ) +
+                                                                    "webp"
                                                                 }
+                                                                onError={(
+                                                                    e
+                                                                ) => {
+                                                                    e.target.onerror =
+                                                                        null;
+                                                                    e.target.src =
+                                                                        "/storage/relaciones/" +
+                                                                            invoice.min ??
+                                                                        invoice.imagen;
+                                                                }}
                                                                 style={{
                                                                     width: "66px",
                                                                     height: "100px",
@@ -554,11 +568,15 @@ const Relacion = ({ relation, api }) => {
                                                                     maxWidth: 100,
                                                                 }}
                                                             >
-                                                                F{invoice.folio}
-                                                                {invoice.type
-                                                                    ? "." +
-                                                                      invoice.type
-                                                                    : ""}
+                                                                {invoice?.type
+                                                                    ? "f. " +
+                                                                      invoice?.folio +
+                                                                      (invoice.type ==
+                                                                      "V"
+                                                                          ? "r"
+                                                                          : "v")
+                                                                    : "f. " +
+                                                                      invoice?.folio}
                                                             </div>
                                                         </SwiperSlide>
                                                     )

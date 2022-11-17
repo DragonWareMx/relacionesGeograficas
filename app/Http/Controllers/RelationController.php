@@ -8,6 +8,7 @@ use App\Models\Api;
 use App\Models\Transcription;
 use App\Models\Map;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -77,6 +78,7 @@ class RelationController extends Controller
         try {
             $relation = new Relation();
             $relation->uuid = Str::uuid();
+            $relation->user_id = Auth::id();
             $relation->idDS = $request->idDS;
             $relation->nombre = $request->nombre;
             $relation->alt_nombre = $request->alt_nombre;
