@@ -127,8 +127,9 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
 
     useEffect(() => {
         console.log("EL AXIOS");
+        console.log(api.url + "mgeneral");
         axios
-            .get(api.url + `relaciones`)
+            .get(api.url + "mgeneral")
             .then((response) => {
                 let new_data = data;
                 new_data.capas = response.data;
@@ -153,6 +154,11 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
     function getCoords(coord) {
         return L.latLng(coord.long, coord.lat);
     }
+
+    const linkToInfo = () => {
+        //inertia visit
+        Inertia.visit("/informacion-tematica");
+    };
 
     return (
         <>
@@ -385,7 +391,7 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                         las dos opciones siguientes:
                     </Typography>
                 </Grid>
-                <Grid item xs={6} sm={4} md={2} style={{ paddingTop: "0px" }}>
+                <Grid item xs={6} sm={4} md={3} style={{ paddingTop: "0px" }}>
                     {/* <Button variant="outlined" sx={{}}>
                     MAPA
                 </Button> */}
@@ -402,12 +408,26 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                     item
                     xs={6}
                     sm={4}
-                    md={2}
+                    md={3}
                     style={{ paddingTop: "0px" }}
                     id="alfabetico2"
                 >
                     <Paper id="btn-alfa" className="btn-op" onClick={showAlfa}>
                         LISTA
+                    </Paper>
+                </Grid>
+                <Grid item xs={6} sm={4} md={3} style={{ paddingTop: "0px" }}>
+                    <Paper
+                        id=""
+                        className="btn-op"
+                        sx={{
+                            backgroundColor: "#4D7DB5",
+                            color: "white",
+                            border: "5px solid #4d7db5",
+                        }}
+                        onClick={linkToInfo}
+                    >
+                        Extraer información temática
                     </Paper>
                 </Grid>
             </Grid>

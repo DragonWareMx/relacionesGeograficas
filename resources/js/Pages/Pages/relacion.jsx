@@ -298,6 +298,7 @@ const Relacion = ({ relation, api }) => {
                                 "https://www.adminrgs.dh.inah.gob.mx/mapa?r=" +
                                 relation.idDS
                             }
+                            scrolling="no"
                             className="map-container"
                             style={{ width: "100%" }}
                         />
