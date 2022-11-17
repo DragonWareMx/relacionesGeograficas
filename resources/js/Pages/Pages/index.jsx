@@ -225,7 +225,6 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                                                     "/storage/relaciones/" +
                                                     banner.banner
                                                 }
-                                                // src="https://www.unionpuebla.mx/sites/default/files/styles/galeria/public/field/image/cultura-olmeca-ii-secundaria_1.jpg?itok=x3nQKuiN"
                                                 className="oski-carousel-img"
                                             />
                                         </div>
