@@ -65,7 +65,11 @@ class InvoiceController extends Controller
             $folio->folio = $request->no_folio;
             $folio->descripcion = $request->descripcion;
             $folio->type = $request->type;
-            $folio->nombre = 'F' . $request->no_folio . '.' . $request->type;
+            if ($request->type == 'V') {
+                $folio->nombre = 'f. ' . $request->no_folio . 'r';
+            } else {
+                $folio->nombre = 'f. ' . $request->no_folio . 'v';
+            }
 
             if ($request->image) {
                 //Se sube foto

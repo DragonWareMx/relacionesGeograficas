@@ -553,11 +553,15 @@ const Relacion = ({ relation, api }) => {
                                                                     maxWidth: 100,
                                                                 }}
                                                             >
-                                                                F{invoice.folio}
-                                                                {invoice.type
-                                                                    ? "." +
-                                                                      invoice.type
-                                                                    : ""}
+                                                                {invoice?.type
+                                                                    ? "f. " +
+                                                                      invoice?.folio +
+                                                                      (invoice.type ==
+                                                                      "V"
+                                                                          ? "r"
+                                                                          : "v")
+                                                                    : "f. " +
+                                                                      invoice?.folio}
                                                             </div>
                                                         </SwiperSlide>
                                                     )
