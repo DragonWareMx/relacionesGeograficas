@@ -436,7 +436,7 @@ const Relations = ({ oldRelation, api, next, autors }) => {
     const [radioValue, setRadioValue] = useState("V");
     const [autor, setAutor] = useState("");
     const [notAvailable, setNotAvailable] = React.useState("");
-    const [disabledRel, setDisabledRel] = useState(true);
+    const [disabledRel, setDisabledRel] = useState(false);
 
     function verify(newValue) {
         setRelation(newValue);
