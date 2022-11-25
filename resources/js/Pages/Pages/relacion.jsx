@@ -289,6 +289,8 @@ const Relacion = ({ relation, api }) => {
                     className={
                         contMap === "lienzo"
                             ? "map-container grid-lienzo"
+                            : contMap === "geo"
+                            ? "map-container geo"
                             : "map-container"
                     }
                 >
@@ -299,7 +301,7 @@ const Relacion = ({ relation, api }) => {
                                 relation.idDS
                             }
                             scrolling="no"
-                            className="map-container"
+                            className="map-iframe"
                             style={{ width: "100%" }}
                         />
                     )}
@@ -506,7 +508,7 @@ const Relacion = ({ relation, api }) => {
                                     <div className="swiper-container">
                                         <Swiper
                                             spaceBetween={15}
-                                            freeMode={false}
+                                            freeMode={true}
                                             effect={"coverflow"}
                                             grabCursor={true}
                                             slidesPerView={5}

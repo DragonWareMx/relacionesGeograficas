@@ -7,6 +7,16 @@
     margin-right: auto;
 }
 
+.map-container.geo {
+    border: none !important;
+}
+
+.map-iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+}
+
 .container-controls {
     display: flex;
     margin-top: 25px;
@@ -75,6 +85,7 @@
 
 .swiper-container {
     width: 95%;
+    max-width: 600px;
 }
 
 .leo-swiper {

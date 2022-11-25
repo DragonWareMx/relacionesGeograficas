@@ -42,7 +42,8 @@ export default function Footer() {
                                 sx={{
                                     color: "white",
                                     textDecoration: "none",
-                                    ":hover": { textDecoration: "underline" },
+                                    textTransform: "none",
+                                    "&:hover": { textDecoration: "underline" },
                                 }}
                             >
                                 Créditos
