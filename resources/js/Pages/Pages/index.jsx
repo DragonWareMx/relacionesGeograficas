@@ -74,70 +74,21 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
         }
     }, []);
 
-    const [data, setData] = useState({
-        infoMapa: {
-            centro: {
-                lat: "20.0853643565",
-                long: "-98.76998",
-            },
-            limites: {
-                visible: false,
-                nE: {
-                    lat: null,
-                    long: null,
-                },
-                nO: {
-                    lat: null,
-                    long: null,
-                },
-                sE: {
-                    lat: null,
-                    long: null,
-                },
-                sO: {
-                    lat: null,
-                    long: null,
-                },
-            },
-            zoom: {
-                max: 12,
-                min: 0,
-                inicial: 4,
-            },
-            mapasBase: {
-                0: {
-                    nombre: "INEGI",
-                    atribution: "INEGI",
-                    link: "http://172.16.4.115/inegi50k/{z}/{x}/{y}.png",
-                },
-                1: {
-                    nombre: "ESRI",
-                    atribution: "ESRI",
-                    link: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
-                },
-                2: {
-                    nombre: "GOOGLE",
-                    atribution: "GOOGLE",
-                    link: "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga",
-                },
-            },
-        },
-        capas: null,
-    });
+    const [data, setData] = useState(null);
 
     useEffect(() => {
-        console.log("EL AXIOS");
-        console.log(api.url + "mgeneral");
         axios
             .get(api.url + "mgeneral")
             .then((response) => {
-                let new_data = data;
-                new_data.capas = response.data;
-                setData({ ...data, new_data });
-                console.log(response.data, new_data);
+                setData(response.data);
             })
             .catch((error) => {});
     }, []);
+
+    //Useeffect to see data
+    useEffect(() => {
+        console.log("DATA: ", data);
+    }, [data]);
 
     /** Leaflet Consts and Functions **/
     const { BaseLayer, Overlay } = LayersControl;
@@ -436,86 +387,94 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                 maxWidth="false"
                 sx={{ maxWidth: "90%", border: "10px solid white" }}
             >
-                <MapContainer
-                    id="mapa"
-                    style={styleMap}
-                    center={L.latLng(
-                        data.infoMapa.centro.lat,
-                        data.infoMapa.centro.long
-                    )}
-                    zoom={5}
-                    minZoom={5}
-                    maxZoom={17}
-                >
-                    <LayersControl position="topleft" collapsed={false}>
-                        {data && Object.values(data.infoMapa.mapasBase) ? (
-                            Object.values(data.infoMapa.mapasBase).map(
-                                (mapa, index) => (
-                                    <BaseLayer
-                                        checked={index === 0}
-                                        name={mapa.nombre}
-                                        key={index + "baselayer"}
-                                    >
-                                        <TileLayer
-                                            attribution={
-                                                '&copy; <a href="http://osm.org/copyright">' +
-                                                mapa.nombre +
-                                                "</a> contributors"
-                                            }
-                                            url={mapa.link}
-                                        />
-                                    </BaseLayer>
-                                )
-                            )
-                        ) : (
-                            <BaseLayer checked name="ESRI Satellite">
-                                <TileLayer
-                                    attribution={
-                                        '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
-                                    }
-                                    url={
-                                        "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
-                                    }
-                                />
-                            </BaseLayer>
+                {data && (
+                    <MapContainer
+                        id="mapa"
+                        style={styleMap}
+                        center={L.latLng(
+                            Number(data?.mapaInfo?.centro?.lat),
+                            Number(data?.mapaInfo?.centro?.long)
                         )}
-                        <LayerGroup>
-                            {data.capas !== null && data.capas.length > 0
-                                ? data.capas.map((item, i) => {
-                                      return (
-                                          <CircleMarker
-                                              key={item.idDS + "layergroup"}
-                                              center={L.latLng(item.Y, item.X)}
-                                              radius={5}
-                                              color={"white"}
-                                              onClick={(e) => {
-                                                  console.log("click");
-                                              }}
-                                              eventHandlers={{
-                                                  click: (e) => {
-                                                      Inertia.get(
-                                                          route(
-                                                              "fromapi",
-                                                              item.idDS
-                                                          )
-                                                      );
-                                                  },
-                                              }}
-                                          >
-                                              <Tooltip>{item.cNombre}</Tooltip>
-                                          </CircleMarker>
-                                      );
-                                  })
-                                : ""}
-                        </LayerGroup>
+                        zoom={5}
+                        minZoom={5}
+                        maxZoom={17}
+                    >
+                        <LayersControl position="topleft" collapsed={false}>
+                            {data &&
+                            Object.values(data?.mapaInfo?.mapasBase) ? (
+                                Object.values(data?.mapaInfo?.mapasBase).map(
+                                    (mapa, index) => (
+                                        <BaseLayer
+                                            checked={index === 0}
+                                            name={mapa.nombre}
+                                            key={index + "baselayer"}
+                                        >
+                                            <TileLayer
+                                                attribution={
+                                                    '&copy; <a href="http://osm.org/copyright">' +
+                                                    mapa.nombre +
+                                                    "</a> contributors"
+                                                }
+                                                url={mapa.link}
+                                            />
+                                        </BaseLayer>
+                                    )
+                                )
+                            ) : (
+                                <BaseLayer checked name="ESRI Satellite">
+                                    <TileLayer
+                                        attribution={
+                                            '&copy; <a href="http://osm.org/copyright">ESRI Satellite</a> contributors'
+                                        }
+                                        url={
+                                            "http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga"
+                                        }
+                                    />
+                                </BaseLayer>
+                            )}
+                            <LayerGroup>
+                                {data?.puntos && data?.puntos?.length > 0
+                                    ? data?.puntos?.map((item, i) => {
+                                          return (
+                                              <CircleMarker
+                                                  key={item.idDS + "layergroup"}
+                                                  center={L.latLng(
+                                                      20.08536,
+                                                      -98.76998
+                                                  )}
+                                                  radius={5}
+                                                  color={"white"}
+                                                  onClick={(e) => {
+                                                      console.log("click");
+                                                  }}
+                                                  eventHandlers={{
+                                                      click: (e) => {
+                                                          Inertia.get(
+                                                              route(
+                                                                  "fromapi",
+                                                                  item.idDS
+                                                              )
+                                                          );
+                                                      },
+                                                  }}
+                                              >
+                                                  <Tooltip>
+                                                      {item.cNombre}
+                                                  </Tooltip>
+                                              </CircleMarker>
+                                          );
+                                      })
+                                    : ""}
+                            </LayerGroup>
 
-                        <ScaleControl
-                            position="bottomright"
-                            metric={true}
-                            imperial={true}
-                        />
-                    </LayersControl>
-                </MapContainer>
+                            <ScaleControl
+                                position="bottomright"
+                                metric={true}
+                                imperial={true}
+                            />
+                        </LayersControl>
+                    </MapContainer>
+                )}
             </Container>
 
             {/* APARTADO DE TODAS LAS RELACIONES */}

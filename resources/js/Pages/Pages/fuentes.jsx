@@ -17,7 +17,7 @@ const Fuentes = ({ idDS, api, uuid }) => {
         axios
             .get(api.url + `mapa/` + idDS)
             .then((response) => {
-                setFuentes(response.data?.infoRelacion?.fuentes);
+                setFuentes(Object.values(response.data?.infoRelacion?.fuentes));
             })
             .catch((error) => {});
     }, []);
@@ -76,36 +76,30 @@ const Fuentes = ({ idDS, api, uuid }) => {
                             <Typography variant="h5">Fuentes</Typography>
                         </Grid>
                         <Grid container mt={2}>
-                            {fuentes && fuentes.length > 0 ? (
-                                fuentes.map((fuente, index) => {
-                                    return (
-                                        <Grid item xs={12} key={index}>
-                                            <Typography
+                            {fuentes &&
+                                fuentes.length &&
+                                fuentes?.map((fuente, index) => (
+                                    <Grid item xs={12} key={index}>
+                                        <Typography
+                                            style={{
+                                                whiteSpace: "pre-line",
+                                                overflow: "hidden",
+                                                textOverflow: "ellipsis",
+                                            }}
+                                        >
+                                            <a
+                                                href={fuente.url}
+                                                target="__blank"
                                                 style={{
-                                                    whiteSpace: "pre-line",
-                                                    overflow: "hidden",
-                                                    textOverflow: "ellipsis",
+                                                    textDecoration: "none",
+                                                    color: "inherit",
                                                 }}
                                             >
-                                                <a
-                                                    href={fuente.url}
-                                                    target="__blank"
-                                                    style={{
-                                                        textDecoration: "none",
-                                                        color: "inherit",
-                                                    }}
-                                                >
-                                                    {fuente.cita}
-                                                </a>
-                                            </Typography>
-                                        </Grid>
-                                    );
-                                })
-                            ) : (
-                                <Grid item xs={12}>
-                                    <Typography>Sin fuentes</Typography>
-                                </Grid>
-                            )}
+                                                {fuente.cita}
+                                            </a>
+                                        </Typography>
+                                    </Grid>
+                                ))}
                         </Grid>
                     </Grid>
                 </Grid>

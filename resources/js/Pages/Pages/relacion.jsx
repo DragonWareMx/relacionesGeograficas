@@ -98,11 +98,10 @@ const Relacion = ({ relation, api }) => {
         axios
             .get(api.url + `mapa/` + relation.idDS)
             .then((response) => {
+                console.log("DATA relación: ", response.data);
                 setData(response.data);
             })
             .catch((error) => {});
-
-        console.log(api.url + "mgeneral/" + relation.idDS);
 
         // axios
         //     .get(api.url + "mapa/" + relation.idDS + "/info")
@@ -418,7 +417,13 @@ const Relacion = ({ relation, api }) => {
                                         className={"lienzo-title"}
                                         style={{ width: "100%" }}
                                     >
-                                        {folioActive.nombre}
+                                        {folioActive?.type
+                                            ? "f. " +
+                                              folioActive?.folio +
+                                              (folioActive.type == "V"
+                                                  ? "r"
+                                                  : "v")
+                                            : "f. " + folioActive?.folio}
                                         <br />
                                         {folioActive.descripcion}
                                     </div>
@@ -685,10 +690,7 @@ const Relacion = ({ relation, api }) => {
                                 <div className="info-text-relacion">
                                     {relation.alt_nombre}
                                     <br />
-                                    Reproducción por cortesía de la Benson Latin
-                                    America Collection. The General Libraries,
-                                    The University of Texas Austin
-                                    (JGI-XXIV-12).
+                                    {data?.infoRelacion?.descripcion}
                                 </div>
                             </Grid>
                             <Grid item sm={4} md={3} xs={12}>
@@ -772,10 +774,25 @@ const Relacion = ({ relation, api }) => {
                                                         height: 139,
                                                         objectFit: "cover",
                                                     }}
+                                                    // src={
+                                                    //     "/storage/relaciones/" +
+                                                    //     invoice.imagen
+                                                    // } aquiaqui
                                                     src={
-                                                        "/storage/relaciones/" +
-                                                        invoice.imagen
+                                                        "/storage/relacionesmini/" +
+                                                        invoice.imagen.slice(
+                                                            0,
+                                                            -3
+                                                        ) +
+                                                        "webp"
                                                     }
+                                                    onError={(e) => {
+                                                        e.target.onerror = null;
+                                                        e.target.src =
+                                                            "/storage/relaciones/" +
+                                                                invoice.min ??
+                                                            invoice.imagen;
+                                                    }}
                                                     onClick={() =>
                                                         changeFolio(
                                                             invoice,

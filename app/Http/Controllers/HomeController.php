@@ -35,7 +35,7 @@ class HomeController extends Controller
             })
             ->orderBy('alt_nombre')
             ->get();
-        $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->take(12)->get();
+        $banners = Relation::select('uuid', 'nombre', 'banner')->inRandomOrder()->get();
         $api = Api::firstOrFail();
         $mainText = MainText::first();
         $pdf = Pdf::first();

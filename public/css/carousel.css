@@ -59,9 +59,9 @@
     }
 
     .oski-carousel-title {
-        margin-top: -150px;
-        padding-right: 80px;
-        font-size: 32px;
+        margin-top: -25px;
+        padding-right: 40px;
+        font-size: 20px;
     }
 }
 
@@ -73,6 +73,12 @@
     .oski-carousel-element {
         height: 180px;
     }
+
+    .oski-carousel-title {
+        margin-top: -10px;
+        padding-right: 5px;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -82,6 +88,12 @@
 
     .oski-carousel-element {
         height: 130px;
+    }
+
+    .oski-carousel-title {
+        margin-top: 0px;
+        padding-right: 0px;
+        font-size: 14px;
     }
 }
 
@@ -95,9 +107,9 @@
     }
 
     .oski-carousel-title {
-        margin-top: -80px;
-        padding-right: 50px;
-        font-size: 20px;
+        margin-top: 15px;
+        padding-right: 0px;
+        font-size: 12px;
     }
 }
 
@@ -111,8 +123,7 @@
     }
 
     .oski-carousel-title {
-        margin-top: -65px;
-        padding-right: 45px;
-        font-size: 15px;
+        margin-top: 15px;
+        font-size: 10px;
     }
 }
