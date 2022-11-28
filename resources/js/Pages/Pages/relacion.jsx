@@ -274,6 +274,14 @@ const Relacion = ({ relation, api }) => {
                                 color: "white",
                                 width: "max-content",
                             }}
+                            onClick={() =>
+                                setTimeout(() => {
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    });
+                                }, 100)
+                            }
                         >
                             <ArrowBackIosIcon />
                             <p style={{ fontSize: "20px" }}>
@@ -705,6 +713,14 @@ const Relacion = ({ relation, api }) => {
                                             "sources.index",
                                             relation.uuid
                                         )}
+                                        onClick={() =>
+                                            setTimeout(() => {
+                                                window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                });
+                                            }, 100)
+                                        }
                                         style={{ textDecoration: "none" }}
                                     >
                                         <ColorButton

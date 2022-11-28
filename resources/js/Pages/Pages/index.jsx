@@ -169,6 +169,14 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                                             "relations.index",
                                             banner.uuid
                                         )}
+                                        onClick={() =>
+                                            setTimeout(() => {
+                                                window.scrollTo({
+                                                    top: 0,
+                                                    behavior: "smooth",
+                                                });
+                                            }, 100)
+                                        }
                                     >
                                         <div className="oski-carousel-element">
                                             <img
@@ -513,6 +521,14 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                                         justifyContent: "center",
                                         flexWrap: "wrap",
                                     }}
+                                    onClick={() =>
+                                        setTimeout(() => {
+                                            window.scrollTo({
+                                                top: 0,
+                                                behavior: "smooth",
+                                            });
+                                        }, 100)
+                                    }
                                 >
                                     <Avatar
                                         alt={rel.alt_nombre}

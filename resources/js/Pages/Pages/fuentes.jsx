@@ -64,7 +64,17 @@ const Fuentes = ({ idDS, api, uuid }) => {
                 <Grid container justifyContent="space-between">
                     <Grid item xs={12}>
                         <Grid container alignItems="center">
-                            <InertiaLink href={route("relations.index", uuid)}>
+                            <InertiaLink
+                                href={route("relations.index", uuid)}
+                                onClick={() =>
+                                    setTimeout(() => {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: "smooth",
+                                        });
+                                    }, 100)
+                                }
+                            >
                                 <ArrowBackIcon
                                     style={{
                                         color: "white",
