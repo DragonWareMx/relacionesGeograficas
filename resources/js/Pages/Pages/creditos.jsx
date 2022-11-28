@@ -49,7 +49,10 @@ const Creditos = ({ credits }) => {
                 <Grid container justifyContent="space-between">
                     <Grid item xs={12} sm={6} className="pd-ri-50">
                         <p className="big-text">Créditos</p>
-                        <p style={{ whiteSpace: "pre-line" }}>{credits?.izq}</p>
+                        <p
+                            style={{ whiteSpace: "pre-line" }}
+                            dangerouslySetInnerHTML={{ __html: credits?.izq }}
+                        ></p>
                         {/* <>
                             <p>
                                 Alejandra Frausto Guerrero
@@ -123,7 +126,10 @@ const Creditos = ({ credits }) => {
                     </Grid>
                     <Grid item xs={12} sm={6} className="pd-le-50">
                         <p className="big-text">Agradecimientos</p>
-                        <p style={{ whiteSpace: "pre-line" }}>{credits?.der}</p>
+                        <p
+                            style={{ whiteSpace: "pre-line" }}
+                            dangerouslySetInnerHTML={{ __html: credits?.der }}
+                        ></p>
                         {/* <>
                             <p>
                                 Biblioteca de las Artes, Centro Nacional de las

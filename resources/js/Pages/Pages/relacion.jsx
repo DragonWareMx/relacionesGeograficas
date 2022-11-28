@@ -684,7 +684,23 @@ const Relacion = ({ relation, api }) => {
                             );
                         })}
                 </div>
+            </Container>
 
+            {/* Boton estilo footer */}
+            <div className="footer-all-folios" style={{ position: "static" }}>
+                <Container maxWidth={"xl"}>
+                    <div
+                        className="folios-button"
+                        style={{ cursor: "pointer" }}
+                        onClick={toggleDrawer}
+                    >
+                        <KeyboardArrowUpIcon style={{ marginRight: 10 }} /> Ver
+                        todos los folios
+                    </div>
+                </Container>
+            </div>
+
+            <Container maxWidth={"xl"} style={{ marginTop: 25 }}>
                 <div style={{ marginTop: 50, width: "100%", marginBottom: 70 }}>
                     <div
                         style={{
@@ -751,19 +767,6 @@ const Relacion = ({ relation, api }) => {
                     ></iframe>
                 </div>
             </Container>
-            {/* Boton estilo footer */}
-            <div className="footer-all-folios" style={{ position: "static" }}>
-                <Container maxWidth={"xl"}>
-                    <div
-                        className="folios-button"
-                        style={{ cursor: "pointer" }}
-                        onClick={toggleDrawer}
-                    >
-                        <KeyboardArrowUpIcon style={{ marginRight: 10 }} /> Ver
-                        todos los folios
-                    </div>
-                </Container>
-            </div>
             <Drawer anchor={"bottom"} open={open} onClose={toggleDrawer}>
                 <div className="drawer-content">
                     <Container
@@ -816,7 +819,16 @@ const Relacion = ({ relation, api }) => {
                                                         )
                                                     }
                                                 />
-                                                <div>{invoice.nombre}</div>
+                                                <div>
+                                                    {invoice?.type
+                                                        ? "f. " +
+                                                          invoice?.folio +
+                                                          (invoice.type == "V"
+                                                              ? "r"
+                                                              : "v")
+                                                        : "f. " +
+                                                          invoice?.folio}
+                                                </div>
                                             </div>
                                         </Grid>
                                     ))}

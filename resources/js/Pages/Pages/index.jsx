@@ -217,8 +217,10 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                         <Typography
                             align="justify"
                             style={{ whiteSpace: "pre-line" }}
+                            dangerouslySetInnerHTML={{
+                                __html: mainText?.izq,
+                            }}
                         >
-                            {mainText?.izq}
                             {/* Este proyecto describe la metodología y los primeros
                             resultados del proyecto Explorando el México
                             Colonial Temprano: Un análisis computacional a gran
@@ -274,8 +276,10 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                         <Typography
                             align="justify"
                             style={{ whiteSpace: "pre-line" }}
+                            dangerouslySetInnerHTML={{
+                                __html: mainText?.der,
+                            }}
                         >
-                            {mainText?.der}
                             {/* Las Relaciones se componen de textos y mapas en cuya
                             elaboración participaron informantes indígenas y
                             oficiales españoles. Debido a la riqueza y variedad
@@ -447,8 +451,8 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                                               <CircleMarker
                                                   key={item.idDS + "layergroup"}
                                                   center={L.latLng(
-                                                      20.08536,
-                                                      -98.76998
+                                                      item.long,
+                                                      item.lat
                                                   )}
                                                   radius={5}
                                                   color={"white"}
