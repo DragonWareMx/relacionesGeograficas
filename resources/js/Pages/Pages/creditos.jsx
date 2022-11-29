@@ -7,6 +7,15 @@ import "/css/common.css";
 import { Head } from "@inertiajs/inertia-react";
 
 const Creditos = ({ credits }) => {
+    React.useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }, 100);
+    }, []);
+
     return (
         <div className={"body-creditos"}>
             <Head>

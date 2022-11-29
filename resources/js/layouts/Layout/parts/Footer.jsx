@@ -36,17 +36,7 @@ export default function Footer() {
                         alignItems="center"
                         sx={{ mt: 1, mb: 1 }}
                     >
-                        <InertiaLink
-                            href="/creditos"
-                            onClick={() =>
-                                setTimeout(() => {
-                                    window.scrollTo({
-                                        top: 0,
-                                        behavior: "smooth",
-                                    });
-                                }, 100)
-                            }
-                        >
+                        <InertiaLink href="/creditos">
                             <Button
                                 size="large"
                                 sx={{

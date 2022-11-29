@@ -115,6 +115,15 @@ const Relacion = ({ relation, api }) => {
         setOpen(!open);
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }, 100);
+    }, []);
+
     const [contMap, setContMap] = useState("geo");
 
     const [folioActive, setFolioActive] = useState(null);
