@@ -407,9 +407,9 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                             Number(data?.mapaInfo?.centro?.lat),
                             Number(data?.mapaInfo?.centro?.long)
                         )}
-                        zoom={5}
-                        minZoom={5}
-                        maxZoom={17}
+                        zoom={data?.mapaInfo?.zoom?.inicial}
+                        minZoom={data?.mapaInfo?.zoom?.min}
+                        maxZoom={data?.mapaInfo?.zoom?.max}
                     >
                         <LayersControl position="topleft" collapsed={false}>
                             {data &&
