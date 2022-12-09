@@ -117,7 +117,7 @@ const Create = (api) => {
             .get(api.api.url + "mapa/" + idDS)
             .then((response) => {
                 setDescription(response.data?.infoRelacion?.descripcion);
-                setFuentes(response.data?.infoRelacion?.fuentes);
+                setFuentes(Object.values(response.data?.infoRelacion?.fuentes));
                 setLimitFuentes(true);
             })
             .catch((error) => {});
@@ -434,21 +434,23 @@ const Create = (api) => {
                                             </Grid>
                                         );
                                     })}
-                                {fuentes && fuentes.length > 2 && limitFuentes && (
-                                    <Grid item xs={12}>
-                                        <Typography
-                                            variant="subtitle1"
-                                            color="primary"
-                                            align="right"
-                                            style={{ cursor: "pointer" }}
-                                            onClick={() =>
-                                                setLimitFuentes(false)
-                                            }
-                                        >
-                                            Ver más
-                                        </Typography>
-                                    </Grid>
-                                )}
+                                {fuentes &&
+                                    fuentes.length > 2 &&
+                                    limitFuentes && (
+                                        <Grid item xs={12}>
+                                            <Typography
+                                                variant="subtitle1"
+                                                color="primary"
+                                                align="right"
+                                                style={{ cursor: "pointer" }}
+                                                onClick={() =>
+                                                    setLimitFuentes(false)
+                                                }
+                                            >
+                                                Ver más
+                                            </Typography>
+                                        </Grid>
+                                    )}
                                 {fuentes &&
                                     fuentes.length > 2 &&
                                     !limitFuentes && (
