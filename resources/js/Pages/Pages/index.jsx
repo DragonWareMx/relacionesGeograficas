@@ -48,10 +48,29 @@ import { Box, Button, Typography } from "@mui/material";
 import { Inertia } from "@inertiajs/inertia";
 
 function showAlfa() {
-    document.getElementById("mapa").style.display = "none";
-    document.getElementById("alfabetico").style.display = "block";
-    document.getElementById("btn-mapa").style.border = "5px solid white";
-    document.getElementById("btn-alfa").style.border = "5px solid #f37946";
+    let div = document.getElementById("mapa");
+    if (div) {
+        console.log("MAPA", div);
+        div.style.display = "none";
+    }
+    div = document.getElementById("alfabetico");
+    if (div) {
+        console.log("ALFA", div);
+
+        div.style.display = "block";
+    }
+    div = document.getElementById("btn-mapa");
+    if (div) {
+        console.log("btn 1", div);
+
+        div.style.border = "5px solid white";
+    }
+    div = document.getElementById("btn-alfa");
+    if (div) {
+        console.log("btn 2", div);
+
+        div.style.border = "5px solid #f37946";
+    }
 }
 function showMapa() {
     document.getElementById("mapa").style.display = "block";
@@ -68,12 +87,6 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
     let params = new URLSearchParams(locationSearch);
     let search = params.get("search");
 
-    useEffect(() => {
-        if (search) {
-            showAlfa();
-        }
-    }, []);
-
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -84,6 +97,12 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
             })
             .catch((error) => {});
     }, []);
+
+    useEffect(() => {
+        if (search && data) {
+            showAlfa();
+        }
+    }, [data]);
 
     //Useeffect to see data
     useEffect(() => {
