@@ -409,8 +409,9 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
             <Container
                 maxWidth="false"
                 sx={{ maxWidth: "90%", border: "10px solid white" }}
+                id="mapa"
             >
-                {data && (
+                {/* {data && (
                     <MapContainer
                         id="mapa"
                         style={styleMap}
@@ -497,7 +498,14 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                             />
                         </LayersControl>
                     </MapContainer>
-                )}
+                )} */}
+                <iframe
+                    src={"http://www.adminrgs.dh.inah.gob.mx/mapa?r=0"}
+                    scrolling="no"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    // className="map-iframe"
+                    style={{ width: "100%", minHeight: 600 }}
+                />
             </Container>
 
             {/* APARTADO DE TODAS LAS RELACIONES */}
