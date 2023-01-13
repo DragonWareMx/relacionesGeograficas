@@ -500,7 +500,7 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                     </MapContainer>
                 )} */}
                 <iframe
-                    src={"http://www.adminrgs.dh.inah.gob.mx/mapa?r=0"}
+                    src={"https://www.adminrgs.dh.inah.gob.mx/mapa?r=0"}
                     scrolling="no"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                     // className="map-iframe"
