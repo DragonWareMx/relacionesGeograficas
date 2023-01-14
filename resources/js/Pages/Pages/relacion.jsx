@@ -318,6 +318,8 @@ const Relacion = ({ relation, api }) => {
                             }
                             scrolling="no"
                             className="map-iframe"
+                            allowFullScreen={true}
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation allow-popups-to-escape-sandbox"
                             style={{ width: "100%" }}
                         />
                     )}
@@ -498,33 +500,34 @@ const Relacion = ({ relation, api }) => {
                                             Mapa geográfico
                                         </div>
                                     </div>
-                                    {relation.maps && relation.maps.length > 0 && (
-                                        <div className="round-button-container">
-                                            <div
-                                                className={
-                                                    contMap === "picto" &&
-                                                    idActive === 0
-                                                        ? "round-button active"
-                                                        : "round-button"
-                                                }
-                                                onClick={() => {
-                                                    setContMap("picto");
-                                                    setIdActive(0);
-                                                    setImageSize();
-                                                }}
-                                                style={{
-                                                    backgroundImage:
-                                                        "url(/storage/relaciones/" +
-                                                        relation.maps[0]
-                                                            .imagen +
-                                                        ")",
-                                                }}
-                                            ></div>
-                                            <div className="round-button-text">
-                                                Mapa pictográfico 1
+                                    {relation.maps &&
+                                        relation.maps.length > 0 && (
+                                            <div className="round-button-container">
+                                                <div
+                                                    className={
+                                                        contMap === "picto" &&
+                                                        idActive === 0
+                                                            ? "round-button active"
+                                                            : "round-button"
+                                                    }
+                                                    onClick={() => {
+                                                        setContMap("picto");
+                                                        setIdActive(0);
+                                                        setImageSize();
+                                                    }}
+                                                    style={{
+                                                        backgroundImage:
+                                                            "url(/storage/relaciones/" +
+                                                            relation.maps[0]
+                                                                .imagen +
+                                                            ")",
+                                                    }}
+                                                ></div>
+                                                <div className="round-button-text">
+                                                    Mapa pictográfico 1
+                                                </div>
                                             </div>
-                                        </div>
-                                    )}
+                                        )}
                                 </Grid>
                                 <Grid xs={9}>
                                     <div className="swiper-container">

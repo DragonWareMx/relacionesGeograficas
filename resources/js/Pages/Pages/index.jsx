@@ -502,7 +502,8 @@ const Home = ({ relaciones, banners, api, mainText, pdf }) => {
                 <iframe
                     src={"https://www.adminrgs.dh.inah.gob.mx/mapa?r=0"}
                     scrolling="no"
-                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation allow-popups-to-escape-sandbox"
+                    allowFullScreen={true}
                     // className="map-iframe"
                     style={{ width: "100%", minHeight: 600 }}
                 />
